@@ -1,0 +1,27 @@
+/*
+ * @Author: FREEST.Dalkong
+ * @Date: 2019-03-01 04:06:43 
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2019-03-22 19:53:34
+ */
+.wrapper { font-family: 'Noto Sans KR', sans-serif; font-weight: 300; text-align: center; } 
+.header { display: flex; align-items: center; justify-content: center; height: 60px; color: #ffffff; border-bottom: 5px solid rgb(255, 111, 97); background-color: rgba(0, 0, 0, 0.75); } 
+.header h1 { font-size: 26px; font-weight: bold; } 
+.content { padding: 50px; } 
+.content .guide_summary { } 
+.content .note { line-height: normal; text-align: left; } 
+.content .note h3 { font-weight: 500; color: rgb(255, 111, 97); } 
+.content .note ul { } 
+.content .note ul li { font-size: 14px; } 
+.content .pub_summary { font-weight: 500; margin: 15px 0; text-align: right; color: rgb(255, 111, 97); } 
+.content .guide_table { width: 100%; table-layout: auto; border-collapse: collapse; } 
+.content .guide_table caption { position: absolute; width: 0; height: 0; opacity: 0; } 
+.content .guide_table thead tr th { font-size: 14px; height: 40px; padding: 5px; vertical-align: middle; border: 1px solid #cecece; background-color: rgba(255, 111, 97, 0.15); } 
+.content .guide_table tbody { } 
+.content .guide_table tbody tr { } 
+.content .guide_table tbody tr td { font-size: 14px; height: 30px; padding: 5px; text-align: left; vertical-align: middle; border: 1px solid #cecece; } 
+.content .guide_table tbody tr td.file { } 
+.content .guide_table tbody tr td.status { background-color: rgba(0, 255, 0, 0.2); } 
+.content .guide_table tbody tr td.note { color: rgb(255, 111, 97); } 
+.footer { display: flex; align-items: center; justify-content: center; height: 50px; color: #ffffff; background-color: rgba(0, 0, 0, 0.5); } 
+.footer .copyright { } 
