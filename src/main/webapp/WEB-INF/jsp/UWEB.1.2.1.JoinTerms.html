@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+
+<body class="bg-white">
+  <!-- Markup Start -->
+  <!-- wrapper -->
+  <div class="wrapper">
+    <!-- header -->
+    <div class="header-wrap">
+      <div class="header">
+        <h1 class="logo-header">
+          <a href="javascript:;"><img src="../../resources/images/logo-uvis-header.png" alt="에스원 유비스"></a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li><a href="javascript:;">실시간 모니터링</a></li>
+            <li><a href="javascript:;">운행현황</a></li>
+            <li><a href="javascript:;">관리설정</a></li>
+          </ul>
+        </div>
+        <div class="my-menu">
+          <ul>
+            <li><a href="javascript:;">배차신청</a></li>
+            <li><a href="javascript:;">eTAS 신청</a></li>
+            <li><a href="javascript:;">운행기록부</a></li>
+            <li><a href="javascript:;">휴식시간현황</a></li>
+          </ul>
+        </div>
+        <div class="util">
+          <ul>
+            <li><a href="javascript:;">로그아웃</a></li>
+            <li><a href="javascript:;">ENG</a></li>
+            <li><a href="javascript:;">고객지원</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- //header -->
+    <!-- content -->
+    <div class="content-wrap">
+      <section class="content">
+        <div class="content-inner">
+          <h2>회원가입</h2>
+          <div class="join-step">
+            <ul>
+              <li class="on">
+                <i class="icon-step-agree"></i>
+                <span>약관 동의</span>
+              </li>
+              <li>
+                <i class="icon-step-input"></i>
+                <span>정보 입력</span>
+              </li>
+              <li>
+                <i class="icon-step-complete"></i>
+                <span>가입 완료</span>
+              </li>
+            </ul>
+          </div>
+          <!-- 약관 -->
+          <div class="agree-box bg-white border-default-gray border-top-dark-gray">
+            <div class="box-title">
+              <h3>계약 확인 및 이용약관 동의</h3>
+              <div class="agree-all">
+                <div class="input-wrap check">
+                  <input id="agreeAll" name type="checkbox">
+                  <i class="icon"></i>
+                </div>
+                <h4><label for="agreeAll">전체동의</label></h4>
+              </div>
+            </div>
+            <div class="agree toggle-box">
+              <div class="agree-title">
+                <div class="input-wrap check">
+                  <input id="agree1" name type="checkbox">
+                  <i class="icon"></i>
+                </div>
+                <h4><label for="agree1">회원약관동의</label></h4>
+                <button class="btn-toggle" data-target="#agreeContent1" data-toggle="collapse" type="button"></button>
+              </div>
+              <div class="agree-body collapse" id="agreeContent1">
+                <div class="agree-content bg-gray border-default-gray">
+                  <p>에스원은 인터넷에서의 개인정보 보호를 매우 중요하게 생각하고 있으며, “정보통신망 이용촉진 및 정보보호 등에 관한 법률”을 준수하고 있습니다. 따라서 이용자의 개인 사생활에 관련된 정보를 보호하고 불법적인 정보의 유출로 인한 피해가 없도록 에스원의 UVIS 홈페이지( s1.u-vis.com, samsung.u-vis.com ,이하 "홈페이지"라 합니다)에 대해 개인정보 보호정책을 시행 중입니다. 개인정보 보호정책은
+                    관련 법률 및 지침에 따라 변경될 수 있으며 개인정보취급방침을 개정하는 경우 홈페이지 (s1.u-vis.com, samsung.u-vis.com) 공지사항(또는 개별공지)을 통하여 공지할 것이므로 방문 시 수시로 그 내용을 확인하여 주시기 바랍니다.
+                    <br>
+                    <br> 에스원은 인터넷에서의 개인정보 보호를 매우 중요하게 생각하고 있으며, “정보통신망 이용촉진 및 정보보호 등에 관한 법률”을 준수하고 있습니다. 따라서 이용자의 개인 사생활에 관련된 정보를 보호하고 불법적인 정보의 유출로 인한 피해가 없도록 에스원의 UVIS 홈페이지( s1.u-vis.com, samsung.u-vis.com ,이하 "홈페이지"라 합니다)에 대해 개인정보 보호정책을 시행 중입니다. 개인정보
+                    보호정책은 관련 법률 및 지침에 따라 변경될 수 있으며 개인정보취급방침을 개정하는 경우 홈페이지 (s1.u-vis.com, samsung.u-vis.com) 공지사항(또는 개별공지)을 통하여 공지할 것이므로 방문 시 수시로 그 내용을 확인하여 주시기 바랍니다.<br>
+                    <br> 에스원은 인터넷에서의 개인정보 보호를 매우 중요하게 생각하고 있으며, “정보통신망 이용촉진 및 정보보호 등에 관한 법률”을 준수하고 있습니다. 따라서 이용자의 개인 사생활에 관련된 정보를 보호하고 불법적인 정보의 유출로 인한 피해가 없도록 에스원의 UVIS 홈페이지( s1.u-vis.com, samsung.u-vis.com ,이하 "홈페이지"라 합니다)에 대해 개인정보 보호정책을 시행 중입니다. 개인정보
+                    보호정책은 관련 법률 및 지침에 따라 변경될 수 있으며 개인정보취급방침을 개정하는 경우 홈페이지 (s1.u-vis.com, samsung.u-vis.com) 공지사항(또는 개별공지)을 통하여 공지할 것이므로 방문 시 수시로 그 내용을 확인하여 주시기 바랍니다.<br>
+                    <br> 에스원은 인터넷에서의 개인정보 보호를 매우 중요하게 생각하고 있으며, “정보통신망 이용촉진 및 정보보호 등에 관한 법률”을 준수하고 있습니다. 따라서 이용자의 개인 사생활에 관련된 정보를 보호하고 불법적인 정보의 유출로 인한 피해가 없도록 에스원의 UVIS 홈페이지( s1.u-vis.com, samsung.u-vis.com ,이하 "홈페이지"라 합니다)에 대해 개인정보 보호정책을 시행 중입니다. 개인정보
+                    보호정책은 관련 법률 및 지침에 따라 변경될 수 있으며 개인정보취급방침을 개정하는 경우 홈페이지 (s1.u-vis.com, samsung.u-vis.com) 공지사항(또는 개별공지)을 통하여 공지할 것이므로 방문 시 수시로 그 내용을 확인하여 주시기 바랍니다.<br>
+                    <br> 에스원은 인터넷에서의 개인정보 보호를 매우 중요하게 생각하고 있으며, “정보통신망 이용촉진 및 정보보호 등에 관한 법률”을 준수하고 있습니다. 따라서 이용자의 개인 사생활에 관련된 정보를 보호하고 불법적인 정보의 유출로 인한 피해가 없도록 에스원의 UVIS 홈페이지( s1.u-vis.com, samsung.u-vis.com ,이하 "홈페이지"라 합니다)에 대해 개인정보 보호정책을 시행 중입니다. 개인정보
+                    보호정책은 관련 법률 및 지침에 따라 변경될 수 있으며 개인정보취급방침을 개정하는 경우 홈페이지 (s1.u-vis.com, samsung.u-vis.com) 공지사항(또는 개별공지)을 통하여 공지할 것이므로 방문 시 수시로 그 내용을 확인하여 주시기 바랍니다.<br>
+                    <br> 에스원은 인터넷에서의 개인정보 보호를 매우 중요하게 생각하고 있으며, “정보통신망 이용촉진 및 정보보호 등에 관한 법률”을 준수하고 있습니다. 따라서 이용자의 개인 사생활에 관련된 정보를 보호하고 불법적인 정보의 유출로 인한 피해가 없도록 에스원의 UVIS 홈페이지( s1.u-vis.com, samsung.u-vis.com ,이하 "홈페이지"라 합니다)에 대해 개인정보 보호정책을 시행 중입니다. 개인정보
+                    보호정책은 관련 법률 및 지침에 따라 변경될 수 있으며 개인정보취급방침을 개정하는 경우 홈페이지 (s1.u-vis.com, samsung.u-vis.com) 공지사항(또는 개별공지)을 통하여 공지할 것이므로 방문 시 수시로 그 내용을 확인하여 주시기 바랍니다.</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>수집 및 이용목적</th>
+                        <th>수집 항목</th>
+                        <th>개인정보 보유 기간</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>회원가입</td>
+                        <td>아이디, 이름, 비밀번호, 전화번호</td>
+                        <td>회원탈퇴(서비스 제공 종료)시까지 보관<br><small class="block">단, 1년 이상 미접속자의 경우 개인정보 삭제</small></td>
+                      </tr>
+                      <tr>
+                        <td>서비스 이용정보 확인, 아이디 찾기</td>
+                        <td>생년월일(개인고객)</td>
+                        <td>개인정보 저장하지 않음</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="agree toggle-box">
+              <div class="agree-title">
+                <div class="input-wrap check">
+                  <input id="agree2" name type="checkbox">
+                  <i class="icon"></i>
+                </div>
+                <h4><label for="agree2">개인정보 수집 및 이용동의<em class="necessary">필수</em></label></h4>
+                <button class="btn-toggle" data-target="#agreeContent2" data-toggle="collapse" type="button"></button>
+              </div>
+              <div class="agree-body collapse" id="agreeContent2">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>수집 및 이용목적</th>
+                      <th>수집 항목</th>
+                      <th>개인정보 보유 기간</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>회원가입</td>
+                      <td>아이디, 이름, 비밀번호, 전화번호</td>
+                      <td>회원탈퇴(서비스 제공 종료)시까지 보관<br><small class="block">단, 1년 이상 미접속자의 경우 개인정보 삭제</small></td>
+                    </tr>
+                    <tr>
+                      <td>서비스 이용정보 확인, 아이디 찾기</td>
+                      <td>생년월일(개인고객)</td>
+                      <td>개인정보 저장하지 않음</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="agree toggle-box">
+              <div class="agree-title">
+                <div class="input-wrap check">
+                  <input id="agree3" name type="checkbox">
+                  <i class="icon"></i>
+                </div>
+                <h4><label for="agree3">개인정보 수집 및 이용동의<em class="necessary">선택</em></label></h4>
+                <button class="btn-toggle" data-target="#agreeContent3" data-toggle="collapse" type="button"></button>
+              </div>
+              <div class="agree-body collapse" id="agreeContent3">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>수집 및 이용목적</th>
+                      <th>수집 항목</th>
+                      <th>개인정보 보유 기간</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>회원가입</td>
+                      <td>이메일 주소</td>
+                      <td>회원탈퇴(서비스 제공 종료)시까지 보관<br><small class="block">단, 1년 이상 미접속자의 경우 개인정보 삭제</small></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="agree box-foot">
+              <div class="agree-title">
+                <div class="input-wrap check"></div>
+                <h4>만 14세 미만 아동 가입 불가<em class="necessary">필수</em></h4>
+              </div>
+              <div class="agree-body">
+                <p>본 서비스는 만 14세 이상부터 회원가입이 가능합니다. 가입자의 나이를 선택하여 주세요. 해당정보는 저장되지 않으며, <br> 만 14세 미만 가입금지 용도로만 사용하고 있습니다.</p>
+                <div class="radio-group col-sm-5">
+                  <div class="input-wrap">
+                    <label for="radio1">
+                          <input id="radio1" name="selRadio" type="radio" checked>
+                          <i class="icon"></i>
+                          <span>만 14세 이상</span>
+                        </label>
+                  </div>
+                  <div class="input-wrap">
+                    <label for="radio2">
+                          <input id="radio2" name="selRadio" type="radio">
+                          <i class="icon"></i>
+                          <span>만 14세 미만</span>
+                        </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="agree-confirm-message">상기 회원약관의 개인정보 보호정책에 동의하십니까?</div>
+          <!-- //약관 -->
+          <div class="page-bottom-btns">
+            <button class="btn btn-white btn-big">동의안함</button>
+            <button class="btn btn-blue btn-big">동의</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- //content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+</body>
+
+</html>

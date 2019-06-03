@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 팝업영역 -->
+      <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- 차량그룹 설정 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">단말기 번호 검색</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- popup top search -->
+              <div class="top-search pop-top-search">
+                <div class="search-forms">
+                  <div class="row">
+                    <div class="input-group col-sm-6">
+                      <legend>회사명</legend>
+                      <div class="input-wrap select">
+                        <select id name>
+                              <option value="">선택</option>
+                            </select>
+                      </div>
+                    </div>
+                    <div class="input-group col-sm-6">
+                      <legend>차량번호</legend>
+                      <div class="input-wrap">
+                        <input class="clearable" id name type="text">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-btns">
+                  <button class="btn btn-blue btn-search">검색</button>
+                </div>
+              </div>
+              <!-- //popup top search -->
+              <!-- data list table -->
+              <div class="data-list-table">
+                <div class="data-table">
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th><span>번호</span></th>
+                        <th><span>단말기 번호</span></th>
+                        <th><span>차량매칭일</span></th>
+                        <th><span>차량번호</span></th>
+                        <th><span>회사명</span></th>
+                        <th><span>단말기타입</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>01</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기01바0001</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>02</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기02바0002</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>03</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기03바0003</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>04</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기04바0004</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>05</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기05바0005</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>06</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기06바0006</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>07</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기07바0007</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>08</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기08바0008</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>09</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기09바0009</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>123456789</td>
+                        <td>2019.01.01</td>
+                        <td>경기10바0010</td>
+                        <td>XX회사</td>
+                        <td>DTG</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="data-list-table-footer">
+                  <div class="footer-left">
+                    <div class="table-info">TOTAL : 50</div>
+                  </div>
+                  <div class="paging">
+                    <a class="btn-first" href="#"></a>
+                    <a class="btn-prev" href="#"></a>
+                    <a class="on" href="#">1</a>
+                    <a class href="#">2</a>
+                    <a class href="#">3</a>
+                    <a class href="#">4</a>
+                    <a class="btn-next" href="#"></a>
+                    <a class="btn-last" href="#"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <select id name>
+                                <option value="">15개씩 보기</option>
+                                <option value="">20개씩 보기</option>
+                                <option value="">50개씩 보기</option>
+                              </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //data list table -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //차량그룹 설정 팝업 -->
+      <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function() {
+      $('#popModel1').modal();
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+
+</html>

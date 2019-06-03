@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+
+<body>
+  <!-- Markup Start -->
+  <!-- wrapper -->
+  <div class="wrapper">
+    <!-- header -->
+    <div class="header-wrap">
+      <div class="header">
+        <h1 class="logo-header">
+          <a href="javascript:;"><img src="../../resources/images/logo-uvis-header.png" alt="에스원 유비스"></a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li><a href="javascript:;">실시간 모니터링</a></li>
+            <li><a href="javascript:;">운행현황</a></li>
+            <li><a href="javascript:;">관리설정</a></li>
+          </ul>
+        </div>
+        <div class="my-menu">
+          <ul>
+            <li><a href="javascript:;">배차신청</a></li>
+            <li><a href="javascript:;">eTAS 신청</a></li>
+            <li><a href="javascript:;">운행기록부</a></li>
+            <li><a href="javascript:;">휴식시간현황</a></li>
+          </ul>
+        </div>
+        <div class="util">
+          <ul>
+            <li><a href="javascript:;">로그아웃</a></li>
+            <li><a href="javascript:;">ENG</a></li>
+            <li><a href="javascript:;">고객지원</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- //header -->
+    <!-- big tabs -->
+    <div class="big-tabs bg-white">
+      <ul>
+        <li><a class="on" href="javascript:;">아이디 찾기</a></li>
+        <li><a href="javascript:;">비밀번호 재설정</a></li>
+      </ul>
+    </div>
+    <!-- //big tabs -->
+    <!-- content -->
+    <div class="content-wrap container-box v-top h-center">
+      <div class="simplified-form">
+        <div class="form-info">회원가입 시 입력했던 정보를 입력해주세요.</div>
+        <div class="form-table">
+          <div class="radio-group">
+            <div class="input-wrap radio bigger">
+              <label for="corpMember">
+                <input id="corpMember" name="selMemType" type="radio">
+                <i class="icon"></i>
+                <span>사업자고객</span>
+              </label>
+            </div>
+            <div class="input-wrap radio bigger">
+              <label for="indiMember">
+                <input id="indiMember" name="selMemType" type="radio">
+                <i class="icon"></i>
+                <span>개인</span>
+              </label>
+            </div>
+          </div>
+          <table>
+            <!-- 사업자고객일 경우 -->
+            <tr>
+              <th>사업자번호</th>
+              <td>
+                <div class="input-wrap block bigger">
+                  <input class="clearable" type="text" title="사업자번호" placeholder>
+                </div>
+              </td>
+            </tr>
+            <!-- //사업자고객일 경우 -->
+            <!-- 개인고객일 경우 -->
+            <tr>
+              <th>생년월일</th>
+              <td>
+                <div class="input-group">
+                  <div class="input-wrap unit-set bigger">
+                    <input type="text" placeholder value="1999">
+                    <label class="unit" for>년</label>
+                  </div>
+                  <div class="input-wrap unit-set bigger">
+                    <input type="text" placeholder>
+                    <label class="unit" for>월</label>
+                  </div>
+                  <div class="input-wrap unit-set bigger">
+                    <input type="text" placeholder>
+                    <label class="unit" for>일</label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <!-- //개인고객일 경우 -->
+            <tr>
+              <th>사용자명</th>
+              <td>
+                <div class="input-wrap block bigger">
+                  <input class="clearable" type="text" title="사용자명" placeholder>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>휴대폰</th>
+              <td>
+                <div class="input-group">
+                  <div class="input-wrap block bigger">
+                    <input class="clearable" type="text" title="휴대폰" placeholder="숫자만 입력">
+                  </div>
+                  <button class="btn btn-default">인증</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>인증번호</th>
+              <td>
+                <div class="input-group">
+                  <div class="input-wrap block bigger">
+                    <div class="timer-set">
+                      <input type="text" title="인증번호" placeholder="인증번호 입력">
+                      <span class="timer">03:00</span>
+                    </div>
+                  </div>
+                  <button class="btn btn-default">확인</button>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <!-- 개인고객일 경우 -->
+          <!-- //개인고객일 경우 -->
+        </div>
+        <div class="page-bottom-btns">
+          <button class="btn btn-white btn-big">취소</button>
+          <button class="btn btn-blue btn-big">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- //content -->
+    <!-- footer -->
+    <div class="footer-wrap">
+      <div class="footer">
+        <div class="footer-info">
+          <ul class="footer-menu">
+            <li><a href="javascript:;">회사소개</a></li>
+            <li><a href="javascript:;">UVIS 소개</a></li>
+            <li><a href="javascript:;">개인정보처리방침</a></li>
+            <li><a href="javascript:;">이메일무단수집거부</a></li>
+          </ul>
+          <ul class="info">
+            <li><span>(주)에스원 UVIS</span></li>
+            <li><span>사업자등록번호 208-81-13302</span></li>
+            <li><span>대표이사 육현표</span></li>
+            <li><span>04511 서울특별시 중구 세종대로 7길 25 에스원 빌딩</span></li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy; S1 Corp. All Right Reserved.
+          </p>
+        </div>
+        <div class="cs-center">
+          <dl>
+            <dt>고객센터</dt>
+            <dd>1544 - 3112</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <!-- //footer -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+</body>
+
+</html>

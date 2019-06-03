@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- content tab -->
+      <div class="content-tab">
+        <div class="radio-group inline bigger page-select">
+          <div class="input-wrap">
+            <label for="pageSelRadio1">
+                    <input id="pageSelRadio1" name="pageSel" type="radio">
+                    <i class="icon"></i>
+                    <span>차량정보 관리</span>
+                  </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+                    <input id="pageSelRadio2" name="pageSel" type="radio">
+                    <i class="icon"></i>
+                    <span>운전자 관리</span>
+                  </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio3">
+                    <input id="pageSelRadio3" name="pageSel" type="radio" checked>
+                    <i class="icon"></i>
+                    <span>단말기 조회</span>
+                  </label>
+          </div>
+        </div>
+      </div>
+      <!-- //content tab -->
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>회사명</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>단말기 번호</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>단말기 타입</legend>
+              <div class="input-wrap select">
+                <select id name>
+                    <option value="">선택</option>
+                    <option value="">선택12312312313</option>
+                  </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차량번호</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차량명</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>업무구분</legend>
+              <div class="input-wrap select">
+                <select id name>
+                      <option value="">선택</option>
+                      <option value="">선택12312312313</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset">초기화</button>
+          <button class="btn btn-blue btn-search">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12 col-md-12">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-right">
+                    <button class="btn btn-white">엑셀다운</button>
+                  </div>
+                </div>
+                <div class="data-table">
+                  <table id="list1">
+                  </table>
+                  <script>
+                  </script>
+                </div>
+                <div class="data-list-table-footer">
+                  <div class="footer-left">
+                    <div class="table-info">TOTAL : 50</div>
+                  </div>
+                  <div class="paging">
+                    <a class="btn-first" href="#"></a>
+                    <a class="btn-prev" href="#"></a>
+                    <a class="on" href="#">1</a>
+                    <a class href="#">2</a>
+                    <a class href="#">3</a>
+                    <a class href="#">4</a>
+                    <a class="btn-next" href="#"></a>
+                    <a class="btn-last" href="#"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <select id name>
+                              <option value="">15개씩 보기</option>
+                              <option value="">20개씩 보기</option>
+                              <option value="">50개씩 보기</option>
+                            </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업 영역 -->
+      <!-- //팝업 영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function() {
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['번호','회사명','단말기 번호','단말기 타입','차량명','차량번호','차종','차량 구분','업무 구분','운전자명'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "100"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "100"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "100"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "100"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "100"
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "100"
+        }],
+        rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "15",
+        col2: "**회사",
+        col3: "123456789",
+        col4: "3G단독",
+        col5: "경기 22하 1234",
+        col6: "경기 22하 1234",
+        col7: "아반테 XD",
+        col8: "승용차",
+        col9: "업무구분",
+        col10: "운전자명",
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>
