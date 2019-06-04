@@ -743,15 +743,15 @@ var pub_list = new Vue({
         pageName: "공통 코드 조회",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.9.1.CodeList",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {
         pageName: "공통 코드 등록 / 수정",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.9.1.CodeAdd",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "정류장 조회",
@@ -813,22 +813,22 @@ var pub_list = new Vue({
         pageName: "연락처 조회",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.14.1.ContactList",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {
         pageName: "보호자 추가",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.14.1.ContactAdd",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "연락처 일괄등록",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.14.1.ContactAllAdd",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "사용자 로그",
