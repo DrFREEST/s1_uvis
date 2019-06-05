@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +19,7 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -30,22 +32,19 @@
           <div class="input-wrap">
             <label for="pageSelRadio1">
                     <input id="pageSelRadio1" name="pageSel" type="radio">
-                    <i class="icon"></i>
-                    <span>차량정보 관리</span>
+                                        <span>차량정보 관리</span>
                   </label>
           </div>
           <div class="input-wrap">
             <label for="pageSelRadio2">
                     <input id="pageSelRadio2" name="pageSel" type="radio">
-                    <i class="icon"></i>
-                    <span>운전자 관리</span>
+                                        <span>운전자 관리</span>
                   </label>
           </div>
           <div class="input-wrap">
             <label for="pageSelRadio3">
                     <input id="pageSelRadio3" name="pageSel" type="radio" checked>
-                    <i class="icon"></i>
-                    <span>단말기 조회</span>
+                                        <span>단말기 조회</span>
                   </label>
           </div>
         </div>
@@ -187,7 +186,7 @@
     $(function() {
       $("#list1").jqGrid({
         datatype: "local",
-        colNames: ['번호','회사명','단말기 번호','단말기 타입','차량명','차량번호','차종','차량 구분','업무 구분','운전자명'],
+        colNames: ['번호', '회사명', '단말기 번호', '단말기 타입', '차량명', '차량번호', '차종', '차량 구분', '업무 구분', '운전자명'],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -268,4 +267,5 @@
   </script>
   <!-- //onload script -->
 </body>
+
 </html>

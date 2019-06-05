@@ -15,20 +15,20 @@ $(function() {
     }
   });
   //selectmenu
-  $('.input-wrap.select').each(function() {
-    var target = $(this);
-    target.find('select').selectmenu({
-      // appendTo: target,
-      // width: "100%",
-      style: 'dropdown',
-      position: {
-        my: "left top",
-        at: "left bottom",
-        of: target,
-        collision: "flip"
-      }
-    });
-  });
+  // $('.input-wrap.select').each(function() {
+  //   var target = $(this);
+  //   target.find('select').selectmenu({
+  //     // appendTo: target,
+  //     // width: "100%",
+  //     style: 'dropdown',
+  //     position: {
+  //       my: "left top",
+  //       at: "left bottom",
+  //       of: target,
+  //       collision: "flip"
+  //     }
+  //   });
+  // });
   //input file form
   $('.input-file-form').each(function() {
     var target = $(this);
