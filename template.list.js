@@ -695,14 +695,14 @@ var pub_list = new Vue({
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.BasicZoneSetting",
         complete: "",
-        note: ""
+        note: "팝업"
       },
       {
         pageName: "ZONE 편집",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointZoneEdit",
         complete: "",
-        note: ""
+        note: "팝업"
       },
       {
         pageName: "지점 정보 일괄등록",
@@ -716,27 +716,27 @@ var pub_list = new Vue({
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointInOut",
         complete: "",
-        note: ""
+        note: "팝업"
       },
       {
         pageName: "지점 차량 도착순서 설정",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointOrderSetting",
         complete: "",
-        note: ""
+        note: "팝업"
       },
       {
         pageName: "지점 SMS 수신자 등록",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointSmsSetting",
         complete: "",
-        note: ""
+        note: "팝업"
       },
       {
         pageName: "에코 정보 설정",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.9.1.EcoSetting",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {
@@ -771,29 +771,29 @@ var pub_list = new Vue({
         pageName: "노선 조회",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.11.1.RouteList",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {
         pageName: "정류장 추가",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.11.1.StationAdd",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "차량 추가",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.11.1.VehicleAdd",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "노선 보기",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.11.1.RouteMap",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "휴일 조회",
@@ -834,7 +834,7 @@ var pub_list = new Vue({
         pageName: "사용자 로그",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.15.1.UserLogList",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {

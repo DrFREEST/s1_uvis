@@ -20,7 +20,7 @@
   <!-- //CSS resource load -->
 </head>
 
-<body class="sub">
+<body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
   <div class="frame-wrapper">
@@ -29,7 +29,7 @@
       <!-- 팝업영역 -->
       <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
       <!-- 사용자 추가 팝업 -->
-      <div class="modal fade dark" id="popModel2" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
         <div class="modal-dialog big" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -152,7 +152,7 @@
         col3: "아반테 MD",
       }];
       for (var i = 0; i <= mydata5.length; i++)
-        $("#list4").jqGrid('addRowData', i + 1, mydata5[i]);
+        $("#list5").jqGrid('addRowData', i + 1, mydata5[i]);
     });
   </script>
   <!-- //onload script -->
