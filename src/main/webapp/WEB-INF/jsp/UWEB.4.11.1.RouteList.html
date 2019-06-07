@@ -193,8 +193,71 @@
                     <button class="btn btn-blue">저장</button>
                   </div>
                 </div>
-                <div class="data-table">
-                  <table id="list3"></table>
+                <div class="data-table v-middle">
+                  <table id="list3">
+                    <colgroup>
+                      <col style="width:55px;">
+                      <col style="width:60px;">
+                      <col style="width:100px;">
+                      <col style="width:100px;">
+                      <col style="width:120px;">
+                      <col style="width:100px;">
+                      <col style="width:100px;">
+                      <col style="width:80px;">
+                      <col style="width:80px;">
+                      <col style="width:120px;">
+                      <col style="width:80px;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>
+                          <input id="listCheckAll" name type="checkbox">
+                        </th>
+                        <th><span>번호</span></th>
+                        <th><span>출발시간</span></th>
+                        <th><span>도착시간</span></th>
+                        <th><span>요일구분</span></th>
+                        <th><span>적용일자</span></th>
+                        <th><span>종료일자</span></th>
+                        <th><span>그룹명1</span></th>
+                        <th><span>그룹명2</span></th>
+                        <th><span>차량번호</span></th>
+                        <th><span>배차</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input id="listCheck1" name type="checkbox">
+                        </td>
+                        <td>1</td>
+                        <td>
+                          <input id name type="text">
+                        </td>
+                        <td>
+                          <input id name type="text">
+                        </td>
+                        <td>
+                          <select id name>
+                            <option value="">평일</option>
+                            <option value="">공휴일</option>
+                          </select>
+                        </td>
+                        <td>
+                          <input class="datepicker" id name type="text">
+                        </td>
+                        <td>
+                          <input class="datepicker" id name type="text">
+                        </td>
+                        <td>**그룹</td>
+                        <td>***그룹</td>
+                        <td>경기 11가 1111</td>
+                        <td>
+                          <button class="btn btn-default">배차</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -321,7 +384,35 @@
                       </h3>
                     </div>
                     <div class="data-table">
-                      <table id="list5"></table>
+                      <table id="list5">
+                        <colgroup>
+                          <col style="width:55px;;">
+                          <col style="width:70px;">
+                          <col style="width:100px;">
+                          <col style="width:70px;">
+                          <col style="width:150px;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>
+                              <input id name type="checkbox">
+                            </th>
+                            <th><span>정류장순</span></th>
+                            <th><span>정류장명</span></th>
+                            <th><span>소모(분)</span></th>
+                            <th><span>메모</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input id name type="checkbox"></td>
+                            <td>1</td>
+                            <td>당산역1</td>
+                            <td><input id name type="text"></td>
+                            <td>-</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                   <!-- //data list table -->
@@ -544,107 +635,6 @@
           }];
           // 
           var lastsel2;
-          $("#list3").jqGrid({
-            datatype: "local",
-            colNames: ['번호', '출발시간', '도착시간', '요일구분', '적용일자', '종료일자', '그룹명1', '그룹명2', '차량번호', '배차'],
-            colModel: [{
-              name: 'col1',
-              index: 'col1',
-              width: "50",
-            }, {
-              name: 'col2',
-              index: 'col2',
-              width: "100",
-              formatter: timeInput,
-            }, {
-              name: 'col3',
-              index: 'col3',
-              width: "100",
-              formatter: timeInput,
-            }, {
-              name: 'col4',
-              index: 'col4',
-              width: "150",
-              formatter: daySelect,
-            }, {
-              name: 'col5',
-              index: 'col5',
-              width: "150",
-              formatter: dateInput,
-            }, {
-              name: 'col6',
-              index: 'col6',
-              width: "150",
-              formatter: dateInput,
-            }, {
-              name: 'col7',
-              index: 'col7',
-              width: "100",
-            }, {
-              name: 'col8',
-              index: 'col8',
-              width: "100",
-            }, {
-              name: 'col9',
-              index: 'col9',
-              width: "150",
-            }, {
-              name: 'col10',
-              index: 'col10',
-              width: "120",
-              formatter: actBtn,
-            }],
-            onSelectRow: function(id) {
-              if (id && id !== lastsel2) {
-                jQuery('#rowed5').jqGrid('restoreRow', lastsel2);
-                jQuery('#rowed5').jqGrid('editRow', id, true);
-                lastsel2 = id;
-              }
-            },
-            rowNum: 15,
-            // scrollRows: true,
-            // scroll: true,
-            rowList: [15, 25, 50],
-            // pager: '#pager3',
-            multiselect: true,
-            multiselectWidth: 50,
-            sortname: 'id',
-            viewrecords: true,
-            sortorder: "desc",
-            autowidth: true,
-            height: "auto",
-            scrollTimeout: 1,
-            shrinkToFit: true,
-            forceFit: true,
-            scrollOffset: 21,
-            // footerrow: true,
-            // userDataOnFooter: true,
-            // altRows: true
-          });
-          function timeInput(cellvalue, options, rowObject) {
-            return '<input type="text">';
-          }
-          function dateInput(cellvalue, options, rowObject) {
-            return '<input type="text" class="datepicker">';
-          }
-          function daySelect(cellvalue, options, rowObject) {
-            return '<select><option>평일</option></select>';
-          }
-          function actBtn(cellvalue, options, rowObject) {
-            return '<button class="btn btn-default">배차</button>';
-          }
-          var mydata3 = [{
-            col1: "1",
-            col2: "04:00",
-            col3: "04:00",
-            col4: "평일",
-            col5: "2019.02.14",
-            col6: "2019.02.14",
-            col7: "**그룹1",
-            col8: "**그룹2",
-            col9: "경기 11하 1234",
-            col10: "",
-          }];
           // 
           $("#list4").jqGrid({
             datatype: "local",
@@ -681,60 +671,9 @@
           });
           var mydata4 = [{
             col1: "당산역1",
-            col1: "-",
+            col2: "-",
           }];
           // 
-          $("#list5").jqGrid({
-            datatype: "local",
-            colNames: ['정류장순', '정류장명', '소요(분)', '메모'],
-            colModel: [{
-              name: 'col1',
-              index: 'col1',
-              width: "100",
-            }, {
-              name: 'col2',
-              index: 'col2',
-              width: "100",
-            }, {
-              name: 'col3',
-              index: 'col3',
-              width: "100",
-              formatter: numInput,
-            }, {
-              name: 'col4',
-              index: 'col4',
-              width: "100",
-            }],
-            rowNum: 15,
-            // scrollRows: true,
-            // scroll: true,
-            rowList: [15, 25, 50],
-            // pager: '#pager3',
-            multiselect: true,
-            multiselectWidth: 55,
-            sortname: 'id',
-            viewrecords: true,
-            sortorder: "desc",
-            // autowidth: true,
-            height: "auto",
-            scrollTimeout: 1,
-            shrinkToFit: true,
-            forceFit: true,
-            scrollOffset: 21,
-            width: 415,
-            // footerrow: true,
-            // userDataOnFooter: true,
-            // altRows: true
-          });
-          function numInput(cellvalue, options, rowObject) {
-            return '<input type="text">';
-          }
-          var mydata5 = [{
-            col1: "1",
-            col2: "당산역2",
-            col3: "",
-            col4: "-",
-          }];
           // 
           $("#list6").jqGrid({
             datatype: "local",
@@ -802,12 +741,8 @@
             $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
           for (var i = 0; i <= mydata2.length; i++)
             $("#list2").jqGrid('addRowData', i + 1, mydata2[i]);
-          for (var i = 0; i <= mydata3.length; i++)
-            $("#list3").jqGrid('addRowData', i + 1, mydata3[i]);
           for (var i = 0; i <= mydata4.length; i++)
             $("#list4").jqGrid('addRowData', i + 1, mydata4[i]);
-          for (var i = 0; i <= mydata5.length; i++)
-            $("#list5").jqGrid('addRowData', i + 1, mydata5[i]);
           for (var i = 0; i <= mydata6.length; i++)
             $("#list6").jqGrid('addRowData', i + 1, mydata6[i]);
           // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망

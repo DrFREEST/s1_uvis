@@ -799,15 +799,15 @@ var pub_list = new Vue({
         pageName: "휴일 조회",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.13.1.ClosingSchedule",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {
         pageName: "휴일 추가",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.13.1.ClosingScheduleAdd",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "연락처 조회",

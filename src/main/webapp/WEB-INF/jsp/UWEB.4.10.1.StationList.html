@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>지점명</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>분류</legend>
+              <div class="input-wrap select">
+                <select id name>
+                    <option value="">선택</option>
+                    <option value="">선택12312312313</option>
+                  </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>범위</legend>
+              <div class="input-wrap select">
+                <select id name>
+                      <option value="">선택</option>
+                      <option value="">선택12312312313</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset">초기화</button>
+          <button class="btn btn-blue btn-search">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xxl-4 col-sm-5">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <button class="btn btn-white">선택삭제</button>
+                  </div>
+                  <div class="header-right">
+                    <button class="btn btn-white">엑셀다운</button>
+                  </div>
+                </div>
+                <div class="data-table">
+                  <table id="list1"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-xxl-8 col-sm-7 flex-col">
+            <!-- map frame -->
+            <div class="map-frame">
+              <div class="map-frame-header">
+                <div class="header-search">
+                  <div class="input-group">
+                    <legend>주소검색</legend>
+                    <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                    <button class="btn btn-blue">검 색</button>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-white">신규</button>
+                  <button class="btn btn-white">ZONE 편집</button>
+                  <button class="btn btn-white">위치변경</button>
+                  <button class="btn btn-white">도착순서 설정</button>
+                </div>
+              </div>
+              <div class="map-frame-body">
+                <!-- map area -->
+                <div class="map-area" style="background:url(../../resources/images/img-sample-map.png) no-repeat center center;background-size:cover;">
+                  지도 영역
+                  <!-- 지도 내부 팝업(좌표값에 맞는 위치 style="top:00px;left:00px;" 형식으로 들어가게 해주세요.) -->
+                  <div class="pop-inner-map" style="top:38px;left:200px;">
+                    <div class="pop-header">
+                      <h3 class="pop-title">갈산동남아파트</h3>
+                      <p class="address">인천광역시 부평구 갈산동 362번지</p>
+                      <button class="btn-pop-close"></button>
+                    </div>
+                    <div class="pop-body">
+                      <div class="data-form-table">
+                        <div class="data-form-table-body">
+                          <table id="test">
+                            <colgroup>
+                              <col style="width:110px;">
+                              <col style="width:;">
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th><span>구분</span></th>
+                                <td>
+                                  <div class="input-wrap select">
+                                    <select id name>
+                                      <option value="">선택</option>
+                                    </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th><span>임시여부</span></th>
+                                <td>
+                                  <div class="input-wrap select">
+                                    <select id name>
+                                          <option value="">선택</option>
+                                        </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th><span>권역구분</span></th>
+                                <td>
+                                  <div class="input-wrap select">
+                                    <select id name>
+                                          <option value="">선택</option>
+                                        </select>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th><span>정류장명</span></th>
+                                <td>
+                                  <div class="input-group">
+                                    <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    <button class="btn btn-default">중복체크</button>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th><span>메모</span></th>
+                                <td>
+                                  <textarea id name cols rows="2"></textarea>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th><span>정류장 이미지</span></th>
+                                <td>
+                                  <div class="input-group">
+                                    <div class="input-wrap">
+                                      <div class="input-file-form">
+                                        <input id name type="file" value="adfasdf.jpg">
+                                        <input class="clearable" id name type="text" value="adfasdf.jpg" readonly disabled>
+                                      </div>
+                                    </div>
+                                    <button class="btn btn-default" onclick="$(this).parent().find('.input-file-form input[type=file]').click();">찾아보기</button>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th><span>정류장 위도</span></th>
+                                <td>
+                                  <div class="input-wrap"><input id name type="text" readonly="readonly" value="3212312313131311312231" disabled></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th><span>정류장 경도</span></th>
+                                <td>
+                                  <div class="input-wrap"><input id name type="text" readonly="readonly" value="3212312313131311312231" disabled></div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pop-footer">
+                      <button class="btn btn-white">취소</button>
+                      <button class="btn btn-white">삭제</button>
+                      <button class="btn btn-blue">수정</button>
+                    </div>
+                  </div>
+                  <!-- //지도 내부 팝업(좌표값에 맞는 위치 style="top:00px;left:00px;" 형식으로 들어가게 해주세요.) -->
+                </div>
+                <!-- //map area -->
+              </div>
+            </div>
+            <!-- //map frame -->
+            <div class="data-list-table row-fix-initial">
+              <div class="data-list-table-header">
+                <h3 class="header-title">노선 정보</h3>
+              </div>
+              <div class="data-table">
+                <table id="list2"></table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업 영역 -->
+      <!-- //팝업 영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function() {
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['정류장명', '정류장 구분', '권역', '임시여부'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100",
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100",
+        }],
+        rowNum: 15,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 40,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "단산역1",
+        col2: "출근",
+        col3: "권역1",
+        col4: "임시",
+      }];
+      //
+      $("#list2").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '정류장명', '노선명', '기점', '종점'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100",
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100",
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "100",
+        }],
+        rowNum: 15,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        multiselectWidth: 40,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 20,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata2 = [{
+        col1: "1",
+        col2: "당산역1",
+        col3: "노선1",
+        col4: "기점1",
+        col5: "종점1",
+      }, {
+        col1: "2",
+        col2: "당산역1",
+        col3: "노선1",
+        col4: "기점1",
+        col5: "종점1",
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      for (var i = 0; i <= mydata2.length; i++)
+        $("#list2").jqGrid('addRowData', i + 1, mydata2[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>
