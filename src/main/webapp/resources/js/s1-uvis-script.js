@@ -38,7 +38,7 @@ $(function() {
     });
   });
   //datepicker
-  $('.datepicker').each(function () {
+  $('.datepicker').each(function() {
     $.fn.datepicker.dates['ko'] = {
       days: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
       daysShort: ["일", "월", "화", "수", "목", "금", "토"],
@@ -156,5 +156,9 @@ $(function() {
       $(this).find('span').text($(this).attr('data-text-open'));
     }
     $(this).toggleClass('active');
+  });
+  //page tab sortable
+  $('.page-tabs ul').sortable({
+    axis: 'x'
   });
 });

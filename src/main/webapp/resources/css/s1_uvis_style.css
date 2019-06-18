@@ -193,7 +193,7 @@ textarea { font-size:16px; font-weight:500; line-height:1.4em; display:block; wi
 .input-group.time-range .to { display:inline-flex; } 
 .input-group.time-range .from .input-wrap + .input-wrap,
 .input-group.time-range .to .input-wrap + .input-wrap { margin-left:10px; } 
-.input-group.time-range .input-wrap + .input-wrap { margin-left:auto; } 
+.input-group.time-range .input-wrap + .input-wrap { margin-left:10px; } 
 .input-wrap.date .icon-calendar { position:absolute; top:50%; right:16px; width:20px; height:20px; margin-top:-10px; cursor:pointer; background:url(../images/icon-calendar.png) no-repeat center; } 
 .input-wrap span.arrow-up,
 .input-wrap span.arrow-down,
@@ -526,7 +526,7 @@ h4 + .data-form-table-body { margin-top:15px; }
 .submit-result h3 { font-size:28px; font-weight:500; line-height:38px; margin-bottom:40px; } 
 .submit-result p { font-size:18px; line-height:26px; } 
 /* UI - Page Tabs */
-.page-tabs { flex:initial; flex-basis:50px; height:50px; min-height:50px; } 
+.page-tabs { flex:initial; flex-basis:50px; height:50px; min-height:50px; position:relative;} 
 .page-tabs ul { display:flex; overflow:hidden; align-items:stretch; flex-direction:row; height:50px; background-color:#f1f1f1; } 
 .page-tabs ul li { position:relative; display:flex; align-items:center; flex-basis:215px; min-width:215px; height:100%; padding:5px 0 0; } 
 .page-tabs ul li + li::before { position:absolute; top:50%; left:0; width:2px; height:20px; margin-top:-5px; margin-left:-1px; content:''; opacity:0.5; border-right:1px solid #ffffff; background-color:#b6b6b6; } 
@@ -656,7 +656,7 @@ h4 + .data-form-table-body { margin-top:15px; }
 .top-search .search-forms .input-group.fix .input-wrap input:not([type=checkbox]):not([type=radio]),
 .top-search .search-forms .input-group.fix .input-wrap select,
 .top-search .search-forms .input-group.fix .input-wrap select + .ui-selectmenu-button { max-width:none; } 
-.top-search .search-btns { display:flex; flex:initial; justify-content:flex-end; padding:0; padding:7.5px 0; align-self:flex-end; } 
+.top-search .search-btns { display:flex; flex:initial; justify-content:flex-end; padding:0; padding:7.5px 0; align-self:flex-start; } 
 .top-search .search-btns .btn { width:100px; min-width:100px; height:60px; } 
 .top-search .search-btns .btn + .btn { margin-left:10px; } 
 @media (max-width:1440px){
@@ -670,7 +670,7 @@ h4 + .data-form-table-body { margin-top:15px; }
 .partition-area > .row + .row { margin-top:40px; } 
 .partition-area > .row > .col { overflow-y:auto; flex-grow:1; height:100%; max-height:100%; padding:0 20px; } 
 .partition-area > .row > .col.flex-col { display:flex; flex-direction:column; height:100%; } 
-.partition-area .area-box { overflow-y:hidden; height:100%; /* padding:0 20px; */ } 
+.partition-area .area-box { overflow-y:auto; height:100%; /* padding:0 20px; */ } 
 .partition-area .area-box h3 { font-size:18px; font-weight:500; } 
 .partition-area .area-box .area-box-header { } 
 .partition-area .area-box .area-box-header .left-btns { } 
@@ -732,8 +732,10 @@ h3 + .data-list-table { margin-top:15px; }
 .data-list-table .data-table table tbody tr td button { padding:0 10px; width:100%; } 
 .data-list-table .data-table table tbody tr td .btn-group { width:100%; } 
 .data-list-table .data-table table tbody tr td input:not([type=checkbox]):not([type=radio]) { padding:0 5px; text-align:center; } 
+.data-list-table .data-table table thead tr th .input-wrap.check,
+.data-list-table .data-table table tbody tr td .input-wrap.check{display:inline-flex;}
 .data-list-table .data-table .input-wrap.check { /* display:inline-flex; */
- justify-content:center; } 
+ justify-content:center;align-items:center; } 
 .data-list-table .data-list-table-footer { display:flex; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:25px; } 
 .data-list-table .data-list-table-footer .footer-left { display:flex; align-items:center; flex:0.25; flex-basis:25%; justify-content:flex-start; } 
 .data-list-table .data-list-table-footer .footer-left .table-info { font-size:14px; line-height:normal; background-color:transparent; } 
