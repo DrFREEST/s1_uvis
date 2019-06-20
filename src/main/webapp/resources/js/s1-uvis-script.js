@@ -4,9 +4,9 @@ function resizeIframe(obj) {
   obj.style.height = obj.contentWindow.$(document).height() + 'px';
 }
 // onload script
-$(function() {
+$(function () {
   // vertical scroll check
-  $(window).on('scroll', function() {
+  $(window).on('scroll', function () {
     // console.log('scrolled'); 
     if ($(window).scrollTop() > 0) {
       $('body').addClass('scrolled');
@@ -30,15 +30,15 @@ $(function() {
   //   });
   // });
   //input file form
-  $('.input-file-form').each(function() {
+  $('.input-file-form').each(function () {
     var target = $(this);
-    target.find('input[type=file]').on('change', function() {
+    target.find('input[type=file]').on('change', function () {
       var fileName = $(this).val();
       target.find('input[type=text]').val(fileName);
     });
   });
   //datepicker
-  $('.datepicker').each(function() {
+  $('.datepicker').each(function () {
     $.fn.datepicker.dates['ko'] = {
       days: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
       daysShort: ["일", "월", "화", "수", "목", "금", "토"],
@@ -72,28 +72,28 @@ $(function() {
         clearBtn: true
       });
     }
-    target.parent().find('.icon-calendar').on('click', function() {
+    target.parent().find('.icon-calendar').on('click', function () {
       target.focus();
     });
   });
   //input focue clear
-  $(document).on('click', '.icon-clear', function(e) {
+  $(document).on('click', '.icon-clear', function (e) {
     $(e.target).parent().find('input').val('').change();
     $(e.target).parent().find('.icon-clear').removeClass('on').hide();
   });
-  $(document).find('.input-wrap input.clearable').each(function(e) {
+  $(document).find('.input-wrap input.clearable').each(function (e) {
     var inputTarget = $(this);
-    var clearVal = function() {
+    var clearVal = function () {
       inputTarget.val('');
     }
-    inputTarget.on('focus', function() {
+    inputTarget.on('focus', function () {
       console.log('focus');
       inputTarget.parent().find('.icon-clear').addClass('focus');
-    }).on('blur', function() {
+    }).on('blur', function () {
       inputTarget.parent().find('.icon-clear').removeClass('focus');
       inputTarget.parent().find('.icon-clear').removeClass('on').hide();
     });
-    inputTarget.parent().on('mouseover focus', function() {
+    inputTarget.parent().on('mouseover focus', function () {
       var clearIcon = $('<i class="icon-clear"></i>');
       if (inputTarget.parent().find('.icon-clear').length <= 0) {
         clearIcon.insertAfter(inputTarget);
@@ -104,11 +104,11 @@ $(function() {
       } else {
         inputTarget.parent().find('.icon-clear').addClass('on').show();
       }
-    }).on('mouseout', function() {
+    }).on('mouseout', function () {
       if (inputTarget.parent().find('.icon-clear').hasClass('focus') == false) {
         inputTarget.parent().find('.icon-clear').removeClass('on').hide();
       }
-    }).on('keyup', function() {
+    }).on('keyup', function () {
       var inputValue = inputTarget.val();
       if (inputTarget.attr('value') == "undefined" || inputValue == '') {
         inputTarget.parent().find('.icon-clear').removeClass('on').hide();
@@ -141,11 +141,11 @@ $(function() {
     })
   }
   contentWrapResize();
-  $(window).resize(function() {
+  $(window).resize(function () {
     contentWrapResize();
   });
   //data form table toggle
-  $('.data-form-table .table-toggle-additional').on('click', '.btn-table-toggle', function() {
+  $('.data-form-table .table-toggle-additional').on('click', '.btn-table-toggle', function () {
     console.log('expended');
     $(this).parents('.data-form-table').find('table').toggleClass('expanded');
     if ($(this).parents('.data-form-table').find('table').hasClass('expanded') == true) {

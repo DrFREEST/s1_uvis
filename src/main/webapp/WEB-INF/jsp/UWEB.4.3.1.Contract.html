@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Title Page</title>
   <!-- CSS resource load -->
-  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
-  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
-  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
   <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
   <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
   <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +16,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -79,7 +74,8 @@
           </div>
         </div>
         <div class="search-btns">
-          <button class="btn btn-blue btn-search">검색</button>
+			<button class="btn btn-white btn-reset action searchContractReset">초기화</button>
+          <button class="btn btn-blue btn-search action searchContract">검색</button>
         </div>
       </div>
       <!-- //top search -->
@@ -90,146 +86,17 @@
             <div class="area-box">
               <div class="data-list-table">
                 <div class="data-list-table-header">
-                  <!-- <div class="header-left">
-                    <button class="btn btn-white">선택삭제</button>
-                    <button class="btn btn-white">업무시간알림 설정</button>
-                  </div> -->
                   <div class="header-right">
-                    <button class="btn btn-white">엑셀다운</button>
+                    <button class="btn btn-white action contractExcel">엑셀다운</button>
                   </div>
                 </div>
                 <div class="data-table">
                   <table id="list1">
-                    <!-- <colgroup>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                      <col>
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>
-                          <span>번호</span>
-                        </th>
-                        <th>
-                          <span>계약번호</span>
-                        </th>
-                        <th>
-                          <span>단말기 번호</span>
-                        </th>
-                        <th>
-                          <span>
-                            차량 번호
-                              <span class="col-sort">
-                                  <button class="btn-atz" title="오름차순 정렬"></button>
-                                  <button class="btn-zta" title="내림차순 정렬"></button>
-                                </span>
-                          </span>
-                        </th>
-                        <th>
-                          <span>
-                            계약상태
-                              <span class="col-sort">
-                                  <button class="btn-atz" title="오름차순 정렬"></button>
-                                  <button class="btn-zta" title="내림차순 정렬"></button>
-                                </span>
-                          </span>
-                        </th>
-                        <th>
-                          <span>결제방법</span>
-                        </th>
-                        <th>
-                          <span>결제정보</span>
-                        </th>
-                        <th>
-                          <span>
-                            청구월
-                              <span class="col-sort">
-                                  <button class="btn-atz" title="오름차순 정렬"></button>
-                                  <button class="btn-zta" title="내림차순 정렬"></button>
-                                </span>
-                          </span>
-                        </th>
-                        <th>
-                          <span>청구금액</span>
-                        </th>
-                        <th>
-                          <span>입금금액</span>
-                        </th>
-                        <th>
-                          <span>
-                            미납금액
-                              <span class="col-sort">
-                                  <button class="btn-atz" title="오름차순 정렬"></button>
-                                  <button class="btn-zta" title="내림차순 정렬"></button>
-                                </span>
-                          </span>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><span>01</span></td>
-                        <td><span>123123456</span></td>
-                        <td><span>123123456</span></td>
-                        <td><span>서울 22하 1234</span></td>
-                        <td><span class="font-red">중지</span></td>
-                        <td><span>자동이체</span></td>
-                        <td><span>우리은행 1234565********</span></td>
-                        <td><span class="font-red">2019.02</span></td>
-                        <td><span>30,000</span></td>
-                        <td><span>0</span></td>
-                        <td><span class="font-red">30,000</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>02</span></td>
-                        <td><span>123123456</span></td>
-                        <td><span>123123456</span></td>
-                        <td><span>서울 22하 1234</span></td>
-                        <td><span>개시</span></td>
-                        <td><span>자동이체</span></td>
-                        <td><span>우리은행 1234565********</span></td>
-                        <td><span>2019.02</span></td>
-                        <td><span>30,000</span></td>
-                        <td><span>30,000</span></td>
-                        <td><span>0</span></td>
-                      </tr>
-                      <tr>
-                        <td><span>03</span></td>
-                        <td><span>123123456</span></td>
-                        <td><span>123123456</span></td>
-                        <td><span>서울 22하 1234</span></td>
-                        <td><span>개시</span></td>
-                        <td><span>자동이체</span></td>
-                        <td><span>우리은행 1234565********</span></td>
-                        <td><span>2019.02</span></td>
-                        <td><span>30,000</span></td>
-                        <td><span>30,000</span></td>
-                        <td><span>0</span></td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td colspan="8">합계</td>
-                        <td>300,000</td>
-                        <td>120,000</td>
-                        <td>120,000</td>
-                      </tr>
-                    </tfoot> -->
                   </table>
-                  <script>
-                  </script>
                 </div>
                 <div class="data-list-table-footer">
                   <div class="footer-left">
-                    <div class="table-info">TOTAL : 50</div>
+                    <!--div class="table-info">TOTAL : 50</div-->
                   </div>
                   <div class="paging">
                     <a class="btn-first" href="#"></a>
@@ -285,6 +152,12 @@
   <!-- onload script -->
   <script>
     $(function() {
+		$('.action').click(function(){
+			if($(this).hasClass('searchContractReset'))		alert("초기화");
+			if($(this).hasClass('searchContract'))			alert("검색");
+			if($(this).hasClass('contractExcel'))			alert("엑셀다운");
+		});
+
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['번호', '계약번호', '단말기 번호', '차량번호', '계약상태', '결재방법', '결재정보', '청구월', '청구금액', '입금금액', '미납금액'],
@@ -336,27 +209,169 @@
           width: "70",
           formatter: 'number'
         }],
-        rowNum: 15,
-        scrollRows: true,
-        scroll: true,
-        rowList: [15, 25, 50],
-        // pager: '#pager3',
-        // multiselect: true,
-        // multiselectWidth: 55,
-        sortname: 'id',
-        viewrecords: true,
-        sortorder: "desc",
-        autowidth: true,
-        height: "auto",
-        scrollTimeout: 1,
-        shrinkToFit: true,
-        forceFit: true,
-        scrollOffset: 21,
-        footerrow: true,
-        userDataOnFooter: true,
-        altRows: true
+			rowNum: 15,
+			scrollRows: true,
+			scroll: true,
+			rowList: [15, 25, 50],
+			// pager: '#pager3',
+			//multiselect: true,
+			//multiselectWidth: 55,
+			sortname: 'id',
+			viewrecords: true,
+			sortorder: "desc",
+			autowidth: true,
+			height: 'auto',
+			scrollTimeout: 1,
+			shrinkToFit: true,
+			forceFit: true,
+			scrollOffset: 21,
+			// height: "auto"
       });
       var mydata = [{
+        col1: "15",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "개시",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      }, {
+        col1: "14",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "중지",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "0",
+        col11: "30000"
+      }, {
+        col1: "13",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "해약",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      },{
+        col1: "12",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "개시",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      }, {
+        col1: "11",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "중지",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "0",
+        col11: "30000"
+      }, {
+        col1: "10",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "해약",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      },{
+        col1: "9",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "개시",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      }, {
+        col1: "8",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "중지",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "0",
+        col11: "30000"
+      }, {
+        col1: "7",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "해약",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      },{
+        col1: "6",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "개시",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      }, {
+        col1: "5",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "중지",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "0",
+        col11: "30000"
+      }, {
+        col1: "4",
+        col2: "123456789",
+        col3: "123456789",
+        col4: "경기 22하 1234",
+        col5: "해약",
+        col6: "자동이체",
+        col7: "우리은행 12343455345-******************",
+        col8: "2019-01",
+        col9: "30000",
+        col10: "30000",
+        col11: "0"
+      },{
         col1: "3",
         col2: "123456789",
         col3: "123456789",
@@ -400,5 +415,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

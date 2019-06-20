@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>회사명</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-blue btn-search">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12 col-md-12">
+            <div class="card-box eco-box">
+              <div class="row">
+                <div class="col col-sm-6 col-xxl-6">
+                  <div class="eco-info">
+                    <ul>
+                      <li>
+                        <img src="../../resources/images/eco-a.png" alt>
+                        <p>900점<span class="arrow-up"></span></p>
+                      </li>
+                      <li>
+                        <img src="../../resources/images/eco-b.png" alt>
+                        <p>800점<span class="arrow-up"></span></p>
+                      </li>
+                      <li>
+                        <img src="../../resources/images/eco-c.png" alt>
+                        <p>600점<span class="arrow-up"></span></p>
+                      </li>
+                      <li>
+                        <img src="../../resources/images/eco-d.png" alt>
+                        <p>400점<span class="arrow-up"></span></p>
+                      </li>
+                      <li>
+                        <img src="../../resources/images/eco-f.png" alt>
+                        <p>400점<span class="arrow-down"></span></p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col col-sm-6 col-xxl-6">
+                  <div class="data-form-table">
+                    <div class="data-form-table-header">
+                      <h3 class="header-title">에코 기준점수 부여 및 관리</h3>
+                    </div>
+                    <div class="data-form-table-body">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <th><span>업체별 초기 점수 부여</span></th>
+                            <td>
+                              <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="table-note font-red"><i class="dot red"></i>예) A등급 ‘900’이상으로 입력 시, 901점 이상이 A등급의 구간이 됩니다.</p>
+                    <div class="data-form-table-header">
+                      <h3 class="header-title">에코지수 구간 설정</h3>
+                    </div>
+                    <div class="data-form-table-body">
+                      <table>
+                        <colgroup>
+                          <col style="width:10%;">
+                          <col style="">
+                          <col style="width:10%;">
+                          <col style="">
+                          <col style="width:10%;">
+                          <col style="">
+                          <col style="width:10%;">
+                          <col style="">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><span>A</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                                <span class="arrow-up"></span>
+                              </div>
+                            </td>
+                            <th><span>B</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                                <span class="arrow-up"></span>
+                              </div>
+                            </td>
+                            <th><span>C</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                                <span class="arrow-up"></span>
+                              </div>
+                            </td>
+                            <th><span>D</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                                <span class="arrow-up"></span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="table-note font-red"><i class="dot red"></i>매월 각 차량에 부여되는 점수를 설정하실 수 있습니다. 부여한 점수를 기준으로 에코 등급을 산정합니다.</p>
+                    <div class="data-form-table-header">
+                      <h3 class="header-title">항목별 에코 점수 부여 및 관리</h3>
+                    </div>
+                    <div class="data-form-table-body">
+                      <table>
+                        <colgroup>
+                          <col style="width:15%;">
+                          <col style="">
+                          <col style="width:15%;">
+                          <col style="">
+                          <col style="width:15%;">
+                          <col style="">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><span>경제운전 <em class="font-blue">+</em></span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                              </div>
+                            </td>
+                            <th><span>급가속 <em class="font-blue">-</em></span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                              </div>
+                            </td>
+                            <th><span>과속 <em class="font-blue">-</em></span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>공회전 <em class="font-blue">-</em></span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id name type="text">
+                              </div>
+                            </td>
+                            <th><span>급감속 <em class="font-blue">-</em></span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input class="clearable" id name type="text">
+                              </div>
+                            </td>
+                            <th><span>과다RPM <em class="font-blue">-</em></span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input class="clearable" id name type="text">
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="table-note font-red"><i class="dot red"></i>경제운전, 관성운전을 제외한 모든 항목은 차감 점수로 설정됩니다.(+,- 기호입력 필요없음)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="page-bottom-btns">
+                <button class="btn btn-blue btn-big">저장</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function() {
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['접속일시', '회사명', '사용자명', '사용자 아이디', '메뉴명', '정보유형', '행위', '결과', '결과값'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "200",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "150"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "100"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "100"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "100"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "300",
+        }],
+        rowNum: 15,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "2019-12-31 00:00:00",
+        col2: "***주식회사",
+        col3: "홍*동",
+        col4: "asdfadf******",
+        col5: "사용자 관리",
+        col6: "개인정보",
+        col7: "조회",
+        col8: "성공",
+        col9: "이*수",
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>

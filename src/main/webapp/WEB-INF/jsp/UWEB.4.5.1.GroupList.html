@@ -49,7 +49,8 @@
           </div>
         </div>
         <div class="search-btns">
-          <button class="btn btn-blue btn-search">검색</button>
+          <button type="button" class="btn btn-white btn-reset action searchGroupReset">초기화</button>
+          <button type="button" class="btn btn-blue btn-search action searchGroup">검색</button>
         </div>
       </div>
       <!-- //top search -->
@@ -61,11 +62,11 @@
               <div class="data-list-table">
                 <div class="data-list-table-header">
                   <div class="header-left">
-                    <button class="btn btn-white">선택삭제</button>
+                    <button type="button" class="btn btn-white action checkGroupDel">선택삭제</button>
                   </div>
                 </div>
                 <div class="data-table">
-                  <table id="list1"></table>
+                  <table id="groupList"></table>
                 </div>
               </div>
             </div>
@@ -75,16 +76,17 @@
               <div class="data-form-table-header">
                 <div class="header-left">
                   <h3 class="header-title">
-                    차량정보 등록
+                    그룹 정보
                     <em class="font-red dotted">
                             <i class="icon dot"></i>필수입력 항목
                             </em>
                   </h3>
                 </div>
                 <div class="header-right">
-                  <button class="btn btn-white">신규</button>
-                  <button class="btn btn-white">취소</button>
-                  <button class="btn btn-blue">저장</button>
+                  <button type="button" class="btn btn-white action goGroupInput">신규</button>
+                  <button type="button" class="btn btn-white action doGroupDel">삭제</button>
+				  <button type="button" class="btn btn-blue action goGroupEdit">수정</button>
+                  <button type="button" class="btn btn-blue action doGroupSave">저장</button>
                 </div>
               </div>
               <div class="data-form-table-body v-middle">
@@ -102,7 +104,7 @@
                     </tr>
                     <tr>
                       <th><span>업무시간</span></th>
-                      <td>
+                      <td colspan="3">
                         <div class="input-group time-range">
                           <div class="input-wrap select">
                             <select id name>
@@ -115,11 +117,12 @@
                                       <option value="">선택</option>
                                     </select>
                           </div>
-                          <button class="btn btn-default">기본값 설정</button>
                         </div>
                       </td>
+					 </tr>
+					 <tr>
                       <th><span>비고</span></th>
-                      <td>
+                      <td colspan="3">
                         <textarea id name rows="3"></textarea>
                       </td>
                     </tr>
@@ -131,15 +134,17 @@
                   <h4>차량 리스트</h4>
                   <div class="data-list-table">
                     <div class="data-list-table-header">
+                    
                       <div class="header-left">
-                        <button class="btn btn-white">선택삭제</button>
+                        <button type="button" class="btn btn-white action checkGroupVehicleDel">선택삭제</button>
                       </div>
                       <div class="header-right">
-                        <button class="btn btn-white" onclick="$('#popModel1').modal();">추가</button>
+                        <button type="button" class="btn btn-white action vehiclePopup">추가</button>
                       </div>
+                    
                     </div>
                     <div class="data-table">
-                      <table id="list2"></table>
+                      <table id="groupVehicleList"></table>
                     </div>
                   </div>
                 </div>
@@ -148,14 +153,14 @@
                   <div class="data-list-table">
                     <div class="data-list-table-header">
                       <div class="header-left">
-                        <button class="btn btn-white">선택삭제</button>
+                        <button type="button" class="btn btn-white action checkGroupUserDel">선택삭제</button>
                       </div>
                       <div class="header-right">
-                        <button class="btn btn-white" onclick="$('#popModel2').modal();">추가</button>
+                        <button type="button" class="btn btn-white action userPopup">추가</button>
                       </div>
                     </div>
                     <div class="data-table">
-                      <table id="list3"></table>
+                      <table id="groupUserList"></table>
                     </div>
                   </div>
                 </div>
@@ -166,8 +171,8 @@
       </div>
       <!-- //분할영역 -->
       <!-- 팝업 영역 -->
-      <!-- 차량 추가 팝업 -->
-      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+       <!-- 차량 추가 팝업 -->
+      <div class="modal fade dark" id="vehicleModal" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
         <div class="modal-dialog big" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -196,28 +201,28 @@
                   </div>
                 </div>
                 <div class="search-btns">
-                  <button class="btn btn-blue btn-search">검색</button>
+                  <button type="button" class="btn btn-blue btn-search action searchVehicle">검색</button>
                 </div>
               </div>
               <!-- //popup top search -->
               <!-- data list table -->
               <div class="data-list-table">
                 <div class="data-table">
-                  <table id="list4"></table>
+                  <table id="vehicleList"></table>
                 </div>
               </div>
               <!-- //data list table -->
             </div>
             <div class="modal-footer">
               <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
-              <button class="btn btn-blue" type="button">차량추가</button>
+              <button class="btn btn-blue action doVehicleAdd" type="button">차량 추가</button>
             </div>
           </div>
         </div>
       </div>
       <!-- //차량 추가 팝업 -->
       <!-- 사용자 추가 팝업 -->
-      <div class="modal fade dark" id="popModel2" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+      <div class="modal fade dark" id="userModal" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
         <div class="modal-dialog big" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -252,21 +257,21 @@
                   </div>
                 </div>
                 <div class="search-btns">
-                  <button class="btn btn-blue btn-search">검색</button>
+                  <button type="button" class="btn btn-blue btn-search action searchUser">검색</button>
                 </div>
               </div>
               <!-- //popup top search -->
               <!-- data list table -->
               <div class="data-list-table">
                 <div class="data-table">
-                  <table id="list5"></table>
+                  <table id="userList"></table>
                 </div>
               </div>
               <!-- //data list table -->
             </div>
             <div class="modal-footer">
               <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
-              <button class="btn btn-blue" type="button">차량추가</button>
+              <button class="btn btn-blue action doUserAdd" type="button">사용자 추가</button>
             </div>
           </div>
         </div>
@@ -301,7 +306,31 @@
   <!-- onload script -->
   <script>
     $(function() {
-      $("#list1").jqGrid({
+		$('.action').click(function() {
+			if ($(this).hasClass('searchGroupReset'))		alert("초기화");
+			if ($(this).hasClass('searchGroup'))			alert("검색");
+			if ($(this).hasClass('checkGroupDel'))			alert("선택삭제");
+			if ($(this).hasClass('goGroupInput'))			alert("신규");
+			if ($(this).hasClass('doGroupDel'))				alert("삭제");
+			if ($(this).hasClass('goGroupEdit'))			alert("수정");
+			if ($(this).hasClass('doGroupSave'))			alert("저장");
+
+			// 차량 추가
+			if ($(this).hasClass('checkGroupVehicleDel'))	alert("선택삭제");
+			if ($(this).hasClass('vehiclePopup'))			$('#vehicleModal').modal();
+
+			if ($(this).hasClass('searchVehicle'))			alert("검색");
+			if ($(this).hasClass('doVehicleAdd'))			alert("차량 추가");
+
+			// 사용자 추가
+			if ($(this).hasClass('checkGroupUserDel'))		alert("선택삭제");
+			if ($(this).hasClass('userPopup'))				$('#userModal').modal();
+
+			if ($(this).hasClass('searchUser'))				alert("검색");
+			if ($(this).hasClass('doUserAdd'))				alert("사용자 추가");
+		});
+
+      $("#groupList").jqGrid({
         datatype: "local",
         colNames: ['그룹명', '업무시간'],
         colModel: [{
@@ -324,7 +353,7 @@
         viewrecords: true,
         sortorder: "desc",
         autowidth: true,
-        height: 750,
+        height: "auto",
         scrollTimeout: 1,
         shrinkToFit: true,
         forceFit: true,
@@ -335,73 +364,52 @@
       });
       var mydata = [{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
+        col2: "00:00 ~ 12:00",
       },{
         col1: "품질관리그룹",
-        col2: "그룹2",
-      },{
-        col1: "품질관리그룹",
-        col2: "그룹2",
-      },{
-        col1: "품질관리그룹",
-        col2: "그룹2",
-      },{
-        col1: "품질관리그룹",
-        col2: "그룹2",
-      },{
-        col1: "품질관리그룹",
-        col2: "그룹2",
-      },{
-        col1: "품질관리그룹",
-        col2: "그룹2",
-      },{
-        col1: "품질관리그룹",
-        col2: "그룹2",
-      },{
-        col1: "품질관리그룹",
-        col2: "그룹2",
-      }];
+        col2: "00:00 ~ 12:00",
+      },];
       // 
-      $("#list2").jqGrid({
+      $("#groupVehicleList").jqGrid({
         datatype: "local",
         colNames: ['회사명', '차량번호', '차종'],
         colModel: [{
@@ -443,7 +451,7 @@
         col3: "아반테 MD",
       }];
       // 
-      $("#list3").jqGrid({
+      $("#groupUserList").jqGrid({
         datatype: "local",
         colNames: ['회사명', '이름', '휴대폰번호'],
         colModel: [{
@@ -485,7 +493,7 @@
         col3: "010-****-0000",
       }];
       // 
-      $("#list4").jqGrid({
+      $("#vehicleList").jqGrid({
         datatype: "local",
         colNames: ['회사명', '차량번호', '차종'],
         colModel: [{
@@ -511,13 +519,13 @@
         sortname: 'id',
         viewrecords: true,
         sortorder: "desc",
-        // autowidth: true,
+        //autowidth: true,
         height: "auto",
         scrollTimeout: 1,
         shrinkToFit: true,
         forceFit: true,
         scrollOffset: 21,
-        width: 860,
+		width : 860,
         // footerrow: true,
         // userDataOnFooter: true,
         // altRows: true
@@ -528,7 +536,7 @@
         col3: "아반테 MD",
       }];
       // 
-      $("#list5").jqGrid({
+      $("#userList").jqGrid({
         datatype: "local",
         colNames: ['회사명', '이름', '휴대폰 번호'],
         colModel: [{
@@ -554,13 +562,13 @@
         sortname: 'id',
         viewrecords: true,
         sortorder: "desc",
-        // autowidth: true,
-        height: 750,
+        //autowidth: true,
+        height: "auto",
         scrollTimeout: 1,
         shrinkToFit: true,
         forceFit: true,
         scrollOffset: 21,
-        width: 860,
+		width : 860,
         // footerrow: true,
         // userDataOnFooter: true,
         // altRows: true
@@ -569,97 +577,17 @@
         col1: "**회사",
         col2: "홍*동",
         col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
-      },{
-        col1: "**회사",
-        col2: "홍*동",
-        col3: "010-****-0000",
       }];
       for (var i = 0; i <= mydata.length; i++)
-        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+        $("#groupList").jqGrid('addRowData', i + 1, mydata[i]);
       for (var i = 0; i <= mydata2.length; i++)
-        $("#list2").jqGrid('addRowData', i + 1, mydata2[i]);
+        $("#groupVehicleList").jqGrid('addRowData', i + 1, mydata2[i]);
       for (var i = 0; i <= mydata3.length; i++)
-        $("#list3").jqGrid('addRowData', i + 1, mydata3[i]);
+        $("#groupUserList").jqGrid('addRowData', i + 1, mydata3[i]);
       for (var i = 0; i <= mydata4.length; i++)
-        $("#list4").jqGrid('addRowData', i + 1, mydata4[i]);
+        $("#vehicleList").jqGrid('addRowData', i + 1, mydata4[i]);
       for (var i = 0; i <= mydata5.length; i++)
-        $("#list5").jqGrid('addRowData', i + 1, mydata5[i]);
+        $("#userList").jqGrid('addRowData', i + 1, mydata5[i]);
       // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
     });
   </script>

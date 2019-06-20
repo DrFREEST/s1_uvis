@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +13,11 @@
   <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
   <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
-  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
   <link href="../../resources/css/reset.css" rel="stylesheet">
   <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body>
   <!-- Markup Start -->
   <!-- wrapper -->
@@ -72,20 +69,22 @@
           <div class="radio-group">
             <div class="input-wrap radio bigger">
               <label for="corpMember">
-                <input id="corpMember" name="selMemType" type="radio">
+                <input id="corpMember" name="selMemType" type="radio" onclick="JavaScript:checkUser('C')" checked>
+
                 <span>사업자고객</span>
               </label>
             </div>
             <div class="input-wrap radio bigger">
               <label for="indiMember">
-                <input id="indiMember" name="selMemType" type="radio">
+                <input id="indiMember" name="selMemType" type="radio" onclick="JavaScript:checkUser('U')">
+
                 <span>개인</span>
               </label>
             </div>
           </div>
           <table>
             <!-- 사업자고객일 경우 -->
-            <tr>
+            <tr class="corpCheck">
               <th>사업자번호</th>
               <td>
                 <div class="input-wrap block bigger">
@@ -95,7 +94,7 @@
             </tr>
             <!-- //사업자고객일 경우 -->
             <!-- 개인고객일 경우 -->
-            <tr>
+            <tr class="userCheck" style="display:none">
               <th>생년월일</th>
               <td>
                 <div class="input-group">
@@ -126,25 +125,24 @@
             <tr>
               <th>휴대폰</th>
               <td>
-                <div class="input-group">
-                  <div class="input-wrap block bigger">
-                    <input class="clearable" type="text" title="휴대폰" placeholder="숫자만 입력">
-                  </div>
-                  <button class="btn btn-default">인증</button>
+              <div class="input-group">
+                <div class="input-wrap block bigger">
+                  <input class="clearable" type="text" title="휴대폰" placeholder="숫자만 입력">
+                </div>
+                  <button class="btn btn-default action checkPhone">인증</button>
                 </div>
               </td>
             </tr>
             <tr>
               <th>인증번호</th>
               <td>
-                <div class="input-group">
-                  <div class="input-wrap block bigger">
-                    <div class="timer-set">
-                      <input type="text" title="인증번호" placeholder="인증번호 입력">
-                      <span class="timer">03:00</span>
-                    </div>
-                  </div>
-                  <button class="btn btn-default">확인</button>
+              <div class="input-group">
+                <div class="input-wrap block bigger">
+                  <div class="timer-set">
+                    <input type="text" title="인증번호" placeholder="인증번호 입력">
+                    <span class="timer">03:00</span>
+                   </div>
+                  <button class="btn btn-default action checkNumber">확인</button>
                 </div>
               </td>
             </tr>
@@ -153,8 +151,8 @@
           <!-- //개인고객일 경우 -->
         </div>
         <div class="page-bottom-btns">
-          <button class="btn btn-white btn-big">취소</button>
-          <button class="btn btn-blue btn-big">확인</button>
+          <button class="btn btn-white btn-big action doIdFindCancel">취소</button>
+          <button class="btn btn-blue btn-big action doIdFindCheck">확인</button>
         </div>
       </div>
     </div>
@@ -189,8 +187,8 @@
     </div>
     <!-- //footer -->
   </div>
-  <!-- //wrapper -->
-  <!-- //Markup End -->
+	<!-- //wrapper -->
+	<!-- //Markup End -->
   <!-- JS resource load -->
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
@@ -211,6 +209,29 @@
   <script src="../../resources/js/jquery.jqGrid.src.js"></script>
   <script src="../../resources/js/s1-uvis-script.js "></script>
   <!-- //JS resource load -->
-</body>
+	<script type="text/javascript">
+	<!--
+	$(function() {
+		$('.action').click(function(){
+			console.log("1");
+			if($(this).hasClass('checkPhone'))			alert("휴대폰인증");
+			if($(this).hasClass('checkNumber'))			alert("인증번호");
+			if($(this).hasClass('doIdFindCancel'))		alert("취소");
+			if($(this).hasClass('doIdFindCheck'))		alert("확인");
+		});
+	});
 
+	function checkUser(val) {
+		if(val == "C") {
+			$(".corpCheck").show();
+			$(".userCheck").hide();
+		} else {
+			$(".corpCheck").hide();
+			$(".userCheck").show();		
+		}
+	}
+	//-->
+	</script>
+
+</body>
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +13,11 @@
   <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
   <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
-  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
   <link href="../../resources/css/reset.css" rel="stylesheet">
   <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body>
   <!-- Markup Start -->
   <!-- wrapper -->
@@ -59,8 +56,8 @@
     <!-- big tabs -->
     <div class="big-tabs bg-white">
       <ul>
-        <li><a class="on" href="javascript:;">아이디 찾기</a></li>
-        <li><a href="javascript:;">비밀번호 재설정</a></li>
+        <li><a href="javascript:;">아이디 찾기</a></li>
+        <li><a class="on" href="javascript:;">비밀번호 재설정</a></li>
       </ul>
     </div>
     <!-- //big tabs -->
@@ -89,7 +86,7 @@
               <td>
                 <div class="input-wrap block bigger">
                   <input class="clearable" type="text" placeholder="숫자만 입력">
-                  <button class="btn btn-default">인증</button>
+                  <button class="btn btn-default action checkPhone">인증</button>
                 </div>
               </td>
             </tr>
@@ -101,15 +98,15 @@
                     <input type="text" placeholder="인증번호 입력">
                     <span class="timer">03:00</span>
                   </div>
-                  <button class="btn btn-default">확인</button>
+                  <button class="btn btn-default action checkNumber">확인</button>
                 </div>
               </td>
             </tr>
           </table>
         </div>
         <div class="page-bottom-btns">
-          <button class="btn btn-white btn-big">취소</button>
-          <button class="btn btn-blue btn-big">확인</button>
+          <button class="btn btn-white btn-big action doPassResetCancel">취소</button>
+          <button class="btn btn-blue btn-big action doPassResetCheck">확인</button>
         </div>
         <!-- //비밀번호 재설정 1단계 -->
         <!-- 비밀번호 재설정 2단계 -->
@@ -145,8 +142,8 @@
           </ul>
         </div>
         <div class="page-bottom-btns">
-          <button class="btn btn-white btn-big">취소</button>
-          <button class="btn btn-blue btn-big">비밀번호 변경</button>
+          <button class="btn btn-white btn-big action doNewPassCancel">취소</button>
+          <button class="btn btn-blue btn-big action doNewPassSave">비밀번호 변경</button>
         </div>
         <!-- //비밀번호 재설정 2단계 -->
       </div>
@@ -204,6 +201,20 @@
   <script src="../../resources/js/jquery.jqGrid.src.js"></script>
   <script src="../../resources/js/s1-uvis-script.js "></script>
   <!-- //JS resource load -->
+	<script type="text/javascript">
+	<!--
+	$(function() {
+		$('.action').click(function(){
+			console.log("1");
+			if($(this).hasClass('checkPhone'))				alert("휴대폰인증");
+			if($(this).hasClass('checkNumber'))				alert("인증번호");
+			if($(this).hasClass('doPassResetCancel'))		alert("취소");
+			if($(this).hasClass('doPassResetCheck'))		alert("확인");
+			if($(this).hasClass('doNewPassCancel'))			alert("취소");
+			if($(this).hasClass('doNewPassSave'))			alert("비밀번호변경");
+		});
+	});
+	//-->
+	</script>
 </body>
-
 </html>

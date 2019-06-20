@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +13,11 @@
   <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
   <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
-  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
   <link href="../../resources/css/reset.css" rel="stylesheet">
   <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="bg-white">
   <!-- Markup Start -->
   <!-- wrapper -->
@@ -83,13 +80,13 @@
               <div class="radio-group col-sm-5">
                 <div class="input-wrap radio bigger">
                   <label for="radio1">
-                    <input id="radio1" name="radioSel" type="radio" checked>
+                    <input id="radio1" name="radioSel" type="radio" onclick="JavaScript:checkUser('C')" checked>
                     <span>사업자고객</span>
                   </label>
                 </div>
                 <div class="input-wrap radio bigger">
                   <label for="radio2">
-                    <input id="radio2" name="radioSel" type="radio">
+                    <input id="radio2" name="radioSel" type="radio" onclick="JavaScript:checkUser('U')">
                     <span>개인</span>
                   </label>
                 </div>
@@ -99,14 +96,14 @@
               <table>
                 <tbody>
                   <!-- 사업자고객 -->
-                  <tr>
+                  <tr class="corpCheck">
                     <th><span class="necessary"><label for="text1">사업자번호</label></span></th>
                     <td>
                       <div class="input-group">
                         <div class="input-wrap">
-                          <input class="clearable" id="text1" name type="text">
+                          <input id="text1" name type="text">
                         </div>
-                        <button class="btn-default wide">계약정보 확인</button>
+                        <button class="btn-default wide action contractCorpCheck">계약정보 확인</button>
                       </div>
                       <p class="note">사업자 번호는 회원 인증 용도로만 사용하며 저장 하지 않습니다.</p>
                     </td>
@@ -128,7 +125,7 @@
                   </tr>
                   <!-- //사업자고객 -->
                   <!-- 개인 -->
-                  <tr>
+                  <tr class="userCheck" style="display:none">
                     <th><span class="necessary"><label for="text1">생년월일</label></span></th>
                     <td>
                       <div class="input-group">
@@ -155,19 +152,19 @@
                         <div class="input-wrap">
                           <input class="clearable" id="text1-1" name type="text">
                         </div>
-                        <button class="btn-default wide">계약정보 확인</button>
+                        <button class="btn-default wide action contractUserChedk">계약정보 확인</button>
                       </div>
                     </td>
                   </tr>
-                  <tr>
+                  <tr class="userCheck" style="display:none">
                     <th><span class="necessary"><label for="select1">소속업체</label></span></th>
                     <td colspan="3">
                       <!-- 정보 확인 성공 -->
                       <div class="input-wrap select">
-                        <select id="select1" name>
-                              <option value="">선택1</option>
-                              <option value="">선택2</option>
-                              <option value="">선택3</option>
+                        <select id="select1" name="select1">
+                              <option value="1">선택1</option>
+                              <option value="2">선택2</option>
+                              <option value="3">선택3</option>
                             </select>
                       </div>
                       <!-- //정보 확인 성공 -->
@@ -184,7 +181,7 @@
                         <div class="input-wrap">
                           <input class="clearable" id="text2" name type="text">
                         </div>
-                        <button class="btn-default wide">중복 확인</button>
+                        <button class="btn-default wide action idCheck">중복 확인</button>
                       </div>
                     </td>
                     <th><span class="necessary"><label for="text3">사용자명</label></span></th>
@@ -231,16 +228,25 @@
                             <span class="timer">03:00</span>
                           </div>
                         </div>
-                        <button class="btn-default wide">확인</button>
+                        <button class="btn-default wide action checkPhone">확인</button>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <th><span class="necessary">자동입력방지</span></th>
                     <td>
-                      <!-- 캡챠 플러그인 영역 -->
-                      캡챠 플러그인 영역
-                      <!-- //캡챠 플러그인 영역 -->
+                      <div class="input-group capcha">
+                        <!-- capcha img -->
+                        <div class="capcha-img">
+                          <img src='https://placehold.it/300x200/ededed/2d2d2d?text=611996' alt=''/>
+                        </div>
+                        <!-- //capcha img -->
+                        <div class="input-wrap">
+                          <input id name type="text" placeholder="좌측숫자 입력">
+                        </div>
+                        <button class="btn-default">새로고침</button>
+                        <button class="btn-default">음성듣기</button>
+                      </div>
                     </td>
                     <th><span><label for="text5">이메일</label></span></th>
                     <td>
@@ -269,8 +275,8 @@
           </div>
           <!-- //가입 폼 -->
           <div class="page-bottom-btns">
-            <button class="btn btn-white btn-big">취소</button>
-            <button class="btn btn-blue btn-big">확인</button>
+            <button class="btn btn-white btn-big action doJoinCancel">취소</button>
+            <button class="btn btn-blue btn-big doJoinCheck">확인</button>
           </div>
         </div>
       </section>
@@ -299,6 +305,31 @@
   <script src="../../resources/js/jquery.jqGrid.src.js"></script>
   <script src="../../resources/js/s1-uvis-script.js "></script>
   <!-- //JS resource load -->
+  <!-- //JS resource load -->
+  <script type="text/javascript">
+    <!--
+    $(function() {
+      $('.action').click(function() {
+        console.log("1");
+        if ($(this).hasClass('contractCorpCheck')) alert("사업자 계약정보 확인");
+        if ($(this).hasClass('contractUserCheck')) alert("개인 계약정보 확인");
+        if ($(this).hasClass('idCheck')) alert("중복 확인");
+        if ($(this).hasClass('checkPhone')) alert("휴대폰인증");
+        if ($(this).hasClass('checkNumber')) alert("인증번호");
+        if ($(this).hasClass('doJoinCancel')) alert("취소");
+        if ($(this).hasClass('doJoinCheck')) alert("확인");
+      });
+    });
+    function checkUser(val) {
+      if (val == "C") {
+        $(".corpCheck").show();
+        $(".userCheck").hide();
+      } else {
+        $(".corpCheck").hide();
+        $(".userCheck").show();
+      }
+    }
+    //-->
+  </script>
 </body>
-
 </html>
