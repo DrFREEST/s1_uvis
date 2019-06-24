@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title Page</title>
+	<!-- CSS resource load -->
+	<link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+	<link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+	<link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+	<link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+	<link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+	<link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+	<link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+	<link href="../../resources/css/reset.css" rel="stylesheet">
+	<link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+	<link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+	<!-- //CSS resource load -->
+</head>
+<body>
+	<!-- Markup Start -->
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header-wrap">
+			<div class="header">
+				<h1 class="logo-header">
+					<a href="javascript:;"><img src="../../resources/images/logo-uvis-header.png" alt="에스원 유비스"></a>
+				</h1>
+				<div class="gnb">
+					<ul>
+						<li><a class="menu" data-tab-id="tabs-4-1-1" href="#" onclick="openTab('tabs-4-1-1', 'UWEB.4.1.1.UserList.html','실시간 모니터링');">실시간 모니터링</a></li>
+						<li><a class="menu" data-tab-id="tabs-4-2-1" href="#" onclick="openTab('tabs-4-2-1', 'UWEB.4.2.1.MenuSetting.html','운행현황');">운행현황</a></li>
+						<li><a class="menu" data-tab-id="tabs-4-3-1" href="#" onclick="openTab('tabs-4-3-1', 'UWEB.4.3.1.Contract.html','관리설정');">관리설정</a></li>
+					</ul>
+				</div>
+				<div class="my-menu">
+					<ul>
+						<li><a class="menu" data-tab-id="tabs-4-4-1" href="#" onclick="openTab('tabs-4-4-1', 'UWEB.4.4.1.VehicleList.html','배차신청');">배차신청</a></li>
+						<li><a class="menu" data-tab-id="tabs-4-5-2" href="#" onclick="openTab('tabs-4-5-1', 'UWEB.4.4.2.DriverList.html','eTAS 신청');">eTAS 신청</a></li>
+						<li><a class="menu" data-tab-id="tabs-4-6-1" href="#" onclick="openTab('tabs-4-6-1', 'UWEB.4.5.1.GroupList.html','운행기록부');">운행기록부</a></li>
+						<li><a class="menu" data-tab-id="tabs-4-7-1" href="#" onclick="openTab('tabs-4-7-1', 'UWEB.4.6.1.AlarmList.html','휴식시간현황');">휴식시간현황</a></li>
+					</ul>
+				</div>
+				<div class="util">
+					<ul>
+						<li><a href="javascript:;">로그아웃</a></li>
+						<li><a href="javascript:;">ENG</a></li>
+						<li><a href="javascript:;">고객지원</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<!-- page tabs -->
+		<div class="page-tabs">
+			<ul id="tabs">
+				<li class="active">
+					<a data-tab-id="tabs-4-1-1" href="#"><span>실시간 모니터링</span></a>
+					<button class="btn-delete action tabClose1" type="button"></button>
+				</li>
+			</ul>
+		</div>
+		<!-- //page tabs -->
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="page-frame" id="tabs-4-1-1">
+				<iframe name="contentsFrame" src="UWEB.4.1.1.UserList.html" frameborder="0"></iframe>
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //wrapper -->
+	<!-- //Markup End -->
+	<!-- JS resource load -->
+	<script src="../../resources/js/jquery-1.12.4.min.js "></script>
+	<script>
+		jQuery.browser = {};
+		(function () {
+			jQuery.browser.msie = false;
+			jQuery.browser.version = 0;
+			if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+				jQuery.browser.msie = true;
+				jQuery.browser.version = RegExp.$1;
+			}
+		})();
+	</script>
+	<script src="../../resources/js/jquery-ui.min.js "></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="../../resources/js/bootstrap.min.js "></script>
+	<script src="../../resources/js/popper.min.js "></script>
+	<script src="../../resources/js/bootstrap-datepicker.js"></script>
+	<script src="../../resources/js/jquery.jqGrid.src.js"></script>
+	<script src="../../resources/js/s1-uvis-script.js "></script>
+	<!-- //JS resource load -->
+	<script>
+		$(function () {
+			var tabTitle = "",
+				tabContent = "",
+				tabCounter = 1;
+			var tabs = $("#tabs").tabs();
+			openTab = function (tabId, url, name) {
+				var label = name || "Tab " + tabCounter,
+					li = "<li><a data-tab-id='" + tabId + "' href='#'><span>" + label + "</span></a><button type='button' class='btn-delete action tabClose'></button></li>";
+				console.log('탭 갯수' + $(document).find('#tabs').find('li').length);
+				if ($(document).find('.content-wrap').find('#' + tabId).length > 0) {
+					console.log('탬 있음');
+					$(document).find('.content-wrap .page-frame').hide();
+					$(document).find('.content-wrap').find('#' + tabId).show();
+					$(document).find('#tabs li a').each(function () {
+						if ($(this).attr('data-tab-id') == tabId) {
+							$(this).parent().addClass('active');
+						} else {
+							$(this).parent().removeClass('active');
+						}
+					});
+				} else if ($(document).find('.content-wrap').find('#' + tabId).length <= 0) {
+					console.log('탬 없음');
+					if ($('#tabs').find('li').length >= 5) {
+						alert("5개까지만 열 수 있음");
+						return;
+					} else {
+						tabs.append(li);
+						$(document).find('.content-wrap .page-frame').hide();
+						$(".content-wrap").append("<div class='page-frame' id='" + tabId + "'><iframe src='" + url + "' frameborder='0'></iframe></div>").show();
+						$(document).find('#tabs li a').each(function () {
+							if ($(this).attr('data-tab-id') == tabId) {
+								$(this).parent().addClass('active');
+							} else {
+								$(this).parent().removeClass('active');
+							}
+						});
+					}
+				}
+				tabs.tabs("refresh");
+				tabCounter++;
+			}
+			tabs.on('click', '.btn-delete', function (event) {
+				if ($(document).find('#tabs li').length <= 1) {
+					alert('현재 탭은 삭제할 수 없습니다.');
+				} else {
+					var deleteTagrget = $(this).parent().find('a').attr('data-tab-id');
+					console.log(deleteTagrget);
+					$('.content-wrap').find('#' + deleteTagrget).hide();
+					$('.content-wrap').find('#' + deleteTagrget).prev().show();
+					$('.content-wrap').find('#' + deleteTagrget).remove();
+					$(this).parent().prev().addClass('active');
+					$(this).parent().remove();
+					tabs.tabs("refresh");
+				}
+			});//tab delete
+			tabs.on('click', 'a', function (event) {
+				var activeTraget = $(this).attr('data-tab-id');
+				$(document).find('.content-wrap .page-frame').hide();
+				$(document).find('.content-wrap').find('#' + activeTraget).show();
+				$(document).find('#tabs li a').each(function () {
+					if ($(this).attr('data-tab-id') == activeTraget) {
+						$(this).parent().addClass('active');
+					} else {
+						$(this).parent().removeClass('active');
+					}
+				});
+			})
+			tabs.on("keyup", function (event) {
+				if (event.altKey && event.keyCode === $.ui.keyCode.BACKSPACE) {
+					var panelId = tabs.find(".ui-tabs-active").remove().attr("aria-controls");
+					$("#" + panelId).remove();
+					tabs.tabs("refresh");
+				}
+			});
+		});
+	</script>
+	<!-- //onload script -->
+</body>
+</html>
