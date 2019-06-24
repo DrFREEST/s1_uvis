@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -29,7 +27,7 @@
     <div class="frame-content">
       <!-- 팝업영역 -->
       <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
-      <!-- 차량그룹 설정 팝업 -->
+      <!-- 지점 일괄 등록 팝업 -->
       <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -52,7 +50,6 @@
                         <div class="input-file-form">
                           <input id name type="file">
                           <input id name type="text" readonly disabled>
-
                         </div>
                         <button class="btn btn-default" onclick="$('.input-file-form input[type=file]').click();">찾아보기</button>
                       </div>
@@ -69,7 +66,7 @@
           </div>
         </div>
       </div>
-      <!-- //차량그룹 설정 팝업 -->
+      <!-- //지점 일괄 등록 팝업 -->
       <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
       <!-- //팝업영역 -->
     </div>
@@ -81,7 +78,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -99,11 +96,10 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $('#popModel1').modal();
     });
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

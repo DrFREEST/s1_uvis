@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -41,16 +39,16 @@
               <legend>이상 이벤트</legend>
               <div class="input-wrap select">
                 <select id name>
-                    <option value="">선택</option>
-                    <option value="">선택12312312313</option>
-                  </select>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
               </div>
             </div>
           </div>
         </div>
         <div class="search-btns">
-          <button type="button" class="btn btn-white btn-reset action searchAlarmReset">초기화</button>
-          <button type="button" class="btn btn-blue btn-search action searchAlarm">검색</button>
+          <button class="btn btn-white btn-reset action searchAlarmReset" type="button">초기화</button>
+          <button class="btn btn-blue btn-search action searchAlarm" type="button">검색</button>
         </div>
       </div>
       <!-- //top search -->
@@ -62,7 +60,7 @@
               <div class="data-list-table">
                 <div class="data-list-table-header">
                   <div class="header-left">
-                    <button type="button" class="btn btn-white action checkAlarmDel">선택삭제</button>
+                    <button class="btn btn-white action checkAlarmDel" type="button">선택삭제</button>
                   </div>
                 </div>
                 <div class="data-table">
@@ -78,15 +76,15 @@
                   <h3 class="header-title">
                     알림 그룹 정보/생성
                     <em class="font-red dotted">
-                            <i class="icon dot"></i>필수입력 항목
-                            </em>
+                      <i class="icon dot"></i>필수입력 항목
+                    </em>
                   </h3>
                 </div>
                 <div class="header-right">
-                  <button type="button" class="btn btn-white action goAlarmInput">신규</button>
-                  <button type="button" class="btn btn-white action doAlarmDel">삭제</button>
-				  <button type="button" class="btn btn-blue action goAlarmEdit">수정</button>
-                  <button type="button" class="btn btn-blue action doAlarmSave">저장</button>
+                  <button class="btn btn-white action goAlarmInput" type="button">신규</button>
+                  <button class="btn btn-white action doAlarmDel" type="button">삭제</button>
+                  <button class="btn btn-blue action goAlarmEdit" type="button">수정</button>
+                  <button class="btn btn-blue action doAlarmSave" type="button">저장</button>
                 </div>
               </div>
               <div class="data-form-table-body v-middle">
@@ -99,53 +97,53 @@
                           <div class="input-wrap">
                             <input class="clearable" id name type="text">
                           </div>
-                        </div>					  
-					  </td>
+                        </div>
+                      </td>
                       <th><span>일일알림횟수</span></th>
                       <td>
                         <div class="input-group">
                           <div class="input-wrap select">
                             <select id name>
-                                          <option value="">선택</option>
-                                        </select>
+                              <option value="">선택</option>
+                            </select>
                           </div>
-                        </div>					  
-					  </td>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <th><span>알림금지시간</span></th>
                       <td>
- <div class="radio-group">
-                            <div class="input-wrap radio">
-                              <label for="selUse1">
-                                <input type="radio" name="selUse" id="selUse1">
-                                                                <span>설정</span>
-                              </label>
-                            </div>
-                            <div class="input-wrap radio">
-                              <label for="selUse2">
-                                <input type="radio" name="selUse" id="selUse2">
-                                                                <span>미설정</span>
-                              </label>
-                            </div>
+                        <div class="radio-group">
+                          <div class="input-wrap radio">
+                            <label for="selUse1">
+                              <input id="selUse1" name="selUse" type="radio">
+                              <span>설정</span>
+                            </label>
                           </div>
-					  </td>
+                          <div class="input-wrap radio">
+                            <label for="selUse2">
+                              <input id="selUse2" name="selUse" type="radio">
+                              <span>미설정</span>
+                            </label>
+                          </div>
+                        </div>
+                      </td>
                       <th><span>알림금지시간대</span></th>
                       <td>
                         <div class="input-group time-range">
                           <div class="input-wrap select">
                             <select id name>
-                                          <option value="">선택</option>
-                                        </select>
+                              <option value="">선택</option>
+                            </select>
                           </div>
                           <span class="between">~</span>
                           <div class="input-wrap select">
                             <select id name>
-                                      <option value="">선택</option>
-                                    </select>
+                              <option value="">선택</option>
+                            </select>
                           </div>
-                        </div>					  
-					  </td>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <th><span class="necessary">이상 이벤트<br>(사용항목 체크)</span></th>
@@ -154,85 +152,85 @@
                           <div class="input-wrap check">
                             <label for="checkEvent01">
                               <input id="checkEvent01" name type="checkbox">
-                                                            <span>미반납</span>
+                              <span>미반납</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent02">
                               <input id="checkEvent02" name type="checkbox">
-                                                            <span>GPS 탈거</span>
+                              <span>GPS 탈거</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent03">
                               <input id="checkEvent03" name type="checkbox">
-                                                            <span>전원이상</span>
+                              <span>전원이상</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent04">
                               <input id="checkEvent04" name type="checkbox">
-                                                            <span>고장정보</span>
+                              <span>고장정보</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent05">
                               <input id="checkEvent05" name type="checkbox">
-                                                            <span>베터리저전압</span>
+                              <span>베터리저전압</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent06">
                               <input id="checkEvent06" name type="checkbox">
-                                                            <span>냉각수과열</span>
+                              <span>냉각수과열</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent07">
                               <input id="checkEvent07" name type="checkbox">
-                                                            <span>재시동차단</span>
+                              <span>재시동차단</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent08">
                               <input id="checkEvent08" name type="checkbox">
-                                                            <span>긴급출동</span>
+                              <span>긴급출동</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent09">
                               <input id="checkEvent09" name type="checkbox">
-                                                            <span>장비점검</span>
+                              <span>장비점검</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent10">
                               <input id="checkEvent10" name type="checkbox">
-                                                            <span>공회전</span>
+                              <span>공회전</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent11">
                               <input id="checkEvent11" name type="checkbox">
-                                                            <span>센서분리</span>
+                              <span>센서분리</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent12">
                               <input id="checkEvent12" name type="checkbox">
-                                                            <span>지점입출입 관리</span>
+                              <span>지점입출입 관리</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent13">
                               <input id="checkEvent13" name type="checkbox">
-                                                            <span>노선이탈 알림</span>
+                              <span>노선이탈 알림</span>
                             </label>
                           </div>
                           <div class="input-wrap check">
                             <label for="checkEvent14">
                               <input id="checkEvent14" name type="checkbox">
-                                                            <span>창고온도이상</span>
+                              <span>창고온도이상</span>
                             </label>
                           </div>
                         </div>
@@ -249,14 +247,14 @@
               </div>
               <div class="row">
                 <div class="col col-xxl-6">
-                  <h4>차량 리스트</h4>
+                  <h4>대상 차량 리스트</h4>
                   <div class="data-list-table">
                     <div class="data-list-table-header">
                       <div class="header-left">
-                        <button type="button" class="btn btn-white action checkAlarmVehicleDel">선택삭제</button>
+                        <button class="btn btn-white action checkAlarmVehicleDel" type="button">선택삭제</button>
                       </div>
                       <div class="header-right">
-                        <button type="button" class="btn btn-white action vehiclePopup">추가</button>
+                        <button class="btn btn-white action vehiclePopup" type="button">추가</button>
                       </div>
                     </div>
                     <div class="data-table">
@@ -265,14 +263,14 @@
                   </div>
                 </div>
                 <div class="col col-xxl-6">
-                  <h4>사용자 리스트</h4>
+                  <h4>발송 대상자</h4>
                   <div class="data-list-table">
                     <div class="data-list-table-header">
                       <div class="header-left">
-                        <button type="button" class="btn btn-white action checkAlarmUserDel">선택삭제</button>
+                        <button class="btn btn-white action checkAlarmUserDel" type="button">선택삭제</button>
                       </div>
                       <div class="header-right">
-                        <button type="button" class="btn btn-white action userPopup">추가</button>
+                        <button class="btn btn-white action userPopup" type="button">추가</button>
                       </div>
                     </div>
                     <div class="data-table">
@@ -304,8 +302,8 @@
                       <legend>회사명</legend>
                       <div class="input-wrap select">
                         <select id name>
-                                <option value="">선택</option>
-                              </select>
+                          <option value="">선택</option>
+                        </select>
                       </div>
                     </div>
                     <div class="input-group col-sm-6">
@@ -317,7 +315,7 @@
                   </div>
                 </div>
                 <div class="search-btns">
-                  <button type="button" class="btn btn-blue btn-search action searchVehicle">검색</button>
+                  <button class="btn btn-blue btn-search action searchVehicle" type="button">검색</button>
                 </div>
               </div>
               <!-- //popup top search -->
@@ -342,11 +340,43 @@
         <div class="modal-dialog big" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">사용자 추가</h5>
+              <h5 class="modal-title">대상자 추가</h5>
               <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+              <!-- data form table -->
+              <div class="data-form-table">
+                <div class="data-form-table-header">
+                  <h6 class="header-title">알림 대상자 신규 입력</h6>
+                </div>
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span class="necessary">대상자명</span></th>
+                        <td>
+                          <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                        </td>
+                        <th><span class="necessary">연락처</span></th>
+                        <td>
+                          <div class="input-wrap"><input class="clearable" id name type="tel"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="data-form-table-footer">
+                  <div class="page-bottom-btns">
+                    <button class="btn btn-white btn-big">초기화</button>
+                    <button class="btn btn-blue btn-big">저장</button>
+                  </div>
+                </div>
+              </div>
+              <!-- //data form table -->
               <!-- popup top search -->
+              <div class="data-form-table-header">
+                <h6 class="header-title">알림 대상자 신규 입력</h6>
+              </div>
               <div class="top-search pop-top-search">
                 <div class="search-forms">
                   <div class="row">
@@ -354,8 +384,8 @@
                       <legend>회사명</legend>
                       <div class="input-wrap select">
                         <select id name>
-                                  <option value="">선택</option>
-                                </select>
+                          <option value="">선택</option>
+                        </select>
                       </div>
                     </div>
                     <div class="input-group col-sm-4">
@@ -373,7 +403,7 @@
                   </div>
                 </div>
                 <div class="search-btns">
-                  <button type="button" class="btn btn-blue btn-search action searchUser">검색</button>
+                  <button class="btn btn-blue btn-search action searchUser" type="button">검색</button>
                 </div>
               </div>
               <!-- //popup top search -->
@@ -403,7 +433,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -420,33 +450,28 @@
   <script src="../../resources/js/s1-uvis-script.js "></script>
   <!-- //JS resource load -->
   <!-- onload script -->
-	<script>
-	$(function() {
-		$('.action').click(function() {
-			if ($(this).hasClass('searchAlarmReset'))		alert("초기화");
-			if ($(this).hasClass('searchAlarm'))			alert("검색");
-			if ($(this).hasClass('checkAlarmDel'))			alert("선택삭제");
-			if ($(this).hasClass('goAlarmInput'))			alert("신규");
-			if ($(this).hasClass('doAlarmDel'))				alert("삭제");
-			if ($(this).hasClass('goAlarmEdit'))			alert("수정");
-			if ($(this).hasClass('doAlarmSave'))			alert("저장");
-
-			// 차량 추가
-			if ($(this).hasClass('checkAlarmVehicleDel'))	alert("선택삭제");
-			if ($(this).hasClass('vehiclePopup'))			$('#vehicleModal').modal();
-
-			if ($(this).hasClass('searchVehicle'))			alert("검색");
-			if ($(this).hasClass('doVehicleAdd'))			alert("차량 추가");
-
-			// 사용자 추가
-			if ($(this).hasClass('checkAlarmUserDel'))		alert("선택삭제");
-			if ($(this).hasClass('userPopup'))				$('#userModal').modal();
-
-			if ($(this).hasClass('searchUser'))				alert("검색");
-			if ($(this).hasClass('doUserAdd'))				alert("사용자 추가");
-		});
-
-	  $("#alarmGroupList").jqGrid({
+  <script>
+    $(function () {
+      $('.action').click(function () {
+        if ($(this).hasClass('searchAlarmReset')) alert("초기화");
+        if ($(this).hasClass('searchAlarm')) alert("검색");
+        if ($(this).hasClass('checkAlarmDel')) alert("선택삭제");
+        if ($(this).hasClass('goAlarmInput')) alert("신규");
+        if ($(this).hasClass('doAlarmDel')) alert("삭제");
+        if ($(this).hasClass('goAlarmEdit')) alert("수정");
+        if ($(this).hasClass('doAlarmSave')) alert("저장");
+        // 차량 추가
+        if ($(this).hasClass('checkAlarmVehicleDel')) alert("선택삭제");
+        if ($(this).hasClass('vehiclePopup')) $('#vehicleModal').modal();
+        if ($(this).hasClass('searchVehicle')) alert("검색");
+        if ($(this).hasClass('doVehicleAdd')) alert("차량 추가");
+        // 사용자 추가
+        if ($(this).hasClass('checkAlarmUserDel')) alert("선택삭제");
+        if ($(this).hasClass('userPopup')) $('#userModal').modal();
+        if ($(this).hasClass('searchUser')) alert("검색");
+        if ($(this).hasClass('doUserAdd')) alert("사용자 추가");
+      });
+      $("#alarmGroupList").jqGrid({
         datatype: "local",
         colNames: ['알림 그룹명'],
         colModel: [{
@@ -476,33 +501,33 @@
       });
       var mydata = [{
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
-      },{
+      }, {
         col1: "품질관리그룹",
       },];
       // 
@@ -546,16 +571,15 @@
         col1: "**회사",
         col2: "경기 22하 1234",
         col3: "아반테 MD",
-      },{
+      }, {
         col1: "**회사",
         col2: "경기 22하 1234",
         col3: "아반테 MD",
-      },{
+      }, {
         col1: "**회사",
         col2: "경기 22하 1234",
         col3: "아반테 MD",
       },];
-
       // 
       $("#alarmUserList").jqGrid({
         datatype: "local",
@@ -631,7 +655,7 @@
         shrinkToFit: true,
         forceFit: true,
         scrollOffset: 21,
-		width: 860,
+        width: 860,
         // footerrow: true,
         // userDataOnFooter: true,
         // altRows: true
@@ -674,7 +698,7 @@
         shrinkToFit: true,
         forceFit: true,
         scrollOffset: 21,
-		width: 860,
+        width: 860,
         // footerrow: true,
         // userDataOnFooter: true,
         // altRows: true
@@ -683,19 +707,19 @@
         col1: "**회사",
         col2: "홍*동",
         col3: "010-****-0000",
-      },{
+      }, {
         col1: "**회사",
         col2: "홍*동",
         col3: "010-****-0000",
-      },{
+      }, {
         col1: "**회사",
         col2: "홍*동",
         col3: "010-****-0000",
-      },{
+      }, {
         col1: "**회사",
         col2: "홍*동",
         col3: "010-****-0000",
-      },{
+      }, {
         col1: "**회사",
         col2: "홍*동",
         col3: "010-****-0000",
@@ -715,5 +739,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

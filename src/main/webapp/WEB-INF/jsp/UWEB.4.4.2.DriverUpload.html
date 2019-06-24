@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -50,17 +48,17 @@
                     <div class="input-group block">
                       <div class="input-wrap select col col-sm-4">
                         <select id name>
-                                        <option value="">회사선택</option>
-                                        <option value="">회사선택1321345497897*911</option>
-                                      </select>
+                          <option value="">회사선택</option>
+                          <option value="">회사선택1321345497897*911</option>
+                        </select>
                       </div>
                       <div class="input-wrap">
                         <div class="input-file-form">
                           <input id name type="file">
                           <input id name type="text" readonly disabled>
                         </div>
-                        <button class="btn btn-default" onclick="$('.input-file-form input[type=file]').click();">찾아보기</button>
                       </div>
+                      <button class="btn btn-default" onclick="$('.input-file-form input[type=file]').click();">찾아보기</button>
                     </div>
                   </div>
                 </div>
@@ -86,7 +84,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -104,11 +102,10 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $('#popModel1').modal();
     });
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

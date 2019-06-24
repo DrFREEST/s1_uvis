@@ -29,8 +29,8 @@
     <div class="frame-content">
       <!-- 팝업영역 -->
       <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
-      <!-- 차량그룹 설정 팝업 -->
-      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+      <!-- 업무시간 일괄설정 팝업 -->
+      <div class="modal fade dark" id="workHourSettingModal" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
         <div class="modal-dialog big" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -66,14 +66,14 @@
                   </div>
                 </div>
                 <div class="search-btns">
-                  <button class="btn btn-blue btn-search">검색</button>
+                  <button class="btn btn-blue btn-search action workHourSettingSearch">검색</button>
                 </div>
               </div>
               <!-- //popup top search -->
               <!-- data list table -->
               <div class="data-list-table">
                 <div class="data-table">
-                  <table>
+                  <table id="workHourSettingList">
                     <colgroup>
                       <col>
                       <col>
@@ -102,97 +102,7 @@
                         <td>123456789</td>
                         <td>그룹2</td>
                         <td>경기01바0001</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check3"><input id="check3" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기02바0002</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check4"><input id="check4" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기03바0003</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check5"><input id="check5" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기04바0004</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check6"><input id="check6" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기05바0005</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check7"><input id="check7" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기06바0006</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check8"><input id="check8" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기07바0007</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check9"><input id="check9" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기08바0008</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check10"><input id="check10" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기09바0009</td>
-                        <td>00:00 ~ 23:59</td>
-                        <td>아반테XD</td>
-                      </tr>
-                      <tr>
-                        <td class="check">
-                          <div class="input-wrap check"><label for="check11"><input id="check11" name type="checkbox"><i class="icon"></i></label></div>
-                        </td>
-                        <td>123456789</td>
-                        <td>그룹2</td>
-                        <td>경기10바0010</td>
-                        <td>00:00 ~ 23:59</td>
+                        <td>00:00 ~ 23:59 월화수목금토일</td>
                         <td>아반테XD</td>
                       </tr>
                     </tbody>
@@ -203,99 +113,112 @@
                     <div class="table-info">TOTAL : 50</div>
                   </div>
                   <div class="paging">
-                    <a class="btn-first" href="#"></a>
-                    <a class="btn-prev" href="#"></a>
-                    <a class="on" href="#">1</a>
-                    <a class href="#">2</a>
-                    <a class href="#">3</a>
-                    <a class href="#">4</a>
-                    <a class="btn-next" href="#"></a>
-                    <a class="btn-last" href="#"></a>
+                    <!-- <a class="btn-first" href="#"></a>
+                          <a class="btn-prev" href="#"></a>
+                          <a class="on" href="#">1</a>
+                          <a class href="#">2</a>
+                          <a class href="#">3</a>
+                          <a class href="#">4</a>
+                          <a class="btn-next" href="#"></a>
+                          <a class="btn-last" href="#"></a> -->
                   </div>
                   <div class="footer-right">
-                    <div class="input-wrap inline select length-change small">
-                      <select id name>
-                                <option value="">15개씩 보기</option>
-                                <option value="">20개씩 보기</option>
-                                <option value="">50개씩 보기</option>
-                              </select>
-                    </div>
+                    <!-- <div class="input-wrap inline select length-change small">
+                            <select id name>
+                              <option value="">15개씩 보기</option>
+                              <option value="">20개씩 보기</option>
+                              <option value="">50개씩 보기</option>
+                            </select>
+                          </div> -->
                   </div>
                 </div>
               </div>
               <!-- //data list table -->
               <!-- setting area -->
-              <div class="setting-area">
-                <div class="check-group inline-block day-select">
-                  <div class="input-wrap">
+              <div class="setting-area border-top border-bottom border-top-dark-gray border-bottom-dark-gray text-center">
+                <div class="check-group inline">
+                  <div class="input-wrap check">
                     <label for="check-day1">
-                          <input id="check-day1" name type="checkbox">
-                          <span>월</span>
-                        </label>
+                      <input id="check-day1" name type="checkbox">
+                      <span>월</span>
+                    </label>
                   </div>
-                  <div class="input-wrap">
+                  <div class="input-wrap check">
                     <label for="check-day2">
-                          <input id="check-day2" name type="checkbox">
-                          <span>화</span>
-                        </label>
+                      <input id="check-day2" name type="checkbox">
+                      <span>화</span>
+                    </label>
                   </div>
-                  <div class="input-wrap">
+                  <div class="input-wrap check">
                     <label for="check-day3">
-                          <input id="check-day3" name type="checkbox">
-                          <span>수</span>
-                        </label>
+                      <input id="check-day3" name type="checkbox">
+                      <span>수</span>
+                    </label>
                   </div>
-                  <div class="input-wrap">
+                  <div class="input-wrap check">
                     <label for="check-day4">
-                          <input id="check-day4" name type="checkbox">
-                          <span>목</span>
-                        </label>
+                      <input id="check-day4" name type="checkbox">
+                      <span>목</span>
+                    </label>
                   </div>
-                  <div class="input-wrap">
+                  <div class="input-wrap check">
                     <label for="check-day5">
-                          <input id="check-day5" name type="checkbox">
-                          <span>금</span>
-                        </label>
+                      <input id="check-day5" name type="checkbox">
+                      <span>금</span>
+                    </label>
                   </div>
-                  <div class="input-wrap">
+                  <div class="input-wrap check">
                     <label for="check-day6">
-                          <input id="check-day6" name type="checkbox">
-                          <span>토</span>
-                        </label>
+                      <input id="check-day6" name type="checkbox">
+                      <span>토</span>
+                    </label>
                   </div>
-                  <div class="input-wrap">
+                  <div class="input-wrap check">
                     <label for="check-day7">
-                          <input id="check-day7" name type="checkbox">
-                          <span>일</span>
-                        </label>
+                      <input id="check-day7" name type="checkbox">
+                      <span>일</span>
+                    </label>
                   </div>
                 </div>
-                <div class="input-group time-range">
+                <div class="input-group time-range inline">
                   <div class="input-wrap select">
                     <select id name>
-                              <option value="">선택</option>
-                            </select>
+                      <option value="">선택</option>
+                    </select>
+                    <span class="unit">시</span>
+                  </div>
+                  <div class="input-wrap select">
+                    <select id name>
+                      <option value="">선택</option>
+                    </select>
+                    <span class="unit">분</span>
                   </div>
                   <span class="between">~</span>
                   <div class="input-wrap select">
                     <select id name>
-                          <option value="">선택</option>
-                        </select>
+                      <option value="">선택</option>
+                    </select>
+                    <span class="unit">시</span>
                   </div>
-                  <button class="btn btn-default">기본값 설정</button>
+                  <div class="input-wrap select">
+                    <select id name>
+                      <option value="">선택</option>
+                    </select>
+                    <span class="unit">분</span>
+                  </div>
                 </div>
               </div>
               <!-- //setting area -->
             </div>
             <div class="modal-footer">
               <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
-              <button class="btn btn-white" type="button">기본값 설정</button>
-              <button class="btn btn-blue" type="button">업무시간 설정</button>
+              <button class="btn btn-white action doDefaultSetting" type="button">기본값 설정</button>
+              <button class="btn btn-blue action doWorkHourSetting" type="button">업무시간 설정</button>
             </div>
           </div>
         </div>
       </div>
-      <!-- //차량그룹 설정 팝업 -->
+      <!-- //업무시간 일괄설정 팝업 -->
       <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
       <!-- //팝업영역 -->
     </div>
@@ -326,7 +249,7 @@
   <!-- onload script -->
   <script>
     $(function() {
-      $('#popModel1').modal();
+      $('#workHourSettingModal').modal();
     });
   </script>
   <!-- //onload script -->

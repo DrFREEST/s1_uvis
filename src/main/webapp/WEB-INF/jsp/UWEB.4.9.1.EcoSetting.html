@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -57,23 +55,23 @@
                     <ul>
                       <li>
                         <img src="../../resources/images/eco-a.png" alt>
-                        <p>900점<span class="arrow-up"></span></p>
+                        <p>900점 이상</p>
                       </li>
                       <li>
                         <img src="../../resources/images/eco-b.png" alt>
-                        <p>800점<span class="arrow-up"></span></p>
+                        <p>800점 이상</p>
                       </li>
                       <li>
                         <img src="../../resources/images/eco-c.png" alt>
-                        <p>600점<span class="arrow-up"></span></p>
+                        <p>600점 이상</p>
                       </li>
                       <li>
                         <img src="../../resources/images/eco-d.png" alt>
-                        <p>400점<span class="arrow-up"></span></p>
+                        <p>400점 이상</p>
                       </li>
                       <li>
                         <img src="../../resources/images/eco-f.png" alt>
-                        <p>400점<span class="arrow-down"></span></p>
+                        <p>400점 미만</p>
                       </li>
                     </ul>
                   </div>
@@ -95,7 +93,7 @@
                         </tbody>
                       </table>
                     </div>
-                    <p class="table-note font-red"><i class="dot red"></i>예) A등급 ‘900’이상으로 입력 시, 901점 이상이 A등급의 구간이 됩니다.</p>
+                    <p class="table-note font-blue"></i>예) A등급 ‘900’이상으로 입력 시, 901점 이상이 A등급의 구간이 됩니다.</p>
                     <div class="data-form-table-header">
                       <h3 class="header-title">에코지수 구간 설정</h3>
                     </div>
@@ -115,37 +113,45 @@
                           <tr>
                             <th><span>A</span></th>
                             <td>
-                              <div class="input-wrap">
-                                <input id name type="text">
-                                <span class="arrow-up"></span>
+                              <div class="input-group">
+                                <div class="input-wrap">
+                                  <input id name type="text">
+                                </div>
+                                <span class="text">이상</span>
                               </div>
                             </td>
                             <th><span>B</span></th>
                             <td>
-                              <div class="input-wrap">
-                                <input id name type="text">
-                                <span class="arrow-up"></span>
+                              <div class="input-group">
+                                <div class="input-wrap">
+                                  <input id name type="text">
+                                </div>
+                                <span class="text">이상</span>
                               </div>
                             </td>
                             <th><span>C</span></th>
                             <td>
-                              <div class="input-wrap">
-                                <input id name type="text">
-                                <span class="arrow-up"></span>
+                              <div class="input-group">
+                                <div class="input-wrap">
+                                  <input id name type="text">
+                                </div>
+                                <span class="text">이상</span>
                               </div>
                             </td>
                             <th><span>D</span></th>
                             <td>
-                              <div class="input-wrap">
-                                <input id name type="text">
-                                <span class="arrow-up"></span>
+                              <div class="input-group">
+                                <div class="input-wrap">
+                                  <input id name type="text">
+                                </div>
+                                <span class="text">미만</span>
                               </div>
                             </td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
-                    <p class="table-note font-red"><i class="dot red"></i>매월 각 차량에 부여되는 점수를 설정하실 수 있습니다. 부여한 점수를 기준으로 에코 등급을 산정합니다.</p>
+                    <p class="table-note font-blue">매월 각 차량에 부여되는 점수를 설정하실 수 있습니다. 부여한 점수를 기준으로 에코 등급을 산정합니다.</p>
                     <div class="data-form-table-header">
                       <h3 class="header-title">항목별 에코 점수 부여 및 관리</h3>
                     </div>
@@ -161,19 +167,19 @@
                         </colgroup>
                         <tbody>
                           <tr>
-                            <th><span>경제운전 <em class="font-blue">+</em></span></th>
+                            <th><span>경제운전 <em class="font-blue">(+)</em></span></th>
                             <td>
                               <div class="input-wrap">
                                 <input id name type="text">
                               </div>
                             </td>
-                            <th><span>급가속 <em class="font-blue">-</em></span></th>
+                            <th><span>급가속 <em class="font-blue">(-)</em></span></th>
                             <td>
                               <div class="input-wrap">
                                 <input id name type="text">
                               </div>
                             </td>
-                            <th><span>과속 <em class="font-blue">-</em></span></th>
+                            <th><span>과속 <em class="font-blue">(-)</em></span></th>
                             <td>
                               <div class="input-wrap">
                                 <input id name type="text">
@@ -181,19 +187,19 @@
                             </td>
                           </tr>
                           <tr>
-                            <th><span>공회전 <em class="font-blue">-</em></span></th>
+                            <th><span>공회전 <em class="font-blue">(-)</em></span></th>
                             <td>
                               <div class="input-wrap">
                                 <input id name type="text">
                               </div>
                             </td>
-                            <th><span>급감속 <em class="font-blue">-</em></span></th>
+                            <th><span>급감속 <em class="font-blue">(-)</em></span></th>
                             <td>
                               <div class="input-wrap">
                                 <input class="clearable" id name type="text">
                               </div>
                             </td>
-                            <th><span>과다RPM <em class="font-blue">-</em></span></th>
+                            <th><span>과다RPM <em class="font-blue">(-)</em></span></th>
                             <td>
                               <div class="input-wrap">
                                 <input class="clearable" id name type="text">
@@ -203,7 +209,7 @@
                         </tbody>
                       </table>
                     </div>
-                    <p class="table-note font-red"><i class="dot red"></i>경제운전, 관성운전을 제외한 모든 항목은 차감 점수로 설정됩니다.(+,- 기호입력 필요없음)</p>
+                    <p class="table-note font-blue">경제운전, 관성운전을 제외한 모든 항목은 차감 점수로 설정됩니다.(+,- 기호입력 필요없음)</p>
                   </div>
                 </div>
               </div>
@@ -224,7 +230,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -242,7 +248,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['접속일시', '회사명', '사용자명', '사용자 아이디', '메뉴명', '정보유형', '행위', '결과', '결과값'],
@@ -321,5 +327,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

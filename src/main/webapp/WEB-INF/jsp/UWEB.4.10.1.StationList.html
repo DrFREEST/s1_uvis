@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -41,18 +39,18 @@
               <legend>분류</legend>
               <div class="input-wrap select">
                 <select id name>
-                    <option value="">선택</option>
-                    <option value="">선택12312312313</option>
-                  </select>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
               </div>
             </div>
             <div class="input-group">
               <legend>범위</legend>
               <div class="input-wrap select">
                 <select id name>
-                      <option value="">선택</option>
-                      <option value="">선택12312312313</option>
-                    </select>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
               </div>
             </div>
           </div>
@@ -98,7 +96,6 @@
                   <button class="btn btn-white">신규</button>
                   <button class="btn btn-white">ZONE 편집</button>
                   <button class="btn btn-white">위치변경</button>
-                  <button class="btn btn-white">도착순서 설정</button>
                 </div>
               </div>
               <div class="map-frame-body">
@@ -136,8 +133,8 @@
                                 <td>
                                   <div class="input-wrap select">
                                     <select id name>
-                                          <option value="">선택</option>
-                                        </select>
+                                      <option value="">선택</option>
+                                    </select>
                                   </div>
                                 </td>
                               </tr>
@@ -146,8 +143,8 @@
                                 <td>
                                   <div class="input-wrap select">
                                     <select id name>
-                                          <option value="">선택</option>
-                                        </select>
+                                      <option value="">선택</option>
+                                    </select>
                                   </div>
                                 </td>
                               </tr>
@@ -232,7 +229,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -250,7 +247,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['정류장명', '정류장 구분', '권역', '임시여부'],
@@ -436,5 +433,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

@@ -40,6 +40,13 @@ var pub_list = new Vue({
         note: ""
       },
       {
+        pageName: "아이디 찾기 결과",
+        fileRoot: "src/main/webapp/WEB-INF/jsp/",
+        fileName: "UWEB.1.1.2.IdFindResult",
+        complete: "완료",
+        note: ""
+      },
+      {
         pageName: "비밀번호 재설정",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.1.1.3.PassReset",
@@ -687,21 +694,21 @@ var pub_list = new Vue({
         pageName: "지점 조회",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointList",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {
         pageName: "기본값 설정",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.BasicZoneSetting",
-        complete: "",
+        complete: "완료",
         note: "팝업"
       },
       {
         pageName: "ZONE 편집",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointZoneEdit",
-        complete: "",
+        complete: "완료",
         note: "팝업"
       },
       {
@@ -715,21 +722,21 @@ var pub_list = new Vue({
         pageName: "지점 입출입 현황",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointInOut",
-        complete: "",
+        complete: "완료",
         note: "팝업"
       },
       {
         pageName: "지점 차량 도착순서 설정",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointOrderSetting",
-        complete: "",
+        complete: "완료",
         note: "팝업"
       },
       {
         pageName: "지점 SMS 수신자 등록",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.7.1.PointSmsSetting",
-        complete: "",
+        complete: "완료",
         note: "팝업"
       },
       {
@@ -757,15 +764,15 @@ var pub_list = new Vue({
         pageName: "정류장 조회",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.10.1.StationList",
-        complete: "",
+        complete: "완료",
         note: ""
       },
       {
         pageName: "ZONE 편집",
         fileRoot: "src/main/webapp/WEB-INF/jsp/",
         fileName: "UWEB.4.10.1.StationZoneEdit",
-        complete: "",
-        note: ""
+        complete: "완료",
+        note: "팝업"
       },
       {
         pageName: "노선 조회",

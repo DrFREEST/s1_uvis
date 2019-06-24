@@ -41,18 +41,18 @@
               <legend>분류</legend>
               <div class="input-wrap select">
                 <select id name>
-                    <option value="">선택</option>
-                    <option value="">선택12312312313</option>
-                  </select>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
               </div>
             </div>
             <div class="input-group">
               <legend>범위</legend>
               <div class="input-wrap select">
                 <select id name>
-                      <option value="">선택</option>
-                      <option value="">선택12312312313</option>
-                    </select>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
               </div>
             </div>
           </div>
@@ -66,15 +66,15 @@
       <!-- 분할영역 -->
       <div class="partition-area">
         <div class="row">
-          <div class="col col-xl-5">
+          <div class="col col-xxl-4 col-sm-5">
             <div class="area-box">
               <div class="data-list-table">
                 <div class="data-list-table-header">
                   <div class="header-left">
                     <button class="btn btn-white">선택삭제</button>
                     <button class="btn btn-white">일괄삭제</button>
-                    <button class="btn btn-white">일괄등록</button>
-                    <button class="btn btn-white">기본값설정</button>
+                    <button class="btn btn-white" onclick="$('#popModel3').modal();">일괄등록</button>
+                    <button class="btn btn-white" onclick="$('#popModel1').modal();">기본값 설정</button>
                   </div>
                   <div class="header-right">
                     <button class="btn btn-white">엑셀다운</button>
@@ -86,11 +86,11 @@
               </div>
             </div>
           </div>
-          <div class="col col-xl-7">
+          <div class="col col-xxl-8 col-sm-7 flex-col">
             <!-- map frame -->
             <div class="map-frame">
               <div class="map-frame-header">
-                <div class="header-left">
+                <div class="header-search">
                   <div class="input-group">
                     <legend>주소검색</legend>
                     <div class="input-wrap"><input class="clearable" id name type="text"></div>
@@ -99,19 +99,19 @@
                 </div>
                 <div class="header-right">
                   <button class="btn btn-white">신규</button>
-                  <button class="btn btn-white">ZONE 편집</button>
+                  <button class="btn btn-white" onclick="$('#popModel2').modal();">ZONE 편집</button>
                   <button class="btn btn-white">위치변경</button>
-                  <button class="btn btn-white">도착순서 설정</button>
+                  <button class="btn btn-white" onclick="$('#popModel5').modal();">도착순서 설정</button>
                 </div>
               </div>
               <div class="map-frame-body">
                 <!-- map area -->
-                <div class="map-area">
+                <div class="map-area" style="background:url(../../resources/images/img-sample-map.png) no-repeat center center;background-size:cover;">
                   지도 영역
                   <!-- 지도 내부 팝업(좌표값에 맞는 위치 style="top:00px;left:00px;" 형식으로 들어가게 해주세요.) -->
-                  <div class="pop-inner-map">
+                  <div class="pop-inner-map" style="top:38px;left:200px;">
                     <div class="pop-header">
-                      <h3 class="pop-title">갈산동남아파트</h3>
+                      <h3 class="pop-title">강남사업팀</h3>
                       <p class="address">인천광역시 부평구 갈산동 362번지</p>
                       <button class="btn-pop-close"></button>
                     </div>
@@ -119,40 +119,74 @@
                       <div class="data-form-table">
                         <div class="data-form-table-body">
                           <table id="test">
-                            <thead>
-                              <tr>
-                                <th>분류</th>
-                                <th>데이터</th>
-                              </tr>
-                            </thead>
+                            <colgroup>
+                              <col style="width:110px;">
+                              <col style="width:;">
+                            </colgroup>
                             <tbody>
                               <tr>
                                 <th><span>분류</span></th>
-                                <td></td>
+                                <td>
+                                  <div class="input-wrap select">
+                                    <select id name>
+                                      <option value="">선택</option>
+                                    </select>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <th><span>지점명</span></th>
-                                <td></td>
+                                <td>
+                                  <div class="input-group">
+                                    <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    <button class="btn btn-default">중복체크</button>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <th><span>사용범위</span></th>
-                                <td></td>
+                                <td>
+                                  <div class="input-wrap check"><label for="checkRange"><input id="checkRange" name type="checkbox"><span>사내공유</span></label></div>
+                                </td>
                               </tr>
                               <tr>
                                 <th><span>반경</span></th>
-                                <td></td>
+                                <td>
+                                  <div class="input-group">
+                                    <div class="input-wrap"><input id name type="text"></div>
+                                    <span class="text">m(최초반영)</span>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <th><span>위치탐지</span></th>
-                                <td></td>
+                                <td>
+                                  <div class="input-group">
+                                    <div class="input-wrap select">
+                                      <option value="">감지 안함</option>
+                                    </div>
+                                    <div class="input-wrap check"><label for="checkScan"><input id="checkScan" name type="checkbox"><span>탐지여부</span></label></div>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <th><span>통지대상</span></th>
-                                <td></td>
+                                <td>
+                                  <div class="input-group">
+                                    <div class="input-wrap select">
+                                      <option value="">통지 안함</option>
+                                    </div>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <th><span>비고</span></th>
-                                <td></td>
+                                <td>
+                                  <div class="input-group">
+                                    <div class="input-wrap"><input id name type="text"></div>
+                                    <div class="input-wrap check"><label for="showMap"><input id="showMap" name type="checkbox"><span>지도표기</span></label></div>
+                                  </div>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
@@ -176,6 +210,318 @@
       </div>
       <!-- //분할영역 -->
       <!-- 팝업 영역 -->
+      <!-- 기본값 설정 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">기본값 설정</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>반경(m)</span></th>
+                        <td>
+                          <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                          <p class="note">신규 지점이 생성될 때 반경 값을 매번 수정하지 않도록 이 값이 자동 입력됩니다.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>지오팬스</span></th>
+                        <td>
+                          <div class="input-wrap radio"><label for="radioGio1"><input id="radioGio1" name="radioGio" type="radio"><span>감지안함</span></label></div>
+                          <div class="input-wrap radio"><label for="radioGio2"><input id="radioGio2" name="radioGio" type="radio"><span>진입(Inbound)</span></label></div>
+                          <div class="input-wrap radio"><label for="radioGio3"><input id="radioGio3" name="radioGio" type="radio"><span>이탈(Outbound)</span></label></div>
+                          <div class="input-wrap radio"><label for="radioGio4"><input id="radioGio4" name="radioGio" type="radio"><span>모두 감지(In-Outbound)</span></label></div>
+                          <p class="note">이동체의 영역(반경) 진입/이탈 여부를 중앙에서 감지합니다.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>통지설정</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">SMS전송 대상 선택</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //기본값 설정 팝업 -->
+      <!-- ZONE 편집 팝업 -->
+      <div class="modal fade dark" id="popModel2" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">ZONE 편집</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- pop map area -->
+              <div class="pop-map-area big">
+                <!-- 노선 지도 들어가는 영역 -->
+                지도 들어가는 영역
+                <!-- //노선 지도 들어가는 영역 -->
+              </div>
+              <!-- //popmap area -->
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-white" type="button">초기화</button>
+              <button class="btn btn-blue" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //ZONE 편집 팝업 -->
+      <!-- 지점 일괄 등록 팝업 -->
+      <div class="modal fade dark" id="popModel3" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">지점 일괄 등록</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- body top btn group -->
+              <div class="top-btn-group text-right">
+                <button class="btn btn-white">서식 다운로드</button>
+              </div>
+              <!-- //body top btn group -->
+              <!-- popup top search -->
+              <div class="top-search pop-top-search">
+                <div class="search-forms">
+                  <div class="row">
+                    <div class="input-group block">
+                      <div class="input-wrap">
+                        <div class="input-file-form">
+                          <input id name type="file">
+                          <input id name type="text" readonly disabled>
+                        </div>
+                        <button class="btn btn-default" onclick="$('.input-file-form input[type=file]').click();">찾아보기</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //popup top search -->
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //지점 일괄 등록 팝업 -->
+      <!-- 지점 입출입 현황 팝업 -->
+      <div class="modal fade dark" id="popModel4" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">입출입 현황 [<em class="font-red">강남사업팀</em>]</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <div class="input-group">
+                      <label for="">입출입 현황</label>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">오늘</option>
+                        </select>
+                      </div>
+                      <button class="btn btn-white">조회</button>
+                    </div>
+                  </div>
+                  <div class="header-right"><button class="btn btn-white">엑셀다운</button></div>
+                </div>
+                <div class="data-table">
+                  <table id="inOutBoundTable"></table>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">저장</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- //지점 입출입 현황 팝업 -->
+      <!-- 도착 순서 설정 팝업 -->
+      <div class="modal fade dark" id="popModel5" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">도착 순서 설정</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- content tab -->
+              <div class="content-tab">
+                <div class="radio-group inline bigger page-select">
+                  <div class="input-wrap">
+                    <label for="pageSelRadio1">
+                      <input id="pageSelRadio1" name="pageSel" type="radio" checked>
+                      <span>차량등록</span>
+                    </label>
+                  </div>
+                  <div class="input-wrap">
+                    <label for="pageSelRadio2">
+                      <input id="pageSelRadio2" name="pageSel" type="radio">
+                      <span>SMS 수신자 등록</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- //content tab -->
+              <!-- popup top search -->
+              <div class="top-search pop-top-search">
+                <div class="search-forms">
+                  <div class="row">
+                    <!-- <div class="radio-group block col-sm-12">
+                            <div class="input-wrap radio"><label for="popRadioType1"><input id="popRadioType1" name="popRadioType" type="radio" checked><span>전체</span></label></div>
+                            <div class="input-wrap radio"><label for="popRadioType2"><input id="popRadioType2" name="popRadioType" type="radio"><span>출근</span></label></div>
+                            <div class="input-wrap radio"><label for="popRadioType3"><input id="popRadioType3" name="popRadioType" type="radio"><span>퇴근</span></label></div>
+                          </div> -->
+                    <div class="input-group col-sm-6">
+                      <legend>권역</legend>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">선택</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="input-group col-sm-6">
+                      <legend>정류장명</legend>
+                      <div class="input-wrap">
+                        <input class="clearable" id name type="text">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-btns">
+                  <button class="btn btn-blue btn-search action searchStation">검색</button>
+                </div>
+              </div>
+              <!-- //popup top search -->
+              <!-- 차량등록 -->
+              <div class="row">
+                <div class="col-sm-5">
+                  <!-- data list table -->
+                  <div class="data-list-table">
+                    <div class="data-list-table-header">
+                      <h3 class="header-title">차량 목록 <span class="font-blue">23</span>
+                        <div class="header-right"></div>
+                      </h3>
+                    </div>
+                    <div class="data-table">
+                      <table id="list3"></table>
+                    </div>
+                  </div>
+                  <!-- //data list table -->
+                </div>
+                <div class="col-sm-1 action-btns">
+                  <button class="btn btn-default action checkInStation"><span>선택</span><i class="arrow right"></i></button>
+                  <button class="btn btn-default action checkOutStation"><span>삭제</span><i class="arrow left"></i></button>
+                </div>
+                <div class="col-sm-6">
+                  <!-- data list table -->
+                  <div class="data-list-table">
+                    <div class="data-list-table-header">
+                      <h3 class="header-title">선택된 차량목록 <span class="font-blue">23</span>
+                        <div class="header-right"></div>
+                      </h3>
+                    </div>
+                    <div class="data-table">
+                      <table id="list4"></table>
+                    </div>
+                  </div>
+                  <!-- //data list table -->
+                  <!-- order action -->
+                  <div class="order-action">
+                    <button class="btn-top action topButton"></button>
+                    <button class="btn-up action upButton"></button>
+                    <button class="btn-down action downButton"></button>
+                    <button class="btn-bottom action bottomButton"></button>
+                  </div>
+                  <!-- //order action -->
+                </div>
+              </div>
+              <!-- //차량등록 -->
+              <!-- SMS 수신자 등록 -->
+              <div class="row">
+                <div class="col-sm-auto">
+                  <!-- data list table -->
+                  <div class="data-list-table">
+                    <div class="data-list-table-header">
+                      <h3 class="header-title">연락처 목록 <span class="font-blue">23</span>
+                        <div class="header-right"></div>
+                      </h3>
+                    </div>
+                    <div class="data-table">
+                      <table id="list5"></table>
+                    </div>
+                  </div>
+                  <!-- //data list table -->
+                </div>
+                <div class="col-sm-1 action-btns">
+                  <button class="btn btn-default action checkInStation"><span>선택</span><i class="arrow right"></i></button>
+                  <button class="btn btn-default action checkOutStation"><span>삭제</span><i class="arrow left"></i></button>
+                </div>
+                <div class="col-sm-auto">
+                  <!-- data list table -->
+                  <div class="data-list-table">
+                    <div class="data-list-table-header">
+                      <h3 class="header-title">선택된 수신자목록 <span class="font-blue">23</span>
+                      </h3>
+                      <div class="header-right">
+                        <button class="btn btn-white">직접입력</button>
+                      </div>
+                    </div>
+                    <div class="data-table">
+                      <table id="list6"></table>
+                    </div>
+                  </div>
+                  <!-- //data list table -->
+                  <!-- order action -->
+                  <div class="order-action">
+                    <button class="btn-top action topButton"></button>
+                    <button class="btn-up action upButton"></button>
+                    <button class="btn-down action downButton"></button>
+                    <button class="btn-bottom action bottomButton"></button>
+                  </div>
+                  <!-- //order action -->
+                </div>
+              </div>
+              <!-- //SMS 수신자 등록 -->
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue action doStationSave" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //도착 순서 설정 팝업 -->
       <!-- //팝업 영역 -->
     </div>
     <!-- //frame content -->
@@ -186,7 +532,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -204,9 +550,271 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
-
-      tableToGrid("#test");
+    function popModel4() {
+      $(document).find('#popModel4').modal();
+    }
+    $(function () {
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['지점명', '분류', '범위', '반경(m)', '입출입현황'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100",
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100",
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "100",
+        }],
+        rowNum: 15,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 40,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "단산역1",
+        col2: "출근",
+        col3: "권역1",
+        col4: "임시",
+        col5: "<button class='btn btn-default inline' onclick='popModel4();'>보기</button>",
+      }];
+      $("#inOutBoundTable").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '차량번호', '입차시간', '이벤트'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100",
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100",
+        }],
+        rowNum: 15,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        multiselectWidth: 40,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        width: 560,
+        // autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata2 = [{
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }];
+      //
+      $("#list3").jqGrid({
+        datatype: "local",
+        colNames: ['차량번호'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }],
+        rowNum: 15,
+        // scrollRows: true,
+        scroll: false,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        width: 340,
+        // autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // width:"100%",
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata3 = [{
+        col1: "경기 11하 1111",
+      }];
+      // 
+      // 
+      $("#list4").jqGrid({
+        datatype: "local",
+        colNames: ['차량번호', '순서'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }],
+        rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        width: 415,
+        // autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata4 = [{
+        col1: "경기 11하 1111",
+        col2: "1",
+      }];
+      //
+      $("#list5").jqGrid({
+        datatype: "local",
+        colNames: ['이름', '연락처'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }],
+        rowNum: 15,
+        // scrollRows: true,
+        scroll: false,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        width: 375,
+        // autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // width:"100%",
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata5 = [{
+        col1: "김이박",
+        col1: "010-****-0000",
+      }];
+      // 
+      // 
+      $("#list6").jqGrid({
+        datatype: "local",
+        colNames: ['이름', '연락처'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }],
+        rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        width: 375,
+        // autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata6 = [{
+        col1: "김이박",
+        col2: "010-****-0000",
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      for (var i = 0; i <= mydata2.length; i++)
+        $("#inOutBoundTable").jqGrid('addRowData', i + 1, mydata2[i]);
+      for (var i = 0; i <= mydata3.length; i++)
+        $("#list3").jqGrid('addRowData', i + 1, mydata3[i]);
+      for (var i = 0; i <= mydata4.length; i++)
+        $("#list4").jqGrid('addRowData', i + 1, mydata4[i]);
+      for (var i = 0; i <= mydata5.length; i++)
+        $("#list5").jqGrid('addRowData', i + 1, mydata5[i]);
+      for (var i = 0; i <= mydata6.length; i++)
+        $("#list6").jqGrid('addRowData', i + 1, mydata6[i]);
       // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
     });
   </script>
