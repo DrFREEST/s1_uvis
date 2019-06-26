@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>그룹명</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차량번호</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>운전자</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group date-range">
+              <legend>배차기간</legend>
+              <div class="input-wrap select year">
+                <select id name>
+                  <option value="">2019</option>
+                </select>
+              </div>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <legend>시간대</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">24시</option>
+                </select>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-white on">일별</button>
+                <button class="btn btn-white">주별</button>
+                <button class="btn btn-white">월별</button>
+              </div>
+            </div>
+            <div class="input-group date-range">
+              <legend>운행일시</legend>
+              <div class="input-wrap select year">
+                <select id name>
+                  <option value="">2019</option>
+                </select>
+              </div>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <legend>시간대</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">24시</option>
+                </select>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-white on">일별</button>
+                <button class="btn btn-white">주별</button>
+                <button class="btn btn-white">월별</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset">초기화</button>
+          <button class="btn btn-blue btn-search">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12 col-md-12">
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <button class="btn btn-white" onclick="$('#popModel1').modal();">운행기록 다운</button>
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list1"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <!-- <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div> -->
+                <!-- <div class="footer-right">
+                  <div class="input-wrap inline select length-change small">
+                    <select id name>
+                      <option value="">15개씩 보기</option>
+                      <option value="">20개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                    </select>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-title">
+                  <h2>운행일지 (차량번호 : 경기 11허 1111)</h2>
+                </div>
+              </div>
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <div class="input-group radio-group content-tabs inline bigger">
+                    <div class="input-wrap radio"><label for="radioPageTab1"><input id="radioPageTab1" name="radioPageTab" type="radio" checked><span>Trip 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab2"><input id="radioPageTab2" name="radioPageTab" type="radio"><span>일자별 운행일지</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab3"><input id="radioPageTab3" name="radioPageTab" type="radio"><span>운행 상세 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab4"><input id="radioPageTab4" name="radioPageTab" type="radio"><span>시동 ON/OFF 정보</span></label></div>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <ul>
+                    <li><span class="font-blue"><i class="dot blue"></i> 운행거리(km) : GPS 수신상태 및 단말의 운영환경에 따라 차량 실제운행 거리와 상이할 수 있습니다.</span></li>
+                    <li><span class="font-blue"><i class="dot blue"></i> 운행일지는 최대 전일까지 조회 가능합니다.</span></li>
+                  </ul>
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list2"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                </div>
+              </div>
+            </div>
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-title">
+                  <h2>운행일지 (차량번호 : 경기 11허 1111)</h2>
+                </div>
+              </div>
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <div class="input-group radio-group content-tabs inline bigger">
+                    <div class="input-wrap radio"><label for="radioPageTab2-1"><input id="radioPageTab2-1" name="radioPageTab2" type="radio"><span>Trip 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab2-2"><input id="radioPageTab2-2" name="radioPageTab2" type="radio" checked><span>일자별 운행일지</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab2-3"><input id="radioPageTab2-3" name="radioPageTab2" type="radio"><span>운행 상세 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab2-4"><input id="radioPageTab2-4" name="radioPageTab2" type="radio"><span>시동 ON/OFF 정보</span></label></div>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list3"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                </div>
+              </div>
+            </div>
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-title">
+                  <h2>운행일지 (차량번호 : 경기 11허 1111)</h2>
+                </div>
+              </div>
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <div class="input-group radio-group content-tabs inline bigger">
+                    <div class="input-wrap radio"><label for="radioPageTab3-1"><input id="radioPageTab3-1" name="radioPageTab3" type="radio"><span>Trip 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab3-2"><input id="radioPageTab3-2" name="radioPageTab3" type="radio"><span>일자별 운행일지</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab3-3"><input id="radioPageTab3-3" name="radioPageTab3" type="radio" checked><span>운행 상세 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab3-4"><input id="radioPageTab3-4" name="radioPageTab3" type="radio"><span>시동 ON/OFF 정보</span></label></div>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <ul>
+                    <li><span class="font-blue"><i class="dot blue"></i> 운행상세정보는 하루씩만 조회 가능합니다</span></li>
+                  </ul>
+                  <div class="input-wrap select">
+                    <select id name>
+                      <option value="">2분단위</option>
+                    </select>
+                  </div>
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list4"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                </div>
+              </div>
+            </div>
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-title">
+                  <h2>운행일지 (차량번호 : 경기 11허 1111)</h2>
+                </div>
+              </div>
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <div class="input-group radio-group content-tabs inline bigger">
+                    <div class="input-wrap radio"><label for="radioPageTab4-1"><input id="radioPageTab4-1" name="radioPageTab4" type="radio"><span>Trip 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab4-2"><input id="radioPageTab4-2" name="radioPageTab4" type="radio"><span>일자별 운행일지</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab4-3"><input id="radioPageTab4-3" name="radioPageTab4" type="radio"><span>운행 상세 정보</span></label></div>
+                    <div class="input-wrap radio"><label for="radioPageTab4-4"><input id="radioPageTab4-4" name="radioPageTab4" type="radio" checked><span>시동 ON/OFF 정보</span></label></div>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list5"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '노선명', '정류장', '운행일자', '출발시간', '운행구분', '반명', '학생명', '보호자연락처', '발송일시', '결과'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "100"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "100"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "100"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "100"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "120",
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "150",
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "100",
+        }],
+        // rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: 228,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }, {
+        col1: "1",
+        col2: "노선1",
+        col3: "기점1",
+        col4: "2019-01-01",
+        col5: "00:00",
+        col6: "등원",
+        col7: "1반",
+        col8: "김이박",
+        col9: "010-****-0000",
+        col10: "2019-01-01 00:00:00",
+        col11: "발송완료",
+      }];
+      //
+      $("#list2").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '운행일자', '차량번호', '운행시간', '운행거리(m)', '과속', '온도A', '온도B', '출발시간', '출발장소', '도착시간', '도착장소'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "80"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "60"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "60"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "60"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "80",
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "180",
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "80",
+        }, {
+          name: 'col12',
+          index: 'col12',
+          width: "180",
+        }],
+        rowNum: 4,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata2 = [{
+        col1: "1",
+        col2: "2019-01-01",
+        col3: "경기 11하 1111",
+        col4: "00시간 00분",
+        col5: "1234",
+        col6: "5",
+        col7: "-",
+        col8: "-",
+        col9: "00:00:00",
+        col10: "경기도 경기시 경기구 경기동 11가",
+        col11: "00:00:00",
+        col12: "경기도 경기시 경기구 경기동 11가",
+      }];
+      //
+      $("#list3").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '운행일자', '차량번호', '운행시간', '운행거리(m)', '과속', '온도A', '온도B', '출발시간', '출발장소', '도착시간', '도착장소'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "80"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "60"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "60"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "60"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "80",
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "180",
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "80",
+        }, {
+          name: 'col12',
+          index: 'col12',
+          width: "180",
+        }],
+        rowNum: 4,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata3 = [{
+        col1: "1",
+        col2: "2019-01-01",
+        col3: "경기 11하 1111",
+        col4: "00시간 00분",
+        col5: "999",
+        col6: "5",
+        col7: "-",
+        col8: "-",
+        col9: "00:00:00",
+        col10: "경기도 경기시 경기동 경기로 11가",
+        col11: "00:00:00",
+        col12: "경기도 경기시 경기동 경기로 11가",
+      }];
+      //
+      $("#list4").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '운행일자', '운행시간', '시동', '속도', '이벤트', '누적운행거리', '도착장소'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "80"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "60"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "60"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "160"
+        }],
+        rowNum: 4,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata4 = [{
+        col1: "1",
+        col2: "2019-01-01",
+        col3: "00시간 00분",
+        col4: "ON",
+        col5: "0",
+        col6: "-",
+        col7: "000",
+        col8: "경기도 경기시 경기동 경기로 11가"
+      }];
+      //
+      $("#list5").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '운행일자', '차량번호', '운행시간', '운행거리(m)', '과속', '온도A', '온도B', '시동ON', '시동ON위치', '시동OFF', '시동OFF위치'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "80"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "60"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "60"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "60"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "80",
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "180",
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "80",
+        }, {
+          name: 'col12',
+          index: 'col12',
+          width: "180",
+        }],
+        rowNum: 4,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata5 = [{
+        col1: "1",
+        col2: "2019-01-01",
+        col3: "경기 11하 1111",
+        col4: "00시간 00분",
+        col5: "999",
+        col6: "5",
+        col7: "-",
+        col8: "-",
+        col9: "00:00:00",
+        col10: "경기도 경기시 경기동 경기로 11가",
+        col11: "00:00:00",
+        col12: "경기도 경기시 경기동 경기로 11가",
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      for (var i = 0; i <= mydata2.length; i++)
+        $("#list2").jqGrid('addRowData', i + 1, mydata2[i]);
+      for (var i = 0; i <= mydata3.length; i++)
+        $("#list3").jqGrid('addRowData', i + 1, mydata3[i]);
+      for (var i = 0; i <= mydata4.length; i++)
+        $("#list4").jqGrid('addRowData', i + 1, mydata4[i]);
+      for (var i = 0; i <= mydata5.length; i++)
+        $("#list5").jqGrid('addRowData', i + 1, mydata5[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+
+</html>
