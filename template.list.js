@@ -344,7 +344,7 @@ var pub_list = new Vue({
       pageName: "운행기록 다운로드 선택",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.1.1.DrivingRecode",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
@@ -358,35 +358,35 @@ var pub_list = new Vue({
       pageName: "월별 운행 현황 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.3.1.DrivingHistory",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "차량별 월간 합계",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.3.1.DrivingMonth",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "배차 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.4.1.DispatchInput",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "대여자(운전자) 검색",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.4.1.LenderSelect",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "대여자 일괄 등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.4.1.LenderAllAdd",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {

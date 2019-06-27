@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -379,6 +377,157 @@
         </div>
       </div>
       <!-- //분할영역 -->
+      <!-- 팝업영역 -->
+      <!-- 운행기록 다운로드 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">운행기록 다운로드</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- popup top search -->
+              <div class="top-search pop-top-search">
+                <div class="search-forms">
+                  <div class="row">
+                    <div class="input-group">
+                      <legend>그룹명</legend>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">선택</option>
+                        </select>
+                      </div>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">선택</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <legend>차량번호</legend>
+                      <div class="input-wrap">
+                        <input class="clearable" id name type="text">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-btns">
+                  <button class="btn btn-blue btn-search">검색</button>
+                </div>
+              </div>
+              <ul class="note font-red">
+                <li>* 운행기록은 차량번호가 등록되어야 조회 가능합니다. ( 설정 > 차량관리 )</li>
+                <li>* 선택한 일자의 1일분만 다운로드가 가능하고 , 차량은 최대 20대까지만 선택할 수 있습니다.</li>
+              </ul>
+              <!-- //popup top search -->
+              <!-- car group list -->
+              <div class="car-group-list vehicle-group-list">
+                <div class="car-group-title">
+                  <div class="input-group">
+                    <div class="input-wrap check inline">
+                      <label for="car-menu-check-all">
+                        <input id="car-menu-check-all" name type="checkbox">
+                        <span>전체선택</span>
+                      </label>
+                    </div>
+                    <span class="font-blue">20대</span>
+                    <span>/ 차량번호(단말기 번호 4자리)</span>
+                  </div>
+                </div>
+                <div class="car-group-header">단말기 번호</div>
+                <div class="car-group">
+                  <ul>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-1">
+                          <input id="check3-1-1" name type="checkbox">
+                          <span>1234567890</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-2">
+                          <input id="check3-1-2" name type="checkbox">
+                          <span>1234567890</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-3">
+                          <input id="check3-1-3" name type="checkbox">
+                          <span>1234567890</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-4">
+                          <input id="check3-1-4" name type="checkbox">
+                          <span>1234567890</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-5">
+                          <input id="check3-1-5" name type="checkbox">
+                          <span>1234567890</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-6">
+                          <input id="check3-1-6" name type="checkbox">
+                          <span>1234567890</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- //car group list -->
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>운행일</span></th>
+                        <td>
+                          <div class="input-wrap date">
+                            <input class="datepicker" id name type="text">
+                            <i class="icon-calendar"></i>
+                          </div>
+                        </td>
+                        <th><span>기록단위</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">2분</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p class="note big text-center">
+                <big>총 <span class="font-blue">20대</span>의 차량 운행기록을 위와 같은 기준으로 다운로드 하시겠습니까?</big>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">다운로드</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //운행기록 다운로드 팝업 -->
+      <!-- //팝업영역 -->
     </div>
     <!-- //frame content -->
   </div>
@@ -927,5 +1076,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

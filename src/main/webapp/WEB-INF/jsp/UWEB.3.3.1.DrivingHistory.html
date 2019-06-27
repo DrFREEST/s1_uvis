@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>그룹명</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차량번호</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group date-range">
+              <legend>운행일시</legend>
+              <div class="input-wrap select year">
+                <select id name>
+                  <option value="">2019</option>
+                </select>
+              </div>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <legend>시간대</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">24시</option>
+                </select>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-white on">일별</button>
+                <button class="btn btn-white">주별</button>
+                <button class="btn btn-white">월별</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset">초기화</button>
+          <button class="btn btn-blue btn-search">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12 col-md-12">
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <ul>
+                    <li><span class="font-blue"><i class="dot blue"></i> 운행거리(km) : GPS 수신상태 및 단말의 운영환경에 따라 차량 실제운행 거리와 상이할 수 있습니다.</span></li>
+                    <li><span class="font-blue"><i class="dot blue"></i> 연료소비량(ℓ) : 통합단말기가 아닌경우 기준연비 3km/l 로 계산됩니다.</span></li>
+                  </ul>
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-white" onclick="$('#popModel1').modal();">차량별 월간 합계</button>
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list1"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                  <!-- <div class="input-wrap inline select length-change small">
+                    <select id name>
+                      <option value="">15개씩 보기</option>
+                      <option value="">20개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                    </select>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-title">
+                  <h2>운행일지 (차량번호 : 경기 11허 1111)</h2>
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list2"></table>
+                <script>
+                </script>
+              </div>
+              <!-- <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업영역 -->
+      <!-- 차량별 월간 합계 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog wide" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">차량별 월간 합계</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- popup top search -->
+              <div class="top-search pop-top-search">
+                <div class="search-forms">
+                  <div class="row">
+                    <div class="input-group">
+                      <legend>그룹명</legend>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">선택</option>
+                        </select>
+                      </div>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">선택</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <legend>차량번호</legend>
+                      <div class="input-wrap">
+                        <input class="clearable" id name type="text">
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <legend>년도선택</legend>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">2019</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-btns">
+                  <button class="btn btn-blue btn-search">검색</button>
+                </div>
+              </div>
+              <!-- //popup top search -->
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-right">
+                    <button class="btn btn-white">엑셀다운</button>
+                  </div>
+                </div>
+                <div class="data-table">
+                  <table id="list3"></table>
+                  <script>
+                  </script>
+                </div>
+                <div class="data-list-table-footer">
+                  <div class="footer-left">
+                    <div class="table-info">TOTAL : 50</div>
+                  </div>
+                  <div class="paging">
+                    <a class="btn-first" href="#"></a>
+                    <a class="btn-prev" href="#"></a>
+                    <a class="on" href="#">1</a>
+                    <a class href="#">2</a>
+                    <a class href="#">3</a>
+                    <a class href="#">4</a>
+                    <a class="btn-next" href="#"></a>
+                    <a class="btn-last" href="#"></a>
+                  </div>
+                  <div class="footer-right">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">다운로드</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //차량별 월간 합계 팝업 -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      var chkcell = { cellId: undefined, chkval: undefined, }
+      function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
+        var attr = rowObject.attr[cm.name], result;
+        if (attr.rowspan) {
+          result = ' rowspan=' + '"' + attr.rowspan + '"';
+        } else if (attr.display) {
+          result = ' style="display:' + attr.display + '"';
+        }
+        return result;
+      }
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['그룹명1', '그룹명2', '차량번호', '운전자명', '구분', '합계', '05/01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31',],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "120"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "50"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "50"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "50"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "50"
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "50"
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "50"
+        }, {
+          name: 'col12',
+          index: 'col12',
+          width: "50"
+        }, {
+          name: 'col13',
+          index: 'col13',
+          width: "50"
+        }, {
+          name: 'col14',
+          index: 'col14',
+          width: "50"
+        }, {
+          name: 'col15',
+          index: 'col15',
+          width: "50"
+        }, {
+          name: 'col16',
+          index: 'col16',
+          width: "50"
+        }, {
+          name: 'col17',
+          index: 'col17',
+          width: "50"
+        }, {
+          name: 'col18',
+          index: 'col18',
+          width: "50"
+        }, {
+          name: 'col19',
+          index: 'col19',
+          width: "50"
+        }, {
+          name: 'col20',
+          index: 'col20',
+          width: "50"
+        }, {
+          name: 'col21',
+          index: 'col21',
+          width: "50"
+        }, {
+          name: 'col22',
+          index: 'col22',
+          width: "50"
+        }, {
+          name: 'col23',
+          index: 'col23',
+          width: "50"
+        }, {
+          name: 'col24',
+          index: 'col24',
+          width: "50"
+        }, {
+          name: 'col25',
+          index: 'col25',
+          width: "50"
+        }, {
+          name: 'col26',
+          index: 'col26',
+          width: "50"
+        }, {
+          name: 'col27',
+          index: 'col27',
+          width: "50"
+        }, {
+          name: 'col28',
+          index: 'col28',
+          width: "50"
+        }, {
+          name: 'col29',
+          index: 'col29',
+          width: "50"
+        }, {
+          name: 'col30',
+          index: 'col30',
+          width: "50"
+        }, {
+          name: 'col31',
+          index: 'col31',
+          width: "50"
+        }, {
+          name: 'col32',
+          index: 'col32',
+          width: "50"
+        }, {
+          name: 'col33',
+          index: 'col33',
+          width: "50"
+        }, {
+          name: 'col34',
+          index: 'col34',
+          width: "50"
+        }, {
+          name: 'col35',
+          index: 'col35',
+          width: "50"
+        }, {
+          name: 'col36',
+          index: 'col36',
+          width: "50"
+        }, {
+          name: 'col37',
+          index: 'col37',
+          width: "50"
+        }],
+        // rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: 228,
+        scrollTimeout: 1,
+        shrinkToFit: false,
+        forceFit: false,
+        scrollOffset: 21,
+        hoverrows: false,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행거리(㎞)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "과속횟수(회)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행거리(㎞)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "과속횟수(회)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        col18: "1234",
+        col19: "1234",
+        col20: "1234",
+        col21: "1234",
+        col22: "1234",
+        col23: "1234",
+        col24: "1234",
+        col25: "1234",
+        col26: "1234",
+        col27: "1234",
+        col28: "1234",
+        col29: "1234",
+        col30: "1234",
+        col31: "1234",
+        col32: "1234",
+        col33: "1234",
+        col34: "1234",
+        col35: "1234",
+        col36: "1234",
+        col37: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }];
+      //
+      $("#list2").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '운행일자', '차량번호', '운행시간', '운행거리(m)', '유류량(ℓ)', '출발시간', '출발장소', '도착시간', '도착장소'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "80"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "80"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "80"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "180"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "80",
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "180",
+        }],
+        rowNum: 4,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata2 = [{
+        col1: "1",
+        col2: "2019-01-01",
+        col3: "경기 11하 1111",
+        col4: "00시간 00분",
+        col5: "1234",
+        col6: "-",
+        col7: "00:00:00",
+        col8: "경기도 경기시 경기구 경기동 11가",
+        col9: "00:00:00",
+        col10: "경기도 경기시 경기구 경기동 11가",
+      }];
+      //
+      $("#list3").jqGrid({
+        datatype: "local",
+        colNames: ['그룹명1', '그룹명2', '차량번호', '운전자명', '구분', '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "120",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "120"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "50"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "50"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "50"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "50"
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "50"
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "50"
+        }, {
+          name: 'col12',
+          index: 'col12',
+          width: "50"
+        }, {
+          name: 'col13',
+          index: 'col13',
+          width: "50"
+        }, {
+          name: 'col14',
+          index: 'col14',
+          width: "50"
+        }, {
+          name: 'col15',
+          index: 'col15',
+          width: "50"
+        }, {
+          name: 'col16',
+          index: 'col16',
+          width: "50"
+        }, {
+          name: 'col17',
+          index: 'col17',
+          width: "50"
+        }],
+        // rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: 228,
+        scrollTimeout: 1,
+        shrinkToFit: false,
+        forceFit: false,
+        scrollOffset: 21,
+        hoverrows: false,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata3 = [{
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행거리(㎞)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "과속횟수(회)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행시간(분)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "운행거리(㎞)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }, {
+        col1: "00그룹 담당",
+        col2: "11그룹 담당",
+        col3: "경기 11하 1111",
+        col4: "김이박",
+        col5: "과속횟수(회)",
+        col6: "1234",
+        col7: "1234",
+        col8: "1234",
+        col9: "1234",
+        col10: "1234",
+        col11: "1234",
+        col12: "1234",
+        col13: "1234",
+        col14: "1234",
+        col15: "1234",
+        col16: "1234",
+        col17: "1234",
+        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+      }];
+      //
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      for (var i = 0; i <= mydata2.length; i++)
+        $("#list2").jqGrid('addRowData', i + 1, mydata2[i]);
+      for (var i = 0; i <= mydata3.length; i++)
+        $("#list3").jqGrid('addRowData', i + 1, mydata3[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>
