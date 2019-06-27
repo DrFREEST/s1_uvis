@@ -414,35 +414,35 @@ var pub_list = new Vue({
       pageName: "차량 이상 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.5.1.WrongVehicle",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "차량 위치(지도)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.5.1.MapFocus",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "고장 진단 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.5.2.WrongTrouble",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "에코 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.5.3.EcoList",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "에코 기준 정보",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.5.3.EcoBasic",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {

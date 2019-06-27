@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- content tab -->
+      <div class="content-tab">
+        <div class="radio-group inline bigger page-select">
+          <div class="input-wrap">
+            <label for="pageSelRadio1">
+              <input id="pageSelRadio1" name="pageSel" type="radio">
+              <span>차량이상정보</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio">
+              <span>고장진단정보</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio" checked>
+              <span>에코정보</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- //content tab -->
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>그룹명</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차량번호</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>업무구분</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group date-range">
+              <legend>운행일자</legend>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-white on">일별</button>
+                <button class="btn btn-white">주별</button>
+                <button class="btn btn-white">월별</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset">초기화</button>
+          <button class="btn btn-blue btn-search">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12 col-md-12">
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-left">
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-white" onclick="$('#popModel1').modal();">에코기준보기</button>
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list1"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                  <!-- <div class="input-wrap inline select length-change small">
+                    <select id name>
+                      <option value="">15개씩 보기</option>
+                      <option value="">20개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                    </select>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-title">
+                  <h2>상세정보 (차량번호 : 경기 11허 1111)</h2>
+                </div>
+                <div class="header-right">
+                  <ul>
+                    <li class="font-blue"><i class="dot blue"></i> 발생위치를 클릭하면 지도 위치를 확인하실 수 있습니다.</li>
+                  </ul>
+                  <button class="btn btn-white" onclick="$('#popModel2').modal();">그래프보기</button>
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list2"></table>
+                <script>
+                </script>
+              </div>
+              <!-- <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업영역 -->
+      <!-- 에코 기준 정보 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">에코 기준 정보</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="data-form-table-header">
+                <div class="header-title">
+                  <h6>에코 등급 기준</h6>
+                </div>
+              </div>
+              <div class="eco-info">
+                <ul>
+                  <li>
+                    <img src="../../resources/images/eco-a.png" alt>
+                    <p>900점 이상</p>
+                  </li>
+                  <li>
+                    <img src="../../resources/images/eco-b.png" alt>
+                    <p>800점 이상</p>
+                  </li>
+                  <li>
+                    <img src="../../resources/images/eco-c.png" alt>
+                    <p>600점 이상</p>
+                  </li>
+                  <li>
+                    <img src="../../resources/images/eco-d.png" alt>
+                    <p>400점 이상</p>
+                  </li>
+                  <li>
+                    <img src="../../resources/images/eco-f.png" alt>
+                    <p>400점 미만</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-title">
+                    <h6>에코 정보 분석 기준</h6>
+                  </div>
+                </div>
+                <div class="data-table info">
+                  <table>
+                    <colgroup>
+                      <col style="width:120px;">
+                      <col style="">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th><span>구분</span></th>
+                        <th><span>내용</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>공회전</td>
+                        <td class="text-left">5분 이상의 공회전은 1km를 주행할 수 있는 연료를 소비하게 됩니다. 또한 이산화탄소/유해물질등을 배출함으로써 인체에 
+                          해롭습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>과속</td>
+                        <td class="text-left">경제속도(70~80km)로 운행할 경우 연비 및 환경에 좋은 영향을 미칩니다. "환경속도"란 용어를 사용할 만큼 중요합니다.</td>
+                      </tr>
+                      <tr>
+                        <td>경제운전</td>
+                        <td class="text-left">경제속도를 일정시간 유지하는 노력을 수치화한 것으로 경제운전은 비용, 환경 두마리 토끼를 모두 잡는 것입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>급가속</td>
+                        <td class="text-left">급출발(급가속)은 정상 출발(운행)보다 30% 이상 연료 소모가 많습니다. <br>급출발(급가속)을 하지 않는 것은 10% 저렴한 
+                          주유소를 찾는 노력보다 쉽게 실천 할 수 있습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>급감속</td>
+                        <td class="text-left">급제동(급감속)은 가속에 의해 소비한 연료를 낭비하는 것입니다. <br>적당한 안전거리를 확보하고 급제동하지 않도록 경제운전을 실천해야 합니다.</td>
+                      </tr>
+                      <tr>
+                        <td>과다RPM</td>
+                        <td class="text-left">과도한 RPM을 유지할 경우 연료소모량 및 이산화탄소 배출량이 급격하게 증가합니다. <br>필요한 경우가 아니면 지양해야 합니다.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //에코 기준 정보 팝업 -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      var chkcell = { cellId: undefined, chkval: undefined, }
+      function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
+        var attr = rowObject.attr[cm.name], result;
+        if (attr.rowspan) {
+          result = ' rowspan=' + '"' + attr.rowspan + '"';
+        } else if (attr.display) {
+          result = ' style="display:' + attr.display + '"';
+        }
+        return result;
+      }
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['순번', '그룹명1', '그룹명2', '차량번호', '운행일지', '업무구분', '호차', '공회전', '과속', '경제운전', '급출발', '급제동', '과다RPM', '에코점수', '에코등급'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100",
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100",
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "100"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "100"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "100"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "80"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "80"
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "80"
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "80"
+        }, {
+          name: 'col12',
+          index: 'col12',
+          width: "80"
+        }, {
+          name: 'col13',
+          index: 'col13',
+          width: "80"
+        }, {
+          name: 'col14',
+          index: 'col14',
+          width: "80"
+        }, {
+          name: 'col15',
+          index: 'col15',
+          width: "80"
+        },],
+        // rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        hoverrows: false,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "1",
+        col2: "11그룹 담당",
+        col3: "그룹2",
+        col4: "경기 11하 1111",
+        col5: "2019-01-01",
+        col6: "",
+        col7: "",
+        col8: "-45",
+        col9: "0",
+        col10: "0",
+        col11: "-66",
+        col12: "0",
+        col13: "-23",
+        col14: "815",
+        col15: "A",
+      }];
+      //
+      $("#list2").jqGrid({
+        datatype: "local",
+        colNames: ['순번', '이상항목', '이벤트값', '발생일자', '발생시간', '발생위치'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "80"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "80"
+        }],
+        rowNum: 4,
+        // scrollRows: true,
+        // scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata2 = [{
+        col1: "1",
+        col2: "공회전",
+        col3: "10분",
+        col4: "2019-01-01",
+        col5: "00:00:00 ~ 00:00:00",
+        col6: "GPS 신호 없음",
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      for (var i = 0; i <= mydata2.length; i++)
+        $("#list2").jqGrid('addRowData', i + 1, mydata2[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>
