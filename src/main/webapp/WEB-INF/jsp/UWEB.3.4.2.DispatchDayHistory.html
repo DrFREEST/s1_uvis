@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- content tab -->
+      <div class="content-tab">
+        <div class="radio-group inline bigger page-select">
+          <div class="input-wrap">
+            <label for="pageSelRadio1">
+              <input id="pageSelRadio1" name="pageSel" type="radio">
+              <span>배차신청</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio" checked>
+              <span>전체 배차현황</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio">
+              <span>차량사용자 배차현황</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- //content tab -->
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>그룹명</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차량번호</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차종</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">전체</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>운전자</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group date-range">
+              <legend>배차기간</legend>
+              <div class="input-wrap select year">
+                <select id name>
+                  <option value="">2019</option>
+                </select>
+              </div>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap date">
+                <input class="datepicker" id name type="text">
+                <i class="icon icon-calendar"></i>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <legend>시간대</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">00시</option>
+                </select>
+              </div>
+              <span class="between">~</span>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">24시</option>
+                </select>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-white on">일별</button>
+                <button class="btn btn-white">주별</button>
+                <button class="btn btn-white">월별</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset action searchVehicleReset" type="button">초기화</button>
+          <button class="btn btn-blue btn-search action searchVehicle" type="button">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12 col-md-12">
+            <div class="data-list-table schedule" id="dispatchHistory">
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <button class="btn btn-white">차량 리스트로 보기</button>
+                </div>
+                <div class="header-center">
+                  <div class="calendar-top">
+                    <div class="top-left">
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">년도</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="top-center">
+                      <div class="calendar-title">
+                        <button class="btn-prev">이전달</button>
+                        <h3><span class="year">2019</span>.<span class="month">04</span></h3>
+                        <button class="btn-next">다음달</button>
+                      </div>
+                    </div>
+                    <div class="top-right"><button class="btn btn-default">오늘</button></div>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <div class="data-info-labels">
+                    <span><i class="dot big label-color-1"></i> 미반납</span>
+                    <span><i class="dot big label-color-2"></i> 대기중</span>
+                    <span><i class="dot big label-color-3"></i> 배차중</span>
+                    <span><i class="dot big label-color-4"></i> 정비중</span>
+                  </div>
+                  <button class="btn btn-white">엑셀다운</button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table id="list1"></table>
+                <script>
+                </script>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                  <div class="input-wrap inline select length-change small">
+                    <select id name>
+                      <option value="">15개씩 보기</option>
+                      <option value="">20개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업 영역 -->
+      <div class="modal-issue">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h5>배차정보</h5>
+            </div>
+            <button class="close" onclick="$('.modal-issue').remove();"></button>
+          </div>
+          <div class="modal-body">
+            <div class="data-form-table">
+              <div class="data-form-table-body v-middle">
+                <table class="">
+                  <tbody>
+                    <tr>
+                      <th><span>차량번호</span></th>
+                      <td>경기 11하 1111(홍길동)</td>
+                    </tr>
+                    <tr>
+                      <th><span>사용자</span></th>
+                      <td>홍길동</td>
+                    </tr>
+                    <tr>
+                      <th><span>반납상태</span></th>
+                      <td>출고</td>
+                    </tr>
+                    <tr>
+                      <th><span>대여일시</span></th>
+                      <td>2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</td>
+                    </tr>
+                    <tr>
+                      <th><span>총 운행거리</span></th>
+                      <td>111㎞</td>
+                    </tr>
+                    <tr>
+                      <th><span>총 운행시간</span></th>
+                      <td>111시간 11분</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //팝업 영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      var chkcell = {
+        cellId: undefined,
+        chkval: undefined,
+      }
+      function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
+        var attr = rowObject.attr[cm.name],
+          result;
+        if (attr.rowspan) {
+          result = ' rowspan=' + '"' + attr.rowspan + '"';
+        } else if (attr.display) {
+          result = ' style="display:' + attr.display + '"';
+        }
+        return result;
+      }
+      var applyClassesToRows = function (grid) {
+        // Use the passed in grid as context, 
+        // in case we have more than one table on the page.
+        var trRow = jQuery("tbody tr", grid.hdiv);
+        trRow.addClass("issue");
+      };
+      var grid1 = $("#list1");
+      grid1.jqGrid({
+        datatype: "local",
+        colNames: ['날짜(요일)', '그룹명1', '그룹명2', '차량번호', '차종', '운전자명', '배차상태'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+          cellattr: jsFormatterCell
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "120",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "120",
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "120",
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "120",
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "120"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "80",
+        }],
+        rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        // multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        hoverrows: false,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata = [{
+        col1: "1(월)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            rowspan: "4"
+          }
+        }
+      }, {
+        col1: "1(월)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            display: "none"
+          }
+        }
+      }, {
+        col1: "1(월)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            display: "none"
+          }
+        }
+      }, {
+        col1: "1(월)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            display: "none"
+          }
+        }
+      }, {
+        col1: "2(화)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            rowspan: "4"
+          }
+        }
+      }, {
+        col1: "2(화)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            display: "none"
+          }
+        }
+      }, {
+        col1: "2(화)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            display: "none"
+          }
+        }
+      }, {
+        col1: "2(화)",
+        col2: "00그룹 담당",
+        col3: "11그룹 담당",
+        col4: "경기 11하 1111",
+        col5: "아반테MD",
+        col6: "홍대차",
+        col7: "미반납",
+        attr: {
+          col1: {
+            display: "none"
+          }
+        }
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      applyClassesToRows(grid1);
+    });
+    /*
+        배차정보 레이어 팝업
+        마우스 오버시 인터렉션 관련 스크립트만 작성되어있습니다.
+        데이터 변경 관련 스크립트는 개발에서 진행해주세요.
+      */
+    $(function () {
+      var targetX, targetY, popFocusX, popFocusY = 0;
+      var issueModal = $('.modal-issue');
+      function popPositionChange(target, targetX, targetY, focusX, focusY) {
+        // console.log(targetX, targetY, focusX, focusY);
+        var frame = $('#dispatchHistory');
+        var frameWidth = frame.width(),
+          frameHeight = frame.height();
+        // console.log(frameWidth, frameHeight);
+        if (focusX < frameWidth - issueModal.width()) { //마우스 위치가 리스트 좌측일때
+          // console.log('left');
+          issueModal.css({
+            'left': focusX + 20
+          })
+        } else if (focusX > frameWidth - issueModal.width()) { //마우스 위치가 리스트 우측일때
+          // console.log('right');
+          issueModal.css({
+            'left': focusX - issueModal.width() - 20
+          })
+        }
+        if (focusY < frame.offset().top + (frameHeight / 2)) { //마우스 위치가 리스트 상단일때
+          // console.log('top');
+          issueModal.css({
+            'top': targetY + target.height() + 20
+          })
+        } else if (focusY > frame.offset().top + (frameHeight / 2)) { //마우스 위치가 리스트 하단일때
+          console.log('bottom');
+          issueModal.css({
+            'top': targetY - issueModal.height() - 20
+          })
+        }
+      }
+      $('.issue').each(function () {
+        var target = $(this);
+        $(this).on('mouseover', function (event) {
+          targetX = $(event.target).offset().left;
+          targetY = $(event.target).offset().top;
+          popFocusX = event.clientX;
+          popFocusY = event.clientY;
+          // console.log(targetX, targetY);
+          popPositionChange(target, targetX, targetY, popFocusX, popFocusY);
+          $('.modal-issue').show();
+        }).on('mouseleave', function (event) {
+          $('.modal-issue').hide();
+        }).on('mousemove', function (event) {
+          targetX = $(event.target).offset().left;
+          targetY = $(event.target).offset().top;
+          popFocusX = event.clientX;
+          popFocusY = event.clientY;
+          popPositionChange(target, targetX, targetY, popFocusX, popFocusY);
+        });
+      });
+    })
+  </script>
+  <!-- //onload script -->
+</body>
+</html>

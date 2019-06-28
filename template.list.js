@@ -393,14 +393,14 @@ var pub_list = new Vue({
       pageName: "전체 배차 현황 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.4.2.DispatchHistory",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "전체 배차 현황 일별 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.4.2.DispatchDayHistory",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
