@@ -82,14 +82,14 @@
           <div class="col col-xl-5">
             <div class="card-box data-form-table">
               <div class="data-form-table-header">
-                <h3 class="header-title">학생/보호자 정보<em class="font-red"><i class="dot red"></i>필수 입력 항목</em></h3>
+                <h3 class="header-title">학생/보호자 정보</h3>
                 <div class="header-left"></div>
                 <div class="header-right">
                   <button class="btn btn-white">신규</button>
                   <button class="btn btn-blue">저장</button>
                 </div>
               </div>
-              <h4>학생 정보</h4>
+              <h4>학생 정보<em class="font-red"><i class="dot red"></i>필수 입력 항목</em></h4>
               <div class="data-form-table-body">
                 <table>
                   <tbody>
@@ -168,8 +168,8 @@
                         <td>
                           <div class="input-wrap select">
                             <select id name>
-                                  <option value="">엄마</option>
-                                </select>
+                              <option value="">엄마</option>
+                            </select>
                           </div>
                         </td>
                       </tr>
@@ -181,7 +181,7 @@
                             <div class="input-wrap check">
                               <label for="telCheck1">
                                 <input id="telCheck1" name type="checkbox">
-                                                                <span>대표 연락처</span>
+                                <span>대표 연락처</span>
                               </label>
                             </div>
                           </div>
@@ -192,9 +192,9 @@
                         <td>
                           <div class="input-wrap check">
                             <label for="selUse1">
-                                  <input id="selUse1" name="selUse" type="radio">
-                                                                    <span>수신함</span>
-                                </label>
+                              <input id="selUse1" name="selUse" type="radio">
+                              <span>수신함</span>
+                            </label>
                           </div>
                         </td>
                       </tr>
@@ -262,7 +262,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -280,7 +280,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['이름', '반', '번호', '나이', '보호자', '보호자 연락처', 'SMS 수신여부', '비고'],
