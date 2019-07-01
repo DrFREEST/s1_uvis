@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -108,8 +110,8 @@
               <div class="data-list-table-header">
                 <div class="header-left">
                   <ul>
-                    <li><span class="font-blue"><i class="dot blue"></i> 운행거리(km) : GPS 수신상태 및 단말의 운영환경에 따라 차량 실제운행 거리와 상이할 수 있습니다.</span></li>
-                    <li><span class="font-blue"><i class="dot blue"></i> 연료소비량(ℓ) : 통합단말기가 아닌경우 기준연비 3km/l 로 계산됩니다.</span></li>
+                    <li><span><i class="dot gray"></i> 운행거리(km) : GPS 수신상태 및 단말의 운영환경에 따라 차량 실제운행 거리와 상이할 수 있습니다.</span></li>
+                    <li><span><i class="dot gray"></i> 연료소비량(ℓ) : 통합단말기가 아닌경우 기준연비 3km/l 로 계산됩니다.</span></li>
                   </ul>
                 </div>
                 <div class="header-right">
@@ -283,7 +285,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -301,10 +303,15 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function () {
-      var chkcell = { cellId: undefined, chkval: undefined, }
+    $(function() {
+      var chkcell = {
+        cellId: undefined,
+        chkval: undefined,
+      }
+
       function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
-        var attr = rowObject.attr[cm.name], result;
+        var attr = rowObject.attr[cm.name],
+          result;
         if (attr.rowspan) {
           result = ' rowspan=' + '"' + attr.rowspan + '"';
         } else if (attr.display) {
@@ -314,7 +321,7 @@
       }
       $("#list1").jqGrid({
         datatype: "local",
-        colNames: ['그룹명1', '그룹명2', '차량번호', '운전자명', '구분', '합계', '05/01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31',],
+        colNames: ['그룹명1', '그룹명2', '차량번호', '운전자명', '구분', '합계', '05/01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', ],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -527,7 +534,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+        attr: {
+          col1: {
+            rowspan: "4"
+          },
+          col2: {
+            rowspan: "4"
+          },
+          col3: {
+            rowspan: "4"
+          },
+          col4: {
+            rowspan: "4"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -566,7 +586,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -605,7 +638,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -644,7 +690,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -683,7 +742,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+        attr: {
+          col1: {
+            rowspan: "4"
+          },
+          col2: {
+            rowspan: "4"
+          },
+          col3: {
+            rowspan: "4"
+          },
+          col4: {
+            rowspan: "4"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -722,7 +794,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -761,7 +846,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -800,7 +898,20 @@
         col35: "1234",
         col36: "1234",
         col37: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }];
       //
       $("#list2").jqGrid({
@@ -995,7 +1106,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+        attr: {
+          col1: {
+            rowspan: "4"
+          },
+          col2: {
+            rowspan: "4"
+          },
+          col3: {
+            rowspan: "4"
+          },
+          col4: {
+            rowspan: "4"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -1014,7 +1138,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -1033,7 +1170,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -1052,7 +1202,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -1071,7 +1234,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { rowspan: "4" }, col2: { rowspan: "4" }, col3: { rowspan: "4" }, col4: { rowspan: "4" } }
+        attr: {
+          col1: {
+            rowspan: "4"
+          },
+          col2: {
+            rowspan: "4"
+          },
+          col3: {
+            rowspan: "4"
+          },
+          col4: {
+            rowspan: "4"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -1090,7 +1266,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -1109,7 +1298,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }, {
         col1: "00그룹 담당",
         col2: "11그룹 담당",
@@ -1128,7 +1330,20 @@
         col15: "1234",
         col16: "1234",
         col17: "1234",
-        attr: { col1: { display: "none" }, col2: { display: "none" }, col3: { display: "none" }, col4: { display: "none" } }
+        attr: {
+          col1: {
+            display: "none"
+          },
+          col2: {
+            display: "none"
+          },
+          col3: {
+            display: "none"
+          },
+          col4: {
+            display: "none"
+          }
+        }
       }];
       //
       for (var i = 0; i <= mydata.length; i++)
@@ -1142,4 +1357,5 @@
   </script>
   <!-- //onload script -->
 </body>
+
 </html>

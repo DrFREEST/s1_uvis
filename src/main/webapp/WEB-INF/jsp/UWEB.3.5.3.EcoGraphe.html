@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="modal">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 팝업영역 -->
+      <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- 에코 정보 팝업 -->
+      <div class="modal fade dark" id="popModel2" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog wide" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">에코 정보</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-title">
+                    <h6>에코 정보 분석 기준</h6>
+                  </div>
+                </div>
+                <div class="data-table info">
+                  <table>
+                    <colgroup>
+                      <col style="width:120px;">
+                      <col style="width:120px;">
+                      <col style="width:120px;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:100px;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                      <col style="width:auto;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th><span>그룹명1</span></th>
+                        <th><span>그룹명2</span></th>
+                        <th><span>차량번호</span></th>
+                        <th><span>업무구분</span></th>
+                        <th><span>호차</span></th>
+                        <th><span>날짜</span></th>
+                        <th><span>공회전</span></th>
+                        <th><span>과속</span></th>
+                        <th><span>경제운전</span></th>
+                        <th><span>급출발</span></th>
+                        <th><span>급제동</span></th>
+                        <th><span>과다RPM</span></th>
+                        <th><span>에코점수</span></th>
+                        <th><span>에코등급</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>그룹명1</td>
+                        <td>그룹명2</td>
+                        <td>경기 11하 1111</td>
+                        <td></td>
+                        <td></td>
+                        <td>2019-01-01</td>
+                        <td>-9999</td>
+                        <td>-1909</td>
+                        <td>13</td>
+                        <td>-165</td>
+                        <td>-132</td>
+                        <td>-32</td>
+                        <td>-74061</td>
+                        <td>C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- line chart -->
+              <div class="chart-area" id="lineChart">
+              </div>
+              <!-- //line chart -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //에코 정보 팝업 -->
+      <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <script src="../../resources/js/highcharts.js"></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    //high chart
+    // $(function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var myChart = Highcharts.chart('lineChart', {
+        chart: {
+          type: 'line',
+          borderColor: '#dcdcdc',
+          height: 305
+        },
+        title: {
+          align: 'left',
+          text: '<span>2019.04<em style="color:#8a8a8a;font-weight:normal;font-size:13px;margin-left:360px;">해당 항목 클릭시 그래프가 노출됩니다.</em></span>',
+          style: { 'color': '#2b2b2b', 'font-size': 17, 'font-family': 'Roboto, "Noto Sans Korean", sans-serif', 'font-weight': 500 },
+          useHTML: true,
+        },
+        legend: {
+          align: 'right',
+          verticalAlign: 'top',
+          floating: true,
+          // width: 500,
+          x: 0,
+          y: 0,
+          style: { 'text-align': 'right' }
+        },
+        xAxis: {
+          categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31',],
+          gridLineColor: '#dcdcdc',
+          lineColor: '#dcdcdc'
+        },
+        yAxis: {
+          title: {
+            text: ''
+          },
+          lineColor: '#dcdcdc'
+        },
+        series: [{
+          name: '공회전',
+          color: '#c288e9',
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+          },
+          data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+        }, {
+          name: '과속',
+          color: '#ef8181',
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+          },
+          data: [1, 0, 3, 0, 5, 0, 7, 0, 9, 0, 11, 0, 13, 0, 15, 0, 17, 0, 19, 0, 21, 0, 23, 0, 25, 0, 27, 0, 29, 0, 31]
+        }, {
+          name: '경제운전',
+          color: '#6bc996',
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+          },
+          data: [31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        }, {
+          name: '급출발',
+          color: '#8096d8',
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+          },
+          data: [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+        }, {
+          name: '급제동',
+          color: '#6ccdeb',
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+          },
+          data: [1, 2, 3, 5, 8, 13, 21]
+        }, {
+          name: '과다RPM',
+          color: '#eea478',
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+          },
+          data: [15, 15, 15, 15, 15, 15, 5, 15, 15, 15, 5, 11, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51]
+        }]
+      });
+    });
+    // });
+    $(function () {
+      $('#popModel2').modal();
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>

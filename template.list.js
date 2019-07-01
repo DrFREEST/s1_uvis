@@ -226,21 +226,21 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.2.1.BatterySetting",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "SMS 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.2.1.SmsSetting",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "차량 위치(지도)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.2.1.MapFocus",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "도어 개폐 조회",
@@ -254,7 +254,7 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.3.1.MapFocus",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "창고 온도 정보 조회",
@@ -268,21 +268,21 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.1.CargoTempSetting",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "SMS 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.1.CargoSmsSetting",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "온도 그래프",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.1.CargoTempGraphe",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "온도 정보 조회",
@@ -296,28 +296,28 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.CarSmsSetting",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "온도 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.CarTempSetting",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "온도 그래프",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.CarTempGraphe",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "차량 위치(지도)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.MapFocus",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "차량 제어 정보 조회",
@@ -331,7 +331,7 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.5.1.RemoteControlSetting",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "운행실적 조회",
@@ -407,7 +407,7 @@ var pub_list = new Vue({
       pageName: "차량별 배차 현황 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.4.3.DispatchVehicle",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
@@ -449,14 +449,14 @@ var pub_list = new Vue({
       pageName: "에코 정보 그래프",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.5.3.EcoGraphe",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "차량 위치(지도)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.5.3.MapFocus",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
@@ -856,14 +856,14 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.1.1.FaqView",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "자주하는 질문 등록 / 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.1.1.FaqInput",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "1: 1 문의내역",
@@ -877,21 +877,21 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.2.1.QAInput",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "1: 1 문의상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.2.1.QAView",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "1: 1 문의답변",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.2.1.QAReply",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "공지사항",
@@ -905,21 +905,21 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.3.1.NoticeInput",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "공지사항 상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.3.1.NoticeView",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "공지사항 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.3.1.NoticeEdit",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "도움말",
@@ -933,21 +933,21 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.4.1.HelpView",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "도움말 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.4.1.HelpEdit",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "도움말 등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.4.1.HelpInput",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "API 신청",
@@ -961,21 +961,21 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.5.1.ApiInput",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "API 신청 상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.5.1.ApiView",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "API 신청 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.5.1.ApiEdit",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "언어 / 지도설정",
@@ -1031,28 +1031,28 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.1.1.QuickEmergencyService",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "차량검색",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.1.1.QuickCarSelect",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "빠른 배차 신청",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.2.1.QuickDispatch",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "배차 가능 차량 검색",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.2.1.QuickDispatchCar",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "eTAS 신청 정보",
@@ -1066,14 +1066,14 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.3.1.EtasInput",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "eTAS 신청 안내",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.3.1.EtasGuide",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "운행기록 정보 조회",
@@ -1087,14 +1087,14 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.7.1.1.Policy",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "이메일 무단 수집 거부",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.7.1.1.EmailReject",
       complete: "",
-      note: ""
+      note: "팝업"
     },
     {
       pageName: "이메일 폼",

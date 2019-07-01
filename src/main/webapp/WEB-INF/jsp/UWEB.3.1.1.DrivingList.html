@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -214,8 +216,8 @@
                 </div>
                 <div class="header-right">
                   <ul>
-                    <li><span class="font-blue"><i class="dot blue"></i> 운행거리(km) : GPS 수신상태 및 단말의 운영환경에 따라 차량 실제운행 거리와 상이할 수 있습니다.</span></li>
-                    <li><span class="font-blue"><i class="dot blue"></i> 운행일지는 최대 전일까지 조회 가능합니다.</span></li>
+                    <li><span><i class="dot gray"></i> 운행거리(km) : GPS 수신상태 및 단말의 운영환경에 따라 차량 실제운행 거리와 상이할 수 있습니다.</span></li>
+                    <li><span><i class="dot gray"></i> 운행일지는 최대 전일까지 조회 가능합니다.</span></li>
                   </ul>
                   <button class="btn btn-white">엑셀다운</button>
                 </div>
@@ -302,7 +304,7 @@
                 </div>
                 <div class="header-right">
                   <ul>
-                    <li><span class="font-blue"><i class="dot blue"></i> 운행상세정보는 하루씩만 조회 가능합니다</span></li>
+                    <li><span><i class="dot gray"></i> 운행상세정보는 하루씩만 조회 가능합니다</span></li>
                   </ul>
                   <div class="input-wrap select">
                     <select id name>
@@ -541,7 +543,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -559,7 +561,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function () {
+    $(function() {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['번호', '노선명', '정류장', '운행일자', '출발시간', '운행구분', '반명', '학생명', '보호자연락처', '발송일시', '결과'],
@@ -1080,4 +1082,5 @@
   </script>
   <!-- //onload script -->
 </body>
+
 </html>

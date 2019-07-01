@@ -70,6 +70,7 @@ strong { font-weight:bold; }
 i.dot { display:inline-block; width:5px; height:5px; margin-right:6px; vertical-align:middle; border-radius:50%; background-color:#2b2b2b; } 
 i.dot.red { display:inline-block; width:5px; height:5px; background-color:#f64655; } 
 i.dot.blue { display:inline-block; width:5px; height:5px; background-color:#1a8cfc; } 
+i.dot.gray { display:inline-block; width:5px; height:5px; background-color:#8a8a8a; } 
 /* common - background */
 .bg-gray { background-color:#fbfbfb; } 
 .bg-white { background-color:#ffffff; } 
@@ -490,6 +491,7 @@ textarea { font-size:16px; font-weight:500; line-height:1.4em; display:block; wi
 /* UI - Data Form Table */
 .data-form-table { text-align:left; } 
 * + .data-form-table { margin-top:30px; } 
+.data-form-table-header+ .data-form-table{margin-top:35px;}
 .modal * + .data-form-table { margin-top:15px; } 
 .data-form-table-header { padding:0 40px 30px; } 
 * + .data-form-table-header { margin-top:25px; } 
@@ -497,15 +499,15 @@ textarea { font-size:16px; font-weight:500; line-height:1.4em; display:block; wi
 .data-form-table-header .radio-group .input-wrap { flex:auto; min-height:auto; margin-right:60px; } 
 .data-form-table-header { display:flex; align-items:center; width:100%; margin-bottom:15px; padding:0; } 
 .data-form-table-header button { font-size:13px; min-width:85px; height:30px; } 
-.data-form-table-header .header-title { font-size:22px; font-weight:500; display:flex; align-items:center; color:#000000; } 
+.data-form-table-header .header-title { font-size:22px; font-weight:500; display:flex; align-items:center; color:#000000; line-height:1em;} 
 .popup .header-title,
 .modal .header-title { font-size:16px; } 
 .data-form-table h3,
 .data-form-table h4{display:flex;align-items:center;}
 .data-form-table-header .header-title em,
 .data-form-table h3 em,
-.data-form-table h4 em { font-size:14px; font-weight:normal; display:inline-flex; align-items:center; margin-left:15px; align-self:center;} 
-.data-form-table-header .header-title em.dotted .dot { display:inline-block; width:5px; height:5px; margin-right:6px; vertical-align:middle; border-radius:50%; background-color:#f64655; } 
+.data-form-table h4 em { font-size:13px; font-weight:normal; display:inline-flex; align-items:center; margin-left:15px; align-self:center;} 
+.data-form-table-header .header-title em.dotted .dot { display:inline-block; width:4px; height:4px; margin-right:6px; vertical-align:middle; border-radius:50%; background-color:#f64655; } 
 .data-form-table-header .header-title em.count { font-size:16px; } 
 .data-form-table-header .header-left { display:flex; align-items:center; flex:auto; justify-content:flex-start; } 
 .data-form-table-header .header-right { display:flex; align-items:center; flex:auto; justify-content:flex-end; } 
@@ -522,7 +524,7 @@ h4 + .data-form-table-body { margin-top:15px; }
 .data-form-table-body table tbody tr th { font-size:15px; font-weight:500; width:130px; padding:5px 10px; text-align:center; vertical-align:middle; color:#5e5e5e; border-bottom:1px solid #e2e2e2; background-color:#f6f6f6; } 
 .data-form-table-body table tbody tr th span { /* line-height:40px; */
  position:relative; display:inline-block; word-break:keep-all; } 
-.data-form-table-body table tbody tr th span.necessary::before { line-height:1; position:absolute; top:0; right:100%; display:block; width:5px; height:5px; margin-right:5px; content:''; border-radius:50%; background-color:#f64655; } 
+.data-form-table-body table tbody tr th span.necessary::before { line-height:1; position:absolute; top:0; right:100%; display:block; width:4px; height:4px; margin-right:5px; content:''; border-radius:50%; background-color:#f64655; } 
 .data-form-table-body table tbody tr td { font-size:16px; height:54px; padding:5px 10px; vertical-align:top; border-bottom:1px solid #e2e2e2; background-color:#ffffff; } 
 .data-form-table-body table tbody tr td button { font-size:13px; border-radius:3px; } 
 .data-form-table-body table tbody tr td > * + button:not(.block) { margin-left:6px; } 
@@ -554,7 +556,7 @@ h4 + .data-form-table-body { margin-top:15px; }
 .table-toggle-additional .btn-table-toggle span { display:inline-block; } 
 .table-toggle-additional .btn-table-toggle .icon-toogle-arrow { display:block; width:10px; height:10px; margin-top:-5px; margin-left:12px; transform:rotate(45deg); border-right:2px solid #5e5e5e; border-bottom:2px solid #5e5e5e; } 
 .table-toggle-additional .btn-table-toggle.active .icon-toogle-arrow { margin-top:5px; transform:rotate(-135deg); border-color:#1a8cfc; } 
-.table-note { font-size:14px; line-height:20px; letter-spacing:-0.05em; color:#8a8a8a; } 
+.table-note { font-size:13px; line-height:20px; letter-spacing:-0.05em; color:#8a8a8a; } 
 .table-note .note-header { font-weight:500; padding:0 13px; color:#1a8cfc; } 
 .table-note ul { display:flex; flex-wrap:wrap; margin-top:6px; } 
 .table-note ul li { display:inline-flex; align-items:center; padding:0; } 
@@ -755,8 +757,10 @@ h3 + .data-list-table { margin-top:15px; }
 .data-list-table-header ul + .input-wrap { margin-left:40px; } 
 .data-list-table-header .header-left,
 .data-list-table-header .header-right,
-.data-list-table-header .header-center { display:flex; align-items:center; flex:initial; } 
+.data-list-table-header .header-center { display:flex; align-items:center; flex:1; } 
+.data-list-table-header .header-title + .header-left,
 .data-list-table-header .header-left + .header-center,
+.data-list-table-header .header-title + .header-right,
 .data-list-table-header .header-center + .header-right { flex:initial; } 
 .data-list-table-header .header-left { justify-content:flex-start; } 
 .data-list-table-header .header-title + .header-left { margin-left:50px; } 
@@ -764,7 +768,7 @@ h3 + .data-list-table { margin-top:15px; }
 .data-list-table-header .header-left button + button { margin-left:6px; } 
 .data-list-table-header .header-right { justify-content:flex-end; } 
 .data-list-table-header .header-right > * { align-self:flex-end; } 
-.data-list-table-header .header-right ul { align-self:center; line-height:1.2em; } 
+.data-list-table-header .header-right ul { align-self:center; line-height:1.2em; color:#8a8a8a;} 
 .data-list-table-header .header-right button + button { margin-left:6px; } 
 .data-list-table-header .header-right .input-wrap select { height:30px; } 
 .data-list-table-header .header-right .input-wrap + button { margin-left:6px; } 
@@ -811,7 +815,7 @@ h3 + .data-list-table { margin-top:15px; }
 .data-list-table .data-table table tbody tr td { font-size:14px; overflow:hidden; height:38px; padding:10px; text-align:center; vertical-align:middle; /* white-space:normal; */ white-space:nowrap; text-overflow:ellipsis; word-break:break-all; border-bottom:1px solid #dcdcdc; background-color:#ffffff; position:relative; } 
 .data-list-table .data-table table tbody tr:hover td { color:#ffffff; background-color:#1a8cfc; } 
 .data-list-table .data-table table td.check { width:50px; vertical-align:middle; } 
-.data-list-table .data-table table tbody tr td button { min-width:80px; padding:0 10px; } 
+.data-list-table .data-table table tbody tr td button { min-width:70px; padding:0 10px;font-size:13px; } 
 .data-list-table .data-table table tbody tr td .btn-group { width:100%; } 
 .data-list-table .data-table table tbody tr td input:not([type=checkbox]):not([type=radio]) { padding:0 5px; text-align:center; } 
 .data-list-table .data-table table thead tr th .input-wrap.check,
@@ -826,7 +830,8 @@ h3 + .data-list-table { margin-top:15px; }
 .data-list-table .data-list-table-footer .footer-right .length-change select,
 .data-list-table .data-list-table-footer .footer-right .length-change .ui-selectmenu-button { font-size:13px; width:auto; min-width:135px; height:30px; } 
 .data-list-table .data-list-table-footer .table-note { font-size:14px; font-weight:normal; display:flex; align-items:center; flex-basis:100%; margin-top:10px; } 
-.dataTables_scrollBody thead { display:none; } 
+.dataTables_scrollBody thead { display:none; }
+.data-list-table +  .chart-area{margin-top:30px;margin-left:-10px;margin-right:-10px;}
 /* bootstrap datatable */
 .data-list-table .data-table table.dataTable thead .sorting_asc .btn-zta { opacity:0 !important; } 
 .data-list-table .data-table table.dataTable thead .sorting_asc .btn-atz { border-bottom-color:#1a8cfc; } 
@@ -845,7 +850,8 @@ h3 + .data-list-table { margin-top:15px; }
 .data-list-table .data-table table tbody tr.jqgfirstrow td { height:0; padding:0; border:none; } 
 .ui-jqgrid-resize-mark { font-size:0; } 
 /* UI - card box */
-.card-box { padding:24px 21px 21px; border:1px solid #dcdcdc; border-radius:6px; background-color:#ffffff; } 
+.card-box { padding:40px 30px 35px; border:1px solid #dcdcdc; border-radius:6px; background-color:#ffffff; } 
+.card-box.flex{display:flex;height:100%;}
 .card-box h4 { font-size:18px; font-weight:500; line-height:1em; } 
 .card-box > .row { margin-right:-20px; margin-left:-20px; } 
 .card-box > * + .row { margin-top:25px; } 
@@ -972,15 +978,16 @@ td .car-group-list { padding-top:0; border-top:none; }
 .car-group-list.vehicle-group-list .car-group { /* padding:0 8px; */ } 
 /* UI - calendar */
 .calendar-area { display:flex; flex-direction:column; height:100%; } 
-.calendar-top { display:flex; flex:initial; margin-bottom:12px; } 
+.card-box .calendar-area{width:100%;}
+.calendar-top { display:flex; flex:initial; margin-bottom:12px; justify-content: center;} 
 .header-center .calendar-top { margin-bottom:0; } 
-.calendar-top .top-left { display:flex; align-items:center; flex:1 0 auto; justify-content:flex-end; margin:0 10px; } 
-.calendar-top button { min-width:60px; height:30px; } 
+.calendar-top .top-left { display:flex; align-items:center; flex:initial; justify-content:flex-end; margin:0 10px; } 
+.calendar-top button { min-width:60px; height:34px; font-size:14px;} 
 .calendar-top .top-left .input-wrap { } 
-.calendar-top .top-left .input-wrap select { min-width:100px; height:30px; } 
+.calendar-top .top-left .input-wrap select { min-width:100px; height:34px; } 
 .calendar-top .top-center { display:flex; align-items:center; flex:initial; justify-content:center; margin:0 10px; } 
 .calendar-top .top-center .calendar-title { display:flex; align-items:center; justify-content:center; } 
-.calendar-top .top-center .calendar-title button { position:relative; display:flex; align-items:center; flex:initial; justify-content:center; width:36px; height:30px; padding:0; font-size:14px; color:#8a8a8a; font-weight:500; border:none; background:none; min-width:70px; } 
+.calendar-top .top-center .calendar-title button { position:relative; display:flex; align-items:center; flex:initial; justify-content:center; width:36px; height:30px; padding:0; font-size:14px; color:#8a8a8a; font-weight:500; border:none; background:none; /* min-width:70px;  */} 
 .calendar-top .top-center .calendar-title button:hover { color: #2b2b2b; } 
 .calendar-top .top-center .calendar-title .btn-prev { } 
 .calendar-top .top-center .calendar-title .btn-prev::before { display:block; width:8px; height:8px; margin-right:-5px; content:''; transform:rotate(-45deg); border:2px solid #8a8a8a; border-right:none; border-bottom:none; margin-right:5px; } 
@@ -991,24 +998,33 @@ td .car-group-list { padding-top:0; border-top:none; }
 .calendar-top .top-center .calendar-title h3 { font-size:26px; font-weight:500; line-height:38px; display:flex; align-items:center; justify-content:center; margin:0 35px; } 
 .calendar-top .top-center .calendar-title h3 .year { } 
 .calendar-top .top-center .calendar-title h3 .month { } 
-.calendar-top .top-right { display:flex; align-items:center; flex:1 0 auto; justify-content:flex-start; margin:0 10px; } 
+.calendar-top .top-right { display:flex; align-items:center; flex:initial; justify-content:flex-start; margin:0 10px; } 
 .calendar-bottom { display:flex; flex:1 0 auto; flex-direction:column; padding:25px 15px; background-color:#ffffff; } 
-.calendar-bottom .calendar-header { flex:initial; border-top:1px solid #2b2b2b; } 
-.calendar-bottom .calendar-header ul { display:flex; align-items:stretch; justify-content:stretch; height:100%; height:55px; } 
-.calendar-bottom .calendar-header ul li { display:flex; align-items:center; flex:1; padding:5px; background-color:#fbfbfb; } 
-.calendar-bottom .calendar-header ul li span { font-size:15px; color:#8a8a8a; } 
-.calendar-bottom .calendar-body { flex:1; border-bottom:1px solid #2b2b2b; } 
+.card-box .calendar-bottom{padding:0;}
+.calendar-bottom .calendar-header { flex:initial; border-top:1px solid #dcdcdc; } 
+.calendar-bottom .calendar-header ul { display:flex; align-items:stretch; justify-content:stretch; height:55px; } 
+.card-box .calendar-bottom .calendar-header ul{height:34px;}
+.calendar-bottom .calendar-header ul li { display:flex; align-items:center; flex:1; padding:5px; /* background-color:#fbfbfb; */ justify-content: center;font-size:14px;} 
+.calendar-bottom .calendar-header ul li span { font-size:14px; color:#2b2b2b; } 
+.calendar-bottom .calendar-body { flex:1; border-bottom:1px solid #dcdcdc; } 
 .calendar-bottom .calendar-body ul { display:flex; flex-wrap:wrap; height:100%; } 
 .calendar-bottom .calendar-body ul .other-month { } 
 .calendar-bottom .calendar-body ul .other-month .date-area { } 
 .calendar-bottom .calendar-body ul .other-month .date-area .date-title { } 
 .calendar-bottom .calendar-body ul .other-month .date-area .date-title .date { } 
 .calendar-bottom .calendar-body ul .other-month .date-area .date-title .date-name { } 
-.calendar-bottom .calendar-body ul li { position:relative; flex:1 0 14.2857%; box-sizing:border-box; height:20%; border-top:1px solid #dcdcdc; } 
+.calendar-bottom .calendar-body ul li { position:relative; flex:1 0 14.2857%; box-sizing:border-box; min-height:90px;/* height:20%; */ border-top:1px solid #ededed; } 
+.calendar-bottom .calendar-body ul li:nth-child(1),
+.calendar-bottom .calendar-body ul li:nth-child(2),
+.calendar-bottom .calendar-body ul li:nth-child(3),
+.calendar-bottom .calendar-body ul li:nth-child(4),
+.calendar-bottom .calendar-body ul li:nth-child(5),
+.calendar-bottom .calendar-body ul li:nth-child(6),
+.calendar-bottom .calendar-body ul li:nth-child(7){border-top-color:#dcdcdc;}
 .calendar-bottom .calendar-body ul li .date-area { position:absolute; top:0; left:0; width:100%; height:100%; padding:5px; cursor:pointer; } 
 .calendar-bottom .calendar-body ul li .date-area:hover::before { position:absolute; z-index:0; top:0; left:0; width:100%; height:100%; content:''; opacity:0.1; background-color:#1a8cfc; } 
 .calendar-bottom .calendar-body ul li .date-area > * { z-index:1; } 
-.calendar-bottom .calendar-body ul li .date-area .date-title { font-size:15px; line-height:22px; display:flex; align-items:flex-start; } 
+.calendar-bottom .calendar-body ul li .date-area .date-title { font-size:14px; line-height:22px; display:flex; align-items:flex-start; color:#6f6f6f;font-weight:500;} 
 .calendar-bottom .calendar-body ul li .date-area .date-title .date { width:20px; } 
 .calendar-bottom .calendar-body ul li .date-area .date-title .date-name { margin-left:6px; } 
 .calendar-bottom .calendar-body ul .closing-day { } 
@@ -1016,11 +1032,18 @@ td .car-group-list { padding-top:0; border-top:none; }
 .calendar-bottom .calendar-body ul .closing-day .date-area .date-title { } 
 .calendar-bottom .calendar-body ul .closing-day .date-area .date-title .date { } 
 .calendar-bottom .calendar-body ul .closing-day .date-area .date-title .date-name { } 
+.calendar-bottom .calendar-body ul .today .date-area{ /* border-right:1px solid #dcdcdc; border-left:1px solid #dcdcdc; */background-color: rgba(26, 140, 252, 0.1);}
 .calendar-bottom .calendar-body ul li.other-month { } 
 .calendar-bottom .calendar-body ul li.other-month .date-area .date-title { opacity:0.5; color:#b5b5b5; } 
 .calendar-bottom .sat { color:#1a8cfc !important; } 
 .calendar-bottom .sun,
 .calendar-bottom .holiday { color:#f64655 !important; } 
+.calendar-bottom .calendar-body ul li .date-area .issue{position: absolute;height:30px;display:flex;align-items:center;justify-content: center;border-radius:15px;padding:0 20px;top:40px;left:0;}
+.calendar-bottom .calendar-body ul li .date-area .issue span{text-overflow:ellipsis;overflow:hidden;display:block;white-space:nowrap;}
+.calendar-bottom .calendar-body ul li .date-area .issue.label-color-1 { background-color: rgba(255, 162, 138,0.5) } 
+.calendar-bottom .calendar-body ul li .date-area .issue.label-color-2 { background-color:rgba(131, 215, 188, 0.5); } 
+.calendar-bottom .calendar-body ul li .date-area .issue.label-color-3 { background-color:rgba(132, 154, 218, 0.5); } 
+.calendar-bottom .calendar-body ul li .date-area .issue.label-color-4 { background-color:rgba(240, 186, 220, 0.5); } 
 /* UI - datepicker */
 /* datepicker */
 .datepicker { width:280px; padding:0; border:1px solid #dcdcdc; } 
@@ -1095,12 +1118,13 @@ td .car-group-list { padding-top:0; border-top:none; }
 .agree-content p { font-size:11px; color:#444444; } 
 .agree-confirm-message { font-size:18px; font-weight:500; line-height:28px; margin-top:35px; text-align:center; } 
 /* UI - Eco Info */
-.card-box.eco-box { padding:50px 25px; } 
+.eco-box { padding:20px 30px; background-color:#ffffff;display:flex;} 
+.eco-box >.row{margin-left:-20px;margin-right:-20px;}
 .eco-info { display:flex; align-items:center; height:100%; } 
 .eco-info ul { display:flex; align-items:center; justify-content:center; width:100%; } 
 .eco-info ul li { flex:1; margin:0 10px; } 
 .eco-info ul li img { display:block; max-width:100%; } 
-.eco-info ul li p { font-size:22px; line-height:33px; position:relative; display:flex; align-items:center; justify-content:center; margin-top:25px; text-align:center; } 
+.eco-info ul li p { font-size:17px; line-height:25px; position:relative; display:flex; align-items:center; justify-content:center; margin-top:5px; text-align:center; } 
 .eco-info ul li p .arrow-up,
 .eco-info ul li p .arrow-down { position:relative; display:inline-block; width:22px; height:22px; margin-left:5px; vertical-align:middle; } 
  .modal .eco-info ul li { margin:0 7.5px; } 
@@ -1207,7 +1231,7 @@ body.modal::before { display:none; }
 .pop-top-search .search-btns { margin-left:10px; } 
 .pop-top-search .search-btns .btn { height:34px; white-space:nowrap; } 
 .modal-dialog.big { width:800px; max-width:800px; } 
-.modal-dialog.wide { width:1024px; max-width:1024px; } 
+.modal-dialog.wide { width:1180px; max-width:1180px; } 
 .modal-dialog.big .modal-header,
 .modal-dialog.wide .modal-header { position:relative; padding:30px 40px 25px; border-bottom:none; } 
 .modal-dialog.big .modal-body,
