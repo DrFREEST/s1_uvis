@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- content tab -->
+      <div class="content-tab">
+        <div class="radio-group inline bigger page-select">
+          <div class="input-wrap">
+            <label for="pageSelRadio1">
+              <input id="pageSelRadio1" name="pageSel" type="radio" checked>
+              <span>휴식일정관리</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio">
+              <span>휴식시간현황</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- //content tab -->
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>차량번호</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+              <div class="input-wrap"><input class="clearable" id name type="text"></div>
+            </div>
+            <div class="input-group">
+              <legend>운전자 선택</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                </select>
+              </div>
+              <div class="input-wrap"><input class="clearable" id name type="text"></div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset">초기화</button>
+          <button class="btn btn-blue btn-search">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12 col-md-12">
+            <div class="calendar-area">
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <p class="font-gray">배차정보를 클릭하면 배차수정이 가능합니다.</p>
+                </div>
+                <div class="calendar-top">
+                  <div class="top-left">
+                  </div>
+                  <div class="top-center">
+                    <div class="input-wrap select">
+                      <select id name>
+                        <option value="">년도</option>
+                        <option value="">2019</option>
+                      </select>
+                    </div>
+                    <div class="calendar-title">
+                      <button class="btn-prev">이전달</button>
+                      <h3><span class="year">2019</span>.<span class="month">04</span></h3>
+                      <button class="btn-next">다음달</button>
+                    </div>
+                    <button class="btn btn-default">오늘</button>
+                  </div>
+                  <div class="top-right"></div>
+                </div>
+                <div class="header-right"></div>
+              </div>
+              <div class="calendar-bottom closing-schedule">
+                <!-- calendar header -->
+                <div class="calendar-header">
+                  <ul>
+                    <li><span class="day sun">일</span></li>
+                    <li><span class="day">월</span></li>
+                    <li><span class="day">화</span></li>
+                    <li><span class="day">수</span></li>
+                    <li><span class="day">목</span></li>
+                    <li><span class="day">금</span></li>
+                    <li><span class="day sat">토</span></li>
+                  </ul>
+                </div>
+                <!-- //calendar header -->
+                <!-- calendar body -->
+                <div class="calendar-body">
+                  <ul>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date sun">31</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">1</span><span class="date-name"></span></div>
+                        <div class="schedule">
+                          <ul>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                          </ul>
+                          <button class="btn-more-schedule" title="더보기"></button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">2</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">3</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="today">
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">4</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">5</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat">6</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">7</span><span class="date-name"></span></div>
+                        <div class="schedule">
+                          <ul>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                          </ul>
+                          <button class="btn-more-schedule" title="더보기"></button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">8</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">9</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">10</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">11</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">12</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat">13</span><span class="date-name"></span></div>
+                        <div class="schedule">
+                          <ul>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                          </ul>
+                          <button class="btn-more-schedule" title="더보기"></button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">14</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">15</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">16</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">17</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <!-- 휴일 -->
+                    <li class="closing-day" onclick="$('#popModel1').modal();">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">18</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <!-- //휴일 -->
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">19</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <!-- 공휴일 -->
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat holiday">20</span><span class="date-name holiday">공휴일</span></div>
+                      </div>
+                    </li>
+                    <!-- //공휴일 -->
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">21</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">22</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">23</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">24</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">25</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">26</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat">27</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">28</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">29</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">30</span><span class="date-name"></span></div>
+                        <div class="schedule">
+                          <ul>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                            <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                          </ul>
+                          <button class="btn-more-schedule" title="더보기"></button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">1</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">2</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">3</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date sat">4</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- //calendar body -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업 영역 -->
+      <div class="modal-schedule">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h5>2019.05.01</h5>
+            </div>
+            <button class="close" onclick="$('.modal-schedule').hide();"></button>
+          </div>
+          <div class="modal-body">
+            <div class="schedule-list">
+              <ul>
+                <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+                <li><a href="javascript:$('#popModel1').modal();"><strong>홍길동</strong> <span>경기 11하 1111(00:00 ~ 00:00)</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 일정/휴식시간 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">휴식시간 배차 등록/수정</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>차량번호</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">선택</option>
+                            </select>
+                          </div>
+                        </td>
+                        <th><span>운전자</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">선택</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>일정</span></th>
+                        <td colspan="3">
+                          <div class="input-group date-range">
+                            <div class="input-wrap select year">
+                              <select id name>
+                                <option value="">2019</option>
+                              </select>
+                            </div>
+                            <div class="input-wrap date">
+                              <input class="datepicker" id name type="text">
+                              <i class="icon icon-calendar"></i>
+                            </div>
+                            <span class="between">~</span>
+                            <div class="input-wrap date">
+                              <input class="datepicker" id name type="text">
+                              <i class="icon icon-calendar"></i>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>운행시간</span></th>
+                        <td colspan="3">
+                          <div class="input-group date-range">
+                            <div class="input-wrap select">
+                              <select id name>
+                                <option value="">00시 00분</option>
+                              </select>
+                            </div>
+                            <span class="between">~</span>
+                            <div class="input-wrap select">
+                              <select id name>
+                                <option value="">00시 00분</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          .radio-group.inline>(.input-wrap.radio>label[for=checkRadioWeekend$]>input:radio[id=checkRadioWeekend$][name=checkRadioWeekend]+span)*2
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>노선번호,노선명</span></th>
+                        <td colspan="3">
+                          <div class="input-wrap"><input type="text" name="" id="" class="clearable"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>기점</span></th>
+                        <td>
+                          <div class="input-wrap"><input type="text" name="" id="" class="clearable"></div>
+                        </td>
+                        <th><span>종점</span></th>
+                        <td>
+                          <div class="input-wrap"><input type="text" name="" id="" class="clearable"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //일정/휴식시간 팝업 -->
+      <!-- //팝업 영역 -->
+    </div>
+    <!-- //frame content -->
+    <!-- //wrapper -->
+    <!-- //Markup End -->
+    <!-- JS resource load -->
+    <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+    <script>
+      jQuery.browser = {};
+      (function() {
+        jQuery.browser.msie = false;
+        jQuery.browser.version = 0;
+        if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+          jQuery.browser.msie = true;
+          jQuery.browser.version = RegExp.$1;
+        }
+      })();
+    </script>
+    <script src="../../resources/js/jquery-ui.min.js "></script>
+    <script src="../../resources/js/bootstrap.min.js "></script>
+    <script src="../../resources/js/popper.min.js "></script>
+    <script src="../../resources/js/bootstrap-datepicker.js"></script>
+    <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+    <script src="../../resources/js/s1-uvis-script.js "></script>
+    <script src="../../resources/js/highcharts.js"></script>
+    <!-- //JS resource load -->
+    <!-- onload script -->
+    <script>
+      //data grid    
+      $(function() {
+        var chkcell = {
+          cellId: undefined,
+          chkval: undefined,
+        }
+
+        function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
+          var attr = rowObject.attr[cm.name],
+            result;
+          if (attr.rowspan) {
+            result = ' rowspan=' + '"' + attr.rowspan + '"';
+          } else if (attr.display) {
+            result = ' style="display:' + attr.display + '"';
+          }
+          return result;
+        }
+        $("#list1").jqGrid({
+          datatype: "local",
+          colNames: ['번호', '노선명', '출발 정류장', '출발시간', '요일구분', '운행구분', '차량번호', '단말기ID', '운전자명', '승하차 학생수'],
+          colModel: [{
+            name: 'col1',
+            index: 'col1',
+            width: "60",
+          }, {
+            name: 'col2',
+            index: 'col2',
+            width: "100",
+          }, {
+            name: 'col3',
+            index: 'col3',
+            width: "100",
+          }, {
+            name: 'col4',
+            index: 'col4',
+            width: "100",
+          }, {
+            name: 'col5',
+            index: 'col5',
+            width: "100"
+          }, {
+            name: 'col6',
+            index: 'col6',
+            width: "100"
+          }, {
+            name: 'col7',
+            index: 'col7',
+            width: "100"
+          }, {
+            name: 'col8',
+            index: 'col8',
+            width: "80"
+          }, {
+            name: 'col9',
+            index: 'col9',
+            width: "80"
+          }, {
+            name: 'col10',
+            index: 'col10',
+            width: "80"
+          }],
+          // rowNum: 15,
+          scrollRows: true,
+          scroll: true,
+          rowList: [15, 25, 50],
+          // pager: '#pager3',
+          // multiselect: true,
+          // multiselectWidth: 55,
+          sortname: 'id',
+          viewrecords: true,
+          sortorder: "desc",
+          autowidth: true,
+          height: "auto",
+          scrollTimeout: 1,
+          shrinkToFit: true,
+          forceFit: true,
+          scrollOffset: 21,
+          hoverrows: false,
+          // footerrow: true,
+          // userDataOnFooter: true,
+          // altRows: true
+        });
+        $("#list1").jqGrid('setGroupHeaders', {
+          useColSpanStyle: true,
+          groupHeaders: [{
+            startColumnName: 'col7',
+            numberOfColumns: 3,
+            titleText: '배차정보'
+          }, ]
+        });
+        var mydata = [{
+          col1: "1",
+          col2: "노선1",
+          col3: "정류장1",
+          col4: "11:11",
+          col5: "평일",
+          col6: "등교",
+          col7: "경기 11하 1111",
+          col8: "123456789",
+          col9: "홍길동",
+          col10: "0",
+        }];
+        //
+        for (var i = 0; i <= mydata.length; i++)
+          $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+        // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+      });
+      /*
+          일정 더보기 레이어 팝업
+          마우스 오버시 인터렉션 관련 스크립트만 작성되어있습니다.
+          데이터 변경 관련 스크립트는 개발에서 진행해주세요.
+        */
+      $(function() {
+        var targetX, targetY, popFocusX, popFocusY = 0;
+        var issueModal = $('.modal-schedule');
+
+        function popPositionChange(target, targetX, targetY, focusX, focusY) {
+          // console.log(targetX, targetY, focusX, focusY);
+          var frame = $('.calendar-bottom');
+          var frameWidth = frame.width(),
+            frameHeight = frame.height();
+          // console.log(frameWidth, frameHeight);
+          if (focusX < frameWidth - issueModal.width()) { //마우스 위치가 리스트 좌측일때
+            // console.log('left');
+            issueModal.css({
+              'left': targetX - target.parent().width() - 20
+            })
+          } else if (focusX > frameWidth - issueModal.width()) { //마우스 위치가 리스트 우측일때
+            // console.log('right');
+            issueModal.css({
+              'left': targetX - issueModal.width() + 20
+            })
+          }
+          if (focusY < frame.offset().top + (frameHeight / 2)) { //마우스 위치가 리스트 상단일때
+            // console.log('top');
+            issueModal.css({
+              'top': targetY + target.height() - 20
+            })
+          } else if (focusY > frame.offset().top + (frameHeight / 2)) { //마우스 위치가 리스트 하단일때
+            console.log('bottom');
+            issueModal.css({
+              'top': targetY - issueModal.height() + 20
+            })
+          }
+        }
+        $('.btn-more-schedule').each(function() {
+          var target = $(this);
+          $(this).on('click', function(event) {
+            $('.modal-schedule').hide();
+            targetX = $(event.target).offset().left;
+            targetY = $(event.target).offset().top;
+            popFocusX = event.clientX;
+            popFocusY = event.clientY;
+            // console.log(targetX, targetY);
+            popPositionChange(target, targetX, targetY, popFocusX, popFocusY);
+            $('.modal-schedule').show();
+          });
+        });
+      })
+    </script>
+    <!-- //onload script -->
+  </div>
+</body>
+
+</html>

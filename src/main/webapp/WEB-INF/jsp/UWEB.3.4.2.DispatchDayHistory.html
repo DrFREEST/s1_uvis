@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -219,7 +221,7 @@
             <div class="modal-title">
               <h5>배차정보</h5>
             </div>
-            <button class="close" onclick="$('.modal-issue').remove();"></button>
+            <button class="close" onclick="$('.modal-issue').hide();"></button>
           </div>
           <div class="modal-body">
             <div class="data-form-table">
@@ -267,7 +269,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -285,11 +287,12 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function () {
+    $(function() {
       var chkcell = {
         cellId: undefined,
         chkval: undefined,
       }
+
       function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
         var attr = rowObject.attr[cm.name],
           result;
@@ -300,7 +303,7 @@
         }
         return result;
       }
-      var applyClassesToRows = function (grid) {
+      var applyClassesToRows = function(grid) {
         // Use the passed in grid as context, 
         // in case we have more than one table on the page.
         var trRow = jQuery("tbody tr", grid.hdiv);
@@ -475,9 +478,10 @@
         마우스 오버시 인터렉션 관련 스크립트만 작성되어있습니다.
         데이터 변경 관련 스크립트는 개발에서 진행해주세요.
       */
-    $(function () {
+    $(function() {
       var targetX, targetY, popFocusX, popFocusY = 0;
       var issueModal = $('.modal-issue');
+
       function popPositionChange(target, targetX, targetY, focusX, focusY) {
         // console.log(targetX, targetY, focusX, focusY);
         var frame = $('#dispatchHistory');
@@ -507,9 +511,9 @@
           })
         }
       }
-      $('.issue').each(function () {
+      $('.issue').each(function() {
         var target = $(this);
-        $(this).on('mouseover', function (event) {
+        $(this).on('mouseover', function(event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;
@@ -517,9 +521,9 @@
           // console.log(targetX, targetY);
           popPositionChange(target, targetX, targetY, popFocusX, popFocusY);
           $('.modal-issue').show();
-        }).on('mouseleave', function (event) {
+        }).on('mouseleave', function(event) {
           $('.modal-issue').hide();
-        }).on('mousemove', function (event) {
+        }).on('mousemove', function(event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;
@@ -531,4 +535,5 @@
   </script>
   <!-- //onload script -->
 </body>
+
 </html>

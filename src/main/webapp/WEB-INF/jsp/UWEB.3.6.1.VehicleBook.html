@@ -37,6 +37,12 @@
                   <option value="">선택12312312313</option>
                 </select>
               </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
+              </div>
             </div>
             <div class="input-group">
               <legend>차량번호</legend>
@@ -61,14 +67,13 @@
       <!-- 분할영역 -->
       <div class="partition-area">
         <div class="row">
-          <div class="col col-sm-5">
+          <div class="col col-sm-4">
             <div class="data-list-table">
               <div class="data-list-table-header">
                 <div class="header-left">
-                  <button class="btn btn-white action checkUserDel" type="button">선택삭제</button>
-                  <button class="btn btn-white action checkUserApproval" type="button">선택승인</button>
+                  <button class="btn btn-white" type="button" onclick="$('#popModel1').modal();">정비항목 관리</button>
                 </div>
-                <div class="header-right">
+                <div class=" header-right">
                   <button class="btn btn-white action userExcel" type="button">엑셀다운</button>
                 </div>
               </div>
@@ -76,33 +81,84 @@
                 <table id="userlist">
                 </table>
               </div>
+              <div class="data-list-table-footer">
+                <div class="footer-left">
+                  <div class="table-info">TOTAL : 50</div>
+                </div>
+                <div class="paging">
+                  <a class="btn-first" href="#"></a>
+                  <a class="btn-prev" href="#"></a>
+                  <a class="on" href="#">1</a>
+                  <a class href="#">2</a>
+                  <a class href="#">3</a>
+                  <a class href="#">4</a>
+                  <a class="btn-next" href="#"></a>
+                  <a class="btn-last" href="#"></a>
+                </div>
+                <div class="footer-right">
+                  <div class="input-wrap inline select length-change small">
+                    <select id name>
+                      <option value="">15개씩 보기</option>
+                      <option value="">20개씩 보기</option>
+                      <option value="">50개씩 보기</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col col-sm-7">
+          <div class="col col-sm-8">
             <div class="data-list-table">
               <div class="data-list-table-header">
                 <div class="header-left">
-                  <button class="btn btn-white action checkUserDel" type="button">선택삭제</button>
-                  <button class="btn btn-white action checkUserApproval" type="button">선택승인</button>
                 </div>
                 <div class="header-right">
-                  <button class="btn btn-white action userExcel" type="button">엑셀다운</button>
+                  <button class="btn btn-white" type="button">취소</button>
+                  <button class="btn btn-blue" type="button">저장</button>
                 </div>
               </div>
               <div class="data-table">
                 <table id="list2">
+                  <colgroup>
+                    <col style="width:;">
+                    <col style="width:;">
+                    <col style="width:;">
+                    <col style="width:;">
+                    <col style="width:;">
+                  </colgroup>
                   <thead>
-                    <thead>
-                      <tr>
-                        <th><span>정비구분</span></th>
-                        <th><span>정비항목</span></th>
-                        <th><span>최종교환일</span></th>
-                        <th><span>교환주기</span></th>
-                        <th><span>현재현황</span></th>
-                      </tr>
-                    </thead>
+                    <tr>
+                      <th><span>정비구분</span></th>
+                      <th><span>정비항목</span></th>
+                      <th><span>최종교환일</span></th>
+                      <th><span>교환주기</span></th>
+                      <th><span>현재현황</span></th>
+                    </tr>
                   </thead>
-                  <tbody></tbody>
+                  <tbody>
+                    <tr>
+                      <td>점검</td>
+                      <td>정기검사</td>
+                      <td>
+                        <div class="input-wrap date"><input class="datepicker text-left" id name type="text"><i class="icon-calendar"></i></div>
+                      </td>
+                      <td>
+                        <div class="input-wrap unit-set"><input class="text-left clearable" id name type="text"><span class="unit">㎞</span></div>
+                      </td>
+                      <td>80일 초과</td>
+                    </tr>
+                    <tr>
+                      <td>소모품</td>
+                      <td>정기검사</td>
+                      <td>
+                        <div class="input-wrap date"><input class="datepicker text-left" id name type="text"><i class="icon-calendar"></i></div>
+                      </td>
+                      <td>
+                        <div class="input-wrap unit-set"><input class="text-left clearable" id name type="text"><span class="unit">개월</span></div>
+                      </td>
+                      <td>80일 초과</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
               <div class="data-list-table-footer">
@@ -135,236 +191,142 @@
       </div>
       <!-- //분할영역 --><br>
       <!-- 팝업영역 -->
-      <!-- 사용자 메뉴설정 팝업 -->
-      <div class="modal fade dark" id="userMenuModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+      <!-- 정비항목 관리 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
         <div class="modal-dialog big" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">사용자 메뉴설정</h5>
+              <h5 class="modal-title">정비항목 관리</h5>
               <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div class="modal-frame">
-                <iframe src="UWEB.4.1.1.UserMenuSetting.html" frameborder="0" onload="resizeIframe(this)"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- //사용자 메뉴설정 팝업 -->
-      <!-- 차량그룹 설정 팝업 -->
-      <div class="modal fade dark" id="vehicleGroupModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
-        <div class="modal-dialog big" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">차량 그룹 설정</h5>
-              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <!-- popup top search -->
-              <!-- <div class="top-search pop-top-search">
-                  <div class="search-forms row">
-                    <div class="input-group">
-                      <legend>회사명</legend>
-                      <div class="input-wrap select">
-                        <select id name>
-                              <option value="">선택</option>
+              <!-- data form table -->
+              <div class="data-form-table">
+                <div class="data-form-table-header">
+                  <div class="header-title">
+                    <h6>정비항목 신규입력</h6>
+                  </div>
+                  <div class="header-right">
+                    <button class="btn btn-white">초기화</button>
+                    <button class="btn btn-blue">저장</button>
+                  </div>
+                </div>
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>정비구분</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">소모품</option>
                             </select>
-                      </div>
-                    </div>
-                    <div class="input-group">
-                      <legend>차량번호</legend>
-                      <div class="input-wrap">
-                        <input id name type="text">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="search-btns col-sm-2">
-                    <button class="btn btn-blue btn-search">검색</button>
-                  </div>
-                </div> -->
-              <!-- //popup top search -->
-              <!-- menu group list -->
-              <div class="menu-group-list">
-                <div class="menu-group">
-                  <ul>
-                    <li class="group-header">
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-1-all">
-                          <input id="popModel2-check2-1-all" name type="checkbox">
-                          <span>그룹명 1</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-1-1">
-                          <input id="popModel2-check2-1-1" name type="checkbox">
-                          <span>그룹명 1-1</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-1-2">
-                          <input id="popModel2-check2-1-2" name type="checkbox">
-                          <span>그룹명 1-2</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-1-3">
-                          <input id="popModel2-check2-1-3" name type="checkbox">
-                          <span>그룹명 1-3</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-1-4">
-                          <input id="popModel2-check2-1-4" name type="checkbox">
-                          <span>그룹명 1-4</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-1-5">
-                          <input id="popModel2-check2-1-5" name type="checkbox">
-                          <span>그룹명 1-5</span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="menu-group">
-                  <ul>
-                    <li class="group-header">
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-2-all">
-                          <input id="popModel2-check2-2-all" name type="checkbox">
-                          <span>그룹명 2</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-2-1">
-                          <input id="popModel2-check2-2-1" name type="checkbox">
-                          <span>그룹명 2-1</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-2-2">
-                          <input id="popModel2-check2-2-2" name type="checkbox">
-                          <span>그룹명 2-2</span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="menu-group">
-                  <ul>
-                    <li class="group-header">
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-3-all">
-                          <input id="popModel2-check2-3-all" name type="checkbox">
-                          <span>그룹명3</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-3-1">
-                          <input id="popModel2-check2-3-1" name type="checkbox">
-                          <span>그룹명 3-1</span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="menu-group">
-                  <ul>
-                    <li class="group-header">
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-4-all">
-                          <input id="popModel2-check2-4-all" name type="checkbox">
-                          <span>그룹명 2</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-4-1">
-                          <input id="popModel2-check2-4-1" name type="checkbox">
-                          <span>그룹명 2-1</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-4-2">
-                          <input id="popModel2-check2-4-2" name type="checkbox">
-                          <span>그룹명 2-2</span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="menu-group">
-                  <ul>
-                    <li class="group-header">
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-5-all">
-                          <input id="popModel2-check2-5-all" name type="checkbox">
-                          <span>그룹명3</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-5-1">
-                          <input id="popModel2-check2-5-1" name type="checkbox">
-                          <span>그룹명 3-1</span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="menu-group">
-                  <ul>
-                    <li class="group-header">
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-6-all">
-                          <input id="popModel2-check2-6-all" name type="checkbox">
-                          <span>그룹명3</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="input-wrap check">
-                        <label for="popModel2-check2-6-1">
-                          <input id="popModel2-check2-6-1" name type="checkbox">
-                          <span>그룹명 3-1</span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
+                          </div>
+                        </td>
+                        <th><span>정비항목</span></th>
+                        <td>
+                          <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>단위</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">개월</option>
+                            </select>
+                          </div>
+                        </td>
+                        <th><span>주기</span></th>
+                        <td>
+                          <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <!-- //menu group list -->
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
-              <button class="btn btn-blue" type="button">저장</button>
+              <!-- //data form table -->
+              <div class="data-form-table-header">
+                <div class="header-title">
+                  <h6>정비항목</h6>
+                </div>
+              </div>
+              <!-- data list table -->
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <button class="btn btn-white">선택삭제</button>
+                  </div>
+                </div>
+                <div class="data-table">
+                  <table id="driverList">
+                    <colgroup>
+                      <col style="width:55px;">
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th><input id name type="checkbox"></th>
+                        <th><span>정비구분</span></th>
+                        <th><span>정비항목</span></th>
+                        <th><span>단위</span></th>
+                        <th><span>주기</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input id name type="checkbox"></td>
+                        <td>점검</td>
+                        <td>정기검사</td>
+                        <td>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">개월</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="input-wrap"><input class="clearable text-left" id name type="text"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="data-list-table-footer">
+                  <div class="footer-left">
+                    <div class="table-info">TOTAL : 50</div>
+                  </div>
+                  <div class="paging">
+                    <a class="btn-first" href="#"></a>
+                    <a class="btn-prev" href="#"></a>
+                    <a class="on" href="#">1</a>
+                    <a class href="#">2</a>
+                    <a class href="#">3</a>
+                    <a class href="#">4</a>
+                    <a class="btn-next" href="#"></a>
+                    <a class="btn-last" href="#"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <select id name>
+                        <option value="">15개씩 보기</option>
+                        <option value="">20개씩 보기</option>
+                        <option value="">50개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //data list table -->
             </div>
           </div>
         </div>
       </div>
-      <!-- //차량그룹 설정 팝업 -->
+      <!-- //정비항목 관리 팝업 -->
       <!-- //팝업영역 -->
     </div>
     <!-- //frame content -->
@@ -411,7 +373,7 @@
       // jqgrid
       $("#userlist").jqGrid({
         datatype: "local",
-        colNames: ['회사명', '부서명', '이름', '휴대폰 번호', '아이디', '권한', '등록일자'],
+        colNames: ['그룹명1', '그룹명2', '차량번호', '차종', '단말기 타입'],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -423,23 +385,15 @@
         }, {
           name: 'col3',
           index: 'col3',
-          width: "*"
+          width: "100"
         }, {
           name: 'col4',
           index: 'col4',
-          width: "80",
+          width: "100",
         }, {
           name: 'col5',
           index: 'col5',
-          width: "70",
-        }, {
-          name: 'col6',
-          index: 'col6',
-          width: "70",
-        }, {
-          name: 'col7',
-          index: 'col7',
-          width: "116",
+          width: "100",
         }],
         rowNum: 15,
         scrollRows: true,
@@ -452,7 +406,7 @@
         viewrecords: true,
         sortorder: "desc",
         autowidth: true,
-        height: 722,
+        height: "auto",
         scrollTimeout: 1,
         shrinkToFit: true,
         forceFit: true,
@@ -460,158 +414,12 @@
         // height: "auto"
       });
       var mydata = [{
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      }, {
-        col1: "aaaaaa",
-        col2: "영업부",
-        col3: "홍*동",
-        col4: "010-****-0000",
-        col5: "asdasd******",
-        col6: "운영자",
-        col7: "2019-01-01"
-      },];
+        col1: "그룹명1",
+        col2: "그룹명2",
+        col3: "경기 11하 1111",
+        col4: "아반테XD",
+        col5: "3G단독",
+      }];
       for (var i = 0; i <= mydata.length; i++)
         $("#userlist").jqGrid('addRowData', i + 1, mydata[i]);
     });

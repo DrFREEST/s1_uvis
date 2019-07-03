@@ -434,7 +434,7 @@
             <div class="modal-title">
               <h5>배차정보</h5>
             </div>
-            <button class="close" onclick="$('.modal-issue').remove();"></button>
+            <button class="close" onclick="$('.modal-issue').hide();"></button>
           </div>
           <div class="modal-body">
             <div class="data-form-table">
@@ -482,7 +482,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -500,7 +500,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function () {
+    $(function() {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['번호', '그룹명 1', '그룹명 2', '차량번호', '차종', '배차기간', '배차'],
@@ -569,9 +569,10 @@
         마우스 오버시 인터렉션 관련 스크립트만 작성되어있습니다.
         데이터 변경 관련 스크립트는 개발에서 진행해주세요.
       */
-    $(function () {
+    $(function() {
       var targetX, targetY, popFocusX, popFocusY = 0;
       var issueModal = $('.modal-issue');
+
       function popPositionChange(target, targetX, targetY, focusX, focusY) {
         // console.log(targetX, targetY, focusX, focusY);
         var frame = $('.calendar-bottom');
@@ -601,9 +602,9 @@
           })
         }
       }
-      $('.issue').each(function () {
+      $('.issue').each(function() {
         var target = $(this);
-        $(this).on('mouseover', function (event) {
+        $(this).on('mouseover', function(event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;
@@ -611,9 +612,9 @@
           // console.log(targetX, targetY);
           popPositionChange(target, targetX, targetY, popFocusX, popFocusY);
           $('.modal-issue').show();
-        }).on('mouseleave', function (event) {
+        }).on('mouseleave', function(event) {
           $('.modal-issue').hide();
-        }).on('mousemove', function (event) {
+        }).on('mousemove', function(event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;

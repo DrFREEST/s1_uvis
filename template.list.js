@@ -463,21 +463,21 @@ var pub_list = new Vue({
       pageName: "차계부 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.6.1.VehicleBook",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "정비 항목 관리",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.6.1.MaintenanceSetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "일정 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.7.1.Schedule",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
@@ -519,7 +519,7 @@ var pub_list = new Vue({
       pageName: "노선별 승하차 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.8.1.RoutePassengerReport",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {

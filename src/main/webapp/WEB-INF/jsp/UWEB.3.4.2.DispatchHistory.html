@@ -221,7 +221,7 @@
             <div class="modal-title">
               <h5>배차정보</h5>
             </div>
-            <button class="close" onclick="$('.modal-issue').remove();"></button>
+            <button class="close" onclick="$('.modal-issue').hide();"></button>
           </div>
           <div class="modal-body">
             <div class="data-form-table">
@@ -269,7 +269,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -287,10 +287,15 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function () {
-      var chkcell = { cellId: undefined, chkval: undefined, }
+    $(function() {
+      var chkcell = {
+        cellId: undefined,
+        chkval: undefined,
+      }
+
       function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
-        var attr = rowObject.attr[cm.name], result;
+        var attr = rowObject.attr[cm.name],
+          result;
         if (attr.rowspan) {
           result = ' rowspan=' + '"' + attr.rowspan + '"';
         } else if (attr.display) {
@@ -298,7 +303,7 @@
         }
         return result;
       }
-      var applyClassesToHeaders = function (grid) {
+      var applyClassesToHeaders = function(grid) {
         // Use the passed in grid as context, 
         // in case we have more than one table on the page.
         var trHead = jQuery("thead:first tr", grid.hdiv);
@@ -318,7 +323,7 @@
       var grid1 = $("#list1");
       grid1.jqGrid({
         datatype: "local",
-        colNames: ['그룹명1', '그룹명2', '차량번호', '차종', '운전자명', '배차상태', '05/01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31',],
+        colNames: ['그룹명1', '그룹명2', '차량번호', '차종', '운전자명', '배차상태', '05/01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', ],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -348,187 +353,249 @@
           index: 'col7',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col8',
           index: 'col8',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col9',
           index: 'col9',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col10',
           index: 'col10',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col11',
           index: 'col11',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col12',
           index: 'col12',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col13',
           index: 'col13',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col14',
           index: 'col14',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col15',
           index: 'col15',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col16',
           index: 'col16',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col17',
           index: 'col17',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col18',
           index: 'col18',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col19',
           index: 'col19',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col20',
           index: 'col20',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col21',
           index: 'col21',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col22',
           index: 'col22',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col23',
           index: 'col23',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col24',
           index: 'col24',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col25',
           index: 'col25',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col26',
           index: 'col26',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col27',
           index: 'col27',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col28',
           index: 'col28',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col29',
           index: 'col29',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col30',
           index: 'col30',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col31',
           index: 'col31',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col32',
           index: 'col32',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col33',
           index: 'col33',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col34',
           index: 'col34',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col35',
           index: 'col35',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col36',
           index: 'col36',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }, {
           name: 'col37',
           index: 'col37',
           width: "40",
           class: "date",
-          cellattr: function () { return " class='date'" }
+          cellattr: function() {
+            return " class='date'"
+          }
         }],
         rowNum: 15,
         scrollRows: true,
@@ -865,40 +932,41 @@
         마우스 오버시 인터렉션 관련 스크립트만 작성되어있습니다.
         데이터 변경 관련 스크립트는 개발에서 진행해주세요.
       */
-    $(function () {
+    $(function() {
       var targetX, targetY, popFocusX, popFocusY = 0;
       var issueModal = $('.modal-issue');
+
       function popPositionChange(targetX, targetY, focusX, focusY) {
         // console.log(targetX, targetY, focusX, focusY);
         var frame = $('#dispatchHistory');
         var frameWidth = frame.width(),
           frameHeight = frame.height();
         // console.log(frameWidth, frameHeight);
-        if (focusX < frameWidth - issueModal.width()) {//마우스 위치가 리스트 좌측일때
+        if (focusX < frameWidth - issueModal.width()) { //마우스 위치가 리스트 좌측일때
           // console.log('left');
           issueModal.css({
             'left': focusX + 20
           })
-        } else if (focusX > frameWidth - issueModal.width()) {//마우스 위치가 리스트 우측일때
+        } else if (focusX > frameWidth - issueModal.width()) { //마우스 위치가 리스트 우측일때
           // console.log('right');
           issueModal.css({
             'left': focusX - issueModal.width() - 20
           })
         }
-        if (focusY < frame.offset().top + (frameHeight / 2)) {//마우스 위치가 리스트 상단일때
+        if (focusY < frame.offset().top + (frameHeight / 2)) { //마우스 위치가 리스트 상단일때
           // console.log('top');
           issueModal.css({
             'top': targetY + 40
           })
-        } else if (focusY > frame.offset().top + (frameHeight / 2)) {//마우스 위치가 리스트 하단일때
+        } else if (focusY > frame.offset().top + (frameHeight / 2)) { //마우스 위치가 리스트 하단일때
           console.log('bottom');
           issueModal.css({
             'top': targetY - issueModal.height() - 20
           })
         }
       }
-      $('.issue').each(function () {
-        $(this).on('mouseover', function (event) {
+      $('.issue').each(function() {
+        $(this).on('mouseover', function(event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;
@@ -906,14 +974,14 @@
           // console.log(targetX, targetY);
           popPositionChange(targetX, targetY, popFocusX, popFocusY);
           $('.modal-issue').show();
-        }).on('mouseleave', function (event) {
+        }).on('mouseleave', function(event) {
           // targetX = $(this).offset().left;
           // targetY = $(this).offset().top;
           // popFocusX = event.clientX;
           // popFocusY = event.clientY;
           // popPositionChange(targetX, targetY, popFocusX, popFocusY);
           $('.modal-issue').hide();
-        }).on('mousemove', function (event) {
+        }).on('mousemove', function(event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;
