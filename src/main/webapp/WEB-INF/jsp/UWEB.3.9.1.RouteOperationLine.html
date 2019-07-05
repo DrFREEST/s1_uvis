@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="modal">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 팝업영역 -->
+      <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- 노선 운행경로 보기 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog wide" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">노선 운행경로 보기</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-5">
+                  <!-- data form table -->
+                  <div class="data-form-table">
+                    <div class="data-form-table-header">
+                      <div class="header-right">
+                        <button class="btn btn-white">경로보기</button>
+                      </div>
+                    </div>
+                    <div class="data-form-table-body narrow">
+                      <table>
+                        <colgroup>
+                          <col style="width:100px;">
+                          <col style="width:;">
+                          <col style="width:100px;">
+                          <col style="width:;">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><span>노선명</span></th>
+                            <td>노선1</td>
+                            <th><span>운행구분</span></th>
+                            <td>출근</td>
+                          </tr>
+                          <tr>
+                            <th><span>출발시간</span></th>
+                            <td>00:00</td>
+                            <th><span>운행일자</span></th>
+                            <td>2019-01-01</td>
+                          </tr>
+                          <tr>
+                            <th><span>담당 운수사</span></th>
+                            <td>서울버스</td>
+                            <th><span>차량번호</span></th>
+                            <td>경기 11하 1111</td>
+                          </tr>
+                          <tr>
+                            <th><span>운전자명</span></th>
+                            <td colspan="3">홍길동</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //data form table -->
+                  <!-- data list table -->
+                  <div class="data-list-table">
+                    <div class="data-list-table-header">
+                      <div class="header-right">
+                        <button class="btn btn-white">엑셀다운</button>
+                      </div>
+                    </div>
+                    <div class="data-table">
+                      <table id="list2"></table>
+                    </div>
+                  </div>
+                  <!-- //data list table -->
+                </div>
+                <div class="col-sm-7">
+                  <div class="flex-map-area">
+                    <div class="map-frame">
+                      지도영역
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //노선 운행경로 보기 팝업 -->
+      <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      $('#popModel1').modal();
+      $("#list2").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '추적시간', '정류장명', '속도(㎞/h)'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "55",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }],
+        rowNum: 15,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        //multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        // autowidth: true,
+        width: 440,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // height: "auto"
+      });
+      var mydata2 = [{
+        col1: "1",
+        col2: "00:00:00",
+        col3: "당산2",
+        col4: "9999",
+      }];
+      for (var i = 0; i <= mydata2.length; i++)
+        $("#list2").jqGrid('addRowData', i + 1, mydata2[i]);
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>

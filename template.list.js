@@ -93,126 +93,126 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarLocation",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "그룹별 차량 현황",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarList",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "리스트 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarListSetting",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "그룹별 차량 현황(상세모드)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarListExp",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "차량 세부 정보(차량정보)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarDetail",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "차량 세부 정보(운행경로)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarOperation",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "차량 세부 정보(운행경로 - 타입라인)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarOperationLine",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "지도상 운행 경로 차량 세부 정보",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.FocusDrivingCarDetail",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "차량 세부 정보(원격제어)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarRemoteControl",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "차량 세부 정보(인접차량)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarAdjacent",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "그룹별 이상 차량 현황",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarWrongList",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "원격 제어 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.RemoteCarSetting",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "지도상 차량 세부 정보",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.FocusCarDetail",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "지도상 그룹핑된 차량 목록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.FocusCarGrouping",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "전체화면(기본화면)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapFull",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "멀티맵 차량 검색",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapCarSelect",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "전체화면(3 분할)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapTri",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "전체화면(4 분할)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapFour",
       complete: "",
-      note: ""
+      note: "지도화면"
     },
     {
       pageName: "배터리 저전압 조회",
@@ -484,35 +484,35 @@ var pub_list = new Vue({
       pageName: "일정 조회(일별)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.7.1.ScheduleDayList",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "일정 등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.7.1.ScheduleAdd",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "일정 일괄 등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.7.1.ScheduleAllAdd",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "휴식 시간 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.7.2.TimeList",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "과거 데이터 신청",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.7.2.TimeHistoryRequest",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
@@ -526,21 +526,21 @@ var pub_list = new Vue({
       pageName: "노선별 운행 실적 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.9.1.RouteOperationReport",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "노선 운행 경로 보기",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.9.1.RouteOperationLine",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "정류장별 탑승자 현황 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.3.9.2.PointPassengerReport",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
