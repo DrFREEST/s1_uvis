@@ -3,6 +3,7 @@ body { font-family:Roboto, 'Noto Sans Korean', sans-serif; font-size:13px; font-
 body.sub { height:100%; background-color:#f6f6f6; } 
 body.modal { position:relative; display:block; overflow:auto; min-width:0; } 
 body.popup { min-width:0; } 
+*.hide-obj{position: absolute !important;opacity:0 !important;width:0 !important;height:0 !important;border:none !important;top:100%;left:0;}
 * { font-weight:inherit; } 
 a { text-decoration:none; color:inherit; } 
 a:focus,
@@ -1024,7 +1025,7 @@ td .car-group-list { padding-top:0; border-top:none; }
 .calendar-top .top-center .calendar-title .btn-next::after { display:block; width:8px; height:8px; margin-left:-5px; margin-left:5px; content:''; transform:rotate(45deg); border:2px solid #8a8a8a; border-bottom:none; border-left:none; } 
 .calendar-top .top-center .calendar-title .btn-prev:hover::before,
 .calendar-top .top-center .calendar-title .btn-next:hover::after { border-color:#2b2b2b; } 
-.calendar-top .top-center .calendar-title h3 { font-size:26px; font-weight:500; line-height:38px; display:flex; align-items:center; justify-content:center; margin:0 35px; } 
+.calendar-top .top-center .calendar-title h3 { font-size:26px; font-weight:500; line-height:38px; display:flex; align-items:center; justify-content:center; margin:0 35px;position:relative; } 
 .calendar-top .top-center .calendar-title h3 .year { } 
 .calendar-top .top-center .calendar-title h3 .month { } 
 .calendar-top .top-right { display:flex; align-items:center; flex:initial; justify-content:flex-start; margin:0 10px; } 
@@ -1189,7 +1190,7 @@ td .car-group-list { padding-top:0; border-top:none; }
 .map-frame .map-frame-header .header-right .btn + .btn { margin-left:6px; } 
 .map-frame .map-frame-body { position:relative; flex:1; } 
 .map-frame .map-frame-body .map-area { position:absolute; top:0; left:0; width:100%; height:100%; border:1px solid #dcdcdc; border-radius:6px; } 
-.pop-inner-map { position:absolute; width:410px; padding:20px 30px; border-radius:10px; /* border-top: 4px solid #1a8cfc; */ background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
+.pop-inner-map { /* position:absolute;  */width:410px; padding:20px 30px; border-radius:10px; /* border-top: 4px solid #1a8cfc; */ background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
 .pop-inner-map.wide { width:560px; } 
 .pop-inner-map .pop-header { padding-bottom:10px; } 
 .pop-inner-map .pop-header .pop-title { font-size:24px; font-weight:500; line-height:1.2em; } 
