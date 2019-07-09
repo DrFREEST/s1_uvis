@@ -218,42 +218,42 @@ var pub_list = new Vue({
       pageName: "배터리 저전압 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.2.1.BatteryLowList",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "전압 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.2.1.BatterySetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "SMS 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.2.1.SmsSetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "차량 위치(지도)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.2.1.MapFocus",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "도어 개폐 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.3.1.DoorOnOff",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "차량 위치(지도)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.3.1.MapFocus",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
@@ -332,6 +332,13 @@ var pub_list = new Vue({
       fileName: "UWEB.2.5.1.RemoteControlSetting",
       complete: "",
       note: "팝업"
+    },
+    {
+      pageName: "출동서비스현황",
+      fileRoot: "src/main/webapp/WEB-INF/jsp/",
+      fileName: "UWEB.2.6.1.EmergencyServiceHistory",
+      complete: "",
+      note: ""
     },
     {
       pageName: "운행실적 조회",

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -203,7 +205,7 @@
             </div>
             <div class="modal-body">
               <!-- pop map area -->
-              <p class="address"></p>
+
               <div class="pop-map-area big">
                 <!-- 노선 지도 들어가는 영역 -->
                 지도 들어가는 영역
@@ -229,7 +231,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -250,7 +252,7 @@
     function openLocation() {
       $(document).find('#popModel1').modal();
     }
-    $(function () {
+    $(function() {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['순번', '그룹명1', '그룹명2', '차량번호', '운전자명', '배차기간', '이상항목', '이벤트값', '발생일자', '발생시간', '발생위치'],
@@ -339,4 +341,5 @@
   </script>
   <!-- //onload script -->
 </body>
+
 </html>

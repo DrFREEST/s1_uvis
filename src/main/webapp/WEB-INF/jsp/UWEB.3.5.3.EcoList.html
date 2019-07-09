@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -235,8 +237,8 @@
                     <tbody>
                       <tr>
                         <td>공회전</td>
-                        <td class="text-left">5분 이상의 공회전은 1km를 주행할 수 있는 연료를 소비하게 됩니다. 또한 이산화탄소/유해물질등을 배출함으로써 인체에 
-                          해롭습니다.</td>
+                        <td class="text-left">5분 이상의 공회전은 1km를 주행할 수 있는 연료를 소비하게 됩니다. 또한 이산화탄소/유해물질등을 배출함으로써 인체에  해롭습니다.
+                        </td>
                       </tr>
                       <tr>
                         <td>과속</td>
@@ -248,8 +250,8 @@
                       </tr>
                       <tr>
                         <td>급가속</td>
-                        <td class="text-left">급출발(급가속)은 정상 출발(운행)보다 30% 이상 연료 소모가 많습니다. <br>급출발(급가속)을 하지 않는 것은 10% 저렴한 
-                          주유소를 찾는 노력보다 쉽게 실천 할 수 있습니다.</td>
+                        <td class="text-left">급출발(급가속)은 정상 출발(운행)보다 30% 이상 연료 소모가 많습니다. <br>급출발(급가속)을 하지 않는 것은 10% 저렴한  주유소를 찾는 노력보다 쉽게 실천 할 수 있습니다.
+                        </td>
                       </tr>
                       <tr>
                         <td>급감속</td>
@@ -359,7 +361,7 @@
             </div>
             <div class="modal-body">
               <!-- pop map area -->
-              <p class="address"></p>
+
               <div class="pop-map-area big">
                 <!-- 노선 지도 들어가는 영역 -->
                 지도 들어가는 영역
@@ -386,7 +388,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -407,7 +409,7 @@
   <script>
     //high chart
     // $(function () {
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
       var myChart = Highcharts.chart('lineChart', {
         chart: {
           type: 'line',
@@ -417,7 +419,12 @@
         title: {
           align: 'left',
           text: '<span>2019.04<em style="color:#8a8a8a;font-weight:normal;font-size:13px;margin-left:360px;">해당 항목 클릭시 그래프가 노출됩니다.</em></span>',
-          style: { 'color': '#2b2b2b', 'font-size': 17, 'font-family': 'Roboto, "Noto Sans Korean", sans-serif', 'font-weight': 500 },
+          style: {
+            'color': '#2b2b2b',
+            'font-size': 17,
+            'font-family': 'Roboto, "Noto Sans Korean", sans-serif',
+            'font-weight': 500
+          },
           useHTML: true,
         },
         legend: {
@@ -427,10 +434,12 @@
           // width: 500,
           x: 0,
           y: 0,
-          style: { 'text-align': 'right' }
+          style: {
+            'text-align': 'right'
+          }
         },
         xAxis: {
-          categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31',],
+          categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', ],
           gridLineColor: '#dcdcdc',
           lineColor: '#dcdcdc'
         },
@@ -496,10 +505,15 @@
     function mapFocus() {
       $(document).find('#popModel3').modal();
     }
-    $(function () {
-      var chkcell = { cellId: undefined, chkval: undefined, }
+    $(function() {
+      var chkcell = {
+        cellId: undefined,
+        chkval: undefined,
+      }
+
       function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
-        var attr = rowObject.attr[cm.name], result;
+        var attr = rowObject.attr[cm.name],
+          result;
         if (attr.rowspan) {
           result = ' rowspan=' + '"' + attr.rowspan + '"';
         } else if (attr.display) {
@@ -570,7 +584,7 @@
           name: 'col15',
           index: 'col15',
           width: "80"
-        },],
+        }, ],
         // rowNum: 15,
         scrollRows: true,
         scroll: true,
@@ -675,4 +689,5 @@
   </script>
   <!-- //onload script -->
 </body>
+
 </html>
