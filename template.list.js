@@ -260,84 +260,84 @@ var pub_list = new Vue({
       pageName: "창고 온도 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.1.CargoTempList",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "온도 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.1.CargoTempSetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "SMS 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.1.CargoSmsSetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "온도 그래프",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.1.CargoTempGraphe",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
-      pageName: "온도 정보 조회",
+      pageName: "차량 온도 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.CarTempList",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "SMS 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.CarSmsSetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "온도 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.CarTempSetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "온도 그래프",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.CarTempGraphe",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "차량 위치(지도)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.4.2.MapFocus",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "차량 제어 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.5.1.RemoteControlList",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
       pageName: "차량 원격 원격제어 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.5.1.RemoteControlSetting",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     },
     {
       pageName: "출동서비스현황",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.6.1.EmergencyServiceHistory",
-      complete: "",
+      complete: "완료",
       note: ""
     },
     {
@@ -849,6 +849,13 @@ var pub_list = new Vue({
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.4.15.1.UserLogList",
       complete: "완료",
+      note: ""
+    },
+    {
+      pageName: "긴급배차 팝업",
+      fileRoot: "src/main/webapp/WEB-INF/jsp/",
+      fileName: "UWEB.4.16.1",
+      complete: "",
       note: ""
     },
     {

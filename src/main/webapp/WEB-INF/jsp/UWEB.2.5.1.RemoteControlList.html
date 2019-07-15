@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>그룹명</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
+              </div>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차량번호</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+            <div class="input-group">
+              <legend>차종</legend>
+              <div class="input-wrap">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset action searchVehicleReset" type="button">초기화</button>
+          <button class="btn btn-blue btn-search action searchVehicle" type="button">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <button class="btn btn-white" type="button" onclick="$('#popModel1').modal();">선택 설정</button>
+                    <button class="btn btn-white" type="button" onclick="$('#popModel1').modal();">전체 설정</button>
+                  </div>
+                  <div class="header-right">
+                    <button class="btn btn-white" type="button">엑셀다운</button>
+                  </div>
+                </div>
+                <div class="data-table">
+                  <table id="list1"></table>
+                </div>
+                <div class="data-list-table-footer">
+                  <div class="footer-left">
+                    <div class="table-info">TOTAL : 50</div>
+                  </div>
+                  <div class="paging">
+                    <a class="btn-first" href="#"></a>
+                    <a class="btn-prev" href="#"></a>
+                    <a class="on" href="#">1</a>
+                    <a class href="#">2</a>
+                    <a class href="#">3</a>
+                    <a class href="#">4</a>
+                    <a class="btn-next" href="#"></a>
+                    <a class="btn-last" href="#"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <select id name>
+                        <option value="">15개씩 보기</option>
+                        <option value="">20개씩 보기</option>
+                        <option value="">50개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업 영역 -->
+      <!-- 원격 일괄제어 설정 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">원격일괄제어 설정</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- car group list -->
+              <div class="car-group-list vehicle-group-list">
+                <div class="car-group-title">
+                  <div class="input-group">
+                    <div class="input-wrap check inline">
+                      <label for="car-menu-check-all">
+                        <input id="car-menu-check-all" name type="checkbox">
+                        <span>전체선택</span>
+                      </label>
+                    </div>
+                    <span class="font-blue">20대</span>
+                  </div>
+                </div>
+                <div class="car-group-header">단말기번호</div>
+                <div class="car-group">
+                  <ul>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-1">
+                          <input id="check3-1-1" name type="checkbox">
+                          <span>123456789</span> </label></div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-2">
+                          <input id="check3-1-2" name type="checkbox">
+                          <span>123456789</span> </label></div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-3">
+                          <input id="check3-1-3" name type="checkbox">
+                          <span>123456789</span> </label></div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-4">
+                          <input id="check3-1-4" name type="checkbox">
+                          <span>123456789</span> </label></div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-5">
+                          <input id="check3-1-5" name type="checkbox">
+                          <span>123456789</span> </label></div>
+                    </li>
+                    <li>
+                      <div class="input-wrap check">
+                        <label for="check3-1-6">
+                          <input id="check3-1-6" name type="checkbox">
+                          <span>123456789</span> </label></div>
+                    </li>
+                  </ul>
+                </div>
+              </div> <!-- //car group list -->
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>과속제한</span></th>
+                        <td>
+                          <div class="input-wrap unit-set">
+                            <input type="text" name="" id="" class="clearable"><span class="unit">㎞/h</span>
+                          </div>
+                        </td>
+                        <th><span>저전압</span></th>
+                        <td>
+                          <div class="input-wrap unit-set">
+                            <input type="text" name="" id="" class="clearable"><span class="unit">v</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>공회전</span></th>
+                        <td>
+                          <div class="input-wrap unit-set">
+                            <input type="text" name="" id="" class="clearable"><span class="unit">분</span>
+                          </div>
+                        </td>
+                        <th><span>GPS</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select name="" id="">
+                              <option value="">시동꺼짐</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>보고주기<br>(시동ON 시)</span></th>
+                        <td>
+                          <div class="input-wrap select">
+                            <select name="" id="">
+                              <option value="">10분</option>
+                            </select>
+                          </div>
+                        </td>
+                        <th><span>보고주기<br>(시동OFF 시)</span></th>
+                        <td>
+                          <div class="input-group">
+                            <div class="input-wrap select">
+                              <select name="" id="">
+                                <option value="">ON</option>
+                                <option value="" selected>OFF</option>
+                              </select>
+                            </div>
+                            <div class="input-wrap select">
+                              <select name="" id="" disabled>
+                                <option value="">10분</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p class="note big text-center">
+                <big>총 <span class="font-blue">20대</span>의 차량이 위의 정보로 원격 일괄제어됩니다.</big>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" >기본 설정값</button>
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //원격 일괄제어 설정 팝업 -->
+      <!-- //팝업 영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <script src="../../resources/js/highcharts.js"></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      var chkcell = {
+        cellId: undefined,
+        chkval: undefined,
+      }
+
+      function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
+        var attr = rowObject.attr[cm.name],
+          result;
+        if (attr.rowspan) {
+          result = ' rowspan=' + '"' + attr.rowspan + '"';
+        } else if (attr.display) {
+          result = ' style="display:' + attr.display + '"';
+        }
+        return result;
+      }
+      var applyClassesToHeaders = function(grid) {
+        // Use the passed in grid as context, 
+        // in case we have more than one table on the page.
+        var trHead = jQuery("thead:first tr", grid.hdiv);
+        var trBody = jQuery("tbody tr", grid.hdiv);
+        var colModel = grid.getGridParam("colModel");
+        // console.log(trBody, colModel);
+        for (var iCol = 0; iCol < colModel.length; iCol++) {
+          var columnInfo = colModel[iCol];
+          if (columnInfo.class) {
+            var headDiv = jQuery("th:eq(" + iCol + ") div", trHead);
+            var bodyDiv = jQuery("td:eq(" + iCol + ") div", trBody);
+            // console.log(bodyDiv);
+            headDiv.parent().addClass(columnInfo.class);
+          }
+        }
+      };
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['그룹명1', '그룹명2', '차량번호', '차종','과속제한 (㎞/h)', '저전압(v)', '공회전(분)', 'GPS', '보고주기(시동ON시/분)', 'OFF','ON'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "100",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "80"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "80"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "80"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "80"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "80"
+        }, {
+          name: 'col9',
+          index: 'col9',
+          width: "80"
+        }, {
+          name: 'col10',
+          index: 'col10',
+          width: "80"
+        }, {
+          name: 'col11',
+          index: 'col11',
+          width: "80"
+        }],
+        rowNum: 10,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // height: "auto"
+      });
+      $("#list1").jqGrid('setGroupHeaders', {
+          useColSpanStyle: true,
+          groupHeaders: [{
+            startColumnName: 'col10',
+            numberOfColumns: 3,
+            titleText: '보고주기 (시동OFF시/분)'
+          },]
+        });
+      var mydata = [{
+        col1: "동부로지스센터",
+        col2: "그룹2",
+        col3: "경기 11허 1111",
+        col4: "모닝",
+        col5: "100",
+        col6: "10",
+        col7: "10",
+        col8: "시동꺼짐",
+        col9: "10",
+        col10: "10",
+        col11: "10",
+      }];
+      //
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>
