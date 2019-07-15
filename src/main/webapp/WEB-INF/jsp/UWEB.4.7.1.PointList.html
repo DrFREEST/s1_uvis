@@ -131,8 +131,6 @@
                                     </select>
                                   </div>
                                 </td>
-                              </tr>
-                              <tr>
                                 <th><span>지점명</span></th>
                                 <td>
                                   <div class="input-group">
@@ -146,8 +144,6 @@
                                 <td>
                                   <div class="input-wrap check"><label for="checkRange"><input id="checkRange" name type="checkbox"><span>사내공유</span></label></div>
                                 </td>
-                              </tr>
-                              <tr>
                                 <th><span>반경</span></th>
                                 <td>
                                   <div class="input-group">
@@ -161,29 +157,31 @@
                                 <td>
                                   <div class="input-group">
                                     <div class="input-wrap select">
-                                      <option value="">감지 안함</option>
+                                      <select id name>
+                                        <option value="">감지 안함</option>
+                                      </select>
                                     </div>
-                                    <div class="input-wrap check"><label for="checkScan"><input id="checkScan" name type="checkbox"><span>탐지여부</span></label></div>
                                   </div>
+                                  <div class="input-wrap check"><label for="checkScan"><input id="checkScan" name type="checkbox"><span>탐지여부</span></label></div>
                                 </td>
-                              </tr>
-                              <tr>
                                 <th><span>통지대상</span></th>
                                 <td>
                                   <div class="input-group">
                                     <div class="input-wrap select">
-                                      <option value="">통지 안함</option>
+                                      <select id name>
+                                        <option value="">통지 안함</option>
+                                      </select>
                                     </div>
                                   </div>
                                 </td>
                               </tr>
                               <tr>
                                 <th><span>비고</span></th>
-                                <td>
+                                <td colspan="3">
                                   <div class="input-group">
                                     <div class="input-wrap"><input id name type="text"></div>
-                                    <div class="input-wrap check"><label for="showMap"><input id="showMap" name type="checkbox"><span>지도표기</span></label></div>
                                   </div>
+                                  <div class="input-wrap check"><label for="showMap"><input id="showMap" name type="checkbox"><span>지도표기</span></label></div>
                                 </td>
                               </tr>
                             </tbody>

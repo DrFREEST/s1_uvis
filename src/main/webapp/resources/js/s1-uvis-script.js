@@ -70,14 +70,16 @@ $(function () {
         viewMode: "months",
         minViewMode: "months",
         maxViewMode: 2,
-        clearBtn: true
+        clearBtn: true,
+        autoClose: true
       });
     } else {
       target.datepicker({
         language: 'ko',
         todayBtn: true,
         todayHighlight: true,
-        clearBtn: true
+        clearBtn: true,
+        autoClose: true
       });
     }
     target.parent().find('.icon-calendar').on('click', function () {
@@ -152,84 +154,22 @@ $(function () {
   $(window).resize(function () {
     contentWrapResize();
   });
-  //data form table toggle
-  $('.data-form-table .table-toggle-additional').on('click', '.btn-table-toggle', function () {
-    console.log('expended');
-    $(this).parents('.data-form-table').find('table').toggleClass('expanded');
-    if ($(this).parents('.data-form-table').find('table').hasClass('expanded') == true) {
-      console.log($(this).attr('data-text-open'))
-      $(this).find('span').text($(this).attr('data-text-close'));
-    } else {
-      console.log($(this).attr('data-text-close'))
-      $(this).find('span').text($(this).attr('data-text-open'));
-    }
-    $(this).toggleClass('active');
-  });
-  //page tab sortable
-  $('.page-tabs ul').sortable({
-    axis: 'x'
-  });
-  // 지도 그룹 리스트
-  $(document).find('.group-level-1 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function () {
-    var target = $(this);
-    var targetList = $(this).parent().parent();
-    var clickIndex = $(document).find('.group-level-1 > ul > li').index(targetList);
-    $(document).find('.group-level-2 > ul > li').removeClass('active');
-    $(document).find('.map-list .group-list .group-level-1 > ul > li').each(function () {
-      var index = $(document).find('.map-list .group-list .group-level-1 > ul > li').index($(this));
-      if (index == clickIndex) {
-        $(this).toggleClass('active')
-      } else {
-        $(this).removeClass('active')
-      }
-    });
-    var clickTitleIndex = $('.group-list .group-title').index($(this).parent());
-    $('.group-list .group-title').each(function () {
-      var titleIndex = $('.group-list .group-title').index($(this));
-      console.log(clickTitleIndex, titleIndex);
-      if (clickTitleIndex == titleIndex) {
-        if ($(this).parent().hasClass('active') == true) {
-          $(this).addClass('active');
-        } else {
-          $(this).toggleClass('active');
-        }
-      } else {
-        $(this).removeClass('active');
-      }
-    });
-    // $(this).parent().parent().toggleClass('active');
-    setTimeout(function () {
-      $('.group-list').scrollTo(targetList, 200)
-    }, 300);
-  });
-  $(document).find('.group-level-2 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function () {
-    var targetList = $(this).parent().parent();
-    var targetListGroup = $(this).parents('.group-level-2');
-    var clickIndex = $(document).find('.group-level-2 > ul > li').index(targetList);
-    $(document).find('.map-list .group-list .group-level-2 > ul > li').each(function () {
-      var index = $(document).find('.map-list .group-list .group-level-2 > ul > li').index($(this));
-      if (index == clickIndex) {
-        $(this).toggleClass('active')
-      } else {
-        $(this).removeClass('active')
-      }
-    });
-    var clickTitleIndex = $('.group-list .group-title').index($(this).parent());
-    $('.group-list .group-title').removeClass('active');
-    $('.group-list .group-title').each(function () {
-      var titleIndex = $('.group-list .group-title').index($(this));
-      console.log(clickTitleIndex, titleIndex);
-      if (clickTitleIndex == titleIndex) {
-        $(this).toggleClass('active');
-      } else {
-        $(this).removeClass('active');
-      }
-    });
-    $(this).parent().addClass('active');
-    setTimeout(function () {
-      $(targetListGroup).scrollTo(targetList, 200)
-    }, 300);
-    // $(this).parent().parent().toggleClass('active');
-    // console.log(clickIndex)
-  });
 });
+//data form table toggle
+$('.data-form-table .table-toggle-additional').on('click', '.btn-table-toggle', function () {
+  console.log('expended');
+  $(this).parents('.data-form-table').find('table').toggleClass('expanded');
+  if ($(this).parents('.data-form-table').find('table').hasClass('expanded') == true) {
+    console.log($(this).attr('data-text-open'))
+    $(this).find('span').text($(this).attr('data-text-close'));
+  } else {
+    console.log($(this).attr('data-text-close'))
+    $(this).find('span').text($(this).attr('data-text-open'));
+  }
+  $(this).toggleClass('active');
+});
+//page tab sortable
+$('.page-tabs ul').sortable({
+  axis: 'x'
+});
+// });

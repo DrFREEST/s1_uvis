@@ -23,10 +23,9 @@ body.map { }
 .map-list .map-list-top .top-dashboard { display:flex; flex:0 0 100%; } 
 .map-list .map-list-top .top-dashboard .list-tab {flex: 0 0 33.3333%; display:flex;align-items:center;padding-right:30px;} 
 .map-list .map-list-top .top-dashboard .list-tab ul {display:flex;align-items:center; width:100%;} 
-.map-list .map-list-top .top-dashboard .list-tab ul li { flex:0 0 50%;max-width:190px;} 
+.map-list .map-list-top .top-dashboard .list-tab ul li { flex:1 1 auto;max-width:190px;} 
 .map-list .map-list-top .top-dashboard .list-tab ul li + li{margin-left:10px;}
 .map-list .map-list-top .top-dashboard .list-tab ul li a {display:flex;width:100%;height:40px; position:relative;text-align:center;align-items:center;justify-content: center;border-radius:3px;overflow:hidden;color:#fbfbfb;font-size:15px;} 
-.map-list .map-list-top .top-dashboard .list-tab ul li .on { } 
 .map-list .map-list-top .top-dashboard .list-tab ul li .on::before ,
 .map-list .map-list-top .top-dashboard .list-tab ul li a:hover::before{position:absolute;width:100%;height:100%;top:0;left:0;background-color:rgba(0,0,0,0.2);content:'';display:block; } 
 .map-list .map-list-top .top-dashboard .list-tab ul li span { position:relative;} 
@@ -39,12 +38,11 @@ body.map { }
 .map-list .map-list-top .top-dashboard .status ul {display:flex; align-items:center;margin:0 auto;justify-content: center;max-width:380px;} 
 .map-list .map-list-top .top-dashboard .status ul li { flex:0 0 25%;position:relative;} 
 .map-list .map-list-top .top-dashboard .status ul li + li:before{content:'';display:block;width:1px;height:25px;top:50%;margin-top:-12.5px;background-color:#fbfbfb;opacity:0.2;position:absolute;}
-.map-list .map-list-top .top-dashboard .status ul li a { } 
 .map-list .map-list-top .top-dashboard .status ul li a .value { font-size:18px;font-weight:500;color:#ffffff;display:block;text-align:center;} 
 .map-list .map-list-top .top-dashboard .status ul li a span { font-size:12px;color:rgba(255,255,255,0.6);text-align:center;display:block;} 
 .map-list .map-list-tabs { } 
-.map-list .map-list-tabs ul { display:flex;width:100%;} 
-.map-list .map-list-tabs ul li { display:flex;align-items:center;justify-content: center;flex:1;max-width:100px;border-bottom:1px solid #dcdcdc;height:40px;align-items:stretch;} 
+.map-list .map-list-tabs ul { display:flex;width:100%;border-bottom:1px solid #dcdcdc;} 
+.map-list .map-list-tabs ul li { display:flex;justify-content: center;flex:1;max-width:100px;height:40px;align-items:stretch;} 
 .map-list .map-list-tabs ul li a{border-top:3px solid transparent;border-bottom:3px solid transparent;display:flex;align-items:center;justify-content: center;width:100%;font-size:15px;font-weight:500;}
 .map-list .map-list-tabs ul li .on,
 .map-list .map-list-tabs ul li a:hover { border-bottom-color:#1a8cfc;color: #1a8cfc;} 
@@ -83,8 +81,6 @@ body.map { }
 .map-list .group-list li.active .group-level-2 li .group-title::before{content:'';display:block;width:11px;height:43px;border-left:1px dashed #b6b6b6;border-bottom:1px dashed #b6b6b6;position:absolute;top:50%;margin-top:-43px;left:18px;box-sizing:content-box;}
 .map-list .group-list .group-level-2 li .group-title::after{left:30px;background-color:#ededed;}
 .map-list .group-list .group-level-2 > li:last-child .group-title::after{display:none;}
-.map-list .group-list .group-level-2 li .group-title .icon-toggle { } 
-.map-list .group-list .group-level-2 li .group-title span { } 
 .map-list .group-list .group-level-2 li .group-title span em { margin-left:10px;} 
 .map-list .group-list .group-level-2 li .group-title .btn-toggle {width:14px;height:14px; } 
 .map-list .group-list .group-level-2 li .group-title .btn-toggle::before{width:8px;height:8px;margin-top:-8px;margin-left:-5px;}
@@ -131,12 +127,7 @@ body.map { }
 .map-list .group-list .list .list-body ul .list-item .car-name .flag { display:inline-flex;width:30px;height:16px;border-radius:8px;color:#ffffff;font-size:11px;align-items:center;justify-content:center;background-color:#dcdcdc;margin-right:6px;} 
 .map-list .group-list .list .list-body ul .list-item .car-name .flag.on{background-color:#1a8cfc;}
 .map-list .group-list .list .list-body ul .list-item .car-name span { display:inline-block;} 
-.map-list .group-list .list .list-body ul .list-item .status { } 
-.map-list .group-list .list .list-body ul .list-item .status ul { } 
-.map-list .group-list .list .list-body ul .list-item .status ul li { } 
-.map-list .group-list .list .list-body ul .list-item .speed { } 
-.map-list .group-list .list .list-body ul .list-item .speed span { } 
-.map-list .group-list .list .list-body ul .list-item .location { } 
+
 .map-list .group-list .list .list-body ul .list-item .location .icon-gps{display:inline-flex;vertical-align:middle;align-items:flex-end;height:12px;margin-right:15px;}
 .map-list .group-list .list .list-body ul .list-item .location .icon-gps i{background-color:#dcdcdc;width:2.5px;}
 .map-list .group-list .list .list-body ul .list-item .location .icon-gps i.on{background-color:#3b95fe;}
@@ -145,20 +136,19 @@ i + i{margin-left:2.5px;}
 .map-list .group-list .list .list-body ul .list-item .location .icon-gps i.gps-bar-1{height:6px;}
 .map-list .group-list .list .list-body ul .list-item .location .icon-gps i.gps-bar-2{height:9px;}
 .map-list .group-list .list .list-body ul .list-item .location .icon-gps i.gps-bar-3{height:12px;}
-.map-list .group-list .list .list-body ul .list-item .location span { } 
-.map-list .group-list .list .list-body ul .list-item .day-drive-time { } 
-.map-list .group-list .list .list-body ul .list-item .day-drive-time span { } 
-.map-list .group-list .list .list-body ul .list-item .day-drive-distance { } 
-.map-list .group-list .list .list-body ul .list-item .day-drive-distance span { } 
-.map-list .group-list .list .list-body ul .list-item .total-drive-distance { } 
-.map-list .group-list .list .list-body ul .list-item .total-drive-distance span { } 
-.map-list .group-list .list .list-body ul .list-item .date-range { } 
 .map-list .group-list .list .list-body ul .list-item .date-range span { display:inline-block;} 
 .map-list .group-list .list .list-body ul .list-item .call-menu {padding:0; } 
 .map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu { display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;height:30px;background:none;border:none;} 
 .map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu::before,
 .map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu::after{content:'';display:block;width:3px;height:3px;border-radius:3px;margin:1.5px auto;background-color:#8a8a8a;}
 .map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu .dot {width:3px;height:3px; margin:1.5px auto;display:block;background-color:#8a8a8a;} 
+.map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu:hover{}
+.map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu:hover::before,
+.map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu:hover::after,
+.map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu:focus::before,
+.map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu:focus::after{background-color:#1a8cfc;}
+.map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu:hover .dot,
+.map-list .group-list .list .list-body ul .list-item .call-menu .btn-call-menu:focus .dot{background-color:#1a8cfc;}
 .map-list .left-area-btns { display:flex;width:100%;} 
 .map-list .left-area-btns .btn { background-color:#ededed;flex:1;height:40px;display:flex;align-items:center;justify-content: center;font-size:13px;font-weight:500;border:none;border-radius:0;border-top:1px solid #dcdcdc;} 
 .map-list .left-area-btns .btn + .btn{border-left:1px solid #dcdcdc;}
@@ -185,28 +175,28 @@ i + i{margin-left:2.5px;}
 .map-list.simple .group-list .list .list-header{display:none;}
 .map-list.default .group-list .list .list-body ul .list-item,
 .map-list.simple .group-list .list .list-body ul .list-item{flex-wrap:wrap;padding-top:13px;padding-bottom:13px;}
-.map-list .group-list .list .list-body ul .list-item > div{padding:0;}
-.map-list .group-list .list .list-body ul .list-item .car-name{flex:0 0 70%;max-width:70%;text-align:left;order:0;}
-.map-list .group-list .list .list-body ul .list-item .car-name span:not(.flag){font-size:14px;}
-.map-list .group-list .list .list-body ul .list-item .date-range{flex:0 0 30%;max-width:30%;order:1;font-size:12px;color:#8a8a8a;}
-.map-list .group-list .list .list-body ul .list-item .location{order:2;flex:0 0 100%;max-width:100%;text-align:left;margin-top:5px;padding-left:9px;font-size:13px;color:#8a8a8a;}
-.map-list .group-list .list .list-body ul .list-item .status{order:3;flex:0 0 135px;max-width:135px;margin-top:10px;display:inline-flex;font-size:12px;margin-left:36px;}
-.map-list .group-list .list .list-body ul .list-item .status ul{display:flex;width:100%;}
-.map-list .group-list .list .list-body ul .list-item .status ul li{display:flex;width:100%;align-items:center;color:#5e5e5e;}
-.map-list .group-list .list .list-body ul .list-item .status ul li strong{flex:0 0 60px;color:#2b2b2b;text-align:left;}
-.map-list .group-list .list .list-body ul .list-item .speed{order:4;flex:0 0 135px;max-width:135px;display:flex;align-items:center;margin-top:10px;margin-right:20px;margin-left:auto;}
-.map-list .group-list .list .list-body ul .list-item .speed span{font-size:12px;color:#5e5e5e;display:flex;align-items:center;width:100%;}
-.map-list .group-list .list .list-body ul .list-item .speed strong{flex:0 0 60px;color:#2b2b2b;text-align:left;}
-.map-list .group-list .list .list-body ul .list-item .day-drive-time{order:5;flex:0 0 135px;max-width:135px;margin-left:36px;}
-.map-list .group-list .list .list-body ul .list-item .day-drive-time span{display:flex;width:100%;align-items:center;color:#5e5e5e;font-size:12px;}
-.map-list .group-list .list .list-body ul .list-item .day-drive-time span strong{color:#2b2b2b;flex:0 0 60px;text-align:left;}
-.map-list .group-list .list .list-body ul .list-item .day-drive-distance{order:6;flex:0 0 135px;max-width:135px;margin-right:20px;margin-left:auto;}
-.map-list .group-list .list .list-body ul .list-item .day-drive-distance span{text-align:left;display:flex;align-items:center;color:#5e5e5e;font-size:12px;}
-.map-list .group-list .list .list-body ul .list-item .day-drive-distance span strong{flex:0 0 60px;color:#2b2b2b;}
-.map-list .group-list .list .list-body ul .list-item .total-drive-distance{order:7;display:none;}
-.map-list .group-list .list .list-body ul .list-item .total-drive-distance span{display:flex;align-items:center;text-align:left;color:#5e5e5e;}
-.map-list .group-list .list .list-body ul .list-item .total-drive-distance span strong{flex:0 0 60px;color:#2b2b2b;}
-.map-list .group-list .list .list-body ul .list-item .call-menu{order:8;position:absolute;right:8px;bottom:15px;}
+.map-list.default .group-list .list .list-body ul .list-item > div{padding:0;}
+.map-list.default .group-list .list .list-body ul .list-item .car-name{flex:0 0 70%;max-width:70%;text-align:left;order:0;}
+.map-list.default .group-list .list .list-body ul .list-item .car-name span:not(.flag){font-size:14px;}
+.map-list.default .group-list .list .list-body ul .list-item .date-range{flex:0 0 30%;max-width:30%;order:1;font-size:12px;color:#8a8a8a;}
+.map-list.default .group-list .list .list-body ul .list-item .location{order:2;flex:0 0 100%;max-width:100%;text-align:left;margin-top:5px;padding-left:9px;font-size:13px;color:#8a8a8a;}
+.map-list.default .group-list .list .list-body ul .list-item .status{order:3;flex:0 0 135px;max-width:135px;margin-top:10px;display:inline-flex;font-size:12px;margin-left:36px;}
+.map-list.default .group-list .list .list-body ul .list-item .status ul{display:flex;width:100%;}
+.map-list.default .group-list .list .list-body ul .list-item .status ul li{display:flex;width:100%;align-items:center;color:#5e5e5e;}
+.map-list.default .group-list .list .list-body ul .list-item .status ul li strong{flex:0 0 60px;color:#2b2b2b;text-align:left;}
+.map-list.default .group-list .list .list-body ul .list-item .speed{order:4;flex:0 0 135px;max-width:135px;display:flex;align-items:center;margin-top:10px;margin-right:20px;margin-left:auto;}
+.map-list.default .group-list .list .list-body ul .list-item .speed span{font-size:12px;color:#5e5e5e;display:flex;align-items:center;width:100%;}
+.map-list.default .group-list .list .list-body ul .list-item .speed strong{flex:0 0 60px;color:#2b2b2b;text-align:left;}
+.map-list.default .group-list .list .list-body ul .list-item .day-drive-time{order:5;flex:0 0 135px;max-width:135px;margin-left:36px;}
+.map-list.default .group-list .list .list-body ul .list-item .day-drive-time span{display:flex;width:100%;align-items:center;color:#5e5e5e;font-size:12px;}
+.map-list.default .group-list .list .list-body ul .list-item .day-drive-time span strong{color:#2b2b2b;flex:0 0 60px;text-align:left;}
+.map-list.default .group-list .list .list-body ul .list-item .day-drive-distance{order:6;flex:0 0 135px;max-width:135px;margin-right:20px;margin-left:auto;}
+.map-list.default .group-list .list .list-body ul .list-item .day-drive-distance span{text-align:left;display:flex;align-items:center;color:#5e5e5e;font-size:12px;}
+.map-list.default .group-list .list .list-body ul .list-item .day-drive-distance span strong{flex:0 0 60px;color:#2b2b2b;}
+.map-list.default .group-list .list .list-body ul .list-item .total-drive-distance{order:7;display:none;}
+.map-list.default .group-list .list .list-body ul .list-item .total-drive-distance span{display:flex;align-items:center;text-align:left;color:#5e5e5e;}
+.map-list.default .group-list .list .list-body ul .list-item .total-drive-distance span strong{flex:0 0 60px;color:#2b2b2b;}
+.map-list.default .group-list .list .list-body ul .list-item .call-menu{order:8;position:absolute;right:8px;bottom:15px;}
 .map-list.default .default-hide{display:none !important;}
 /* 간단 뷰 */
 .map-list.simple .group-list .list .list-body ul .list-item > div{display:none;}
@@ -214,53 +204,84 @@ i + i{margin-left:2.5px;}
 .map-list.simple .group-list .list .list-body ul .list-item .status{flex:initial;display:flex;max-width:30%;margin-top:0;margin-left:0;}
 .map-list.simple .group-list .list .list-body ul .list-item .status ul li{display:none;font-size:14px;color:#444444;}
 .map-list.simple .group-list .list .list-body ul .list-item .status ul li strong{display:none;}
-.map-list.simple .group-list .list .list-body ul .list-item .call-menu{display:block;top:50%;margin-top:-15px;right:8px;}
+.map-list.simple .group-list .list .list-body ul .list-item .call-menu{display:block;top:50%;margin-top:-15px;right:8px;bottom:auto;}
 .map-list.simple .simple-show{display:block !important;}
 /* ****** 좌측영역 ****** */
 /* ****** 우측영역 ****** */
-.map-partition-area .right-area { position:relative; z-index:0; } 
-.right-area .map-controls { } 
-.right-area .map-controls .location-control { position:absolute; } 
-.right-area .map-controls .location-control .location { } 
-.right-area .map-controls .location-control .location .location-name { } 
-.right-area .map-controls .location-control .location .location-list { } 
-.right-area .map-controls .location-control .location .location-list ul { } 
-.right-area .map-controls .location-control .location .location-list ul li { } 
-.right-area .map-controls .location-control .location .location-list ul li a { } 
-.right-area .map-controls .location-control .point { } 
+.map-partition-area .right-area { position:relative; z-index:0;height:100vh; flex:1 0 auto;} 
+.right-area .map-controls { position:static;} 
+.right-area .map-controls .location-control { position:absolute; top:12px;left:40px;display:flex;width:40vw;z-index:2;} 
+.right-area .map-controls .location-control .location-group { box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);background-color:#ffffff;border-radius:3px;display:flex;flex:initial;padding:0 16px;align-items:center;height:38px;} 
+.right-area .map-controls .location-control .location-group .location {flex:initial; display:flex;align-items:center;position:relative;height:38px;} 
+.right-area .map-controls .location-control .location-group .location + .location{margin-left:15px;}
+.right-area .map-controls .location-control .location-group .location + .location::before{content:'';display:inline-block;transform:rotate(45deg);border-top:1px solid #8a8a8a;border-right:1px solid #8a8a8a;width:8px;height:8px;flex:initial;}
+.right-area .map-controls .location-control .location .location-name {font-weight:500; color:#5e5e5e;cursor:pointer;} 
+.right-area .map-controls .location-control .location-group .location + .location .location-name{margin-left:15px;}
+.right-area .map-controls .location-control .location .location-list {position:absolute;padding-top:10px;top:100%;left:0;} 
+.right-area .map-controls .location-control .location:hover .location-list{}
+.right-area .map-controls .location-control .location .location-list ul {  background-color:#ffffff;border-radius:3px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);transition:0.2s all;height:auto;max-height:0;opacity:0;overflow:hidden;width:120px;padding:0;} 
+.right-area .map-controls .location-control .location:hover .location-list ul{opacity:1;max-height:200px;overflow-y:auto;padding-top:10px;padding-bottom:10px;}
+.right-area .map-controls .location-control .location .location-list ul li {display:flex;height:28px;align-items:center;padding:0 16px; } 
+.right-area .map-controls .location-control .location .location-list ul li:hover{background-color:#f6f6f6;}
+.right-area .map-controls .location-control .location .location-list ul li a { color:#5e5e5e;font-weight:500;} 
+.right-area .map-controls .location-control .location .location-list ul li a:hover{color:#1a8cfc;}
+.right-area .map-controls .location-control .point { margin-left:10px;} 
 .right-area .map-controls .location-control .point .input-wrap { } 
-.right-area .map-controls .location-control .point .input-wrap select { } 
-.right-area .map-controls .map-settings { position:absolute; } 
-.right-area .map-controls .map-settings .map-setting { } 
-.right-area .map-controls .map-settings .map-setting .btn-white { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .setting-title { } 
+.right-area .map-controls .location-control .point .input-wrap select { height:38px;border-radius:3px;width:140px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);border:none;font-weight:normal;color:#5e5e5e;font-size:14px;padding-left:12px;}
+.right-area .map-controls .map-settings { position:absolute; top:12px;right:12px;z-index:2;display:flex;align-items:flex-start;} 
+.right-area .map-controls .map-settings .map-setting { position:relative;} 
+.right-area .map-controls .map-settings .map-setting .btn-map-setting { width:38px;height:38px;background:url(../images/icon-setting.png) no-repeat center center;border-radius:3px;border:1px solid #dcdcdc;background-color:#ffffff;box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);display:block;} 
+.right-area .map-controls .map-settings .map-setting .btn-map-setting:hover,
+.right-area .map-controls .map-settings .map-setting .btn-map-setting:focus,
+.right-area .map-controls .map-settings .map-setting .btn-map-setting.on{background-color:#1a8cfc;background-image:url(../images/icon-setting-on.png);border-color:#1a8cfc;}
+.right-area .map-controls .map-settings .map-setting .setting-layer { border-radius:3px;background-color:#ffffff;box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);padding:20px;position:absolute;top:100%;margin-top:10px;right:0;width:250px;transition:0.2s all;left:auto;} 
+.left-area.expanded + .right-area .map-controls .map-settings .map-setting .setting-layer{margin-right:-212px;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .setting-title { font-size:15px;font-weight:500;color:#2b2b2b;margin-bottom:15px;} 
 .right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li { } 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul {display:flex; } 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li {margin:0 auto; flex:0 0 60px;} 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li + li{}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:first-child{margin-left:0;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:last-child{margin-right:0;}
 .right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a span { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap { } 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon {width:36px;height:36px;border-radius:50%; display:block;margin:0 auto 10px;border:1px solid #dcdcdc;} 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-traffic{background:#ffffff url(../images/icon-traffic-light.png) no-repeat center center;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-traffic,
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-traffic{background-image:url(../images/icon-traffic-light-on.png);background-color:#1a8cfc;border-color:#1a8cfc;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-cctv{background:#ffffff url(../images/icon-cctv.png) no-repeat center center;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-cctv,
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-cctv{background-image:url(../images/icon-cctv-on.png);background-color:#1a8cfc;border-color:#1a8cfc;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-trouble{background:#ffffff url(../images/icon-trouble.png) no-repeat center center;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-trouble,
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-trouble{background-image:url(../images/icon-trouble-on.png);background-color:#1a8cfc;border-color:#1a8cfc;}
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a span { display:block;text-align:center;font-size:13px;color:#8a8a8a;line-height:1;} 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps {border-top:1px solid #ededed; margin-top:20px;padding-top:20px;} 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group { display:flex;} 
+.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap { flex:1;} 
 .right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label { } 
 .right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label #selMapType1 { } 
 .right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label span { } 
-.right-area .map-controls .map-settings .partition-setting { } 
-.right-area .map-controls .map-settings .partition-setting .btn-white { } 
-.right-area .map-controls .map-settings .partition-setting ul { } 
+.right-area .map-controls .map-settings .partition-setting { margin-left:10px;position:relative;} 
+.right-area .map-controls .map-settings .partition-setting .btn-partition-setting {height:38px;border-radius:3px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);font-size:14px;width:65px;display:block;} 
+.right-area .map-controls .map-settings .partition-setting ul { border-radius:3px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);background-color:#ffffff;position:absolute;left:0;top:100%;margin-top:10px;} 
 .right-area .map-controls .map-settings .partition-setting ul li { } 
-.right-area .map-controls .map-settings .partition-setting ul li a { } 
-.right-area .map-controls .map-settings .partition-setting ul li a .icon-partition-2 { } 
-.right-area .map-controls .map-settings .map-style-setting { } 
-.right-area .map-controls .map-settings .map-style-setting .btn-group { } 
-.right-area .map-controls .map-settings .map-style-setting .btn-group .btn { } 
-.right-area .map-controls .map-settings .map-focus-setting { } 
+.right-area .map-controls .map-settings .partition-setting ul li + li{border-top:1px solid #ededed;}
+.right-area .map-controls .map-settings .partition-setting ul li a {width:65px;display:flex;height:38px;align-items:center;justify-content: center; } 
+.right-area .map-controls .map-settings .partition-setting ul li a i{width:19px;height:16px;border:1px solid #5e5e5e;display:block;border-radius:3px;position:relative;}
+.right-area .map-controls .map-settings .partition-setting ul li a .icon-partition-2::before {content:''; display:block;position:absolute;top:50%;margin-top:-1px;left:0;width:100%;height:1px;background-color:#5e5e5e;} 
+.right-area .map-controls .map-settings .partition-setting ul li a .icon-partition-3::before { content:''; display:block;position:absolute;top:50%;margin-top:-1px;left:0;width:100%;height:1px;background-color:#5e5e5e;} 
+.right-area .map-controls .map-settings .partition-setting ul li a .icon-partition-3::after{ content:''; display:block;position:absolute;top:0;left:50%;margin-left:-0.5px;width:1px;height:50%;background-color:#5e5e5e;}
+.right-area .map-controls .map-settings .partition-setting ul li a .icon-partition-4::before { content:''; display:block;position:absolute;top:50%;margin-top:-1px;left:0;width:100%;height:1px;background-color:#5e5e5e;}
+.right-area .map-controls .map-settings .partition-setting ul li a .icon-partition-4::after{ content:''; display:block;position:absolute;top:0;left:50%;margin-left:-0.5px;width:1px;height:100%;background-color:#5e5e5e;} 
+.right-area .map-controls .map-settings .partition-setting ul li a .icon-partition-3 { } 
+.right-area .map-controls .map-settings .map-style-setting {margin-left:70px; border-radius:3px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);font-size:14px;} 
+.right-area .map-controls .map-settings .map-style-setting .btn-group {border-radius:3px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);font-size:14px; } 
+.right-area .map-controls .map-settings .map-style-setting .btn-group .btn { height:38px;font-size:14px;} 
+.right-area .map-controls .map-settings .map-focus-setting {position:absolute; right:0;top:90px;display:flex;flex-direction:column;} 
 .right-area .map-controls .map-settings .map-focus-setting .map-zoom { } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn { } 
-.right-area .map-controls .map-settings .map-focus-setting .btn { } 
+.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn { width:38px;height:38px;border-radius:3px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);} 
+.right-area .map-controls .map-settings .map-focus-setting > .btn { margin-top:10px;width:38px;height:38px;border-radius:3px; box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21);} 
 .right-area .map-object-area { } 
-.right-area .background-map-area { } 
+.right-area .background-map-area {position:absolute;width:100%;left:0;height:100%;top:0; z-index:0;box-shadow:inset 0 1px 4px 0 rgba(0,0,0,0.3);} 
 /* ****** 우측영역 ****** */
 /* ************************** 지도영역 END ************************** */

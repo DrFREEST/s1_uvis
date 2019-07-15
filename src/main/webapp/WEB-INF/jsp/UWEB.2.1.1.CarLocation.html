@@ -33,7 +33,7 @@
         <!-- 좌측 리스트 영역 -->
         <div class="left-area expanded">
           <!-- map list 간단/기본/상세 정보 각각 클래스 simple/default/detail-->
-          <div class="map-list simple">
+          <div class="map-list detail">
             <div class="map-list-top">
               <!-- 업데이트 설정 -->
               <div class="update">
@@ -2380,28 +2380,51 @@
           <div class="map-controls">
             <!-- 위치 설정 -->
             <div class="location-control">
-              <div class="location depth-1">
-                <div class="location-name">서울특별시</div>
-                <div class="location-list">
-                  <ul>
-                    <li><a href="">서울특별시</a></li>
-                  </ul>
+              <div class="location-group">
+                <div class="location depth-1">
+                  <div class="location-name">서울특별시</div>
+                  <div class="location-list">
+                    <ul>
+                      <li><a href="">서울특별시</a></li>
+                      <li><a href="">서울특별시</a></li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="location depth-2">
-                <div class="location-name">종로구</div>
-                <div class="location-list">
-                  <ul>
-                    <li><a href="">종로구</a></li>
-                  </ul>
+                <div class="location depth-2">
+                  <div class="location-name">종로구</div>
+                  <div class="location-list">
+                    <ul>
+                      <li><a href="">종로구</a></li>
+                      <li><a href="">종로구</a></li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="location depth-3">
-                <div class="location-name">사직동</div>
-                <div class="location-list">
-                  <ul>
-                    <li><a href="">사직동</a></li>
-                  </ul>
+                <div class="location depth-3">
+                  <div class="location-name">사직동</div>
+                  <div class="location-list">
+                    <ul>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                      <li><a href="">사직동</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div class="point">
@@ -2421,7 +2444,7 @@
                   <div class="setting-title">지도설정</div>
                   <div class="toggle-btns">
                     <ul>
-                      <li><a href="#"><i class="icon icon-traffic"></i><span>교통정보</span></a></li>
+                      <li class="on"><a href="#"><i class="icon icon-traffic"></i><span>교통정보</span></a></li>
                       <li><a href="#"><i class="icon icon-cctv"></i><span>CCTV</span></a></li>
                       <li><a href="#"><i class="icon icon-trouble"></i><span>사고,공사</span></a></li>
                     </ul>
@@ -2437,6 +2460,7 @@
               <div class="partition-setting">
                 <button class="btn-white btn-partition-setting">멀티탭</button>
                 <ul>
+                  <li><a href title="1분할 맵 보기"><i class="icon-partition-1"></i></a></li>
                   <li><a href title="2분할 맵 보기"><i class="icon-partition-2"></i></a></li>
                   <li><a href title="3분할 맵 보기"><i class="icon-partition-3"></i></a></li>
                   <li><a href title="4분할 맵 보기"><i class="icon-partition-4"></i></a></li>
@@ -2466,7 +2490,7 @@
           </div>
           <!-- //지도 오브젝트 영역 -->
           <!-- 실제 지도 들어가는 영역 -->
-          <div class="background-map-area"></div>
+          <div class="background-map-area" style="background:url(../../resources/images/img-sample-map.png)"></div>
           <!-- //실제 지도 들어가는 영역 -->
         </div>
         <!-- //우측 지도 영역 -->
@@ -2501,6 +2525,74 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
+    // 지도 그룹 리스트
+    //그룹목록1depth
+    $(document).find('.group-level-1 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function () {
+      var target = $(this);
+      var targetList = $(this).parent().parent();
+      var clickIndex = $(document).find('.group-level-1 > ul > li').index(targetList);
+      $(document).find('.group-level-2 > ul > li').removeClass('active');
+      $(document).find('.map-list .group-list .group-level-1 > ul > li').each(function () {
+        var index = $(document).find('.map-list .group-list .group-level-1 > ul > li').index($(this));
+        if (index == clickIndex) {
+          $(this).toggleClass('active')
+        } else {
+          $(this).removeClass('active')
+        }
+      });
+      var clickTitleIndex = $('.group-list .group-title').index($(this).parent());
+      $('.group-list .group-title').each(function () {
+        var titleIndex = $('.group-list .group-title').index($(this));
+        console.log(clickTitleIndex, titleIndex);
+        if (clickTitleIndex == titleIndex) {
+          if ($(this).parent().hasClass('active') == true) {
+            $(this).addClass('active');
+          } else {
+            $(this).toggleClass('active');
+          }
+        } else {
+          $(this).removeClass('active');
+        }
+      });
+      // $(this).parent().parent().toggleClass('active');
+      setTimeout(function () {
+        $('.group-list').scrollTo(targetList, 200)
+      }, 300);
+    });
+    //그룹목록2depth
+    $(document).find('.group-level-2 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function () {
+      var targetList = $(this).parent().parent();
+      var targetListGroup = $(this).parents('.group-level-2');
+      var clickIndex = $(document).find('.group-level-2 > ul > li').index(targetList);
+      $(document).find('.map-list .group-list .group-level-2 > ul > li').each(function () {
+        var index = $(document).find('.map-list .group-list .group-level-2 > ul > li').index($(this));
+        if (index == clickIndex) {
+          $(this).toggleClass('active')
+        } else {
+          $(this).removeClass('active')
+        }
+      });
+      var clickTitleIndex = $('.group-list .group-title').index($(this).parent());
+      $('.group-list .group-title').removeClass('active');
+      $('.group-list .group-title').each(function () {
+        var titleIndex = $('.group-list .group-title').index($(this));
+        console.log(clickTitleIndex, titleIndex);
+        if (clickTitleIndex == titleIndex) {
+          $(this).toggleClass('active');
+        } else {
+          $(this).removeClass('active');
+        }
+      });
+      $(this).parent().addClass('active');
+      setTimeout(function () {
+        $(targetListGroup).scrollTo(targetList, 200)
+      }, 300);
+      // $(this).parent().parent().toggleClass('active');
+      // console.log(clickIndex)
+    });
+    //리스트설정
+    //미니맵
+    //차량세부설정팝업
   </script>
   <!-- //onload script -->
 </body>
