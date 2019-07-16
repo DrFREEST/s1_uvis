@@ -1648,6 +1648,11 @@
               </ul>
             </div>
             <!-- //리스트아이템 레이어 -->
+            <!-- 미니맵 레이어 -->
+            <div class="pop-minimap" style="background:url(../../resources/images/img-sample-map.png)">
+              <div class="car-object on" style="position:absolute;left:50%;top:50%;margin-left:-60px;margin-top:-33px;"><i></i><span>경기 11허 1111</span></div>
+            </div>
+            <!-- //미니맵 레이어 -->
             <!-- 리스트 설정 레이어 -->
             <div class="pop-list-setting">
               <div class="modal-header">
@@ -1704,11 +1709,469 @@
               <p class="note font-gray indent">차량정보에 마우스 오버 시, 차량위치를 확인 할 수 있는 미니맵이 활성화됩니다.</p>
             </div>
             <!-- //리스트 설정 레이어 -->
-            <!-- 미니맵 레이어 -->
-            <div class="pop-minimap" style="background:url(../../resources/images/img-sample-map.png)">
-              <div class="car-object on" style="position:absolute;left:50%;top:50%;margin-left:-60px;margin-top:-33px;"><i></i><span>경기 11허 1111</span></div>
+            <!--  차량상세정보 -->
+            <div class="pop-car-detail">
+              <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button class="close" type="button" aria-label="Close" onclick="$('.pop-car-detail').removeClass('show');"></button>
+              </div>
+              <div class="car-info">
+                <div class="car-name"><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;홍길동)</span></div>
+                <div class="time-remining">
+                  24시간 00분 남음
+                </div>
+                <div class="gps-address">
+                  <div class="icon-gps">
+                    <i class="gps-bar-1 on"></i>
+                    <i class="gps-bar-2"></i>
+                    <i class="gps-bar-3"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="info-tabs tabs">
+                <ul>
+                  <li><a href="#car-info-tab-1">기본정보</a></li>
+                  <li><a href="#car-info-tab-2">운행경로</a></li>
+                  <li><a href="#car-info-tab-3">원격제어</a></li>
+                  <li><a href="#car-info-tab-4">인접차량</a></li>
+                </ul>
+                <!-- 기본정보 -->
+                <div class="info-tab-content" id="car-info-tab-1">
+                  <dl class="car-info-group">
+                    <dl>
+                      <dt>회사명</dt>
+                      <dd>유비스</dd>
+                    </dl>
+                    <dl>
+                      <dt>그룹명</dt>
+                      <dd>아이오티서비스그룹</dd>
+                    </dl>
+                    <dl>
+                      <dt>운전자명</dt>
+                      <dd>홍길동</dd>
+                    </dl>
+                    <dl>
+                      <dt>연락처</dt>
+                      <dd><a href="#">010-0000-0000</a></dd>
+                    </dl>
+                  </dl>
+                  <dl class="car-info-group">
+                    <dl>
+                      <dt>현재속도</dt>
+                      <dd>100㎞/h</dd>
+                    </dl>
+                    <dl>
+                      <dt>평균속도</dt>
+                      <dd>100㎞/h</dd>
+                    </dl>
+                    <dl>
+                      <dt>운행시간/일</dt>
+                      <dd>24시간 00분</dd>
+                    </dl>
+                    <dl>
+                      <dt>운행거리/일</dt>
+                      <dd>100㎞</dd>
+                    </dl>
+                    <dl>
+                      <dt>누적운행거리</dt>
+                      <dd>100㎞</dd>
+                    </dl>
+                    <dl>
+                      <dt>최근신호/ON</dt>
+                      <dd>2019-01-01 00:00:00</dd>
+                    </dl>
+                    <dl>
+                      <dt>최근신호/OFF</dt>
+                      <dd>2019-01-01 00:00:00</dd>
+                    </dl>
+                  </dl>
+                  <dl class="car-info-group">
+                    <dl>
+                      <dt>단말기번호</dt>
+                      <dd>1234567890</dd>
+                    </dl>
+                    <dl>
+                      <dt>계약번호</dt>
+                      <dd>1234567890</dd>
+                    </dl>
+                  </dl>
+                  <dl class="car-info-group">
+                    <dl>
+                      <dt>호차</dt>
+                      <dd>1호차</dd>
+                    </dl>
+                    <dl>
+                      <dt>전방온도</dt>
+                      <dd>10℃<span class="font-gray">기준 0℃ ~ 00℃</span></dd>
+                    </dl>
+                    <dl>
+                      <dt>후방온도</dt>
+                      <dd>10℃<span class="font-gray">기준 0℃ ~ 00℃</span></dd>
+                    </dl>
+                  </dl>
+                  <dl class="car-info-group">
+                    <dl>
+                      <dt>업무구분</dt>
+                      <dd>상온</dd>
+                    </dl>
+                  </dl>
+                  <dl class="car-info-group">
+                    <dl>
+                      <dt>최종수신일</dt>
+                      <dd>2019-01-01 00:00:00</dd>
+                    </dl>
+                  </dl>
+                </div>
+                <!-- //기본정보 -->
+                <!-- 운행경로 -->
+                <div class="info-tab-content" id="car-info-tab-2">
+                  <div class="drive-route">
+                    <!-- 달력 -->
+                    <div class="calendar">
+                      <div class="calendar-header">
+                        <div class="header-left"><button class="btn-prev">이전달</button></div>
+                        <div class="header-center">
+                          <div class="calendar-title"><span class="year"></span><span class="month"></span></div>
+                          <button class="btn-today">오늘</button>
+                        </div>
+                        <div class="headre-right"><button class="btn-next">다음달</button></div>
+                        <div class="calendar-body">
+                          <ul class="day-list">
+                            <li class="day other-month"><span class="date sun">28</span></li>
+                            <li class="day other-month"><span class="date">29</span></li>
+                            <li class="day other-month"><span class="date">30</span></li>
+                            <li class="day"><span class="date">1</span></li>
+                            <li class="day"><span class="date issu start">2</span></li>
+                            <li class="day"><span class="date issue between">3</span></li>
+                            <li class="day"><span class="date sat">4</span></li>
+                            <li class="day"><span class="date sun">5</span></li>
+                            <li class="day"><span class="date">6</span></li>
+                            <li class="day"><span class="date">7</span></li>
+                            <li class="day"><span class="date">8</span></li>
+                            <li class="day"><span class="date">9</span></li>
+                            <li class="day"><span class="date">10</span></li>
+                            <li class="day"><span class="date sat">11</span></li>
+                            <li class="day"><span class="date sun">12</span></li>
+                            <li class="day"><span class="date">13</span></li>
+                            <li class="day"><span class="date">14</span></li>
+                            <li class="day"><span class="date">15</span></li>
+                            <li class="day"><span class="date">16</span></li>
+                            <li class="day"><span class="date">17</span></li>
+                            <li class="day"><span class="date sat">18</span></li>
+                            <li class="day"><span class="date sun">19</span></li>
+                            <li class="day"><span class="date">20</span></li>
+                            <li class="day"><span class="date">21</span></li>
+                            <li class="day"><span class="date">22</span></li>
+                            <li class="day"><span class="date">23</span></li>
+                            <li class="day"><span class="date">24</span></li>
+                            <li class="day"><span class="date sat">25</span></li>
+                            <li class="day"><span class="date sun">26</span></li>
+                            <li class="day"><span class="date">27</span></li>
+                            <li class="day"><span class="date">28</span></li>
+                            <li class="day"><span class="date">29</span></li>
+                            <li class="day"><span class="date">30</span></li>
+                            <li class="day other-month"><span class="date">1</span></li>
+                            <li class="day other-month"><span class="date sat">2</span></li>
+                          </ul>
+                        </div>
+                        <button class="btn-toggle-calendar" data-close-text="달력 펼치기" data-open-text="달력 접기"><span>달력 접기</span><i></i></button>
+                      </div>
+                    </div>
+                    <!-- //달력 -->
+                    <!-- 시간표 -->
+                    <div class="time-table">
+                      <dl>
+                        <dt>오전</dt>
+                        <dd>
+                          <buttton class="btn-white">1</buttton>
+                          <buttton class="btn-white">2</buttton>
+                          <buttton class="btn-white">3</buttton>
+                          <buttton class="btn-white">4</buttton>
+                          <buttton class="btn-white">5</buttton>
+                          <buttton class="btn-white">6</buttton>
+                          <buttton class="btn-white">7</buttton>
+                          <buttton class="btn-white">8</buttton>
+                          <buttton class="btn-white">9</buttton>
+                          <buttton class="btn-white">10</buttton>
+                          <buttton class="btn-white">11</buttton>
+                          <buttton class="btn-white">12</buttton>
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt>오후</dt>
+                        <dd>
+                          <buttton class="btn-white">13</buttton>
+                          <buttton class="btn-white">14</buttton>
+                          <buttton class="btn-white">15</buttton>
+                          <buttton class="btn-white">16</buttton>
+                          <buttton class="btn-white">17</buttton>
+                          <buttton class="btn-white">18</buttton>
+                          <buttton class="btn-white">19</buttton>
+                          <buttton class="btn-white">20</buttton>
+                          <buttton class="btn-white">21</buttton>
+                          <buttton class="btn-white">22</buttton>
+                          <buttton class="btn-white">23</buttton>
+                          <buttton class="btn-white">24</buttton>
+                        </dd>
+                      </dl>
+                    </div>
+                    <!-- //시간표 -->
+                    <div class="show-route-btns">
+                      <button class="btn-white">전체 경로 보기</button>
+                      <button class="btn-white">경로 비교하기</button>
+                    </div>
+                    <hr>
+                    <div class="route-option">
+                      <div class="option-left">
+                        <div class="input-wrap check"><label for="checkSpeedColor"><input id="checkSpeedColor" name type="checkbox"><span>속도색상</span></label></div>
+                      </div>
+                      <div class="option-right">
+                        <div class="input-wrap"><label for="selTimeInterval"></label>
+                          <select id="selTimeInterval" name>
+                            <option value="">1분</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 운행리스트 -->
+                    <div class="drive-timeline">
+                      <ul class="timeline-header">
+                        <li class="time"><span>시간</span></li>
+                        <li class="location"><span>주소</span></li>
+                        <li class="event"><span>이벤트</span></li>
+                        <li class="speed"><span>속도</span></li>
+                        <li class="distance"><span>거리(㎞)</span></li>
+                      </ul>
+                      <ul class="timeline-body">
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location painted"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location painted"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- //운행리스트 -->
+                    <div class="download-btns">
+                      <button class="btn btn-default">엑셀 다운로드</button>
+                      <button class="btn btn-default">지번 다운로드</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- //운행경로 -->
+                <!-- 원격제어 -->
+                <div class="info-tab-content" id="car-info-tab-3">
+                  <div class="data-form-table">
+                    <div class="data-form-table-body">
+                      <table>
+                        <colgroup>
+                          <col style="width:135px;">
+                          <col style="width:auto;">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th><span>시동 제어</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap select">
+                                  <select id name>
+                                    <option value="">업무구분 선택</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>보고주기/시동ON</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap select">
+                                  <select id name>
+                                    <option value="">1 분</option>
+                                  </select>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>보고주기/시동OFF</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap select">
+                                  <select id name>
+                                    <option value="">1 분</option>
+                                  </select>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>GPS</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap select">
+                                  <select id name>
+                                    <option value="">항상켜짐</option>
+                                  </select>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>저전압</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap unit-set">
+                                  <input class="clearable" id name type="text"><span class="unit">v</span>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>과속제한</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap unit-set">
+                                  <input class="clearable" id name type="text"><span class="unit">㎞/h</span>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>누적거리</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap unit-set">
+                                  <input class="clearable" id name type="text"><span class="unit">㎞</span>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>공회전</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap unit-set">
+                                  <input class="clearable" id name type="text"><span class="unit">분</span>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>LED</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap select">
+                                  <select id name>
+                                    <option value="">ON</option>
+                                  </select>
+                                </div>
+                                <button class="btn-default">설정</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>냉각수</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-group">
+                                  <div class="input-wrap unit-set">
+                                    <input class="clearable" id name type="text"><span class="unit">℃</span>
+                                  </div>
+                                  <button class="btn-default">설정</button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- //원격제어 -->
+                <!-- 인접차량 -->
+                <div class="info-tab-content" id="car-info-tab-4">
+                  <!-- 검색 -->
+                  <div class="search-form">
+                    <div class="input-group"><label for="distance">반경</label>
+                      <div class="input-wrap"><input id="distance" name type="text"></div>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">㎞</option>
+                        </select>
+                      </div>
+                      <button class="btn btn-white">초기화</button>
+                      <button class="btn btn-blue">검색</button>
+                    </div>
+                  </div>
+                  <!-- //검색 -->
+                  <div class="data-list-table">
+                    <div class="data-table">
+                      <table id="list1"></table>
+                    </div>
+                  </div>
+                </div>
+                <!-- //인접차량 -->
+              </div>
             </div>
-            <!-- //미니맵 레이어 -->
+            <!--  //차량상세정보 -->
             <!-- //좌측 레이어 팝업 -->
           </div>
           <!-- //map list -->

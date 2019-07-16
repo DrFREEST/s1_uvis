@@ -385,7 +385,7 @@ textarea { font-size:16px; font-weight:500; line-height:1.4em; display:block; wi
 .header .sub-depth1 a:hover{color:#1a8cfc;}
 .header .sub-depth1 > ul >li.height-flex{height:100%;}
 .header .sub-depth1 > ul >li > a{font-size:16px;color:#2b2b2b;}
-.header .sub-depth1 > ul >li + li{margin-left:0;height:auto;border:none;}
+.header .sub-depth1 > ul >li + li{margin-left:0;height:auto;border:none;padding-left:0;}
 .header .sub-depth2> ul{display:flex;flex-direction:column;align-items:flex-start;justify-content: flex-start;margin-top:8px;}
 .header .sub-depth2> ul> li{height:auto;}
 
