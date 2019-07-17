@@ -167,7 +167,7 @@ var pub_list = new Vue({
       pageName: "전체화면(기본화면)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapFull",
-      complete: "",
+      complete: "완료",
       note: "지도화면"
     }, {
       pageName: "멀티맵 차량 검색",
@@ -179,19 +179,19 @@ var pub_list = new Vue({
       pageName: "전체화면(2 분할)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapTwo",
-      complete: "",
+      complete: "완료",
       note: "지도화면"
     }, {
       pageName: "전체화면(3 분할)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapTri",
-      complete: "",
+      complete: "완료",
       note: "지도화면"
     }, {
       pageName: "전체화면(4 분할)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapFour",
-      complete: "",
+      complete: "완료",
       note: "지도화면"
     }, {
       pageName: "배터리 저전압 조회",
@@ -749,115 +749,115 @@ var pub_list = new Vue({
       pageName: "자주하는 질문",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.1.1.FaqList",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "자주하는 질문 상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.1.1.FaqView",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "자주하는 질문 등록 / 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.1.1.FaqInput",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "1: 1 문의내역",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.2.1.QAList",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "1: 1 문의등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.2.1.QAInput",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "1: 1 문의상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.2.1.QAView",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "1: 1 문의답변",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.2.1.QAReply",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "공지사항",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.3.1.Notice",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "공지사항 등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.3.1.NoticeInput",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "공지사항 상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.3.1.NoticeView",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "공지사항 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.3.1.NoticeEdit",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "도움말",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.4.1.Help",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "도움말 상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.4.1.HelpView",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "도움말 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.4.1.HelpEdit",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "도움말 등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.4.1.HelpInput",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "API 신청",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.5.1.ApiList",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "API 신청 등록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.5.1.ApiInput",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "API 신청 상세 / 삭제",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.5.1.ApiView",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "API 신청 수정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.5.1.ApiEdit",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "언어 / 지도설정",
