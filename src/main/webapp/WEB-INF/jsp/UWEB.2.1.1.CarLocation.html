@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +20,6 @@
   <link href="../../resources/css/s1_uvis_map_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="map">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -135,7 +133,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -172,7 +170,7 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -246,7 +244,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -283,118 +281,7 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </li>
-                        <li>
-                          <h5 class="group-title"><span>그룹명-1-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
-                          <div class="list">
-                            <table>
-                              <colgroup>
-                                <col style="width:36px;">
-                                <col style="width:12%;">
-                                <col style="width:14%;">
-                                <col style="width:6.5%;">
-                                <col style="width:22%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:14%;">
-                                <col style="width:35px;">
-                              </colgroup>
-                              <thead class="list-header">
-                                <tr>
-                                  <th class="space"></th>
-                                  <th class="car-name"><span>차량명</span></th>
-                                  <th class="status"><span>상태</span></th>
-                                  <th class="speed"><span>속도</span></th>
-                                  <th class="location"><span>위치</span></th>
-                                  <th class="day-drive-time"><span>운행시간/일</span></th>
-                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
-                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
-                                  <th class="time-remaining"><span>남은시간</span></th>
-                                  <th class="date-range"><span>배차기간</span></th>
-                                  <th class="call-menu"></th>
-                                </tr>
-                              </thead>
-                              <tbody class="list-body">
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -468,7 +355,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -505,7 +392,118 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                        <li>
+                          <h5 class="group-title"><span>그룹명-1-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
+                          <div class="list">
+                            <table>
+                              <colgroup>
+                                <col style="width:36px;">
+                                <col style="width:12%;">
+                                <col style="width:14%;">
+                                <col style="width:6.5%;">
+                                <col style="width:22%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:14%;">
+                                <col style="width:35px;">
+                              </colgroup>
+                              <thead class="list-header">
+                                <tr>
+                                  <th class="space"></th>
+                                  <th class="car-name"><span>차량명</span></th>
+                                  <th class="status"><span>상태</span></th>
+                                  <th class="speed"><span>속도</span></th>
+                                  <th class="location"><span>위치</span></th>
+                                  <th class="day-drive-time"><span>운행시간/일</span></th>
+                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
+                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
+                                  <th class="time-remaining"><span>남은시간</span></th>
+                                  <th class="date-range"><span>배차기간</span></th>
+                                  <th class="call-menu"></th>
+                                </tr>
+                              </thead>
+                              <tbody class="list-body">
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -590,7 +588,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -627,7 +625,7 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -701,7 +699,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -738,118 +736,7 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </li>
-                        <li>
-                          <h5 class="group-title"><span>그룹명-2-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
-                          <div class="list">
-                            <table>
-                              <colgroup>
-                                <col style="width:36px;">
-                                <col style="width:12%;">
-                                <col style="width:14%;">
-                                <col style="width:6.5%;">
-                                <col style="width:22%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:14%;">
-                                <col style="width:35px;">
-                              </colgroup>
-                              <thead class="list-header">
-                                <tr>
-                                  <th class="space"></th>
-                                  <th class="car-name"><span>차량명</span></th>
-                                  <th class="status"><span>상태</span></th>
-                                  <th class="speed"><span>속도</span></th>
-                                  <th class="location"><span>위치</span></th>
-                                  <th class="day-drive-time"><span>운행시간/일</span></th>
-                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
-                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
-                                  <th class="time-remaining"><span>남은시간</span></th>
-                                  <th class="date-range"><span>배차기간</span></th>
-                                  <th class="call-menu"></th>
-                                </tr>
-                              </thead>
-                              <tbody class="list-body">
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -923,7 +810,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -960,118 +847,7 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </li>
-                        <li>
-                          <h5 class="group-title"><span>그룹명-2-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
-                          <div class="list">
-                            <table>
-                              <colgroup>
-                                <col style="width:36px;">
-                                <col style="width:12%;">
-                                <col style="width:14%;">
-                                <col style="width:6.5%;">
-                                <col style="width:22%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:14%;">
-                                <col style="width:35px;">
-                              </colgroup>
-                              <thead class="list-header">
-                                <tr>
-                                  <th class="space"></th>
-                                  <th class="car-name"><span>차량명</span></th>
-                                  <th class="status"><span>상태</span></th>
-                                  <th class="speed"><span>속도</span></th>
-                                  <th class="location"><span>위치</span></th>
-                                  <th class="day-drive-time"><span>운행시간/일</span></th>
-                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
-                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
-                                  <th class="time-remaining"><span>남은시간</span></th>
-                                  <th class="date-range"><span>배차기간</span></th>
-                                  <th class="call-menu"></th>
-                                </tr>
-                              </thead>
-                              <tbody class="list-body">
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -1145,7 +921,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -1182,118 +958,7 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </li>
-                        <li>
-                          <h5 class="group-title"><span>그룹명-2-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
-                          <div class="list">
-                            <table>
-                              <colgroup>
-                                <col style="width:36px;">
-                                <col style="width:12%;">
-                                <col style="width:14%;">
-                                <col style="width:6.5%;">
-                                <col style="width:22%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:9%;">
-                                <col style="width:14%;">
-                                <col style="width:35px;">
-                              </colgroup>
-                              <thead class="list-header">
-                                <tr>
-                                  <th class="space"></th>
-                                  <th class="car-name"><span>차량명</span></th>
-                                  <th class="status"><span>상태</span></th>
-                                  <th class="speed"><span>속도</span></th>
-                                  <th class="location"><span>위치</span></th>
-                                  <th class="day-drive-time"><span>운행시간/일</span></th>
-                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
-                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
-                                  <th class="time-remaining"><span>남은시간</span></th>
-                                  <th class="date-range"><span>배차기간</span></th>
-                                  <th class="call-menu"></th>
-                                </tr>
-                              </thead>
-                              <tbody class="list-body">
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
-                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
-                                  </td>
-                                  <td class="status">
-                                    <ul>
-                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
-                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
-                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
-                                    </ul>
-                                  </td>
-                                  <td class="speed">
-                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
-                                  </td>
-                                  <td class="location">
-                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
-                                  </td>
-                                  <td class="day-drive-time">
-                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
-                                  </td>
-                                  <td class="day-drive-distance">
-                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
-                                  </td>
-                                  <td class="total-drive-distance">
-                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
-                                  </td>
-                                  <td class="time-remaining">
-                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
-                                  </td>
-                                  <td class="date-range">
-                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
-                                  </td>
-                                  <td class="call-menu">
-                                    <button class="btn-call-menu"><i class="dot"></i></button>
-                                  </td>
-                                </tr>
-                                <tr class="list-item">
-                                  <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -1367,7 +1032,7 @@
                               <tbody class="list-body">
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -1404,7 +1069,340 @@
                                 </tr>
                                 <tr class="list-item">
                                   <td class="space"></td>
-                                  <td class="car-name">
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                        <li>
+                          <h5 class="group-title"><span>그룹명-2-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
+                          <div class="list">
+                            <table>
+                              <colgroup>
+                                <col style="width:36px;">
+                                <col style="width:12%;">
+                                <col style="width:14%;">
+                                <col style="width:6.5%;">
+                                <col style="width:22%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:14%;">
+                                <col style="width:35px;">
+                              </colgroup>
+                              <thead class="list-header">
+                                <tr>
+                                  <th class="space"></th>
+                                  <th class="car-name"><span>차량명</span></th>
+                                  <th class="status"><span>상태</span></th>
+                                  <th class="speed"><span>속도</span></th>
+                                  <th class="location"><span>위치</span></th>
+                                  <th class="day-drive-time"><span>운행시간/일</span></th>
+                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
+                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
+                                  <th class="time-remaining"><span>남은시간</span></th>
+                                  <th class="date-range"><span>배차기간</span></th>
+                                  <th class="call-menu"></th>
+                                </tr>
+                              </thead>
+                              <tbody class="list-body">
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                        <li>
+                          <h5 class="group-title"><span>그룹명-2-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
+                          <div class="list">
+                            <table>
+                              <colgroup>
+                                <col style="width:36px;">
+                                <col style="width:12%;">
+                                <col style="width:14%;">
+                                <col style="width:6.5%;">
+                                <col style="width:22%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:14%;">
+                                <col style="width:35px;">
+                              </colgroup>
+                              <thead class="list-header">
+                                <tr>
+                                  <th class="space"></th>
+                                  <th class="car-name"><span>차량명</span></th>
+                                  <th class="status"><span>상태</span></th>
+                                  <th class="speed"><span>속도</span></th>
+                                  <th class="location"><span>위치</span></th>
+                                  <th class="day-drive-time"><span>운행시간/일</span></th>
+                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
+                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
+                                  <th class="time-remaining"><span>남은시간</span></th>
+                                  <th class="date-range"><span>배차기간</span></th>
+                                  <th class="call-menu"></th>
+                                </tr>
+                              </thead>
+                              <tbody class="list-body">
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                        <li>
+                          <h5 class="group-title"><span>그룹명-2-3<em>9,999</em></span><button class="btn-toggle"></button></h5>
+                          <div class="list">
+                            <table>
+                              <colgroup>
+                                <col style="width:36px;">
+                                <col style="width:12%;">
+                                <col style="width:14%;">
+                                <col style="width:6.5%;">
+                                <col style="width:22%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:9%;">
+                                <col style="width:14%;">
+                                <col style="width:35px;">
+                              </colgroup>
+                              <thead class="list-header">
+                                <tr>
+                                  <th class="space"></th>
+                                  <th class="car-name"><span>차량명</span></th>
+                                  <th class="status"><span>상태</span></th>
+                                  <th class="speed"><span>속도</span></th>
+                                  <th class="location"><span>위치</span></th>
+                                  <th class="day-drive-time"><span>운행시간/일</span></th>
+                                  <th class="day-drive-distance"><span>운행거리/일</span></th>
+                                  <th class="total-drive-distance"><span>누적 운행거리</span></th>
+                                  <th class="time-remaining"><span>남은시간</span></th>
+                                  <th class="date-range"><span>배차기간</span></th>
+                                  <th class="call-menu"></th>
+                                </tr>
+                              </thead>
+                              <tbody class="list-body">
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </td>
+                                  <td class="status">
+                                    <ul>
+                                      <li><strong class="detail-hide">배터리</strong>11.1v</li>
+                                      <li class="default-hide"><strong class="detail-hide">GPS신호</strong>GPS 양호</li>
+                                      <li class="simple-show"><strong class="detail-hide">온도</strong>-12.0℃</li>
+                                    </ul>
+                                  </td>
+                                  <td class="speed">
+                                    <span><strong class="detail-hide">현재속도</strong>100㎞/h</span>
+                                  </td>
+                                  <td class="location">
+                                    <span class="icon-gps detail-hide"><i class="gps-bar-1 on"></i><i class="gps-bar-2"></i><i class="gps-bar-3"></i></span><span>서울시 정로구 충무로 11가 111-1</span>
+                                  </td>
+                                  <td class="day-drive-time">
+                                    <span><strong class="detail-hide">운행시간</strong>11시간 40분</span>
+                                  </td>
+                                  <td class="day-drive-distance">
+                                    <span><strong class="detail-hide">운행거리</strong>990㎞</span>
+                                  </td>
+                                  <td class="total-drive-distance">
+                                    <span><strong class="detail-hide">총 운행거리</strong>999,990㎞</span>
+                                  </td>
+                                  <td class="time-remaining">
+                                    <span><strong class="detail-hide">남은시간</strong>24시간 55분 남음</span>
+                                  </td>
+                                  <td class="date-range">
+                                    <span>2019-01-01</span> <span class="default-hide">~</span> <span class="default-hide">2019-01-01</span>
+                                  </td>
+                                  <td class="call-menu">
+                                    <button class="btn-call-menu"><i class="dot"></i></button>
+                                  </td>
+                                </tr>
+                                <tr class="list-item">
+                                  <td class="space"></td>
+                                  <td class="car-name" onclick="$('.pop-map-car-detail').addClass('show');">
                                     <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
                                   </td>
                                   <td class="status">
@@ -1472,7 +1470,9 @@
                             <div class="list-body">
                               <ul>
                                 <li class="list-item">
-                                  <div class="car-name"><span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span></div>
+                                  <div class="car-name" onclick="$('.pop-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span>
+                                  </div>
                                   <div class="status">
                                     <ul>
                                       <li><strong class="detail-hide">배터리</strong>11.1v</li>
@@ -1530,7 +1530,8 @@
                             <div class="list-body">
                               <ul>
                                 <li class="list-item">
-                                  <div class="car-name"><span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span></div>
+                                  <div class="car-name" onclick="$('.pop-car-detail').addClass('show');">
+                                    <span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span></div>
                                   <div class="status">
                                     <ul>
                                       <li><strong class="detail-hide">배터리</strong>11.1v</li>
@@ -1588,7 +1589,7 @@
                             <div class="list-body">
                               <ul>
                                 <li class="list-item">
-                                  <div class="car-name"><span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span></div>
+                                  <div class="car-name" onclick="$('.pop-car-detail').addClass('show');"><span class="flag on">ON</span><span>15허1470</span><span>(강서&middot;강진수)</span></div>
                                   <div class="status">
                                     <ul>
                                       <li><strong class="detail-hide">배터리</strong>11.1v</li>
@@ -1727,6 +1728,7 @@
                       <i class="gps-bar-2"></i>
                       <i class="gps-bar-3"></i>
                     </div>
+                    <span>서울 중구 충무로 4가 1234-4222</span>
                   </div>
                 </div>
               </div>
@@ -1829,97 +1831,114 @@
                 <div class="info-tab-content" id="car-info-tab-2">
                   <div class="drive-route">
                     <!-- 달력 -->
-                    <div class="calendar">
+                    <div class="calendar expanded">
                       <div class="calendar-header">
                         <div class="header-left"><button class="btn-prev">이전달</button></div>
                         <div class="header-center">
-                          <div class="calendar-title"><span class="year"></span><span class="month"></span></div>
-                          <button class="btn-today">오늘</button>
+                          <div class="calendar-title"><label for="monthDatepicker"><span>2019.04</span><input class="datepicker monthly hide-obj" id="monthDatepicker" name type="text"></label>
+                            <button class="btn-today">오늘</button>
+                          </div>
                         </div>
-                        <div class="headre-right"><button class="btn-next">다음달</button></div>
-                        <div class="calendar-body">
-                          <ul class="day-list">
-                            <li class="day other-month"><span class="date sun">28</span></li>
-                            <li class="day other-month"><span class="date">29</span></li>
-                            <li class="day other-month"><span class="date">30</span></li>
-                            <li class="day"><span class="date">1</span></li>
-                            <li class="day"><span class="date issu start">2</span></li>
-                            <li class="day"><span class="date issue between">3</span></li>
-                            <li class="day"><span class="date sat">4</span></li>
-                            <li class="day"><span class="date sun">5</span></li>
-                            <li class="day"><span class="date">6</span></li>
-                            <li class="day"><span class="date">7</span></li>
-                            <li class="day"><span class="date">8</span></li>
-                            <li class="day"><span class="date">9</span></li>
-                            <li class="day"><span class="date">10</span></li>
-                            <li class="day"><span class="date sat">11</span></li>
-                            <li class="day"><span class="date sun">12</span></li>
-                            <li class="day"><span class="date">13</span></li>
-                            <li class="day"><span class="date">14</span></li>
-                            <li class="day"><span class="date">15</span></li>
-                            <li class="day"><span class="date">16</span></li>
-                            <li class="day"><span class="date">17</span></li>
-                            <li class="day"><span class="date sat">18</span></li>
-                            <li class="day"><span class="date sun">19</span></li>
-                            <li class="day"><span class="date">20</span></li>
-                            <li class="day"><span class="date">21</span></li>
-                            <li class="day"><span class="date">22</span></li>
-                            <li class="day"><span class="date">23</span></li>
-                            <li class="day"><span class="date">24</span></li>
-                            <li class="day"><span class="date sat">25</span></li>
-                            <li class="day"><span class="date sun">26</span></li>
-                            <li class="day"><span class="date">27</span></li>
-                            <li class="day"><span class="date">28</span></li>
-                            <li class="day"><span class="date">29</span></li>
-                            <li class="day"><span class="date">30</span></li>
-                            <li class="day other-month"><span class="date">1</span></li>
-                            <li class="day other-month"><span class="date sat">2</span></li>
-                          </ul>
-                        </div>
-                        <button class="btn-toggle-calendar" data-close-text="달력 펼치기" data-open-text="달력 접기"><span>달력 접기</span><i></i></button>
+                        <div class="header-right"><button class="btn-next">다음달</button></div>
+                      </div>
+                      <div class="calendar-body">
+                        <ul class="day-title">
+                          <li class="day sun"><span>일</span></li>
+                          <li class="day"><span>월</span></li>
+                          <li class="day"><span>화</span></li>
+                          <li class="day"><span>수</span></li>
+                          <li class="day"><span>목</span></li>
+                          <li class="day"><span>금</span></li>
+                          <li class="day sat"><span>토</span></li>
+                        </ul>
+                        <ul class="day-list">
+                          <li class="day other-month"><span class="date sun">28</span></li>
+                          <li class="day other-month"><span class="date">29</span></li>
+                          <li class="day other-month"><span class="date">30</span></li>
+                          <li class="day"><span class="date">1</span></li>
+                          <li class="day"><span class="date issue start">2</span></li>
+                          <li class="day"><span class="date issue between">3</span></li>
+                          <li class="day"><span class="date sat issue end">4</span></li>
+                          <li class="day"><span class="date sun">5</span></li>
+                          <li class="day"><span class="date">6</span></li>
+                          <li class="day"><span class="date">7</span></li>
+                          <li class="day"><span class="date">8</span></li>
+                          <li class="day"><span class="date">9</span></li>
+                          <li class="day"><span class="date">10</span></li>
+                          <li class="day"><span class="date sat">11</span></li>
+                          <li class="day"><span class="date sun">12</span></li>
+                          <li class="day"><span class="date">13</span></li>
+                          <li class="day"><span class="date">14</span></li>
+                          <li class="day"><span class="date">15</span></li>
+                          <li class="day"><span class="date">16</span></li>
+                          <li class="day"><span class="date">17</span></li>
+                          <li class="day"><span class="date sat">18</span></li>
+                          <li class="day"><span class="date sun">19</span></li>
+                          <li class="day"><span class="date">20</span></li>
+                          <li class="day"><span class="date">21</span></li>
+                          <li class="day"><span class="date">22</span></li>
+                          <li class="day"><span class="date">23</span></li>
+                          <li class="day"><span class="date">24</span></li>
+                          <li class="day"><span class="date sat">25</span></li>
+                          <li class="day"><span class="date sun">26</span></li>
+                          <li class="day"><span class="date">27</span></li>
+                          <li class="day"><span class="date">28</span></li>
+                          <li class="day"><span class="date">29</span></li>
+                          <li class="day"><span class="date">30</span></li>
+                          <li class="day other-month"><span class="date">1</span></li>
+                          <li class="day other-month"><span class="date sat">2</span></li>
+                        </ul>
                       </div>
                     </div>
+                    <button class="btn-toggle-calendar" data-close-text="달력 펼치기" data-open-text="달력 접기"><span>달력 접기</span><i></i></button>
                     <!-- //달력 -->
                     <!-- 시간표 -->
                     <div class="time-table">
+                      <div class="time-table-header">
+                        <div class="header-left"><button class="btn-prev">12.31</button></div>
+                        <div class="header-center">
+                          <div class="time-table-title">2019.01.01</div>
+                        </div>
+                        <div class="header-right"><button class="btn-next">01.01</button></div>
+                      </div>
                       <dl>
                         <dt>오전</dt>
                         <dd>
-                          <buttton class="btn-white">1</buttton>
-                          <buttton class="btn-white">2</buttton>
-                          <buttton class="btn-white">3</buttton>
-                          <buttton class="btn-white">4</buttton>
-                          <buttton class="btn-white">5</buttton>
-                          <buttton class="btn-white">6</buttton>
-                          <buttton class="btn-white">7</buttton>
-                          <buttton class="btn-white">8</buttton>
-                          <buttton class="btn-white">9</buttton>
-                          <buttton class="btn-white">10</buttton>
-                          <buttton class="btn-white">11</buttton>
-                          <buttton class="btn-white">12</buttton>
+                          <button class="btn-white">1</button>
+                          <button class="btn-white">2</button>
+                          <button class="btn-white">3</button>
+                          <button class="btn-white">4</button>
+                          <button class="btn-white">5</button>
+                          <button class="btn-white">6</button>
+                          <button class="btn-white on">7</button>
+                          <button class="btn-white on">8</button>
+                          <button class="btn-white">9</button>
+                          <button class="btn-white">10</button>
+                          <button class="btn-white">11</button>
+                          <button class="btn-white">12</button>
                         </dd>
                       </dl>
                       <dl>
                         <dt>오후</dt>
                         <dd>
-                          <buttton class="btn-white">13</buttton>
-                          <buttton class="btn-white">14</buttton>
-                          <buttton class="btn-white">15</buttton>
-                          <buttton class="btn-white">16</buttton>
-                          <buttton class="btn-white">17</buttton>
-                          <buttton class="btn-white">18</buttton>
-                          <buttton class="btn-white">19</buttton>
-                          <buttton class="btn-white">20</buttton>
-                          <buttton class="btn-white">21</buttton>
-                          <buttton class="btn-white">22</buttton>
-                          <buttton class="btn-white">23</buttton>
-                          <buttton class="btn-white">24</buttton>
+                          <button class="btn-white">13</button>
+                          <button class="btn-white">14</button>
+                          <button class="btn-white">15</button>
+                          <button class="btn-white on">16</button>
+                          <button class="btn-white on">17</button>
+                          <button class="btn-white on">18</button>
+                          <button class="btn-white on">19</button>
+                          <button class="btn-white on">20</button>
+                          <button class="btn-white">21</button>
+                          <button class="btn-white">22</button>
+                          <button class="btn-white">23</button>
+                          <button class="btn-white">24</button>
                         </dd>
                       </dl>
                     </div>
                     <!-- //시간표 -->
                     <div class="show-route-btns">
-                      <button class="btn-white">전체 경로 보기</button>
+                      <button class="btn-white" onclick="collapseCalendar();expandRouteList();$('.point-object').toggle();$('.pop-route-info').toggle();">전체 경로 보기</button>
                       <button class="btn-white">경로 비교하기</button>
                     </div>
                     <hr>
@@ -1928,7 +1947,8 @@
                         <div class="input-wrap check"><label for="checkSpeedColor"><input id="checkSpeedColor" name type="checkbox"><span>속도색상</span></label></div>
                       </div>
                       <div class="option-right">
-                        <div class="input-wrap"><label for="selTimeInterval"></label>
+                        <div class="input-wrap">
+                          <label for="selTimeInterval">화살표 표시 간격</label>
                           <select id="selTimeInterval" name>
                             <option value="">1분</option>
                           </select>
@@ -1947,7 +1967,7 @@
                       <ul class="timeline-body">
                         <li>
                           <div class="time"><span>00:00:00</span></div>
-                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="location painted"><span>가산동 2265-74</span></div>
                           <div class="event"><span>과속</span></div>
                           <div class="speed"><span>0</span></div>
                           <div class="distance"><span>0</span></div>
@@ -2002,19 +2022,19 @@
                           <div class="distance"><span>0</span></div>
                         </li>
                       </ul>
+                      <div class="download-btns">
+                        <button class="btn btn-default">엑셀 다운로드</button>
+                        <button class="btn btn-default">지번 다운로드</button>
+                      </div>
                     </div>
                     <!-- //운행리스트 -->
-                    <div class="download-btns">
-                      <button class="btn btn-default">엑셀 다운로드</button>
-                      <button class="btn btn-default">지번 다운로드</button>
-                    </div>
                   </div>
                 </div>
                 <!-- //운행경로 -->
                 <!-- 원격제어 -->
                 <div class="info-tab-content" id="car-info-tab-3">
                   <div class="data-form-table">
-                    <div class="data-form-table-body">
+                    <div class="data-form-table-body no-border">
                       <table>
                         <colgroup>
                           <col style="width:135px;">
@@ -2303,9 +2323,184 @@
               <div class="object-item car-object off selected"><i></i><span>경기 11하 1111</span></div>
             </div>
             <!-- //차량 -->
+            <!-- 경로 출발/도착 포인트 -->
+            <div class="rought-objects" style="position:absolute;left:400px;top:200px;z-index:5;">
+              <div class="point-object start-point">출발</div>
+              <div class="point-object end-point">도착</div>
+            </div>
+            <!-- //경로 출발/도착 포인트 -->
+            <!-- 경로 정보 레이어 -->
+            <div class="pop-inner-map pop-route-info" style="position:absolute;left:400px;top:300px;z-index:5;">
+              <div class="modal-header">
+                <div class="car-info">
+                  <div class="car-name"><span class="flag on">ON</span><span>경기 11허 1111(강서·홍길동)</span></div>
+                  <div class="gps-address">
+                    <div class="icon-gps">
+                      <i class="gps-bar-1 on"></i>
+                      <i class="gps-bar-2"></i>
+                      <i class="gps-bar-3"></i>
+                    </div>
+                    <span>서울 중구 충무로 4가 1234-4222</span>
+                    <dl>
+                      <dt>배터리</dt>
+                      <dd>12v</dd>
+                    </dl>
+                  </div>
+                </div>
+                <button class="close" type="button" aria-label="Close" onclick="$('.pop-route-info').hide();"></button>
+              </div>
+              <div class="data-form-table">
+                <div class="data-form-table-body v-middle">
+                  <table>
+                    <colgroup>
+                      <col style="width:85px;">
+                      <col style="width:auto;">
+                      <col style="width:85px;">
+                      <col style="width:auto;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th><span>운행시간</span></th>
+                        <td>00:00:00</td>
+                        <th><span>속도</span></th>
+                        <td>100㎞/h</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- //경로 레이어 -->
+            <!-- 지도상 차량세부정보 -->
+            <div class="pop-inner-map pop-map-car-detail" style="position:abxolute;left:400px;top:500px;z-index:5;display:none;">
+              <div class="modal-header">
+                <div class="car-info">
+                  <div class="car-name"><span class="flag on">ON</span><span>경기 11허 1111(강서·홍길동)</span></div>
+                  <div class="gps-address">
+                    <div class="icon-gps">
+                      <i class="gps-bar-1 on"></i>
+                      <i class="gps-bar-2"></i>
+                      <i class="gps-bar-3"></i>
+                    </div>
+                    <span>서울 중구 충무로 4가 1234-4222</span>
+                    <dl>
+                      <dt>배터리</dt>
+                      <dd>12v</dd>
+                    </dl>
+                    <dl>
+                      <dt>온도</dt>
+                      <dd>10℃</dd>
+                    </dl>
+                  </div>
+                </div>
+                <button class="close" type="button" aria-label="Close" onclick="$('.pop-route-info').hide();"></button>
+              </div>
+              <div class="data-form-table">
+                <div class="data-form-table-body v-middle">
+                  <table>
+                    <colgroup>
+                      <col style="width:85px;">
+                      <col style="width:auto;">
+                      <col style="width:85px;">
+                      <col style="width:auto;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th><span>그룹명</span></th>
+                        <td>그룹그룹그룹</td>
+                        <th><span>현재속도</span></th>
+                        <td>100㎞/h</td>
+                      </tr>
+                      <tr>
+                        <th><span>운전자명</span></th>
+                        <td>홍길동</td>
+                        <th><span>평균속도</span></th>
+                        <td>100㎞/h</td>
+                      </tr>
+                      <tr>
+                        <th><span>연락처</span></th>
+                        <td><a class="font-blue" href="#">010-0000-0000</a></td>
+                        <th><span>운행시간/일</span></th>
+                        <td>10시간 30분</td>
+                      </tr>
+                      <tr>
+                        <th><span>계약번호</span></th>
+                        <td>1234567890</td>
+                        <th><span>운행거리/일</span></th>
+                        <td>100㎞</td>
+                      </tr>
+                      <tr>
+                        <th><span>배차기간</span></th>
+                        <td>2019-01-01 ~ 2019-01-01</td>
+                        <th><span>누적운행거리</span></th>
+                        <td>123,456㎞</td>
+                      </tr>
+                      <tr>
+                        <th><span>최근신호/ON</span></th>
+                        <td>2019-01-01 ~ 2019-01-01</td>
+                        <th><span>전방온도</span></th>
+                        <td>10℃<em class="font-gray">기준 0℃ ~ 00℃</em></td>
+                      </tr>
+                      <tr>
+                        <th><span>최근신호/OFF</span></th>
+                        <td>2019-01-01 ~ 2019-01-01</td>
+                        <th><span>전방온도</span></th>
+                        <td>10℃<em class="font-gray">기준 0℃ ~ 00℃</em></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="pop-footer flex-end">
+                <button class="btn btn-white">운행경로</button>
+                <button class="btn btn-white">원격제어</button>
+                <button class="btn btn-white">인접차량</button>
+              </div>
+            </div>
+            <!-- //지도상 차량세부정보 -->
             <!-- 그룹 -->
-            <div class="group-objects"></div>
+            <div class="group-objects" style="position:absolute;left:800px;top:450px;z-index:5;">
+              <div class="group-object group-color-1"><span>999</span></div>
+              <div class="group-object group-color-2"><span>999</span></div>
+              <div class="group-object group-color-3"><span>999</span></div>
+            </div>
             <!--// 그룹 -->
+            <!-- 지도상 그룹핑된 차량 목록 -->
+            <div class="pop-inner-map pop-map-group-list" style="position:absolute;left:800px;top:500px;z-index:5;">
+              <div class="modal-header">
+                <div class="modal-title">UVIS AS 전담자</div>
+                <button class="close" type="button" aria-label="Close" onclick="$('.pop-route-info').hide();"></button>
+              </div>
+              <div class="member-list">
+                <ul>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag on">ON</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                  <li><span class="flag off">OFF</span><span>경기 11허 1111(강서&middot;강진주)</span></li>
+                </ul>
+              </div>
+            </div>
+            <!-- //지도상 그룹핑된 차량 목록 -->
           </div>
           <!-- //지도 오브젝트 영역 -->
           <!-- 실제 지도 들어가는 영역 -->
@@ -2335,7 +2530,7 @@
       }
     })();
   </script>
-  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/jquery-ui.js"></script>
   <script src="../../resources/js/bootstrap.min.js "></script>
   <script src="../../resources/js/popper.min.js "></script>
   <script src="../../resources/js/bootstrap-datepicker.js"></script>
@@ -2359,6 +2554,8 @@
       $('.map-settings .partition-group').removeClass('show');
       //리스트 설정
       // $('.left-area .pop-list-setting').removeClass('show');
+      //차량 상세 정보
+      $('.left-area .pop-car-detail').removeClass('show');
     }
     //좌측영역 토글
     $('.btn-toggle-left-area').on('click', function () {
@@ -2465,13 +2662,17 @@
     });
     //지도설정 레이어 토글
     $('.right-area .btn-map-setting').on('click', function () {
-      resetMapMenus();
+      if ($(this).hasClass('on') == false) {
+        resetMapMenus();
+      }
       $(this).toggleClass('on');
       $('.map-setting .setting-layer').toggleClass('show');
     });
     //멀티맵 레이어 토글
     $('.right-area .btn-partition-setting').on('click', function () {
-      resetMapMenus();
+      if ($(this).hasClass('on') == false) {
+        resetMapMenus();
+      }
       $(this).toggleClass('on');
       $('.right-area .partition-group').toggleClass('show');
     });
@@ -2494,8 +2695,113 @@
     $('.background-map-area').on('click', function () {
       resetMapMenus();
     });
+    //차량상세정보 레이어
+    var DELAY = 300, clicks = 0, timer = null;
+    $('.left-area .group-list .list-item').on('click', function (e) {//차량상세정보 레이어(한번클릭)
+      clicks++;
+      if (clicks === 1) {
+        timer = setTimeout(function () {
+          console.log("우측 맵에서 차량 상세정보 레이어 호출");  //perform single-click action    
+          resetMapMenus();
+          $('.pop-map-car-detail').show();
+          clicks = 0;             //after action performed, reset counter
+        }, DELAY);
+      } else {
+        clearTimeout(timer);    //prevent single-click action
+        console.log("좌측 영역에서 차량 상세정보 레이어 호출");  //perform double-click action
+        resetMapMenus();
+        $('.pop-car-detail').addClass('show');
+        clicks = 0;             //after action performed, reset counter
+      }
+    }).on('dblclick', function (e) {//차량상세정보 레이어(더블클릭)
+      e.preventDefault();
+    });
+    //차량상세정보 레이어 탭
+    $(function () {
+      $('.pop-car-detail .info-tabs').tabs()
+    });
+    //운행경로 달력 토글
+    function toggleCalendar() {
+      $('.pop-car-detail .calendar').toggleClass('expanded');
+    }
+    function collapseCalendar() {
+      $('.pop-car-detail .calendar').removeClass('expanded');
+    }
+    function expandRouteList() {
+      $('.pop-car-detail .drive-timeline').addClass('expanded');
+    }
+    function collapseRouteList() {
+      $('.pop-car-detail .drive-timeline').removeClass('expanded');
+    }
+    $('.pop-car-detail .btn-toggle-calendar').on('click', function () {
+      toggleCalendar();
+    });
+    $('.pop-car-detail .time-table button, .pop-car-detail .calendar .day-list .issue').on('click', function () {
+      collapseCalendar();
+      expandRouteList();
+    });
+    //jqgrid
+    $(function () {
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['차량명', '상태', '거리'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "150",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "100"
+        }],
+        rowNum: 10,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: false,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        // autowidth: true,
+        width: 360,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // height: "auto"
+      });
+      var mydata = [{
+        col1: "경기 11허 1111(홍길동)",
+        col2: "12v, GPS 양호",
+        col3: "12,345㎞",
+      }, {
+        col1: "경기 11허 1111(홍길동)",
+        col2: "12v, GPS 양호",
+        col3: "12,345㎞",
+      }, {
+        col1: "경기 11허 1111(홍길동)",
+        col2: "12v, GPS 양호",
+        col3: "12,345㎞",
+      }, {
+        col1: "경기 11허 1111(홍길동)",
+        col2: "12v, GPS 양호",
+        col3: "12,345㎞",
+      }, {
+        col1: "경기 11허 1111(홍길동)",
+        col2: "12v, GPS 양호",
+        col3: "12,345㎞",
+      }];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+    })
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

@@ -92,99 +92,99 @@ var pub_list = new Vue({
       pageName: "차량 위치 모니터링",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarLocation",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "그룹별 차량 현황",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarList",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "리스트 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarListSetting",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "그룹별 차량 현황(상세모드)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarListExp",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "차량 세부 정보(차량정보)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarDetail",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "차량 세부 정보(운행경로)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarOperation",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "차량 세부 정보(운행경로 - 타입라인)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarOperationLine",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "지도상 운행 경로 차량 세부 정보",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.FocusDrivingCarDetail",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "차량 세부 정보(원격제어)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarRemoteControl",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "차량 세부 정보(인접차량)",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarAdjacent",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "그룹별 이상 차량 현황",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.CarWrongList",
-      complete: "",
+      complete: "완료",
       note: "지도화면"
     },
     {
       pageName: "원격 제어 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.RemoteCarSetting",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarWrongList 에서 구현됨"
     },
     {
       pageName: "지도상 차량 세부 정보",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.FocusCarDetail",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "지도상 그룹핑된 차량 목록",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.1.FocusCarGrouping",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "지도화면 UWEB.2.1.1.CarLocation 에서 구현됨"
     },
     {
       pageName: "전체화면(기본화면)",
