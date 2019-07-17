@@ -197,8 +197,8 @@ var pub_list = new Vue({
       pageName: "멀티맵 차량 검색",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.2.1.2.MultiMapCarSelect",
-      complete: "",
-      note: "지도화면"
+      complete: "완료",
+      note: "팝업"
     },
     {
       pageName: "전체화면(3 분할)",
