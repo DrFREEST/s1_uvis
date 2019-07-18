@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +21,7 @@
   <link href="../../resources/css/s1_uvis_map_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="map">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -2002,6 +2004,41 @@
                         </li>
                         <li>
                           <div class="time"><span>00:00:00</span></div>
+                          <div class="location painted"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location painted"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
+                          <div class="location"><span>가산동 2265-74</span></div>
+                          <div class="event"><span>과속</span></div>
+                          <div class="speed"><span>0</span></div>
+                          <div class="distance"><span>0</span></div>
+                        </li>
+                        <li>
+                          <div class="time"><span>00:00:00</span></div>
                           <div class="location"><span>가산동 2265-74</span></div>
                           <div class="event"><span>과속</span></div>
                           <div class="speed"><span>0</span></div>
@@ -2702,8 +2739,12 @@
       if (clicks === 1) {
         timer = setTimeout(function () {
           console.log("우측 맵에서 차량 상세정보 레이어 호출");  //perform single-click action    
-          resetMapMenus();
-          $('.pop-map-car-detail').show();
+          if ($(e.target).hasClass('btn-call-menu') == true) {
+
+          } else {
+            resetMapMenus();
+            $('.pop-map-car-detail').show();
+          }
           clicks = 0;             //after action performed, reset counter
         }, DELAY);
       } else {
@@ -2722,6 +2763,13 @@
     });
     //운행경로 달력 토글
     function toggleCalendar() {
+      if ($('.pop-car-detail .btn-toggle-calendar').hasClass('on') == true) {
+        $('.pop-car-detail .btn-toggle-calendar').removeClass('on');
+        $('.pop-car-detail .btn-toggle-calendar').find('span').text($('.pop-car-detail .btn-toggle-calendar').attr('data-open-text'));
+      } else {
+        $('.pop-car-detail .btn-toggle-calendar').addClass('on');
+        $('.pop-car-detail .btn-toggle-calendar').find('span').text($('.pop-car-detail .btn-toggle-calendar').attr('data-close-text'));
+      }
       $('.pop-car-detail .calendar').toggleClass('expanded');
     }
     function collapseCalendar() {
@@ -2804,4 +2852,5 @@
   </script>
   <!-- //onload script -->
 </body>
+
 </html>

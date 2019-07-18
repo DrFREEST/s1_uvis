@@ -291,7 +291,7 @@ body.map { }
 .pop-minimap { position:fixed; z-index:4; bottom:4px; left:400px; display:none; width:300px; height:200px; margin-left:4px; transition:0.2s all; border:solid 6px rgb(255, 255, 255); border-radius:2px; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
 .left-area .map-list.detail .pop-minimap { left:70vw; } 
 /* 차량 상세 팝업 */
-.pop-car-detail { position:fixed; z-index:5; bottom:4px; left:400px; display:none; width:400px; margin-left:4px; padding:20px; transition:0.2s all; border-radius:4px; background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
+.pop-car-detail { position:fixed; z-index:5; bottom:4px; left:400px; display:none; width:400px; margin-left:4px; padding:20px; transition:0.2s all; border-radius:4px; background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); height:calc(100% - 8px);max-height:none;} 
 .pop-car-detail.show { display:block; } 
 .left-area .map-list.detail .pop-car-detail { left:70vw; } 
 .pop-car-detail .modal-header { display:block; padding:0 0 20px; border-bottom:1px solid #2d2d2d; } 
@@ -364,7 +364,8 @@ body.map { }
 .pop-car-detail .drive-route .btn-toggle-calendar { font-size:12px; font-weight:500; width:100%; height:32px; color:#5e5e5e; border:solid 1px #e2e2e2; border-top:none; background-color:#f6f6f6; } 
 .pop-car-detail .drive-route .expanded + .btn-toggle-calendar { border-top:1px solid #e2e2e2; } 
 .pop-car-detail .drive-route .btn-toggle-calendar span { } 
-.pop-car-detail .drive-route .btn-toggle-calendar i { } 
+.pop-car-detail .drive-route .btn-toggle-calendar i { width:8px;height:8px;transform:rotate(45deg);border-right:1px solid #5e5e5e;border-bottom:1px solid #5e5e5e;display:inline-block;margin-left:10px;margin-top:-7px;vertical-align:middle;} 
+.pop-car-detail .drive-route .btn-toggle-calendar.on i{border-left:1px solid #5e5e5e;border-top:1px solid #5e5e5e;border-right:none;border-bottom:none;margin-top:2.5px;}
 .pop-car-detail .drive-route .time-table { margin-top:20px; } 
 .pop-car-detail .drive-route .time-table .time-table-header { display:flex; align-items:center; width:100%; margin-bottom:20px; } 
 .pop-car-detail .drive-route .time-table .time-table-header button { font-size:14px; font-weight:500; display:flex; align-items:center; color:#8a8a8a; border:none; background:none; } 
@@ -399,7 +400,7 @@ body.map { }
 .pop-car-detail .drive-route .route-option .option-right .input-wrap label { font-size:13px; margin-right:10px; } 
 .pop-car-detail .drive-route .route-option .option-right .input-wrap select { font-size:13px; height:28px; } 
 .pop-car-detail .drive-route .drive-timeline { overflow:hidden; height:auto; max-height:0; margin-top:20px; transition:0.2s all; } 
-.pop-car-detail .drive-route .drive-timeline.expanded { max-height:340px;; } 
+.pop-car-detail .drive-route .drive-timeline.expanded { max-height:calc(45vh); } 
 .pop-car-detail .drive-route .drive-timeline .timeline-header { display:flex; align-items:center; height:28px; background-color:#ededed; } 
 .pop-car-detail .drive-route .drive-timeline .timeline-header li { font-size:11px; text-align:center; color:#5e5e5e; } 
 .pop-car-detail .drive-route .drive-timeline .timeline-header .time { flex:0 0 19%; } 
@@ -412,7 +413,7 @@ body.map { }
 .pop-car-detail .drive-route .drive-timeline .timeline-header .speed span { } 
 .pop-car-detail .drive-route .drive-timeline .timeline-header .distance { flex:0 1 22%; } 
 .pop-car-detail .drive-route .drive-timeline .timeline-header .distance span { } 
-.pop-car-detail .drive-route .drive-timeline .timeline-body { position:relative; overflow-y:auto; max-height:calc(35vh - 55px); padding:15px 0; background-color:#fbfbfb; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body { position:relative; overflow-y:auto; max-height:calc(44vh - 79px); padding:15px 0; background-color:#fbfbfb; } 
 .pop-car-detail .drive-route .drive-timeline .timeline-body::before { position:absolute; top:15px; bottom:15px; left:19%; display:block; width:6px; margin-left:-3px; content:''; background-color:#ededed; } 
 .pop-car-detail .drive-route .drive-timeline .timeline-body li { display:flex; align-items:center; padding:5px 0; } 
 .pop-car-detail .drive-route .drive-timeline .timeline-body li:hover { background-color:#e8f3ff; } 
