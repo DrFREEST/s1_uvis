@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -207,12 +205,12 @@
                 </div>
                 <div class="data-list-table-header">
                   <div class="header-right">
-                    <div class="data-info-labels">
+                    <!-- <div class="data-info-labels">
                       <span><i class="dot big label-color-1"></i> 미반납</span>
                       <span><i class="dot big label-color-2"></i> 대기중</span>
                       <span><i class="dot big label-color-3"></i> 배차중</span>
                       <span><i class="dot big label-color-4"></i> 정비중</span>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="calendar-bottom closing-schedule">
@@ -235,7 +233,9 @@
                       <li class="other-month">
                         <div class="date-area">
                           <div class="date-title"><span class="date sun">31</span><span class="date-name"></span></div>
-                          <div class="issue label-color-1" style="width:700%;"><span>최광복 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
+                          <!-- 해당 주에 시작일만 있을 때(다음주 까지 이어질 때) -->
+                          <div class="issue has-start" style="width:700%;"><span><strong>최광복</strong> 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
+                          <!-- //해당 주에 시작일만 있을 때 -->
                         </div>
                       </li>
                       <li>
@@ -271,12 +271,17 @@
                       <li>
                         <div class="date-area">
                           <div class="date-title"><span class="date sun">7</span><span class="date-name"></span></div>
+                          <!-- 해당 주에 종료일만 있을 때(이전 주에서 이어질 때) -->
+                          <div class="issue has-end" style="width:100%;"><span></span></div>
+                          <!-- //해당 주에 종료일만 있을 때 -->
                         </div>
                       </li>
                       <li>
                         <div class="date-area">
                           <div class="date-title"><span class="date">8</span><span class="date-name"></span></div>
-                          <div class="issue label-color-2" style="width:600%;"><span>최광복 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
+                          <!-- 한 주에 시작일과 종료일이 모두 있는 경우 -->
+                          <div class="issue has-start has-end" style="width:600%;"><span><strong>최광복</strong> 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
+                          <!-- //한 주에 시작일과 종료일이 모두 있는 경우 -->
                         </div>
                       </li>
                       <li>
@@ -324,7 +329,7 @@
                       <li>
                         <div class="date-area">
                           <div class="date-title"><span class="date">17</span><span class="date-name"></span></div>
-                          <div class="issue label-color-3" style="width:400%;"><span>최광복 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
+                          <div class="issue has-start has-end" style="width:400%;"><span><strong>최광복</strong> 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
                         </div>
                       </li>
                       <!-- 휴일 -->
@@ -369,7 +374,7 @@
                       <li>
                         <div class="date-area">
                           <div class="date-title"><span class="date">25</span><span class="date-name"></span></div>
-                          <div class="issue label-color-4" style="width:200%;"><span>최광복 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
+                          <div class="issue has-start has-end" style="width:200%;"><span><strong>최광복</strong> 2019-01-01 00:00:00 ~ 2019-01-01 00:00:00</span></div>
                         </div>
                       </li>
                       <li>
@@ -482,7 +487,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -500,7 +505,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['번호', '그룹명 1', '그룹명 2', '차량번호', '차종', '배차기간', '배차'],
@@ -569,10 +574,9 @@
         마우스 오버시 인터렉션 관련 스크립트만 작성되어있습니다.
         데이터 변경 관련 스크립트는 개발에서 진행해주세요.
       */
-    $(function() {
+    $(function () {
       var targetX, targetY, popFocusX, popFocusY = 0;
       var issueModal = $('.modal-issue');
-
       function popPositionChange(target, targetX, targetY, focusX, focusY) {
         // console.log(targetX, targetY, focusX, focusY);
         var frame = $('.calendar-bottom');
@@ -602,9 +606,9 @@
           })
         }
       }
-      $('.issue').each(function() {
+      $('.issue').each(function () {
         var target = $(this);
-        $(this).on('mouseover', function(event) {
+        $(this).on('mouseover', function (event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;
@@ -612,9 +616,9 @@
           // console.log(targetX, targetY);
           popPositionChange(target, targetX, targetY, popFocusX, popFocusY);
           $('.modal-issue').show();
-        }).on('mouseleave', function(event) {
+        }).on('mouseleave', function (event) {
           $('.modal-issue').hide();
-        }).on('mousemove', function(event) {
+        }).on('mousemove', function (event) {
           targetX = $(event.target).offset().left;
           targetY = $(event.target).offset().top;
           popFocusX = event.clientX;
@@ -626,5 +630,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>
