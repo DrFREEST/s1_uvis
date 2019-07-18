@@ -456,115 +456,115 @@ body.map { }
 /* ****** 좌측영역 ****** */
 /* ****** 우측영역 ****** */
 .map-partition-area .right-area { position:relative; z-index:0; flex:1 0 auto; height:100vh; } 
-.right-area .map-controls { position:static; } 
-.right-area .map-controls > div { z-index:10; } 
-.right-area .map-controls .location-control { position:absolute; top:12px; left:40px; display:flex; width:40vw; } 
-.right-area .map-controls .location-control .location-group { display:flex; align-items:center; flex:initial; height:38px; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .location-control .location-group .location { position:relative; display:flex; align-items:center; flex:initial; height:38px; } 
-.right-area .map-controls .location-control .location-group .location + .location { margin-left:15px; } 
-.right-area .map-controls .location-control .location-group .location + .location::before { display:inline-block; flex:initial; width:8px; height:8px; margin-left:-16px; content:''; transform:rotate(45deg); border-top:1px solid #8a8a8a; border-right:1px solid #8a8a8a; } 
-.right-area .map-controls .location-control .location .location-name { font-weight:500; margin:0 15px; cursor:pointer; color:#5e5e5e; } 
-.right-area .map-controls .location-control .location-group .location + .location .location-name { } 
-.right-area .map-controls .location-control .location .location-list { position:absolute; top:100%; left:0; padding-top:10px; } 
-.right-area .map-controls .location-control .location:hover .location-list { } 
-.right-area .map-controls .location-control .location .location-list ul { overflow:hidden; width:120px; height:auto; max-height:0; padding:0; transition:0.2s all; opacity:0; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .location-control .location:hover .location-list ul { overflow-y:auto; max-height:200px; padding-top:10px; padding-bottom:10px; opacity:1; } 
-.right-area .map-controls .location-control .location .location-list ul li { display:flex; align-items:center; height:28px; padding:0 16px; } 
-.right-area .map-controls .location-control .location .location-list ul li:hover { background-color:#f6f6f6; } 
-.right-area .map-controls .location-control .location .location-list ul li a { font-weight:500; color:#5e5e5e; } 
-.right-area .map-controls .location-control .location .location-list ul li a:hover { color:#1a8cfc; } 
-.right-area .map-controls .location-control .point { margin-left:10px; } 
-.right-area .map-controls .location-control .point .input-wrap { } 
-.right-area .map-controls .location-control .point .input-wrap select { font-size:14px; font-weight:normal; width:140px; height:38px; padding-left:12px; color:#5e5e5e; border:none; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings { position:absolute; top:12px; right:12px; display:flex; align-items:flex-start; } 
-.right-area .map-controls .map-settings .map-setting { position:relative; } 
-.right-area .map-controls .map-settings .map-setting .btn-map-setting { display:block; width:38px; height:38px; border:1px solid #dcdcdc; border-radius:3px; background:url(../images/icon-setting.png) no-repeat center center; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .map-setting .btn-map-setting:hover,
-.right-area .map-controls .map-settings .map-setting .btn-map-setting.on { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-setting-on.png); } 
-.right-area .map-controls .map-settings .map-setting .setting-layer { position:absolute; top:100%; right:0; left:auto; display:none; width:250px; margin-top:10px; padding:20px; transition:0.2s all; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .map-setting .setting-layer.show { display:block; } 
-.left-area.expanded + .right-area .map-controls .map-settings .map-setting .setting-layer { margin-right:-212px; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .setting-title { font-size:15px; font-weight:500; margin-bottom:15px; color:#2b2b2b; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul { display:flex; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li { flex:0 0 60px; margin:0 auto; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li + li { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:first-child { margin-left:0; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:last-child { margin-right:0; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon { display:block; width:36px; height:36px; margin:0 auto 10px; border:1px solid #dcdcdc; border-radius:50%; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-traffic { background:#ffffff url(../images/icon-traffic-light.png) no-repeat center center; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-traffic,
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-traffic { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-traffic-light-on.png); } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-cctv { background:#ffffff url(../images/icon-cctv.png) no-repeat center center; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-cctv,
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-cctv { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-cctv-on.png); } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-trouble { background:#ffffff url(../images/icon-trouble.png) no-repeat center center; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-trouble,
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-trouble { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-trouble-on.png); } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a span { font-size:13px; line-height:1; display:block; text-align:center; color:#8a8a8a; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps { margin-top:20px; padding-top:20px; border-top:1px solid #ededed; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group { display:flex; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap { flex:1; } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label #selMapType1 { } 
-.right-area .map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label span { } 
-.right-area .map-controls .map-settings .partition-setting { position:relative; margin-left:10px; } 
-.right-area .map-controls .map-settings .partition-setting .btn-partition-setting { font-size:14px; display:block; width:65px; height:38px; padding:0; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .partition-setting .btn-partition-setting:hover,
-.right-area .map-controls .map-settings .partition-setting .btn-partition-setting:focus { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group { position:absolute; top:100%; left:0; display:none; margin-top:10px; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .partition-setting .partition-group.show { display:block; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group { } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn { display:flex; align-items:center; justify-content:center; width:65px; height:38px; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn + .btn { border-top:1px solid #dcdcdc; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn i { position:relative; display:block; width:19px; height:16px; border:1px solid #5e5e5e; border-radius:3px; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-2::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-3::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-3::after { position:absolute; top:0; left:50%; display:block; width:1px; height:50%; margin-left:-0.5px; content:''; background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-4::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-4::after { position:absolute; top:0; left:50%; display:block; width:1px; height:100%; margin-left:-0.5px; content:''; background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:hover,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:focus,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn.on { background-color:#1a8cfc; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:hover i,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:focus i,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn.on i { border-color:#ffffff; } 
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:hover i::before,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:hover i::after,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:focus i::before,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn:focus i::after,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn.on i::before,
-.right-area .map-controls .map-settings .partition-setting .partition-group .btn.on i::after { background-color:#ffffff; } 
-.right-area .map-controls .map-settings .map-style-setting { font-size:14px; margin-left:70px; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .map-style-setting .btn-group { font-size:14px; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .map-style-setting .btn-group .btn { font-size:14px; position:relative; height:38px; } 
-.right-area .map-controls .map-settings .map-style-setting .btn-group .btn:not(.on) + .btn::after { position:absolute; top:50%; left:0; display:block; width:1px; height:18px; margin-top:-9px; content:''; background-color:#dcdcdc; } 
-.right-area .map-controls .map-settings .map-style-setting .btn-group .btn:hover,
-.right-area .map-controls .map-settings .map-style-setting .btn-group .btn:focus,
-.right-area .map-controls .map-settings .map-style-setting .btn-group .btn.on { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
-.right-area .map-controls .map-settings .map-focus-setting { position:absolute; top:90px; right:0; display:flex; flex-direction:column; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom { } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn { width:38px; height:38px; padding:0; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn i { position:relative; display:block; width:12px; height:12px; margin:0 auto; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in { position:relative; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in i::before { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in i::after { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; transform:rotate(90deg); background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-out { position:relative; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-out i::before { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; background-color:#5e5e5e; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn:hover,
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn:hover,
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn.on { background-color:#1a8cfc; } 
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:before,
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:before,
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn.on i:before,
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:after,
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:after,
-.right-area .map-controls .map-settings .map-focus-setting .map-zoom .btn.on i:after { background-color:#ffffff; } 
-.right-area .map-controls .map-settings .map-focus-setting > .btn-focus { width:38px; height:38px; margin-top:10px; border-radius:3px; background:#ffffff url(../images/icon-current-location.png) no-repeat center; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
-.right-area .map-controls .map-settings .map-focus-setting > .btn-focus:hover,
-.right-area .map-controls .map-settings .map-focus-setting > .btn-focus:focus,
-.right-area .map-controls .map-settings .map-focus-setting > .btn-focus.on { background-color:#1a8cfc; background-image:url(../images/icon-current-location.png); } 
+.map-controls { position:static; } 
+.map-controls > div { z-index:10; } 
+.map-controls .location-control { position:absolute; top:12px; left:40px; display:flex; width:40vw; } 
+.map-controls .location-control .location-group { display:flex; align-items:center; flex:initial; height:38px; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .location-control .location-group .location { position:relative; display:flex; align-items:center; flex:initial; height:38px; } 
+.map-controls .location-control .location-group .location + .location { margin-left:15px; } 
+.map-controls .location-control .location-group .location + .location::before { display:inline-block; flex:initial; width:8px; height:8px; margin-left:-16px; content:''; transform:rotate(45deg); border-top:1px solid #8a8a8a; border-right:1px solid #8a8a8a; } 
+.map-controls .location-control .location .location-name { font-weight:500; margin:0 15px; cursor:pointer; color:#5e5e5e; } 
+.map-controls .location-control .location-group .location + .location .location-name { } 
+.map-controls .location-control .location .location-list { position:absolute; top:100%; left:0; padding-top:10px; } 
+.map-controls .location-control .location:hover .location-list { } 
+.map-controls .location-control .location .location-list ul { overflow:hidden; width:120px; height:auto; max-height:0; padding:0; transition:0.2s all; opacity:0; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .location-control .location:hover .location-list ul { overflow-y:auto; max-height:200px; padding-top:10px; padding-bottom:10px; opacity:1; } 
+.map-controls .location-control .location .location-list ul li { display:flex; align-items:center; height:28px; padding:0 16px; } 
+.map-controls .location-control .location .location-list ul li:hover { background-color:#f6f6f6; } 
+.map-controls .location-control .location .location-list ul li a { font-weight:500; color:#5e5e5e; } 
+.map-controls .location-control .location .location-list ul li a:hover { color:#1a8cfc; } 
+.map-controls .location-control .point { margin-left:10px; } 
+.map-controls .location-control .point .input-wrap { } 
+.map-controls .location-control .point .input-wrap select { font-size:14px; font-weight:normal; width:140px; height:38px; padding-left:12px; color:#5e5e5e; border:none; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings { position:absolute; top:12px; right:12px; display:flex; align-items:flex-start; } 
+.map-controls .map-settings .map-setting { position:relative; } 
+.map-controls .map-settings .map-setting .btn-map-setting { display:block; width:38px; height:38px; border:1px solid #dcdcdc; border-radius:3px; background:url(../images/icon-setting.png) no-repeat center center; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-setting .btn-map-setting:hover,
+.map-controls .map-settings .map-setting .btn-map-setting.on { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-setting-on.png); } 
+.map-controls .map-settings .map-setting .setting-layer { position:absolute; top:100%; right:0; left:auto; display:none; width:250px; margin-top:10px; padding:20px; transition:0.2s all; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-setting .setting-layer.show { display:block; } 
+.left-area.expanded + .map-controls .map-settings .map-setting .setting-layer { margin-right:-212px; } 
+.map-controls .map-settings .map-setting .setting-layer .setting-title { font-size:15px; font-weight:500; margin-bottom:15px; color:#2b2b2b; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul { display:flex; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li { flex:0 0 60px; margin:0 auto; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li + li { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:first-child { margin-left:0; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:last-child { margin-right:0; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon { display:block; width:36px; height:36px; margin:0 auto 10px; border:1px solid #dcdcdc; border-radius:50%; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-traffic { background:#ffffff url(../images/icon-traffic-light.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-traffic,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-traffic { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-traffic-light-on.png); } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-cctv { background:#ffffff url(../images/icon-cctv.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-cctv,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-cctv { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-cctv-on.png); } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-trouble { background:#ffffff url(../images/icon-trouble.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-trouble,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-trouble { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-trouble-on.png); } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a span { font-size:13px; line-height:1; display:block; text-align:center; color:#8a8a8a; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps { margin-top:20px; padding-top:20px; border-top:1px solid #ededed; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group { display:flex; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap { flex:1; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label #selMapType1 { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label span { } 
+.map-controls .map-settings .partition-setting { position:relative; margin-left:10px; } 
+.map-controls .map-settings .partition-setting .btn-partition-setting { font-size:14px; display:block; width:65px; height:38px; padding:0; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .partition-setting .btn-partition-setting:hover,
+.map-controls .map-settings .partition-setting .btn-partition-setting:focus { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
+.map-controls .map-settings .partition-setting .partition-group { position:absolute; top:100%; left:0; display:none; margin-top:10px; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .partition-setting .partition-group.show { display:block; } 
+.map-controls .map-settings .partition-setting .partition-group { } 
+.map-controls .map-settings .partition-setting .partition-group .btn { display:flex; align-items:center; justify-content:center; width:65px; height:38px; } 
+.map-controls .map-settings .partition-setting .partition-group .btn + .btn { border-top:1px solid #dcdcdc; } 
+.map-controls .map-settings .partition-setting .partition-group .btn i { position:relative; display:block; width:19px; height:16px; border:1px solid #5e5e5e; border-radius:3px; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-2::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-3::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-3::after { position:absolute; top:0; left:50%; display:block; width:1px; height:50%; margin-left:-0.5px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-4::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-4::after { position:absolute; top:0; left:50%; display:block; width:1px; height:100%; margin-left:-0.5px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn:hover,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus,
+.map-controls .map-settings .partition-setting .partition-group .btn.on { background-color:#1a8cfc; } 
+.map-controls .map-settings .partition-setting .partition-group .btn:hover i,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus i,
+.map-controls .map-settings .partition-setting .partition-group .btn.on i { border-color:#ffffff; } 
+.map-controls .map-settings .partition-setting .partition-group .btn:hover i::before,
+.map-controls .map-settings .partition-setting .partition-group .btn:hover i::after,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus i::before,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus i::after,
+.map-controls .map-settings .partition-setting .partition-group .btn.on i::before,
+.map-controls .map-settings .partition-setting .partition-group .btn.on i::after { background-color:#ffffff; } 
+.map-controls .map-settings .map-style-setting { font-size:14px; margin-left:70px; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-style-setting .btn-group { font-size:14px; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-style-setting .btn-group .btn { font-size:14px; position:relative; height:38px; } 
+.map-controls .map-settings .map-style-setting .btn-group .btn:not(.on) + .btn::after { position:absolute; top:50%; left:0; display:block; width:1px; height:18px; margin-top:-9px; content:''; background-color:#dcdcdc; } 
+.map-controls .map-settings .map-style-setting .btn-group .btn:hover,
+.map-controls .map-settings .map-style-setting .btn-group .btn:focus,
+.map-controls .map-settings .map-style-setting .btn-group .btn.on { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
+.map-controls .map-settings .map-focus-setting { position:absolute; top:90px; right:0; display:flex; flex-direction:column; } 
+.map-controls .map-settings .map-focus-setting .map-zoom { } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn { width:38px; height:38px; padding:0; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn i { position:relative; display:block; width:12px; height:12px; margin:0 auto; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in { position:relative; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in i::before { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in i::after { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; transform:rotate(90deg); background-color:#5e5e5e; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-out { position:relative; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-out i::before { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn.on { background-color:#1a8cfc; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:before,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:before,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn.on i:before,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:after,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:after,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn.on i:after { background-color:#ffffff; } 
+.map-controls .map-settings .map-focus-setting > .btn-focus { width:38px; height:38px; margin-top:10px; border-radius:3px; background:#ffffff url(../images/icon-current-location.png) no-repeat center; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-focus-setting > .btn-focus:hover,
+.map-controls .map-settings .map-focus-setting > .btn-focus:focus,
+.map-controls .map-settings .map-focus-setting > .btn-focus.on { background-color:#1a8cfc; background-image:url(../images/icon-current-location.png); } 
 .right-area .map-object-area { position:static; } 
 .right-area .map-object-area .object-item { position:relative; z-index:9; } 
 .car-object { display:inline-block; width:120px; text-align:center; } 
@@ -632,4 +632,26 @@ body.map { }
 .group-object.group-color-3::after{background-color: #ffaf0a;}
 
 /* ****** 우측영역 ****** */
+/* ****** 분할영역 ****** */
+.multi-map-area{overflow:hidden;height:100vh;}
+.multi-map-header{height:55px;display:flex;align-items:center;padding:0 30px;border-bottom:1px solid #dcdcdc;position:relative;z-index:10;flex:0 0 100%;}
+.multi-map-header .header-title{font-size:17px;font-weight:500;color:#000000;margin-right:30px;flex:initial}
+.multi-map-header .header-left{display:flex;align-items:center;flex:1 0 auto;}
+.multi-map-header .header-left button{width:90px;height:26px;font-size:13px;padding:0;}
+.multi-map-header .header-left button+button{margin-left:10px;}
+.multi-map-header .header-right{flex:1 0 auto;display:flex;align-items:center;justify-content: flex-end;}
+.multi-map-header .header-right button{width:100px;height:34px;font-size:13px;padding:0;}
+
+.multi-map-body{display:flex;height:calc(100% - 49px);position:relative;margin-left:-3px;margin-right:-3px;margin-top:-3px;margin-bottom:-3px;z-index:0;background-color:#ffffff;align-items:stretch;flex-wrap:wrap;flex:0 0 100%;}
+.multi-map-body .map-layout{padding:3px;background-color:#ffffff;flex:1 0 50%;position:relative;}
+.multi-map-body .map-layout .map-frame{position:relative;display:flex;padding:3px;width:100%;height:100%;z-indeX:0;}
+.multi-map-body .map-layout .frame-ready{position:absolute;top:3px;right:3px;bottom:3px;left:3px;background-color:#f5f5f5;margin-top:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:10;}
+.multi-map-body .map-layout .frame-ready .btn-add{width:90px;height:90px;border-radius:50%;border:3px solid #b6b6b6;position:relative;display:block;margin:0 auto;background-color:transparent;}
+.multi-map-body .map-layout .frame-ready .btn-add::before,
+.multi-map-body .map-layout .frame-ready .btn-add::after{content:'';display:block;width:36px;height:3px;border-radius:1.5px;background-color:#b6b6b6;position:absolute;left:50%;top:50%;margin-top:-1.5px;margin-left:-18px;}
+.multi-map-body .map-layout .frame-ready .btn-add::after{transform:rotate(90deg);}
+.multi-map-body .map-layout .frame-ready p{font-size:22px;font-weight:500;color:#b6b6b6;margin-top:35px;line-height:32px;text-align:center;}
+.multi-map-body .map-layout .background-map-area{position:absolute;z-index:0;top:0;left:0;right:0;bottom:0;}
+
+/* ****** 분할영역 ****** */
 /* ************************** 지도영역 END ************************** */
