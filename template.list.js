@@ -1,8 +1,8 @@
-$(function() {
+$(function () {
   var page_length = $('.guide_table tbody tr').length;
-  calc_pub_process = function() {
+  calc_pub_process = function () {
     var pub_ended = 0;
-    $('.status').each(function() {
+    $('.status').each(function () {
       var status = $(this).text();
       if (status == '완료') {
         pub_ended = pub_ended + 1;
@@ -12,7 +12,7 @@ $(function() {
     $('.pub_summary').text('퍼블리싱 진행률 [ ' + pub_ended + ' page / ' + page_length + ' page] ' + per_complete + '% 완료');
   }
   calc_pub_process();
-  $('a').each(function() {
+  $('a').each(function () {
     $(this).attr('target', '_blank')
   });
   // vue
@@ -881,25 +881,25 @@ var pub_list = new Vue({
       pageName: "비밀번호 입력",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.6.2.ProfilePass",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "정보변경",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.6.2.ProfileEdit",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "비밀번호 변경",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.6.2.ProfilePassEdit",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "회원탈퇴",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.6.2.ProfileDel",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "긴급출동서비스 신청",
@@ -929,43 +929,43 @@ var pub_list = new Vue({
       pageName: "eTAS 신청 정보",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.3.1.Etas",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "eTAS 신청",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.3.1.EtasInput",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "eTAS 신청 안내",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.3.1.EtasGuide",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "운행기록 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.4.1.OperationRecode",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "개인정보처리방침",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.7.1.1.Policy",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "이메일 무단 수집 거부",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.7.1.1.EmailReject",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "이메일 폼",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.7.1.1.EmailForm",
-      complete: "",
+      complete: "완료",
       note: ""
     }]
   }

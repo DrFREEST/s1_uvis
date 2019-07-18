@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eTAS 신청하기 팝업</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="modal">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 팝업영역 -->
+      <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- 일정/휴식시간 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">공단제출용 파일신청 <a class="help">?</a></h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>회사명</span></th>
+                        <td><span>0000 기업</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>영업부</span></th>
+                        <td><span>00000000 부서</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>신청자명</span></th>
+                        <td><span>홍길동</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>신청기간</span></th>
+                        <td>
+                          <div class="input-group date-range">
+                            <div class="input-wrap select">
+                              <select id name>
+                                <option value="">000 관리자</option>
+                              </select>
+                            </div>
+                            <div class="input-wrap date">
+                              <input class="datepicker" id name type="text">
+                              <i class="icon icon-calendar"></i>
+                            </div>
+                            <span class="between">~</span>
+                            <div class="input-wrap date">
+                              <input class="datepicker" id name type="text">
+                              <i class="icon icon-calendar"></i>
+                            </div>
+                            <div class="btn-group">
+                              <button class="btn btn-white on">일별</button>
+                              <button class="btn btn-white">주별</button>
+                              <button class="btn btn-white">월별</button>
+                            </div>
+                          </div>
+                          <span class="note">최대 2주분 신청 가능. 최근 6개월분 제한.</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="popup-car-list">
+                  <!-- car group list -->
+                  <div class="car-group-list vehicle-group-list">
+                    <div class="car-group-title">
+                      <div class="input-group list-caption">
+                        <div class="input-wrap check inline">
+                          <label for="car-menu-check-all">
+                            <input id="car-menu-check-all" name type="checkbox">
+                            <span>전체선택</span>
+                          </label>
+                        </div>
+                        <span class="font-blue">20대</span><span> / 차량번호(단말기 번호 자리)</span>
+                      </div>
+                    </div>
+                    <!--div class="car-group-header"></div-->
+                    <div class="car-group">
+                      <ul>
+                        <li>
+                          <div class="input-wrap check">
+                            <label for="check3-1-1">
+                              <input id="check3-1-1" name type="checkbox">
+                              <span>123456789</span> </label></div>
+                        </li>  
+                        <li>
+                          <div class="input-wrap check">
+                            <label for="check3-1-2">
+                              <input id="check3-1-2" name type="checkbox">
+                              <span>123456789</span> </label></div>
+                        </li>
+                        <li>
+                          <div class="input-wrap check">
+                            <label for="check3-1-3">
+                              <input id="check3-1-3" name type="checkbox">
+                              <span>123456789</span> </label></div>
+                        </li>
+                        <li>
+                          <div class="input-wrap check">
+                            <label for="check3-1-4">
+                              <input id="check3-1-4" name type="checkbox">
+                              <span>123456789</span> </label></div>
+                        </li>
+                        <li>
+                          <div class="input-wrap check">
+                            <label for="check3-1-5">
+                              <input id="check3-1-5" name type="checkbox">
+                              <span>123456789</span> </label></div>
+                        </li>
+                        <li>
+                          <div class="input-wrap check">
+                            <label for="check3-1-6">
+                              <input id="check3-1-6" name type="checkbox">
+                              <span>123456789</span> </label></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- //car group list -->
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">신청하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //일정/휴식시간 팝업 -->
+      <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      $('#popModel1').modal();
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>
