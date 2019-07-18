@@ -1,0 +1,154 @@
+
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1:1 문의 등록 (답변있음) 내용</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="modal">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 팝업영역 -->
+      <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- 일정/휴식시간 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">1:1 문의</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>그룹명 1</span></th>
+                        <td><span>품질관리그룹</span></td>
+                        <th><span>그룹명 2</span></th>
+                        <td><span>품질관리 1-2</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>질문자명</span></th>
+                        <td colspan="3"><span>홍*동</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>서비스</span></th>
+                        <td colspan="3"><span>공통</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>분류</span></th>
+                        <td colspan="3"><span>전체</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>제목</span></th>
+                        <td colspan="3"><span>ㅇㅇㅇ?</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>문의내용</span></th>
+                        <td colspan="3">
+                          <!-- 내용 상세 -->  
+                          <div class="table-content-wrap">
+                          <p>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+                          </div>
+                          <!-- /내용 상세 -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span>답변여부</span></th>
+                        <td><span>답변완료</span></td>
+                        <th><span>답변자</span></th>
+                        <td><span>ㅇㅇ관리자</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>첨부파일</span></th>
+                        <td colspan="3"><span>filename_190717_(2).png</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>답변내용</span></th>
+                        <td colspan="3">
+                          <!-- 내용 상세 -->  
+                          <div class="table-content-wrap">
+                          <p>ㄹㄹㄹ</p>
+                          </div>
+                          <!-- /내용 상세 -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">확인</button>
+              <button class="btn btn-white" data-dismiss="modal" type="button">답변삭제</button>
+              <button class="btn btn-blue" type="button">답변수정</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //일정/휴식시간 팝업 -->
+      <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      $('#popModel1').modal();
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>

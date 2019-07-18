@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자주하는 질문</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>분류</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">전체</option>
+                  <option value="">선택1</option>
+                </select>
+              </div>
+              <div class="input-wrap-wide">
+                <input class="clearable" id name type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+            <button class="btn btn-white btn-download" type="button">매뉴얼 다운로드</button>
+            <button class="btn btn-blue btn-search action searchVehicle" type="button">검색</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-12">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <button class="btn btn-white" type="button" onclick="$('#popModel1').modal();">선택삭제</button>
+                    <p class="font-gray">질문을 클릭하시면 답변을 보실 수 있습니다.</p>
+                  </div>
+                  <div class="header-right">
+                    <button class="btn btn-white" type="button">신규</button>
+                  </div>
+                </div>
+                <div class="data-table">
+                  <table id="list1"></table>
+                </div>
+                <div class="data-list-table-footer">
+                  <div class="footer-left">
+                    <div class="table-info">TOTAL : 50</div>
+                  </div>
+                  <div class="paging">
+                    <a class="btn-first" href="#"></a>
+                    <a class="btn-prev" href="#"></a>
+                    <a class="on" href="#">1</a>
+                    <a class href="#">2</a>
+                    <a class href="#">3</a>
+                    <a class href="#">4</a>
+                    <a class="btn-next" href="#"></a>
+                    <a class="btn-last" href="#"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <select id name>
+                        <option value="">15개씩 보기</option>
+                        <option value="">20개씩 보기</option>
+                        <option value="">50개씩 보기</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업 영역 -->
+      <!-- //팝업 영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <script src="../../resources/js/highcharts.js"></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      var chkcell = {
+        cellId: undefined,
+        chkval: undefined,
+      }
+
+      function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
+        var attr = rowObject.attr[cm.name],
+          result;
+        if (attr.rowspan) {
+          result = ' rowspan=' + '"' + attr.rowspan + '"';
+        } else if (attr.display) {
+          result = ' style="display:' + attr.display + '"';
+        }
+        return result;
+      }
+      var applyClassesToHeaders = function(grid) {
+        // Use the passed in grid as context, 
+        // in case we have more than one table on the page.
+        var trHead = jQuery("thead:first tr", grid.hdiv);
+        var trBody = jQuery("tbody tr", grid.hdiv);
+        var colModel = grid.getGridParam("colModel");
+        // console.log(trBody, colModel);
+        for (var iCol = 0; iCol < colModel.length; iCol++) {
+          var columnInfo = colModel[iCol];
+          if (columnInfo.class) {
+            var headDiv = jQuery("th:eq(" + iCol + ") div", trHead);
+            var bodyDiv = jQuery("td:eq(" + iCol + ") div", trBody);
+            // console.log(bodyDiv);
+            headDiv.parent().addClass(columnInfo.class);
+          }
+        }
+      };
+      $("#list1").jqGrid({
+        datatype: "local",
+        colNames: ['서비스', '분류', '질문', '조회수'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "16",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "16",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "",
+          align: "left"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "10"
+        }],
+        rowNum: 4,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // height: "auto"
+      });
+      var mydata = [{
+        col1: "공통",
+        col2: "청구입금",
+        col3: "전자 세금계산서 발행은 언제 되나요?",
+        col4: "4123"
+      }];
+      //
+      for (var i = 0; i <= mydata.length; i++)
+        $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>

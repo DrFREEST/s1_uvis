@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>회원 정보 - 변경</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- big tabs -->
+    <div class="big-tabs bg-white">
+      <ul>
+        <li><a class="on" href="javascript:;">개인정보변경</a></li>
+        <li><a href="javascript:;">비밀번호 변경</a></li>
+        <li><a href="javascript:;">회원탈퇴</a></li>
+      </ul>
+    </div>
+    <!-- //big tabs -->
+    <!-- content -->
+    <div class="content-wrap container-box v-top h-center">
+      <div class="simplified-form">
+        <h3></h3>
+        <p>개인 정보를 수정할 수 있습니다.</p>  
+        <div class="form-table wide">
+          <table>
+            <tr>
+              <th>회사명</th>
+              <td><span class="profile-edit-txt">에스원회사</span></td>
+            </tr>
+          </table>
+          <hr />
+          <table>
+            <tr>
+              <th>아이디</th>
+              <td><span class="profile-edit-txt">id123456789</span></td>
+            </tr>
+            <tr>
+              <th>이름</th>
+              <td><span class="profile-edit-txt">홍길동</span></td>
+            </tr>
+            <tr>
+              <th>전화번호</th>
+              <td>
+                <div class="input-wrap block bigger">
+                  <input class="clearable" type="text" placeholder="숫자만 입력">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>이메일</th>
+              <td>
+                <div class="input-wrap block bigger">
+                  <input class="clearable" type="text" placeholder="example@example.com">
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="page-bottom-btns">
+          <button class="btn btn-white btn-big action doPassResetCancel">취소</button>
+          <button class="btn btn-blue btn-big action doPassResetCheck">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- //content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+</html>
