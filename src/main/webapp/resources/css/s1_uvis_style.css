@@ -886,8 +886,11 @@ h3 + .data-list-table { margin-top:15px; }
 .data-list-table .data-table table tfoot tr td { border-top:none; }
 .data-list-table .data-table table thead tr th + th:before,
 .data-list-table .data-table table thead tr.jqg-third-row-header th:first-child::before { position:absolute; top:20px; left:0; display:block; width:1px; height:15px; margin-top:-7.5px; content:''; background-color:#e2e2e2; }
-.data-list-table .data-table table thead tr.jqg-second-row-header th::before { top:32.5px; height:30px; }
-.data-list-table .data-table table thead tr.jqg-third-row-header th:first-child::before { top:0; height:22.5px; }
+.data-list-table .data-table table thead tr th + th[rowspan="2"]:before{top:40px;}
+.data-list-table .data-table table thead tr th + th[rowspan="3"]:before{top:60px;}
+/* .data-list-table .data-table table thead tr.jqg-second-row-header th::before { top:32.5px; height:30px; } */
+/* .data-list-table .data-table table thead tr.jqg-second-row-header th + th::before{top:20px;height:15px;} */
+/* .data-list-table .data-table table thead tr.jqg-third-row-header th:first-child::before { top:0; height:22.5px; } */
 .data-list-table .data-table table thead tr th > span,
 .data-list-table .data-table table thead tr th > div { position:relative; display:inline-block; }
 .data-list-table .data-table table thead tr th .col-sort,
@@ -1507,7 +1510,26 @@ body.modal::before { display:none; }
 .popup-car-list { margin-top:20px }
 .popup-car-list .car-group { border-top:1px solid #2b2b2b; overflow-y:auto; max-height:250px; margin-top:0 }
 .modal-title a.help { background:#ccc; border-radius:50%; width:22px; height:22px; color:#fff; font-weight:600; font-size:14px; display:inline-block; text-align:center; line-height:22px; margin:0 0 0 10px; cursor:pointer }
-
+/* goeun 190719~ 추가수정 */
+.work-time-right { float:right }
+.work-time-right .check-group { margin-right:10px }
+.work-time-right .btn-group { margin-left:0 }
+.data-form-table .header-title { margin-bottom:10px; overflow:hidden }
+.data-form-table .header-title h5 { float:left; font-size:17px; color:#2b2b2b; font-weight:600 }
+.icon-pick img { width:50px; height:50px }
+.header-margin { margin-top:30px; font-weight:600 !important }
+.service-check1 { margin-top:5px }
+.service-check1 span { font-size:16px !important; }
+.service-check2 { margin-top:-10px }
+.service-check2 span { font-size:16px !important; margin-top:22px }
+.modal-footer .q-service { margin-top:10px }
+.modal-footer .q-service  p { font-size:16px; font-weight:500 }
+.modal-footer .q-service .radio-group { width:160px; margin:0 auto; margin-top:14px; margin-bottom:10px;text-align:center }
+.modal-footer .q-service .radio-group span { font-size:16px !important }
+.modal-footer .q-service button { width:320px }
+.pop-table-middle { width:100% !important; max-height:600px }
+.pop-table-middle table { max-width:100% }
+.pop-search-tmargin { margin-top:5px }
 /* eTAS windows popup */
 .win-popup { margin:10px; padding:30px; font-size:14px; line-height:170%; background:#fff; width:auto; width:450px; border-radius:15px }
 .win-popup h2 { font-size:20px; color:#1a8cfc; font-weight:500 }

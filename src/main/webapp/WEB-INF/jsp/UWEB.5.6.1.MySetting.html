@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>환경설정</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- content tab -->
+      <div class="content-tab">
+        <div class="radio-group inline bigger page-select">
+          <div class="input-wrap">
+            <label for="pageSelRadio1">
+              <input id="pageSelRadio1" name="pageSel" type="radio" checked>
+              <span>언어&#47;지도 설정</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio">
+              <span>사용 메뉴 설정</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio">
+              <span>차량 업무시간 설정</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- //content tab -->
+      <!-- top search -->
+      <!--div class="top-search">
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset action searchVehicleReset" type="button">취소</button>
+          <button class="btn btn-blue btn-search action searchVehicle" type="button">저장</button>
+        </div>
+      </div-->
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+            <div class="card-box data-form-table">
+              <div class="data-form-table-header">
+                <!--div class="header-left">
+                  <div class="input-wrap check inline">
+                    <label for="QuickEmergencyService1">
+                      <input id="" name type="checkbox">
+                      <span>전체선택</span>
+                    </label>
+                  </div>
+                </div-->
+                <div class="header-right">
+                  <button class="btn btn-blue action doMenuSettingSave">저장</button>
+                </div>
+              </div>
+              <div class="data-form-table-body v-middle">
+                <table>
+                  <tbody>
+                    <colgroup>
+                      <col width="200" />
+                      <col width="" />
+                    </colgroup>
+                    <tr>
+                      <th>언어설정</th>
+                      <td>
+                        <div class="radio-group inline">
+                          <div class="input-wrap radio"><label for="checkLanguage"><input id="checkLanguage" name="checkLanguage" type="radio"><span>한국어</span></label></div>
+                          <div class="input-wrap radio"><label for="checkLanguage"><input id="checkLanguage" name="checkLanguage" type="radio"><span>English</span></label></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>지도설정</th>
+                      <td>
+                        <div class="radio-group inline">
+                          <div class="input-wrap radio"><label for="checkAPImap"><input id="checkAPImap" name="checkAPImap" type="radio"><span>구글맵</span></label></div>
+                          <div class="input-wrap radio"><label for="checkAPImap"><input id="checkAPImap" name="checkAPImap" type="radio"><span>다음맵</span></label></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>차량 아이콘 스타일</th>
+                      <td>
+                        <div class="radio-group inline icon-pick">
+                          <div class="input-wrap radio"><label for="checkCarIcons"><input id="checkCarIcons" name="checkCarIcons" type="radio"><img src="http://dimg.donga.com/ugc/CDB/WEEKLY/Article/5a/bd/ea/eb/5abdeaeb2123d2738de6.jpg" /></label></div>
+                          <div class="input-wrap radio"><label for="checkCarIcons"><input id="checkCarIcons" name="checkCarIcons" type="radio"><img src="http://dimg.donga.com/ugc/CDB/WEEKLY/Article/5a/bd/ea/eb/5abdeaeb2123d2738de6.jpg" /></label></div>
+                          <div class="input-wrap radio"><label for="checkCarIcons"><input id="checkCarIcons" name="checkCarIcons" type="radio"><img src="http://dimg.donga.com/ugc/CDB/WEEKLY/Article/5a/bd/ea/eb/5abdeaeb2123d2738de6.jpg" /></label></div>
+                          <div class="input-wrap radio"><label for="checkCarIcons"><input id="checkCarIcons" name="checkCarIcons" type="radio"><img src="http://dimg.donga.com/ugc/CDB/WEEKLY/Article/5a/bd/ea/eb/5abdeaeb2123d2738de6.jpg" /></label></div>
+                          <div class="input-wrap radio"><label for="checkCarIcons"><input id="checkCarIcons" name="checkCarIcons" type="radio"><img src="http://dimg.donga.com/ugc/CDB/WEEKLY/Article/5a/bd/ea/eb/5abdeaeb2123d2738de6.jpg" /></label></div>
+                          <div class="input-wrap radio"><label for="checkCarIcons"><input id="checkCarIcons" name="checkCarIcons" type="radio"><img src="http://dimg.donga.com/ugc/CDB/WEEKLY/Article/5a/bd/ea/eb/5abdeaeb2123d2738de6.jpg" /></label></div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  
+</body>
+</html>

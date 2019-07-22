@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>차량업무시간설정</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- content tab -->
+      <div class="content-tab">
+        <div class="radio-group inline bigger page-select">
+          <div class="input-wrap">
+            <label for="pageSelRadio1">
+              <input id="pageSelRadio1" name="pageSel" type="radio">
+              <span>언어&#47;지도 설정</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio">
+              <span>사용 메뉴 설정</span>
+            </label>
+          </div>
+          <div class="input-wrap">
+            <label for="pageSelRadio2">
+              <input id="pageSelRadio2" name="pageSel" type="radio" checked>
+              <span>차량 업무시간 설정</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- //content tab -->
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <div class="row">
+            <div class="input-group">
+              <legend>차량명</legend>
+              <div class="input-wrap wide select">
+                <select id name>
+                  <option value="">선택</option>
+                  <option value="">선택12312312313</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-btns">
+          <button class="btn btn-white btn-reset action searchVehicleReset" type="button">취소</button>
+          <button class="btn btn-blue btn-search action searchVehicle" type="button">저장</button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-7 col-md-12">
+            <!-- 달력 -->
+            <div class="calendar-area">
+              <div class="calendar-top">
+                <div class="top-left">
+                  <div class="input-wrap select">
+                    <select id name>
+                      <option value="">년도</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="top-center">
+                  <div class="calendar-title">
+                    <button class="btn-prev">이전달</button>
+                    <h3><label for="monthDatepicker"><span class="year">2019</span>.<span class="month">04</span><input class="datepicker monthly hide-obj" id="monthDatepicker" name type="text"></label></h3>
+                    <button class="btn-next">다음달</button>
+                  </div>
+                </div>
+                <div class="top-right"><button class="btn btn-default">오늘</button></div>
+              </div>
+              <div class="calendar-bottom closing-schedule">
+                <!-- calendar header -->
+                <div class="calendar-header">
+                  <ul>
+                    <li><span class="day sun">일</span></li>
+                    <li><span class="day">월</span></li>
+                    <li><span class="day">화</span></li>
+                    <li><span class="day">수</span></li>
+                    <li><span class="day">목</span></li>
+                    <li><span class="day">금</span></li>
+                    <li><span class="day sat">토</span></li>
+                  </ul>
+                </div>
+                <!-- //calendar header -->
+                <!-- calendar body -->
+                <div class="calendar-body">
+                  <ul>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date sun">31</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">1</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">2</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">3</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">4</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">5</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat">6</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">7</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">8</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">9</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">10</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">11</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">12</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat">13</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">14</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">15</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">16</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">17</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <!-- 휴일 -->
+                    <li class="closing-day" onclick="$('#popModel1').modal();">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">18</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <!-- //휴일 -->
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">19</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <!-- 공휴일 -->
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat holiday">20</span><span class="date-name holiday">공휴일</span></div>
+                      </div>
+                    </li>
+                    <!-- //공휴일 -->
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">21</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">22</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">23</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">24</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">25</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">26</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sat">27</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date sun">28</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">29</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" onclick="$('#popModel1').modal();">
+                        <div class="date-title"><span class="date">30</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">1</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">2</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">3</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date sat">4</span><span class="date-name"></span></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- //calendar body -->
+              </div>
+            </div>
+            <!-- //달력 -->
+
+          </div>
+          <div class="col col-xl-5 col-md-12">
+            <div class="card-box data-form-table work-time-right">
+              <div class="data-form-table-header">
+                <div class="header-left">
+                  <h3 class="header-title">업무정보</h3>
+                </div>
+                <div class="header-right">
+                  <button class="btn btn-blue action goVehicleNew" type="button">신규</button>
+                  <button class="btn btn-blue action doVehicleSave" type="button">수정</button>
+                </div>
+              </div>
+              <div class="data-form-table-body v-middle">
+                <table>
+                  <tbody>
+                    <colgroup>
+                      <col width="85" />
+                      <col width="" />
+                    </colgroup>
+                    <tr>
+                      <th><span>차량명</span></th>
+                      <td>
+                        <div class="input-wrap select">
+                          <select id name>
+                            <option value="">선택</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>업무날짜</span></th>
+                      <td>
+                        <div class="input-group date-range">
+                          <div class="input-wrap date">
+                            <input class="datepicker" id name type="text">
+                            <i class="icon icon-calendar"></i>
+                          </div>
+                          <span class="between">~</span>
+                          <div class="input-wrap date">
+                            <input class="datepicker" id name type="text">
+                            <i class="icon icon-calendar"></i>
+                          </div>
+                        </div>
+                        <div class="btn-group">
+                          <button class="btn btn-white on">일별</button>
+                          <button class="btn btn-white">주별</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>주말휴무</span></th>
+                      <td>
+                        <div class="radio-group inline">
+                          <div class="input-wrap radio"><label for="checkRadioWeekend1"><input id="checkRadioWeekend1" name="checkRadioWeekend" type="radio"><span>주말휴무</span></label></div>
+                          <div class="input-wrap radio"><label for="checkRadioWeekend2"><input id="checkRadioWeekend2" name="checkRadioWeekend" type="radio"><span>주말근무</span></label></div>
+                          <div class="check-group inline-block">
+                            <div class="input-wrap">
+                              <label for="check-day6">
+                                <input id="check-day6" name type="checkbox">
+                                <span>토</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="check-group inline-block">
+                            <div class="input-wrap">
+                              <label for="check-day7">
+                                <input id="check-day7" name type="checkbox">
+                                <span>일</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>업무시간</span></th>
+                      <td>
+                        <div class="input-group date-range">
+                          <div class="input-wrap select year">
+                            <select id name>
+                              <option value="">시</option>
+                            </select>
+                          </div>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">분</option>
+                            </select>
+                          </div>
+                          <span class="between">~</span>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">시</option>
+                            </select>
+                          </div>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">분</option>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>사용목적</span></th>
+                      <td>
+                        <div class="input-wrap select">
+                          <select id name>
+                            <option value="">선택</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>부대비용</span></th>
+                      <td>
+                        <div class="input-wrap">
+                          <input class="clearable" type="text"><span>&nbsp;원</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>출근시간</span></th>
+                      <td>
+                        <div class="input-group date-range">
+                          <div class="input-wrap select year">
+                            <select id name>
+                              <option value="">시</option>
+                            </select>
+                          </div>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">분</option>
+                            </select>
+                          </div>
+                          <span class="between">~</span>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">시</option>
+                            </select>
+                          </div>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">분</option>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>퇴근시간</span></th>
+                      <td>
+                        <div class="input-group date-range">
+                          <div class="input-wrap select year">
+                            <select id name>
+                              <option value="">시</option>
+                            </select>
+                          </div>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">분</option>
+                            </select>
+                          </div>
+                          <span class="between">~</span>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">시</option>
+                            </select>
+                          </div>
+                          <div class="input-wrap select">
+                            <select id name>
+                              <option value="">분</option>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><span>비고</span></th>
+                      <td>
+                        <textarea id name cols rows="3"></textarea>
+                      </td>
+                    </tr>
+                    <!-- //상세항목 -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function() {
+      $('.action').click(function() {
+        console.log("1");
+        if ($(this).hasClass('terminalPopup')) $('#terminalModal').modal();
+        if ($(this).hasClass('driverPopup')) $('#driverModal').modal();
+        if ($(this).hasClass('vehicleGroupPopup')) $('#vehicleGroupModal').modal();
+        if ($(this).hasClass('vehicleUploadPopup')) $('#vehicleUploadModal').modal();
+        if ($(this).hasClass('workHourSettingPopup')) $('#workHourSettingModal').modal();
+        if ($(this).hasClass('searchVehicleReset')) alert("초기화");
+        if ($(this).hasClass('searchVehicle')) alert("검색");
+        if ($(this).hasClass('checkVehicleDel')) alert("선택삭제");
+        if ($(this).hasClass('checkUserApproval')) alert("선택승인");
+        if ($(this).hasClass('vehicleExcel')) alert("엑셀다운");
+        if ($(this).hasClass('goVehicleInput')) alert("신규");
+        if ($(this).hasClass('doVehicleDel')) alert("삭제");
+        if ($(this).hasClass('goVehicleEdit')) alert("수정");
+        if ($(this).hasClass('doVehicleSave')) alert("저장");
+        // 일괄등록
+        if ($(this).hasClass('vehicleAllFormat')) alert("일괄등록 서식 다운로드");
+        if ($(this).hasClass('doVehicleUploadSave')) alert("저장");
+        // 업무시간알림 설정
+        if ($(this).hasClass('workHourSettingSearch')) alert("검색");
+        if ($(this).hasClass('doDefaultSetting')) alert("기본값");
+        if ($(this).hasClass('doWorkHourSetting')) alert("업무시간설정");
+        // 차량번호 중복체크
+        if ($(this).hasClass('vehicleCheck')) alert("중복체크");
+        // 차량 그룹 설정
+        if ($(this).hasClass('doVehicleGroupSave')) alert("저장");
+      });
+      $("#vehicleList").jqGrid({
+        datatype: "local",
+        colNames: ['그룹명 1', '그룹명 2', '차량번호', '차량종류', '단말기 타입', '운전자명', '차량상태'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "120",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "150"
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "100"
+        }, {
+          name: 'col5',
+          index: 'col5',
+          width: "100"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "100"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "100"
+        }],
+        rowNum: 10,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        multiselect: true,
+        multiselectWidth: 55,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        autowidth: true,
+        height: "auto",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // height: "auto"
+      });
+      var mydata = [{
+        col1: "품질관리그룹",
+        col2: "그룹21",
+        col3: "경기 22하 1234",
+        col4: "승용차",
+        col5: "3G단독",
+        col6: "김*동",
+        col7: "정상"
+      }, {
+        col1: "품질관리그룹",
+        col2: "그룹22",
+        col3: "경기 22하 1234",
+        col4: "승용차",
+        col5: "3G단독",
+        col6: "김*동",
+        col7: "정상"
+      }, ];
+      for (var i = 0; i <= mydata.length; i++)
+        $("#vehicleList").jqGrid('addRowData', i + 1, mydata[i]);
+      // 테이블 하단 합계 부분은 jqgrid 가이드 참고하여 개발 요망
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+
+</html>

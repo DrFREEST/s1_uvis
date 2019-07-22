@@ -743,7 +743,7 @@ var pub_list = new Vue({
       pageName: "긴급배차 팝업",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.4.16.1",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "자주하는 질문",
@@ -863,19 +863,19 @@ var pub_list = new Vue({
       pageName: "언어 / 지도설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.6.1.MySetting",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "사용 메뉴 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.6.1.MyMenuSetting",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "차량 업무시간 설정",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.5.6.1.WorkTimeSetting",
-      complete: "",
+      complete: "완료",
       note: ""
     }, {
       pageName: "비밀번호 입력",
@@ -905,25 +905,25 @@ var pub_list = new Vue({
       pageName: "긴급출동서비스 신청",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.1.1.QuickEmergencyService",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "차량검색",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.1.1.QuickCarSelect",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "빠른 배차 신청",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.2.1.QuickDispatch",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "배차 가능 차량 검색",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.2.1.QuickDispatchCar",
-      complete: "",
+      complete: "완료",
       note: "팝업"
     }, {
       pageName: "eTAS 신청 정보",

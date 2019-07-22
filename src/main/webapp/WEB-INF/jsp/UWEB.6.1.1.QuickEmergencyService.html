@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>긴급출동서비스</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="modal">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 팝업영역 -->
+      <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- 일정/휴식시간 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">긴급출동 서비스</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- 차량 정보 -->
+              <div class="data-form-table">
+                <div class="header-title">
+                  <h5>차량 정보</h5>
+                  <p>시동이 차단된 차량만 검색 노출됩니다.</p>
+                </div>
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span class="necessary">신청차량</span></th>
+                        <td>
+                          <div class="input-group">
+                            <div class="input-wrap">
+                              <input class="clearable" id name type="text" value="">
+                            </div>
+                            <button class="btn btn-default">검색</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">제조사</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="" placeholder="예)현대, 기아, GM대우 등">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">차량구분</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="" placeholder="예)승용차, SUV, 버스">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">차 종</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="" placeholder="예)아반떼 MD, 뉴포터, 스타렉스 등">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">색상</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="" placeholder="예)검은색, 흰색, 은색">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>배기량</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="" placeholder="CC">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>연식</span></th>
+                        <td>
+                          <div class="input-group">
+                            <div class="input-wrap"><input id name type="text" value="" placeholder="년"></div>
+                            <span class="between">~</span>
+                            <div class="input-wrap"><input id name type="text" value="" placeholder="월"></div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>특이사항</span></th>
+                        <td>
+                          <div class="input-textarea">
+                            <textarea placeholder="예) 앞범퍼 오른쪽에 심하게 긁힌 자국이 있음"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /차량 정보 -->   
+              <!-- 신청자 정보 -->
+              <div class="data-form-table">
+                <div class="header-title header-margin">
+                  <h5>신청자 정보</h5>
+                  <p></p>
+                </div>
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span class="necessary">신청자 이름</span></th>
+                        <td>
+                          <div class="input-group">
+                            <div class="input-wrap">
+                              <input class="clearable" id name type="text" value="">
+                            </div>
+                            <button class="btn btn-default">검색</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">연락처</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="" placeholder="숫자만 입력">
+                          </div>
+                          <span class="note">이 번호로 SMS 또는 유선안내 되오니 정확하게 연락처를 입력해주세요.</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">아이디</span></th>
+                        <td><span>id123455</span></td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">비밀번호</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="" placeholder="">
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /신청자 정보 -->          
+              <!-- 서비스 약관 및 요금 취소 기준 동의 -->
+              <div class="data-form-table">
+                <div class="header-title header-margin">
+                  <h5>서비스 약관 및 요금 취소 기준 동의</h5>
+                  <p></p>
+                </div>
+                <div class="data-form-table-body">
+                  <table>
+                    <colgroup>
+                      <col width="30">
+                      <col width="">
+                      <col width="50">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th colspan="2"><span>구분</span></th>
+                        <th><span>청구금액</span></th>  
+                      </tr>
+                      <tr>
+                        <th rowspan="2"><span>신청차량</span></th>
+                        <td align="center"><span>출동+수색실패</span></td>
+                        <td align="center"><span>25,000원/件</span></td>
+                      </tr>
+                      <tr>
+                        <td align="center"><span>출동+수색성공</span></td>
+                        <td align="center"><span>50,000원/件</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>신청차량</span></th>
+                        <td align="center"><span>출동 시작 이전에만 가능</span></td>
+                        <td align="center"><span>과금없음</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="form-footnote">
+                  <p>※ 서비스별 과금은 출동 서비스 종료 이후 자동 청구 됩니다.</p>
+                  <p>※ 긴급출동 이후에는 차량 찾음 유/무와 관계없이 출동료(25,000원)가 청구됩니다.</p>
+                  <p>※ 긴급출동시작 이후 취소시에도 출동료(25,000원)가 청구됩니다</p>
+                </div>
+                <div class="input-group list-caption service-check1">
+                  <div class="input-wrap check inline">
+                    <label for="QuickEmergencyService1">
+                      <input id="QuickEmergencyService1" name type="checkbox">
+                      <span>본인은 서비스 요금 및 취소기준을 확인하였으며, 그 내용에 동의합니다.</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="header-title header-margin">
+                  <h5>서비스 약관 및 요금 취소 기준 동의</h5>
+                  <p></p>
+                </div>
+                <div class="form-rule-box">
+                  <p><strong>제6장 UVIS 출동서비스 특별약관</strong></p>
+                  <p>제40조(출동서비스의 정의)</p>
+                  <p>UVIS 출동서비스란 UVIS-R 서비스 상품을 이용하는 고객에 한하여 제공되는 서비스로 고객 차량에 설치된 3G단말기로부터 재시동차단 신호가 회사의 관제센터에 수신되면 출동요원을 출동시켜 차량 위치확인 업무를 수행한 후 그 결과를 고객에게 통보하는 서비스를 말합니다.</p>
+                </div>
+                <div class="input-group list-caption service-check2">
+                  <div class="input-wrap check inline">
+                    <label for="QuickEmergencyService2">
+                      <input id="QuickEmergencyService2" name type="checkbox">
+                      <span>본인은 출동서비스의 약관 내용을 충분히 인식하며 내용을 상세히 읽은 후,<br />그 내용에 대해 동의합니다.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- /서비스 약관 및 요금 취소 기준 동의 -->          
+            </div>
+            <div class="modal-footer">
+              <div class="q-service">
+                <p>위 정보를 기반으로 UVIS출동 서비스를 신청합니다.</p>
+                <div class="radio-group">
+                    <div class="input-wrap radio"><label for="QuickEmergencyServiceY"><input id="QuickEmergencyServiceY" name="QuickEmergencyServiceY" type="radio"><span>네</span></label></div>
+                    <div class="input-wrap radio"><label for="QuickEmergencyServiceN"><input id="QuickEmergencyServiceN" name="QuickEmergencyServiceN" type="radio"><span>아니오</span></label></div>
+                </div>
+                <button class="btn btn-blue q-service" type="button">긴급출동 서비스 신청하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //일정/휴식시간 팝업 -->
+      <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      $('#popModel1').modal();
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>
