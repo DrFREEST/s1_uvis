@@ -54,11 +54,12 @@ body.map { }
 .map-list .group-list .group-level-1 li { position:relative; z-index:1; } 
 .map-list .group-list .group-level-1 > ul > li { display:block; overflow:hidden; flex:initial; flex-direction:column; height:auto; max-height:50px; transition:0.2s all; } 
 .map-list .group-list .group-level-1 > ul > li.active { max-height:calc(100vh - 250px); } 
+.map-list .group-list .group-level-1 > ul > li + li,
 .map-list .group-list .group-level-1 > ul > li.active ~ li { border-top:1px solid #dcdcdc; } 
 .map-list .group-list .group-level-1 li .group-title { font-size:16px; position:relative; z-index:2; display:flex; align-items:center; flex:initial; height:50px; min-height:50px; } 
 .map-list .group-list .group-level-1 > ul > li.active > .group-title::before { position:absolute; bottom:0; left:18px; display:block; width:11px; height:15px; content:''; border-left:1px dashed #b6b6b6; } 
-.map-list .group-list .group-level-1 li .group-title::after { position:absolute; right:0; bottom:0; left:0; display:block; height:1px; content:''; background-color:#dcdcdc; } 
-.map-list .group-list .group-level-1 li.active .group-title::after { left:36px; } 
+.map-list .group-list .group-level-1 li .group-title::after { position:absolute; right:0; bottom:0; left:0;  height:1px; content:''; background-color:#dcdcdc;display:none; } 
+.map-list .group-list .group-level-1 li.active .group-title::after { left:36px; display:block;} 
 .map-list .group-list .group-level-1 li.active .group-level-2 ul li:last-child .group-title::after { display:none; } 
 .map-list .group-list .group-level-1 li .group-title:hover { background-color:#f7fbff; } 
 .map-list .group-list .group-title.active,
@@ -93,6 +94,7 @@ body.map { }
 .map-list .group-list li.active > .list::after { position:absolute; right:0; bottom:0; left:36px; display:block; height:1px; content:''; background-color:#dcdcdc; } 
 .map-list .group-list li:last-child > .list::after { display:none; } 
 .map-list .group-list .list::before { position:absolute; z-index:2; top:0; left:18px; display:block; box-sizing:content-box; width:11px; height:100%; margin-top:-20px; content:''; border-left:1px dashed #b6b6b6; /* border-bottom:1px dotted #b6b6b6; */ } 
+.map-list .group-list .group-level-1 > ul> li>.list::before{border-bottom:1px dashed #b6b6b6;}
 .map-list .group-list .group-level-2 li:last-child .list { border-bottom:none; } 
 .map-list .group-list .group-level-2 li:last-child .list::before { display:none; } 
 .map-list .group-list .list { } 
@@ -569,12 +571,12 @@ body.map { }
 .right-area .map-object-area { position:static; } 
 .right-area .map-object-area .object-item { position:relative; z-index:9; } 
 .car-object { display:inline-block; width:120px; text-align:center; } 
-.car-object i { display:block; width:42px; height:42px; margin:0 auto; } 
-.car-object span { font-size:16px; font-weight:500; line-height:24px; display:inline-block; padding:0 5px; color:#ffffff; border-radius:2px; background-color:rgba(0, 0, 0, 0.6); box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.5); } 
-.car-object.on i { background:url(../images/icon-car-on-default.png) no-repeat center top; } 
-.car-object.on.selected i { background:url(../images/icon-car-on-selected.png) no-repeat center top; } 
-.car-object.off i { background:url(../images/icon-car-off-default.png) no-repeat center top; } 
-.car-object.off.selected i { background:url(../images/icon-car-off-selected.png) no-repeat center top; } 
+.car-object > i { display:block; width:42px; height:42px; margin:0 auto; } 
+.car-object > span { font-size:16px; font-weight:500; line-height:24px; display:inline-block; padding:0 5px; color:#ffffff; border-radius:2px; background-color:rgba(0, 0, 0, 0.6); box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.5); } 
+.car-object.on > i { background:url(../images/icon-car-on-default.png) no-repeat center top; } 
+.car-object.on.selected > i { background:url(../images/icon-car-on-selected.png) no-repeat center top; } 
+.car-object.off > i { background:url(../images/icon-car-off-default.png) no-repeat center top; } 
+.car-object.off.selected > i { background:url(../images/icon-car-off-selected.png) no-repeat center top; } 
 /* 경로 오브젝트 */
 .point-object { display:flex; align-items:center; justify-content:center; width:40px; height:40px; border:solid 4px #ffffff; background-color:#1a8cfc; box-shadow:0 1px 10px 0 #00000021;color:#ffffff;z-index:5; font-size:13px;font-weight:500;border-radius:50%;} 
 /* 경로정보 */
@@ -619,7 +621,7 @@ body.map { }
 
 /* 그룹오브젝트 */
 .group-object{display:inline-flex;width:46px;height:46px;align-items:center;justify-content: center;border-radius:50%;background-color:rgb(137, 137, 137);position:relative;}
-.group-object span{font-size:20px;font-weight:500;color:#ffffff;position:relative;z-index:2;}
+.group-object > span{font-size:20px;font-weight:500;color:#ffffff;position:relative;z-index:2;}
 .group-object::before{border-radius:50%;content:'';position:absolute;display:block;width:78px;height:78px;left:50%;top:50%;margin-left:-39px;margin-top:-39px;background-color:rgb(137, 137, 137);opacity:0.4;}
 .group-object::after{border-radius:50%;content:'';position:absolute;display:block;width:124px;height:124px;left:50%;top:50%;margin-left:-62px;margin-top:-62px;background-color:rgb(137, 137, 137);opacity:0.15;}
 .group-object.group-color-1,
