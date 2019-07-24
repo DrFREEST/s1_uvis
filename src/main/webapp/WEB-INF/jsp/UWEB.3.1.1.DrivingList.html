@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -422,7 +420,7 @@
                   <button class="btn btn-blue btn-search">검색</button>
                 </div>
               </div>
-              <ul class="note font-red">
+              <ul class="note font-gray">
                 <li>* 운행기록은 차량번호가 등록되어야 조회 가능합니다. ( 설정 > 차량관리 )</li>
                 <li>* 선택한 일자의 1일분만 다운로드가 가능하고 , 차량은 최대 20대까지만 선택할 수 있습니다.</li>
               </ul>
@@ -448,7 +446,7 @@
                       <div class="input-wrap check">
                         <label for="check3-1-1">
                           <input id="check3-1-1" name type="checkbox">
-                          <span>1234567890</span>
+                          <span>14허2345 경기/ *5623</span>
                         </label>
                       </div>
                     </li>
@@ -456,7 +454,7 @@
                       <div class="input-wrap check">
                         <label for="check3-1-2">
                           <input id="check3-1-2" name type="checkbox">
-                          <span>1234567890</span>
+                          <span>14허2345 경기/ *5623</span>
                         </label>
                       </div>
                     </li>
@@ -464,7 +462,7 @@
                       <div class="input-wrap check">
                         <label for="check3-1-3">
                           <input id="check3-1-3" name type="checkbox">
-                          <span>1234567890</span>
+                          <span>14허2345 경기/ *5623</span>
                         </label>
                       </div>
                     </li>
@@ -472,7 +470,7 @@
                       <div class="input-wrap check">
                         <label for="check3-1-4">
                           <input id="check3-1-4" name type="checkbox">
-                          <span>1234567890</span>
+                          <span>14허2345 경기/ *5623</span>
                         </label>
                       </div>
                     </li>
@@ -480,7 +478,7 @@
                       <div class="input-wrap check">
                         <label for="check3-1-5">
                           <input id="check3-1-5" name type="checkbox">
-                          <span>1234567890</span>
+                          <span>14허2345 경기/ *5623</span>
                         </label>
                       </div>
                     </li>
@@ -488,7 +486,7 @@
                       <div class="input-wrap check">
                         <label for="check3-1-6">
                           <input id="check3-1-6" name type="checkbox">
-                          <span>1234567890</span>
+                          <span>14허2345 경기/ *5623</span>
                         </label>
                       </div>
                     </li>
@@ -543,7 +541,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -561,10 +559,10 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $("#list1").jqGrid({
         datatype: "local",
-        colNames: ['번호', '노선명', '정류장', '운행일자', '출발시간', '운행구분', '반명', '학생명', '보호자연락처', '발송일시', '결과'],
+        colNames: ['그룹명1', '그룹명2', '차량번호', '업무구분', '호차', '온도A', '온도B', '차종', '운전자', '구분', '배차기간', '운행시간', '운행거리(㎞)', '에코등급', '공회전', '과속', '급가속', '급감속', '최종신호', '단말기타입'],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -609,19 +607,55 @@
           name: 'col11',
           index: 'col11',
           width: "100",
+        }, {
+          name: 'col12',
+          index: 'col12',
+          width: "100",
+        }, {
+          name: 'col13',
+          index: 'col13',
+          width: "100",
+        }, {
+          name: 'col14',
+          index: 'col14',
+          width: "80",
+        }, {
+          name: 'col15',
+          index: 'col15',
+          width: "80",
+        }, {
+          name: 'col16',
+          index: 'col16',
+          width: "80",
+        }, {
+          name: 'col17',
+          index: 'col17',
+          width: "80",
+        }, {
+          name: 'col18',
+          index: 'col18',
+          width: "80",
+        }, {
+          name: 'col19',
+          index: 'col19',
+          width: "80",
+        }, {
+          name: 'col20',
+          index: 'col20',
+          width: "80",
         }],
         // rowNum: 15,
         scrollRows: true,
         scroll: true,
         rowList: [15, 25, 50],
         // pager: '#pager3',
-        // multiselect: true,
-        // multiselectWidth: 55,
+        multiselect: true,
+        multiselectWidth: 55,
         sortname: 'id',
         viewrecords: true,
         sortorder: "desc",
         autowidth: true,
-        height: 228,
+        height: "auto",
         scrollTimeout: 1,
         shrinkToFit: true,
         forceFit: true,
@@ -631,113 +665,26 @@
         // altRows: true
       });
       var mydata = [{
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
-      }, {
-        col1: "1",
-        col2: "노선1",
-        col3: "기점1",
-        col4: "2019-01-01",
-        col5: "00:00",
-        col6: "등원",
-        col7: "1반",
-        col8: "김이박",
-        col9: "010-****-0000",
-        col10: "2019-01-01 00:00:00",
-        col11: "발송완료",
+        col1: "그룹명1",
+        col2: "그룹명2",
+        col3: "경기 11하 1111",
+        col4: "상온",
+        col5: "1",
+        col6: "5℃",
+        col7: "5℃",
+        col8: "아반테",
+        col9: "법인",
+        col10: "2019-01-01 00:00:00 ~ 2019-01-01 00:00:00",
+        col11: "999시간 00분",
+        col12: "99,999분",
+        col13: "A",
+        col14: "5",
+        col15: "5",
+        col16: "5",
+        col17: "5",
+        col18: "5",
+        col19: "2019-01-01 00:00:00",
+        col20: "3G 단독",
       }];
       //
       $("#list2").jqGrid({
@@ -1082,5 +1029,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

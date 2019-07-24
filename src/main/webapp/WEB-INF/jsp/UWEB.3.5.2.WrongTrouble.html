@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -83,6 +81,14 @@
               </div>
             </div>
             <div class="input-group">
+              <legend>정비구분</legend>
+              <div class="input-wrap select">
+                <select id name>
+                  <option value="">전체</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
               <legend>정비항목</legend>
               <div class="input-wrap select">
                 <select id name>
@@ -99,7 +105,7 @@
               </div>
             </div>
             <div class="input-group date-range">
-              <legend>배차기간</legend>
+              <legend>발생일시</legend>
               <div class="input-wrap select year">
                 <select id name>
                   <option value="">2019</option>
@@ -202,12 +208,12 @@
         <div class="modal-dialog big" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">차량위치 <em class="font-blue">경상남도 김해시 대청동 351</em></h5>
+              <h5 class="modal-title">차량위치</h5>
               <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <!-- pop map area -->
-
+              <div class="pop-map-address">경상남도 김해시 대청동 351</div>
               <div class="pop-map-area big">
                 <!-- 노선 지도 들어가는 영역 -->
                 지도 들어가는 영역
@@ -233,7 +239,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -254,10 +260,10 @@
     function openLocation() {
       $(document).find('#popModel1').modal();
     }
-    $(function() {
+    $(function () {
       $("#list1").jqGrid({
         datatype: "local",
-        colNames: ['순번', '그룹명1', '그룹명2', '차량번호', '차종', '운전자명', '정비구분', '정비항목', '발생일자', '발생시간', '처리구분', '교환주기', '최종교환일', '현재현황', ],
+        colNames: ['순번', '그룹명1', '그룹명2', '차량번호', '차종', '운전자명', '정비구분', '정비항목', '발생일자', '발생시간', '처리구분', '교환주기', '최종교환일', '현재현황',],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -358,5 +364,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

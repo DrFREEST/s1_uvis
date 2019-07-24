@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -65,16 +63,8 @@
                                   <div class="input-wrap radio"><label for="popRadioType2"><input id="popRadioType2" name="popRadioType" type="radio"><span>출근</span></label></div>
                                   <div class="input-wrap radio"><label for="popRadioType3"><input id="popRadioType3" name="popRadioType" type="radio"><span>퇴근</span></label></div>
                                 </div> -->
-                    <div class="input-group col-sm-6">
-                      <legend>권역</legend>
-                      <div class="input-wrap select">
-                        <select id name>
-                          <option value="">선택</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="input-group col-sm-6">
-                      <legend>정류장명</legend>
+                    <div class="input-group block">
+                      <legend>차량번호</legend>
                       <div class="input-wrap">
                         <input class="clearable" id name type="text">
                       </div>
@@ -175,7 +165,7 @@
       //
       $("#list5").jqGrid({
         datatype: "local",
-        colNames: ['이름', '연락처'],
+        colNames: ['이름', '전화번호'],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -195,7 +185,7 @@
         sortname: 'id',
         viewrecords: true,
         sortorder: "desc",
-        width: 313,
+        width: 364,
         // autowidth: true,
         height: "auto",
         scrollTimeout: 1,
@@ -209,13 +199,13 @@
       });
       var mydata5 = [{
         col1: "김이박",
-        col1: "010-****-0000",
+        col2: "010-****-0000",
       }];
       // 
       // 
       $("#list6").jqGrid({
         datatype: "local",
-        colNames: ['이름', '연락처'],
+        colNames: ['이름', '전화번호'],
         colModel: [{
           name: 'col1',
           index: 'col1',
@@ -235,7 +225,7 @@
         sortname: 'id',
         viewrecords: true,
         sortorder: "desc",
-        width: 313,
+        width: 364,
         // autowidth: true,
         height: "auto",
         scrollTimeout: 1,
@@ -258,5 +248,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

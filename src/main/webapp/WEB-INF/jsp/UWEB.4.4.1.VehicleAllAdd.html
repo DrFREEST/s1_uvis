@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
+
 <body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -38,7 +40,7 @@
             <div class="modal-body">
               <!-- body top btn group -->
               <div class="top-btn-group text-right">
-                <button class="btn btn-white">서식 다운로드</button>
+                <button class="btn btn-white action">일괄등록 엑셀 다운로드</button>
               </div>
               <!-- //body top btn group -->
               <!-- popup top search -->
@@ -67,7 +69,7 @@
             </div>
             <div class="modal-footer">
               <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
-              <button class="btn btn-blue" type="button">저장</button>
+              <button class="btn btn-blue" type="button">일괄등록</button>
             </div>
           </div>
         </div>
@@ -84,7 +86,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function () {
+    (function() {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -102,10 +104,11 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function () {
+    $(function() {
       $('#popModel1').modal();
     });
   </script>
   <!-- //onload script -->
 </body>
+
 </html>

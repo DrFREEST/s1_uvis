@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -30,7 +29,7 @@
       <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
       <!-- 일정/휴식시간 팝업 -->
       <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
-        <div class="modal-dialog big" role="document">
+        <div class="modal-dialog wide" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">공지사항</h5>
@@ -54,7 +53,7 @@
                       <tr>
                         <th><span>제목</span></th>
                         <td>
-                          <div class="input-wrap"><input class="clearable" id name type="text" value=""></div>
+                          <div class="input-wrap"><input class="clearable" id name type="text" value></div>
                         </td>
                       </tr>
                       <tr>
@@ -79,15 +78,14 @@
                             <span class="between">:</span>
                             <div class="input-wrap"><input class="clearable" id name type="text" value="00"></div>
                           </div>
-
                         </td>
                       </tr>
                       <tr>
                         <th><span>문의내용</span></th>
                         <td>
-                            <!-- 에디터 개발 협의 -->
-                            <div class="input-wrap"><textarea></textarea></div>
-                            <!-- /에디터 개발 협의 -->
+                          <!-- 에디터 개발 협의 -->
+                          <div class="input-wrap"><textarea rows="10"></textarea></div>
+                          <!-- /에디터 개발 협의 -->
                         </td>
                       </tr>
                     </tbody>

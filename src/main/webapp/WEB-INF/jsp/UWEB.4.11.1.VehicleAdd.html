@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -46,13 +44,13 @@
                       <legend>그룹명</legend>
                       <div class="input-wrap select">
                         <select id name>
-                                    <option value="">선택</option>
-                                  </select>
+                          <option value="">선택</option>
+                        </select>
                       </div>
                       <div class="input-wrap select">
                         <select id name>
-                                      <option value="">선택</option>
-                                    </select>
+                          <option value="">선택</option>
+                        </select>
                       </div>
                     </div>
                     <div class="input-group col-sm-5">
@@ -78,7 +76,7 @@
                 </div>
                 <div class="data-list-table-footer">
                   <div class="footer-left">
-                    <div class="table-info">TOTAL : 50</div>
+                    <!-- <div class="table-info">TOTAL : 50</div> -->
                   </div>
                   <div class="paging">
                     <a class="btn-first" href="#"></a>
@@ -91,13 +89,13 @@
                     <a class="btn-last" href="#"></a>
                   </div>
                   <div class="footer-right">
-                    <div class="input-wrap inline select length-change small">
+                    <!-- <div class="input-wrap inline select length-change small">
                       <select id name>
                                     <option value="">15개씩 보기</option>
                                     <option value="">20개씩 보기</option>
                                     <option value="">50개씩 보기</option>
                                   </select>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -122,7 +120,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -140,7 +138,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $('#popModel3').modal();
       $("#list6").jqGrid({
         datatype: "local",
@@ -190,7 +188,7 @@
         shrinkToFit: true,
         forceFit: true,
         scrollOffset: 21,
-        width: 860,
+        width: 830,
         // footerrow: true,
         // userDataOnFooter: true,
         // altRows: true
@@ -210,5 +208,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

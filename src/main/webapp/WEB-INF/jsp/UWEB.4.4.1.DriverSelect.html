@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -46,15 +44,20 @@
                       <legend>회사명</legend>
                       <div class="input-wrap select">
                         <select id name>
-                              <option value="">선택</option>
-                            </select>
+                          <option value="">선택</option>
+                        </select>
                       </div>
                     </div>
                     <div class="input-group col-sm-6">
-                      <legend>운전자명</legend>
+                      <legend>이름</legend>
                       <div class="input-wrap">
                         <input class="clearable" id name type="text">
-
+                      </div>
+                    </div>
+                    <div class="input-group col-sm-6">
+                      <legend>휴대폰번호</legend>
+                      <div class="input-wrap">
+                        <input class="clearable" id name type="text">
                       </div>
                     </div>
                   </div>
@@ -69,7 +72,7 @@
                 <div class="data-table">
                   <table>
                     <colgroup>
-                      <col>
+                      <col style="width:60px;">
                       <col>
                       <col>
                       <col>
@@ -163,10 +166,10 @@
                   <div class="footer-right">
                     <div class="input-wrap inline select length-change small">
                       <select id name>
-                                <option value="">15개씩 보기</option>
-                                <option value="">20개씩 보기</option>
-                                <option value="">50개씩 보기</option>
-                              </select>
+                        <option value="">15개씩 보기</option>
+                        <option value="">20개씩 보기</option>
+                        <option value="">50개씩 보기</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -188,7 +191,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -206,11 +209,10 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $('#popModel1').modal();
     });
   </script>
   <!-- //onload script -->
 </body>
-
 </html>
