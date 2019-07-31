@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UVIS 이전설치 신청서</title>
+  <!-- CSS resource load -->
+  <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+  <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+  <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+  <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="../../resources/css/ui.jqgrid.css" rel="stylesheet">
+  <link href="../../resources/css/reset.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+  <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+  <!-- //CSS resource load -->
+</head>
+<body class="modal">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 팝업영역 -->
+      <!-- ↑ 위쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- 일정/휴식시간 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog big" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">UVIS 이전설치 신청서</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- 차량 정보 -->
+              <div class="data-form-table">
+                <div class="data-form-table-body">
+                  <table>
+                    <tbody>
+                      <colgroup>
+                        <col style="width:130px;">
+                        <col style="width:auto;">
+                        <col style="width:130px;">
+                        <col style="width:auto;">
+                      </colgroup>
+                      <tr>
+                        <th><span class="necessary">설치희망 날짜</span></th>
+                        <td>
+                          <div class="input-group date-range">
+                            <div class="input-wrap date">
+                              <input class="datepicker" id name type="text" value>
+                              <i class="icon icon-calendar"></i>
+                            </div>
+                            <div class="input-wrap select">
+                              <select id name>
+                                <option value="">00:00</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <th><span>계약처명</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value="업체업체업체" readonly>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">탈거, 설치주소</span></th>
+                        <td colspan="3">
+                          <div class="input-group">
+                            <div class="input-wrap">
+                              <input class="clearable" id name type="text" value>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">작업내용</span></th>
+                        <td colspan="3">
+                          <!-- 추가시에 해당 단위로 추가되면 됨 -->
+                          <div class="data-form-table template">
+                            <div class="data-form-table-body">
+                              <table>
+                                <colgroup>
+                                  <col style="width:120px;">
+                                  <col style="width:auto;">
+                                  <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                  <tr>
+                                    <th><span></span></th>
+                                    <th class="border-left"><span>탈거차량</span></th>
+                                    <th class="border-left"><span>설치차량</span></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th><span>차량번호</span></th>
+                                    <td class="border-left">
+                                      <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    </td>
+                                    <td class="border-left">
+                                      <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th><span>차량명(차종)</span></th>
+                                    <td class="border-left">
+                                      <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    </td>
+                                    <td class="border-left">
+                                      <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th><span>3G통신번호</span></th>
+                                    <td class="border-left">
+                                      <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    </td>
+                                    <td class="border-left">
+                                      <div class="input-wrap"><input class="clearable" id name type="text"></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th><span>대상기기</span></th>
+                                    <td class="border-left">
+                                      <div class="input-group radio-group">
+                                        <div class="input-wrap radio block"><label for="sel3gType1-1"><input id="sel3gType1-1" name="sel3gType1" type="radio"><span>3G 단말기</span></label></div>
+                                        <div class="input-wrap radio block"><label for="sel3gType1-2"><input id="sel3gType1-2" name="sel3gType1" type="radio"><span>3G + DTG</span></label></div>
+                                        <div class="input-wrap radio block"><label for="sel3gType1-3"><input id="sel3gType1-3" name="sel3gType1" type="radio"><span>3G + OBD + 시동차단</span></label></div>
+                                        <div class="input-wrap radio block"><label for="sel3gType1-4"><input id="sel3gType1-4" name="sel3gType1" type="radio"><span>3G + 시동차단</span></label></div>
+                                      </div>
+                                    </td>
+                                    <td class="border-left">
+                                      <div class="input-group radio-group">
+                                        <div class="input-wrap radio block"><label for="sel3gType2-1"><input id="sel3gType2-1" name="sel3gType2" type="radio"><span>3G 단말기</span></label></div>
+                                        <div class="input-wrap radio block"><label for="sel3gType2-2"><input id="sel3gType2-2" name="sel3gType2" type="radio"><span>3G + DTG</span></label></div>
+                                        <div class="input-wrap radio block"><label for="sel3gType2-3"><input id="sel3gType2-3" name="sel3gType2" type="radio"><span>3G + OBD + 시동차단</span></label></div>
+                                        <div class="input-wrap radio block"><label for="sel3gType2-4"><input id="sel3gType2-4" name="sel3gType2" type="radio"><span>3G + 시동차단</span></label></div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <!-- //추가시에 해당 단위로 추가되면 됨 -->
+                          <div class="data-form-table-footer">
+                            <div class="btns">
+                              <button class="btn btn-white">삭제</button>
+                              <button class="btn btn-blue" onclick="$(this).parents('td').find('.data-form-table.template').clone().removeClass('template').insertBefore($(this).parents('td').find('.data-form-table-footer'));">추가</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>비용안내</span></th>
+                        <td colspan="3">
+                          <div class="data-form-table">
+                            <div class="data-form-table-header">
+                              <div class="header-title">총 0대 (철거, 이전) 설치비 청구 금액 : 0 (VAT별도)</div>
+                              <div class="header-right">※ 탈거 및 설치 비용</div>
+                            </div>
+                            <div class="data-form-table-body">
+                              <table>
+                                <colgroup>
+                                  <col style="width:100px;">
+                                  <col style="width:auto;">
+                                  <col style="width:auto;">
+                                  <col style="width:auto;">
+                                  <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                  <tr>
+                                    <th><span>탈거</span></th>
+                                    <td class="text-center">2만원</td>
+                                    <td class="text-center">5만원</td>
+                                    <td class="text-center">3만원</td>
+                                    <td class="text-center">2만원</td>
+                                  </tr>
+                                  <tr>
+                                    <th><span>설치</span></th>
+                                    <td class="text-center">3만원</td>
+                                    <td class="text-center">7만원</td>
+                                    <td class="text-center">7만원</td>
+                                    <td class="text-center">4만원</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="data-form-table-footer">
+                              <p class="info font-gray">외제 차량은 부착비 15만원/1대, 탈거비는 상기 기준 적용함. <br>*GPS 안테나, 전원선 미탈거 시 자재비용 추가됨(고객님 자가 탈거시)</p>
+                              <div class="input-wrap check"><input id name type="checkbox"><span>본인은 에스원UVIS 이전설치 비용을 상기와 같이 안내 받았음을 확인하고 서명합니다.</span></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">신청자명</span></th>
+                        <td colspan="3">
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">연락처</span></th>
+                        <td colspan="3">
+                          <div class="input-wrap">
+                            <input class="clearable" id name type="text" value>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /차량 정보 -->
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue" type="button">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //일정/휴식시간 팝업 -->
+      <!-- ↓ 아래쪽 마크업은 필요 없고 modal 영역만 서브페이지 frame-content 영역 가장 아래쪽에 들어가면 됩니다.(호출 방식은 아래 onload 스크립트 참조) -->
+      <!-- //팝업영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
+  <!-- onload script -->
+  <script>
+    $(function () {
+      $('#popModel1').modal();
+    });
+  </script>
+  <!-- //onload script -->
+</body>
+</html>

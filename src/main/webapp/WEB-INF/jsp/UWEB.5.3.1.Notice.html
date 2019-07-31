@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -55,6 +53,8 @@
                   <option value="">제목</option>
                 </select>
               </div>
+            </div>
+            <div class="input-group">
               <div class="input-wrap wide">
                 <input class="clearable" id name type="text">
               </div>
@@ -124,7 +124,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -143,12 +143,11 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       var chkcell = {
         cellId: undefined,
         chkval: undefined,
       }
-
       function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
         var attr = rowObject.attr[cm.name],
           result;
@@ -159,7 +158,7 @@
         }
         return result;
       }
-      var applyClassesToHeaders = function(grid) {
+      var applyClassesToHeaders = function (grid) {
         // Use the passed in grid as context, 
         // in case we have more than one table on the page.
         var trHead = jQuery("thead:first tr", grid.hdiv);
@@ -234,5 +233,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

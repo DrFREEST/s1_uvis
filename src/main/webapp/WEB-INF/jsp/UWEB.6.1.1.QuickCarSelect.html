@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="modal">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -42,14 +40,15 @@
               <div class="top-search pop-top-search">
                 <div class="search-forms">
                   <div class="row">
-                    <div class="input-group">
+                    <div class="input-group block">
+                      <legend>차량번호</legend>
                       <div class="input-wrap select">
                         <select id name>
-                          <option value="">차량번호</option>
+                          <option value="">전체</option>
                         </select>
                       </div>
-                      <div class="input-wrap wide">
-                        <input class="" id name type="text">
+                      <div class="input-wrap flex">
+                        <input class id name type="text">
                       </div>
                     </div>
                   </div>
@@ -91,7 +90,6 @@
               </div>
               <!-- //data list table -->
             </div>
-
             <!--div class="modal-footer">
               <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
               <button class="btn btn-blue" type="button">차량추가</button>
@@ -111,7 +109,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -129,7 +127,7 @@
   <!-- //JS resource load -->
   <!-- onload script -->
   <script>
-    $(function() {
+    $(function () {
       $('#popModel1').modal();
       $("#list5").jqGrid({
         datatype: "local",
@@ -194,5 +192,4 @@
   </script>
   <!-- //onload script -->
 </body>
-
 </html>

@@ -46,6 +46,7 @@
                     </select>
                   </div>
                 </div>
+                <a href="#">그룹 원격 일괄제어</a>
               </div>
               <!-- //업데이트 설정 -->
               <!-- 현황/검색 -->
@@ -1123,11 +1124,15 @@
                           <button class="btn-white">1</button>
                           <button class="btn-white">2</button>
                           <button class="btn-white">3</button>
-                          <button class="btn-white">4</button>
-                          <button class="btn-white">5</button>
-                          <button class="btn-white">6</button>
-                          <button class="btn-white on">7</button>
-                          <button class="btn-white on">8</button>
+                          <!-- 기본 -->
+                          <button class="btn-default">4</button>
+                          <button class="btn-default">5</button>
+                          <button class="btn-default">6</button>
+                          <!-- //기본 -->
+                          <!-- 선택 -->
+                          <button class="btn-default on">7</button>
+                          <button class="btn-default on">8</button>
+                          <!-- //선택 -->
                           <button class="btn-white">9</button>
                           <button class="btn-white">10</button>
                           <button class="btn-white">11</button>
@@ -1140,11 +1145,11 @@
                           <button class="btn-white">13</button>
                           <button class="btn-white">14</button>
                           <button class="btn-white">15</button>
-                          <button class="btn-white on">16</button>
-                          <button class="btn-white on">17</button>
-                          <button class="btn-white on">18</button>
-                          <button class="btn-white on">19</button>
-                          <button class="btn-white on">20</button>
+                          <button class="btn-default on">16</button>
+                          <button class="btn-default on">17</button>
+                          <button class="btn-default on">18</button>
+                          <button class="btn-default on">19</button>
+                          <button class="btn-default on">20</button>
                           <button class="btn-white">21</button>
                           <button class="btn-white">22</button>
                           <button class="btn-white">23</button>
@@ -1840,16 +1845,16 @@
                 <!-- //지도상 그룹핑된 차량 목록 -->
               </div>
               <div class="group-color-2">
-                  <img src="../../resources/images/icon-group-blue.png" alt>
+                <img src="../../resources/images/icon-group-blue.png" alt>
               </div>
               <div class="group-color-3">
-                  <img src="../../resources/images/icon-group-red.png" alt>
+                <img src="../../resources/images/icon-group-red.png" alt>
               </div>
               <div class="group-color-4">
-                  <img src="../../resources/images/icon-group-magenta.png" alt>
+                <img src="../../resources/images/icon-group-magenta.png" alt>
               </div>
               <div class="group-color-5">
-                  <img src="../../resources/images/icon-group-purple.png" alt>
+                <img src="../../resources/images/icon-group-purple.png" alt>
               </div>
             </div>
             <!--// 그룹 -->
@@ -1889,6 +1894,43 @@
               </div>
             </div> -->
             <!-- //지도상 그룹핑된 차량 목록 -->
+            <!-- 입출입현황 -->
+            <div class="pop-inner-map pop-in-out">
+              <div class="modal-header">
+                <h5 class="modal-title">입출입 현황 <span class="font-blue">강남사업팀</span></h5>
+                <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+              </div>
+              <!-- popup top search -->
+              <div class="top-search pop-top-search">
+                <div class="search-forms">
+                  <div class="row">
+                    <div class="input-group block">
+                      <legend>입출입현황</legend>
+                      <div class="input-wrap select">
+                        <select id name>
+                          <option value="">선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-btns">
+                  <button class="btn btn-blue btn-search">검색</button>
+                </div>
+              </div>
+              <!-- //popup top search -->
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                  </div>
+                  <div class="header-right"><button class="btn btn-white">엑셀다운</button></div>
+                </div>
+                <div class="data-table">
+                  <table id="inOutBoundTable"></table>
+                </div>
+              </div>
+            </div>
+            <!-- //입출입현황 -->
           </div>
           <!-- //지도 오브젝트 영역 -->
           <!-- 실제 지도 들어가는 영역 -->
@@ -2198,6 +2240,101 @@
       }];
       for (var i = 0; i <= mydata.length; i++)
         $("#list1").jqGrid('addRowData', i + 1, mydata[i]);
+      $("#inOutBoundTable").jqGrid({
+        datatype: "local",
+        colNames: ['번호', '차량번호', '입차시간', '이벤트'],
+        colModel: [{
+          name: 'col1',
+          index: 'col1',
+          width: "60",
+        }, {
+          name: 'col2',
+          index: 'col2',
+          width: "100",
+        }, {
+          name: 'col3',
+          index: 'col3',
+          width: "80",
+        }, {
+          name: 'col4',
+          index: 'col4',
+          width: "160",
+        }],
+        rowNum: 6,
+        scrollRows: true,
+        scroll: true,
+        rowList: [15, 25, 50],
+        // pager: '#pager3',
+        // multiselect: true,
+        multiselectWidth: 40,
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        width: 443,
+        // autowidth: true,
+        height: "calc(50vh - 240px)",
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 21,
+        // footerrow: true,
+        // userDataOnFooter: true,
+        // altRows: true
+      });
+      var mydata2 = [{
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }, {
+        col1: "1",
+        col2: "경기 11하 1111",
+        col3: "16:45",
+        col4: "-",
+      }];
+      //
+      for (var i = 0; i <= mydata2.length; i++)
+        $("#inOutBoundTable").jqGrid('addRowData', i + 1, mydata2[i]);
     })
   </script>
   <!-- //onload script -->

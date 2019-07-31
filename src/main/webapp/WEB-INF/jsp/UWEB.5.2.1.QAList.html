@@ -139,7 +139,6 @@
         cellId: undefined,
         chkval: undefined,
       }
-
       function jsFormatterCell(rowid, val, rowObject, cm, rdata) {
         var attr = rowObject.attr[cm.name],
           result;
@@ -150,7 +149,7 @@
         }
         return result;
       }
-      var applyClassesToHeaders = function(grid) {
+      var applyClassesToHeaders = function (grid) {
         // Use the passed in grid as context, 
         // in case we have more than one table on the page.
         var trHead = jQuery("thead:first tr", grid.hdiv);
@@ -169,20 +168,20 @@
       };
       $("#list1").jqGrid({
         datatype: "local",
-        colNames: ['번호', '제목', '작성자', '작성일', '조회수'],
+        colNames: ['서비스', '분류', '제목', '그룹명1', '그룹명2', '질문자명', '질문일자', '답변여부'],
         colModel: [{
           name: 'col1',
           index: 'col1',
-          width: "10",
+          width: "25",
         }, {
           name: 'col2',
           index: 'col2',
-          width: "",
-          align: "left"
+          width: "25",
         }, {
           name: 'col3',
           index: 'col3',
-          width: "20",
+          width: "",
+          align: "left"
         }, {
           name: 'col4',
           index: 'col4',
@@ -190,7 +189,19 @@
         }, {
           name: 'col5',
           index: 'col5',
-          width: "10"
+          width: "20"
+        }, {
+          name: 'col6',
+          index: 'col6',
+          width: "20"
+        }, {
+          name: 'col7',
+          index: 'col7',
+          width: "20"
+        }, {
+          name: 'col8',
+          index: 'col8',
+          width: "20"
         }],
         rowNum: 4,
         scrollRows: true,
@@ -211,11 +222,23 @@
         // height: "auto"
       });
       var mydata = [{
-        col1: "123",
-        col2: "전자 세금계산서 발행은 언제 되나요?",
-        col3: "아무개",
-        col4: "2019-05-05",
-        col5: "123"
+        col1: "일반",
+        col2: "공통",
+        col3: "전자 세금계산서 발행은 언제 되나요?",
+        col4: "아무개",
+        col5: "아무개",
+        col6: "아무개",
+        col7: "2019-05-05",
+        col8: "<span class='font-blue'>답변완료</span>"
+      }, {
+        col1: "일반",
+        col2: "공통",
+        col3: "전자 세금계산서 발행은 언제 되나요?",
+        col4: "아무개",
+        col5: "아무개",
+        col6: "아무개",
+        col7: "2019-05-05",
+        col8: "문의중"
       }];
       //
       for (var i = 0; i <= mydata.length; i++)

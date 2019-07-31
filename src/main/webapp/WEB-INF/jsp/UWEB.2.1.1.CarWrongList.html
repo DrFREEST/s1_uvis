@@ -2478,7 +2478,7 @@
             </div>
             <!-- //경로 출발/도착 포인트 -->
             <!-- 경로 정보 레이어 -->
-            <div class="pop-route-info" style="position:absolute;left:400px;top:300px;z-index:5;">
+            <div class="pop-inner-map pop-route-info" style="position:absolute;left:400px;top:300px;z-index:5;">
               <div class="modal-header">
                 <div class="car-info">
                   <div class="car-name"><span class="flag on">ON</span><span>경기 11허 1111(강서·홍길동)</span></div>
@@ -2533,7 +2533,7 @@
   <script src="../../resources/js/jquery-1.12.4.min.js "></script>
   <script>
     jQuery.browser = {};
-    (function() {
+    (function () {
       jQuery.browser.msie = false;
       jQuery.browser.version = 0;
       if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
@@ -2554,7 +2554,7 @@
     //멥 메뉴 전체 숨기기
     function resetMapMenus() {
       //그룹 리스트 메뉴
-      $('.left-area .btn-call-menu').each(function() {
+      $('.left-area .btn-call-menu').each(function () {
         $(this).removeClass('on');
       });
       $('.left-area .pop-list-item-menu').removeClass('show');
@@ -2570,18 +2570,18 @@
       $('.left-area .pop-car-detail').removeClass('show');
     }
     //좌측영역 토글
-    $('.btn-toggle-left-area').on('click', function() {
-        resetMapMenus();
-        $('.left-area').toggleClass('expanded');
-      })
-      // 지도 그룹 리스트
-      //그룹목록1depth
-    $(document).find('.group-level-1 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function() {
+    $('.btn-toggle-left-area').on('click', function () {
+      resetMapMenus();
+      $('.left-area').toggleClass('expanded');
+    })
+    // 지도 그룹 리스트
+    //그룹목록1depth
+    $(document).find('.group-level-1 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function () {
       var target = $(this);
       var targetList = $(this).parent().parent();
       var clickIndex = $(document).find('.group-level-1 > ul > li').index(targetList);
       $(document).find('.group-level-2 > ul > li').removeClass('active');
-      $(document).find('.map-list .group-list .group-level-1 > ul > li').each(function() {
+      $(document).find('.map-list .group-list .group-level-1 > ul > li').each(function () {
         var index = $(document).find('.map-list .group-list .group-level-1 > ul > li').index($(this));
         if (index == clickIndex) {
           $(this).toggleClass('active')
@@ -2590,7 +2590,7 @@
         }
       });
       var clickTitleIndex = $('.group-list .group-title').index($(this).parent());
-      $('.group-list .group-title').each(function() {
+      $('.group-list .group-title').each(function () {
         var titleIndex = $('.group-list .group-title').index($(this));
         console.log(clickTitleIndex, titleIndex);
         if (clickTitleIndex == titleIndex) {
@@ -2605,16 +2605,16 @@
       });
       resetMapMenus();
       // $(this).parent().parent().toggleClass('active');
-      setTimeout(function() {
+      setTimeout(function () {
         $('.group-list').scrollTo(targetList, 200)
       }, 300);
     });
     //그룹목록2depth
-    $(document).find('.group-level-2 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function() {
+    $(document).find('.group-level-2 > ul > li > .group-title').on('click', '> .icon-toggle,> .btn-toggle', function () {
       var targetList = $(this).parent().parent();
       var targetListGroup = $(this).parents('.group-level-2');
       var clickIndex = $(document).find('.group-level-2 > ul > li').index(targetList);
-      $(document).find('.map-list .group-list .group-level-2 > ul > li').each(function() {
+      $(document).find('.map-list .group-list .group-level-2 > ul > li').each(function () {
         var index = $(document).find('.map-list .group-list .group-level-2 > ul > li').index($(this));
         if (index == clickIndex) {
           $(this).toggleClass('active')
@@ -2624,7 +2624,7 @@
       });
       var clickTitleIndex = $('.group-list .group-title').index($(this).parent());
       $('.group-list .group-title').removeClass('active');
-      $('.group-list .group-title').each(function() {
+      $('.group-list .group-title').each(function () {
         var titleIndex = $('.group-list .group-title').index($(this));
         // console.log(clickTitleIndex, titleIndex);
         if (clickTitleIndex == titleIndex) {
@@ -2635,14 +2635,14 @@
       });
       $(this).parent().addClass('active');
       resetMapMenus();
-      setTimeout(function() {
+      setTimeout(function () {
         $(targetListGroup).scrollTo(targetList, 200)
       }, 300);
       // $(this).parent().parent().toggleClass('active');
       // console.log(clickIndex)
     });
     //리스트 메뉴
-    $('.left-area .btn-call-menu').on('click', function(event) {
+    $('.left-area .btn-call-menu').on('click', function (event) {
       var target = $(event.target);
       var targetPosX = target.offset().left;
       var targetPosY = target.offset().top;
@@ -2652,7 +2652,7 @@
       if ($('.left-area .pop-list-item-menu').hasClass('show') == true && target.hasClass('on') == true) {
         resetMapMenus();
       } else if ($('.left-area .pop-list-item-menu').hasClass('show') == true && target.hasClass('on') == false) {
-        $('.left-area .btn-call-menu').each(function() {
+        $('.left-area .btn-call-menu').each(function () {
           $(this).removeClass('on');
         });
         target.addClass('on');
@@ -2665,7 +2665,7 @@
         'top': targetPosY - $(event.target).height(),
         'left': targetPosX + $(event.target).width(),
       });
-      $('.group-list, .group-level-2').on('scroll', function() {
+      $('.group-list, .group-level-2').on('scroll', function () {
         $('.left-area .pop-list-item-menu').css({
           'top': target.offset().top - $(event.target).height(),
           'left': target.offset().left + $(event.target).width(),
@@ -2673,7 +2673,7 @@
       });
     });
     //지도설정 레이어 토글
-    $('.right-area .btn-map-setting').on('click', function() {
+    $('.right-area .btn-map-setting').on('click', function () {
       if ($(this).hasClass('on') == false) {
         resetMapMenus();
       }
@@ -2681,7 +2681,7 @@
       $('.map-setting .setting-layer').toggleClass('show');
     });
     //멀티맵 레이어 토글
-    $('.right-area .btn-partition-setting').on('click', function() {
+    $('.right-area .btn-partition-setting').on('click', function () {
       if ($(this).hasClass('on') == false) {
         resetMapMenus();
       }
@@ -2689,26 +2689,26 @@
       $('.right-area .partition-group').toggleClass('show');
     });
     //리스트설정
-    $('.left-area .btn-list-setting').on('click', function() {
+    $('.left-area .btn-list-setting').on('click', function () {
       resetMapMenus();
       $(this).toggleClass('on');
       $('.left-area .pop-list-setting').toggleClass('show');
     });
     //미니맵
-    $('.left-area .list-item').on('mouseover', function() {
+    $('.left-area .list-item').on('mouseover', function () {
       if ($('#checkSetMinimap').prop('checked') == true) {
         $('.left-area .pop-minimap').show();
       }
-    }).on('mouseleave', function() {
+    }).on('mouseleave', function () {
       $('.left-area .pop-minimap').hide();
     });
     //차량세부설정팝업
     //
-    $('.background-map-area').on('click', function() {
+    $('.background-map-area').on('click', function () {
       resetMapMenus();
     });
     //차량상세정보 레이어 탭
-    $(function() {
+    $(function () {
       $('.pop-car-detail .info-tabs').tabs()
     });
     //운행경로 달력 토글
@@ -2727,15 +2727,15 @@
     function collapseRouteList() {
       $('.pop-car-detail .drive-timeline').removeClass('expanded');
     }
-    $('.pop-car-detail .btn-toggle-calendar').on('click', function() {
+    $('.pop-car-detail .btn-toggle-calendar').on('click', function () {
       toggleCalendar();
     });
-    $('.pop-car-detail .time-table button, .pop-car-detail .calendar .day-list .issue').on('click', function() {
+    $('.pop-car-detail .time-table button, .pop-car-detail .calendar .day-list .issue').on('click', function () {
       collapseCalendar();
       expandRouteList();
     });
     //jqgrid
-    $(function() {
+    $(function () {
       $("#list1").jqGrid({
         datatype: "local",
         colNames: ['차량명', '상태', '거리'],

@@ -1,0 +1,96 @@
+/* 2019 05 30 회원가입 캡챠 css 수정*/
+#captcha > input {min-width: 100px; margin-left: 10px;}
+#captcha button { flex:initial; flex-basis:80px; flex-shrink:1; min-width:80px; height:100%; margin-left:10px; } 
+#captcha button + button{margin-top: 5px;}
+
+/*구글맵 height 조절*/
+.gm-style-iw.gm-style-iw-c{max-height:420px !important;}
+.gm-style-iw-d{max-height:420px !important;}
+
+/* UI - pop inner map */
+.map-info{display:flex;margin-bottom:10px;}
+.map-info ul{display:flex;}
+.map-info ul li{padding:0 10px;font-size:14px;color: #8a8a8a;}
+.map-info ul li:first-child{padding-left:0;}
+.map-info ul li + li{border-left:1px solid #dcdcdc;}
+.station_name{display: inline-block; background: white; padding: 1px 1px 1px 1px; border: 1px solid black;}
+.station_name span {display:inline-block; margin-left:11px; padding-right:11px; height:21px; line-height:22px; color:#4d4d4d;}
+}
+
+body.modal { position:relative; display:block; overflow:auto; min-width:0; background-color:#ffffff;} 
+body.popup { min-width:0; background-color:#ffffff;overflow-x:hidden;} 
+.modal-frame{max-width:100%;}
+.menu-group-list.vehicle-group-list .menu-group + .menu-group{margin-left:0;}
+input + .content-tab{margin-top:0 !important;}
+.modal .content-tab + .top-search { padding-top:12.5px; } 
+input.error:not([type=checkbox]):not([type=radio]):focus { color:#f64655; outline:none; } 
+.input-wrap >.unit-title{font-size:14px;margin-right:10px;}
+.order-action button { font-size:0; line-height:24px; display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:26px; padding:0 5px; text-align:center; border:1px solid #e2e2e2; border-radius:3px; background-color:#ffffff; } 
+.order-action button.btn-top::before { display:block; width:8px; height:8px; margin-right:-4px; transform:rotate(-45deg); border:2px solid #2b2b2b; border-right:none; border-bottom:none; } 
+.order-action button.btn-top::after { display:block; width:8px; height:8px; margin-right:-4px; margin-left:1px; transform:rotate(-45deg); border:2px solid #2b2b2b; border-right:none; border-bottom:none; } 
+.order-action button.btn-up::before { display:block; width:8px; height:8px; margin-right:-4px; transform:rotate(-45deg); border:2px solid #2b2b2b; border-right:none; border-bottom:none; } 
+.order-action button.btn-down::before { display:block; width:8px; height:8px; margin-left:-4px; transform:rotate(45deg); border:2px solid #2b2b2b; border-bottom:none; border-left:none; } 
+.order-action button.btn-bottom::before { display:block; width:8px; height:8px; margin-right:1px; margin-left:-4px; transform:rotate(45deg); border:2px solid #2b2b2b; border-bottom:none; border-left:none; } 
+.order-action button.btn-bottom::after { display:block; width:8px; height:8px; margin-left:-4px; transform:rotate(45deg); border:2px solid #2b2b2b; border-bottom:none; border-left:none; } 
+.data-form-table-body table + .note{margin-top:5px;font-size:13px;}
+.data-form-table-body > .btns{margin-top:10px;margin-bottom:15px;text-align:center;}
+.data-form-table-body > .btns button{margin:0 3px;font-size:13px;min-width:75px;}
+.data-form-table-body table tbody tr.disabled{}
+.data-form-table-body table tbody tr.disabled th{color:#b6b6b6;}
+.data-form-table-body table tbody tr.disabled td,
+.data-form-table-body table tbody tr.disabled td .unit,
+.data-form-table-body table tbody tr.disabled td *{color:#b6b6b6;}
+.data-form-table .data-form-table-footer > button{font-size:13px;}
+.modal .content-tab { margin-bottom:10px; padding:0; } 
+.flex-box{display:flex;height:100%;}
+.flex-box.column-box{flex-direction:column;}
+.flex-box.column-box > .row{margin-left:0;margin-right:0;}
+.data-list-table-header .header-title h3 + span{margin-left:10px;}
+.data-list-table .data-table table tfoot tr td { font-size:14px; position:relative; overflow:hidden; height:40px; padding:0 5px; text-align:center; vertical-align:middle; white-space:nowrap; text-overflow:ellipsis; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc; background-color:#fbfbfb; line-height:normal;} 
+.data-list-table .data-table table tbody tr:hover td { /* color:#ffffff;  */background-color:#e8f3ff; } 
+.data-list-table > .table-note { margin-top:5px; } 
+.header-left .status-dashboard:first-child{margin-left:0;}
+.header-right .status-dashboard:last-child{margin-right:0;}
+.card-box { padding:20px 25px; border:1px solid #dcdcdc; border-radius:6px; background-color:#ffffff; } 
+.action-btns button { font-size:13px; display:flex; align-items:center; justify-content:center; width:100%; height:34px; margin:0 auto; padding:0; } 
+.car-group-list .car-group-title { font-size:16px; font-weight:500; flex:0 0 100%; margin-bottom:10px; } 
+.modal-footer .btn { width:160px; height:44px; margin-right:0 !important;font-size:17px; } 
+
+div.pop-inner-map.wide{width: auto; position: unset;}
+div.pop-inner-map{position: unset;}
+
+.markerLabel {transform:translateX(-50%); font-size:16px; font-weight:500; line-height:24px; display:inline-block; padding:0 5px; color:#ffffff; border-radius:2px; background-color:rgba(0, 0, 0, 0.6); box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.5);}
+
+.pop-minimap { position:fixed; z-index:4; bottom:4px; left:400px; display:none; width:312px; height:212px; margin-left:4px; transition:0.2s all; border:solid 6px rgb(255, 255, 255); border-radius:2px; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
+
+/* 아이콘 리모컨 */
+.compare_area { position: fixed;
+    z-index: 4;
+    top: 150px;
+    left: 0;
+    width: 400px;
+    margin-left: 4px;
+    padding: 20px;
+    transition: 0.2s all;
+}
+.left-area.expanded .map-list .compare_area{left: 400px;}
+.left-area.expanded .map-list.detail .compare_area{left:70vw;}
+.compare_area ul.mpath {width:100%;}
+.compare_area ul.mpath div {position:relative; }
+.compare_area ul li div{display:flex;width:100%;align-items:center;}
+.compare_area ul li + li{margin-top:10px;}
+.compare_area ul li div span:nth-child(1){margin-right:10px;flex:initial;}
+.compare_area ul li div span.button{flex:1;}
+.compare_area ul li div span.button button{width:100%;border:none;background-color:transparent;color:#2b2b2b;font-size:12px;text-align:left;}
+.compare_area ul li div span:last-child{flex:initial;}
+.compare_area ul li div span:last-child a{display:block;}
+
+.left-area .page-bottom-btns{margint-top:20px;}
+.left-area .page-bottom-btns button{font-size:15px;height:34px;}
+
+
+
+.pop-car-detail .drive-route .time-table dl dd button.off { color:#ffffff; border-color:#838d96; background-color:#838d96; } 
+.pop-car-detail .drive-route .time-table dl dd button.on { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
+
+

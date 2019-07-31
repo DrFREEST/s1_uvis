@@ -950,6 +950,12 @@ var pub_list = new Vue({
       complete: "완료",
       note: ""
     }, {
+      pageName: "이전설치 신청",
+      fileRoot: "src/main/webapp/WEB-INF/jsp/",
+      fileName: "UWEB.6.5.1",
+      complete: "",
+      note: ""
+    }, {
       pageName: "개인정보처리방침",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.7.1.1.Policy",
