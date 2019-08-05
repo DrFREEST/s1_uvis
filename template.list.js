@@ -944,6 +944,12 @@ var pub_list = new Vue({
       complete: "완료",
       note: "팝업"
     }, {
+      pageName: "eTAS 신청 안내(레이어팝업)",
+      fileRoot: "src/main/webapp/WEB-INF/jsp/",
+      fileName: "UWEB.6.3.1.EtasGuideLayer",
+      complete: "완료",
+      note: "팝업"
+    }, {
       pageName: "운행기록 정보 조회",
       fileRoot: "src/main/webapp/WEB-INF/jsp/",
       fileName: "UWEB.6.4.1.OperationRecode",

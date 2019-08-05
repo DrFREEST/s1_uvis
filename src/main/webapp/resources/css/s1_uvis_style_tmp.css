@@ -15,7 +15,6 @@
 .map-info ul li + li{border-left:1px solid #dcdcdc;}
 .station_name{display: inline-block; background: white; padding: 1px 1px 1px 1px; border: 1px solid black;}
 .station_name span {display:inline-block; margin-left:11px; padding-right:11px; height:21px; line-height:22px; color:#4d4d4d;}
-}
 
 body.modal { position:relative; display:block; overflow:auto; min-width:0; background-color:#ffffff;} 
 body.popup { min-width:0; background-color:#ffffff;overflow-x:hidden;} 

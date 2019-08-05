@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -39,9 +36,9 @@
     <div class="content-wrap container-box v-top h-center">
       <div class="simplified-form">
         <h3>온라인 유비스 회원을 탈퇴합니다.</h3>
-        <p><br />회원 탈퇴시 개인정보 처리방침에 따라 회원 정보를 보유하는 경우를 제외하고는,<br />회원의 모든 데이터는 삭제되며 유비스 서비스 로그인 및 탈퇴 취소는 불가능합니다.<br /><br />회원 탈퇴하시겠습니까?<br /></p>
+        <p><br>회원 탈퇴시 개인정보 처리방침에 따라 회원 정보를 보유하는 경우를 제외하고는,<br>회원의 모든 데이터는 삭제되며 유비스 서비스 로그인 및 탈퇴 취소는 불가능합니다.<br><br>회원 탈퇴하시겠습니까?<br></p>
         <div class="form-table wide">
-          <hr />
+          <hr>
           <table>
             <tr>
               <th>회원 탈퇴 아이디</th>
@@ -63,5 +60,25 @@
   </div>
   <!-- //wrapper -->
   <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
 </body>
 </html>

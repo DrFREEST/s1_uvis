@@ -1,0 +1,736 @@
+/* ************************** 지도영역 START ************************** */
+/* UI full map */
+body.map { overflow:hidden;} 
+.map-partition-area { display:flex; overflow:hidden; height:100vh; box-shadow:inset 0 1px 4px 0 rgba(0, 0, 0, 0.3); } 
+/* ****** 좌측영역 ****** */
+.map-partition-area .left-area { position:relative; z-index:1; width:0; transition:0.2s all; } 
+.map-partition-area .left-area * { letter-spacing:normal; } 
+.map-partition-area .left-area.expanded { width:400px; margin-left:0; } 
+.left-area .map-list { position:absolute; top:0; left:0; height:100%; transition:0.2s all; background-color:#ffffff; box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.25); } 
+/* 상세모드 */
+.map-list.detail { font-weight:normal; display:flex; flex-direction:column; width:70vw; margin-left:-70vw; transition:0.2s all; } 
+.expanded .map-list.detail { width:70vw; max-width:70vw; margin-left:0; } 
+.map-list .map-list-top { display:flex; align-items:center; flex-wrap:wrap; padding:14px 10px 18px; color:#ffffff; background-color:#1a8cfc; } 
+.map-list .map-list-top .update { display:flex; align-items:center; flex:0 0 100%; margin-bottom:15px; } 
+.map-list .map-list-top .update .update-time { font-size:12px; display:flex; align-items:center; flex:initial; color:rgba(255, 255, 255, 0.6); margin-right:10px;} 
+.map-list .map-list-top .update .update-time .btn { width:20px; height:20px; margin-right:5px; padding:0; border:none; background:url(../images/icon-refresh.png) no-repeat center center; } 
+.map-list .map-list-top .update .update-time span { font-size:12px; letter-spacing:-0.05em; } 
+.map-list .map-list-top .update .update-interval { font-size:12px; flex:1; text-align:left; letter-spacing:-0.05em; } 
+.map-list .map-list-top .update .update-interval .input-wrap { display:inline-flex; width:auto; min-height:auto; } 
+.map-list .map-list-top .update .update-interval .input-wrap label { font-size:12px; font-weight:normal; color:rgba(255, 255, 255, 0.6); } 
+.map-list .map-list-top .update .update-interval .input-wrap select { font-size:12px; font-weight:normal; height:20px; color:rgba(255, 255, 255, 0.6); border:none; background-color:transparent; background-image:linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.6) 50%), linear-gradient(135deg, rgba(255, 255, 255, 0.6) 50%, transparent 50%); background-repeat:no-repeat; background-position:calc(100% - 16px) calc(50%), calc(100% - 12px) calc(50%), 100% 0; background-size:4px 4px, 4px 4px, 2em 2em; } 
+.map-list .map-list-top .update .update-interval .input-wrap select:focus { border-color:#1a8cfc; outline:0; background-image:linear-gradient(45deg, rgba(255, 255, 255, 0.6) 50%, transparent 50%), linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.6) 50%); background-repeat:no-repeat; background-position:calc(100% - 12px) 50%, calc(100% - 16px) 50%, 100% 0; background-size:4px 4px, 4px 4px, 2em 2em; color:#2b2b2b;} 
+.map-list .map-list-top .update a{color:rgba(255, 255, 255, 0.6); flex:initial;margin-left:10px;font-size:12px;}
+.map-list .map-list-top .top-dashboard { display:flex; flex:0 0 100%; } 
+.map-list .map-list-top .top-dashboard .list-tab { display:flex; align-items:center; flex:0 0 33.3333%; padding-right:30px; } 
+.map-list .map-list-top .top-dashboard .list-tab ul { display:flex; align-items:center; width:100%; } 
+.map-list .map-list-top .top-dashboard .list-tab ul li { flex:1 1 auto; max-width:190px; } 
+.map-list .map-list-top .top-dashboard .list-tab ul li + li { margin-left:10px; } 
+.map-list .map-list-top .top-dashboard .list-tab ul li a { font-size:15px; position:relative; display:flex; overflow:hidden; align-items:center; justify-content:center; width:100%; height:40px; text-align:center; color:#fbfbfb; border-radius:3px; } 
+.map-list .map-list-top .top-dashboard .list-tab ul li .on::before,
+.map-list .map-list-top .top-dashboard .list-tab ul li a:hover::before { position:absolute; top:0; left:0; display:block; width:100%; height:100%; content:''; background-color:rgba(0, 0, 0, 0.2); } 
+.map-list .map-list-top .top-dashboard .list-tab ul li span { position:relative; } 
+.map-list .map-list-top .top-dashboard .list-tab ul li span .dot.issue { position:absolute; top:0; left:100%; width:5px; height:5px; margin-left:5px; border-radius:50%; background-color:#fcce1a; } 
+.map-list .map-list-top .top-dashboard .search-form { display:flex; align-items:center; flex:0 0 33.3333%; justify-content:center; } 
+.map-list .map-list-top .top-dashboard .search-form .input-wrap { width:100%; max-width:380px; height:42px; margin:0 auto; } 
+.map-list .map-list-top .top-dashboard .search-form .input-wrap input { height:42px; padding-right:43px; padding-left:16px; border-radius:4px; } 
+.map-list .map-list-top .top-dashboard .search-form .input-wrap .icon.icon-search { position:absolute; top:50%; right:20px; display:block; width:17px; height:17px; margin-top:-8.5px; background:url(../images/icon-left-search.png) no-repeat center center; } 
+.map-list .map-list-top .top-dashboard .status { flex:0 0 33.3333%; padding:0 20px; text-align:center; } 
+.map-list .map-list-top .top-dashboard .status ul { display:flex; align-items:center; justify-content:center; max-width:380px; margin:0 auto; } 
+.map-list .map-list-top .top-dashboard .status ul li { position:relative; flex:0 0 25%; } 
+.map-list .map-list-top .top-dashboard .status ul li + li:before { position:absolute; top:50%; display:block; width:1px; height:25px; margin-top:-12.5px; content:''; opacity:0.2; background-color:#fbfbfb; } 
+.map-list .map-list-top .top-dashboard .status ul li a .value { font-size:18px; font-weight:500; display:block; text-align:center; color:#ffffff; } 
+.map-list .map-list-top .top-dashboard .status ul li a span { font-size:12px; display:block; text-align:center; color:rgba(255, 255, 255, 0.6); } 
+.map-list .map-list-tabs { border-bottom:1px solid #dcdcdc; flex-wrap:wrap;} 
+.map-list .map-list-tabs ul { display:flex; width:100%; } 
+.map-list .map-list-tabs ul li { display:flex; align-items:stretch; flex:0 0 100px; justify-content:center; max-width:100px; height:40px; } 
+.map-list .map-list-tabs ul li a { font-size:15px; font-weight:500; display:flex; align-items:center; justify-content:center; width:100%; border-top:3px solid transparent; border-bottom:3px solid transparent; } 
+.map-list .map-list-tabs ul li .on,
+.map-list .map-list-tabs ul li a:hover { color:#1a8cfc; border-bottom-color:#1a8cfc; } 
+.map-list .map-list-tabs .btn-group-remote{display:block;width:130px;height:34px;margin:20px auto 15px;font-size:13px;padding:0;}
+/* group list */
+.map-list .group-list { overflow-x:hidden; overflow-y:auto; height:calc(100vh - 190px); } 
+.map-list .group-list .group-level-1 { display:flex; flex-direction:column; height:100%; } 
+.map-list .group-list .group-level-1 > ul { display:block; height:100%; } 
+.map-list .group-list .group-level-1 li { position:relative; z-index:1; } 
+.map-list .group-list .group-level-1 > ul > li { display:block; overflow:hidden; flex:initial; flex-direction:column; height:auto; max-height:50px; transition:0.2s all; } 
+.map-list .group-list .group-level-1 > ul > li.active { max-height:calc(100vh - 250px); } 
+.map-list .group-list .group-level-1 > ul > li + li,
+.map-list .group-list .group-level-1 > ul > li.active ~ li { border-top:1px solid #dcdcdc; } 
+.map-list .group-list .group-level-1 li .group-title { font-size:16px; position:relative; z-index:2; display:flex; align-items:center; flex:initial; height:50px; min-height:50px; } 
+.map-list .group-list .group-level-1 > ul > li.active > .group-title::before { position:absolute; bottom:0; left:18px; display:block; width:11px; height:15px; content:''; border-left:1px dashed #b6b6b6; } 
+.map-list .group-list .group-level-1 li .group-title::after { position:absolute; right:0; bottom:0; left:0;  height:1px; content:''; background-color:#dcdcdc;display:none; } 
+.map-list .group-list .group-level-1 li.active .group-title::after { left:36px; display:block;} 
+.map-list .group-list .group-level-1 li.active .group-level-2 ul li:last-child .group-title::after { display:none; } 
+.map-list .group-list .group-level-1 li .group-title:hover { background-color:#f7fbff; } 
+.map-list .group-list .group-title.active,
+.map-list .group-list .group-title.active:hover { background-color:#e8f3ff; } 
+.map-list .group-list .group-level-1 li .group-title .icon-toggle { position:relative; flex:initial; width:13px; min-width:13px; max-width:13px; height:13px; margin:0 12px; cursor:pointer; border:1px solid #1a8cfc; border-radius:2px; background-color:#ffffff; } 
+.map-list .group-list .group-level-1 li .group-title .icon-toggle::before { position:absolute; top:50%; left:50%; display:block; width:7px; height:1px; margin-top:0; margin-left:-3.5px; content:''; background-color:#1a8cfc; } 
+.map-list .group-list .group-level-1 li .group-title .icon-toggle::after { position:absolute; top:50%; left:50%; display:block; width:1px; height:7px; margin-top:-3.5px; margin-left:-1px; content:''; background-color:#1a8cfc; } 
+.map-list .group-list .group-level-1 li.active .group-title .icon-toggle::after { display:none; } 
+.map-list .group-list .group-level-1 li .group-title span { flex:1; } 
+.map-list .group-list .group-level-1 li .group-title span em { margin-left:14px; } 
+.map-list .group-list .group-title .btn-toggle { position:relative; width:20px; height:20px; margin-right:16px; padding:0; border:none; background-color:transparent; } 
+.map-list .group-list .group-title .btn-toggle::before { position:absolute; top:50%; left:50%; display:block; width:14px; height:14px; margin-top:-11px; margin-left:-7px; content:''; transform:rotate(45deg); border-right:1px solid #8a8a8a; border-bottom:1px solid #8a8a8a; } 
+.map-list .group-list .active > .group-title .btn-toggle::before { margin-top:-2px; transform:rotate(-135deg); border-color:#2b2b2b; } 
+.map-list .group-list .active > .group-title.active .btn-toggle::before { border-color:#1a8cfc; } 
+.map-list .group-list .group-level-2 { position:relative; z-index:0; flex:1; /* overflow-y:auto; overflow-x:hidden; */ transition:0.2s all; } 
+.map-list .group-list .active .group-level-2 { overflow-y:auto; max-height:calc(100vh - 410px); } 
+.map-list .group-list .group-level-2 > ul { overflow:hidden; height:100%; } 
+.map-list .group-list .group-level-2 li { position:relative; z-index:0; } 
+.map-list .group-list .group-level-2 li .group-title { font-size:14px; height:45px; min-height:45px; padding-left:36px; } 
+.map-list .group-list li.active .group-level-2 li .group-title::before { position:absolute; top:50%; left:18px; display:block; box-sizing:content-box; width:11px; height:43px; margin-top:-43px; content:''; border-bottom:1px dashed #b6b6b6; border-left:1px dashed #b6b6b6; } 
+.map-list .group-list .group-level-2 li .group-title::after { left:30px; background-color:#ededed; } 
+.map-list .group-list .group-level-2 > li:last-child .group-title::after { display:none; } 
+.map-list .group-list .group-level-2 li .group-title span em { margin-left:10px; } 
+.map-list .group-list .group-level-2 li .group-title .btn-toggle { width:14px; height:14px; } 
+.map-list .group-list .group-level-2 li .group-title .btn-toggle::before { width:8px; height:8px; margin-top:-8px; margin-left:-5px; } 
+.map-list .group-list .group-level-2 li.active .group-title { color:#1a8cfc; } 
+.map-list .group-list .group-level-2 li.active .group-title .btn-toggle::before { margin-top:-3px; border-color:#1a8cfc; } 
+.map-list .group-list .group-level-2 > li.on { } 
+.map-list .group-list .list { position:relative; overflow:hidden; height:auto; max-height:0; margin-top:-1px; transition:0.2s all; background-color:#fbfbfb; } 
+.map-list .group-list li.active > .list { /* border-bottom-color:#dcdcdc; */
+  z-index:3; overflow-y:auto; max-height:calc(100vh - 410px); } 
+ .map-list.detail .group-list li.active > .list{max-height:calc(100vh - 300px); }
+.map-list .group-list li.active > .list::after { position:reltive; right:0; bottom:0; margin-left:36px; display:block; height:1px; content:''; background-color:#dcdcdc; } 
+.map-list .group-list li:last-child > .list::after { display:none; } 
+.map-list .group-list .list::before { position:absolute; z-index:2; top:0; left:18px; display:block; box-sizing:content-box; width:11px; height:100%; margin-top:-20px; content:''; border-left:1px dashed #b6b6b6; /* border-bottom:1px dotted #b6b6b6; */ } 
+.map-list .group-list .group-level-1 > ul> li>.list::before{border-bottom:1px dashed #b6b6b6;}
+.map-list .group-list .group-level-2 li:last-child .list { border-bottom:none; } 
+.map-list .group-list .group-level-2 li:last-child .list::before { display:none; } 
+.map-list .group-list .list { } 
+.map-list .group-list .list table { width:calc(100% - 36px); table-layout:fixed; } 
+.map-list .group-list .list table .list-header th:not(.space) { font-size:14px; position:relative; height:40px; text-align:center; vertical-align:middle; letter-spacing:-0.05em; word-break:keep-all; color:#5e5e5e; border-top:1px solid #ededed; border-bottom:1px solid #dcdcdc; } 
+.map-list .group-list .list table .list-header th.call-menu,
+.map-list .group-list .list table .list-body td.call-menu { max-width:35px; } 
+.map-list .group-list .list table .list-header th span { position:relative; display:block; padding:0 10px; text-align:center; } 
+.map-list .group-list .list table .list-header th:not(.space) + th span::before { position:absolute; top:calc(50% - 7px); left:0; display:block; width:1px; height:14px; content:''; background-color:#e2e2e2; } 
+.map-list .group-list .list table tbody td { padding:10px; vertical-align:middle; } 
+.map-list .group-list .list .list-header { line-height:1.1em; position:relative; text-align:center; /* border-top:1px solid #ededed; border-bottom:1px solid #dcdcdc; */ } 
+.map-list .group-list .list .list-header::after { position:absolute; right:0; bottom:0; left:36px; display:block; height:1px; content:''; background-color:#dcdcdc; } 
+.map-list .group-list .list .list-header > div { font-size:14px; position:relative; display:flex; align-items:center; justify-content:center; min-height:40px; padding:10px; letter-spacing:-0.05em; word-break:keep-all; color:#5e5e5e; } 
+.map-list .group-list .list .list-header > div + div::before { position:absolute; top:50%; left:0; display:block; width:1px; height:14px; margin-top:-7px; content:''; background-color:#e2e2e2; } 
+.map-list .group-list .list .list-header > div.no-partition::before { display:none; } 
+.map-list .group-list .list .car-name { flex:0 1 13%; max-width:13%; } 
+.map-list .group-list .list .car-name span { } 
+.map-list .group-list .list .status { flex:0 1 13%; max-width:13%; } 
+.map-list .group-list .list .status span { } 
+.map-list .group-list .list .speed { flex:0 1 6.75%; max-width:6.75%; } 
+.map-list .group-list .list .speed span { } 
+.map-list .group-list .list .location { flex:0 1 22%; } 
+.map-list .group-list .list .location span { } 
+.map-list .group-list .list .day-drive-time { flex:0 1 9%; max-width:9%; } 
+.map-list .group-list .list .day-drive-time span { } 
+.map-list .group-list .list .day-drive-distance { flex:0 1 9%; max-width:9%; } 
+.map-list .group-list .list .day-drive-distance span { } 
+.map-list .group-list .list .total-drive-distance { flex:0 1 9%; max-width:9%; } 
+.map-list .group-list .list .total-drive-distance span { } 
+.map-list .group-list .list .temperature { flex:0 1 8.5%; max-width:8.5%; } 
+.map-list .group-list .list .temperature span { } 
+.map-list .group-list .list .time-remaining { flex:0 1 14%; max-width:14%; } 
+.map-list .group-list .list .time-remaining span { } 
+.map-list .group-list .list .date-range { flex:0 1 14%; max-width:14%; } 
+.map-list .group-list .list .date-range span { } 
+.map-list .group-list .list .call-menu { flex:initial; min-width:35px; max-width:35px; padding:0; } 
+.map-list .group-list .list .call-menu::before { display:none; } 
+.map-list .group-list .list .call-menu span { } 
+.map-list .group-list .list .list-body { } 
+.map-list .group-list .list .list-body .list-item { } 
+.map-list .group-list .list .list-body .list-item:hover { background-color:#ededed; } 
+/* .map-list .group-list .list .list-body .list-item::before { position:absolute; top:0; right:0; left:36px; display:block; height:1px; content:''; background-color:#ededed; } */
+.map-list .group-list .list .list-body .list-item > td { font-size:14px; padding:10px; text-align:center; color:#2b2b2b; } 
+.map-list .group-list .list .list-body .list-item .car-name { line-height:16px; justify-content:flex-start; /* padding-left:0; */ } 
+.map-list .group-list .list .list-body .list-item .car-name .flag { font-size:11px; display:inline-flex; align-items:center; justify-content:center; width:30px; height:16px; margin-right:6px; vertical-align:middle; color:#ffffff; border-radius:8px; background-color:#dcdcdc; } 
+.map-list .group-list .list .list-body .list-item .car-name .flag.on { background-color:#1a8cfc; } 
+.map-list .group-list .list .list-body .list-item .car-name span { display:inline-block; } 
+.map-list .group-list .list .list-body .list-item .location .icon-gps { display:inline-flex; align-items:flex-end; height:12px; margin-right:10px; vertical-align:middle; } 
+.map-list .group-list .list .list-body .list-item .location .icon-gps i { width:2.5px; background-color:#dcdcdc; } 
+.map-list .group-list .list .list-body .list-item .location .icon-gps i.on { background-color:#3b95fe; } 
+.map-list .group-list .list .list-body .list-item .location .icon-gps i + i { margin-left:2.5px; } 
+.map-list .group-list .list .list-body .list-item .location .icon-gps i.gps-bar-1 { height:6px; } 
+.map-list .group-list .list .list-body .list-item .location .icon-gps i.gps-bar-2 { height:9px; } 
+.map-list .group-list .list .list-body .list-item .location .icon-gps i.gps-bar-3 { height:12px; } 
+.map-list .group-list .list .list-body .list-item .date-range span { display:inline-block; } 
+.map-list .group-list .list .list-body .list-item .call-menu { padding:0; } 
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu { display:flex; align-items:center; flex-direction:column; justify-content:center; width:100%; height:30px; border:none; background:none; } 
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu::before,
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu::after { display:block; width:3px; height:3px; margin:1.5px auto; content:''; border-radius:3px; background-color:#8a8a8a; } 
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu .dot { display:block; width:3px; height:3px; margin:1.5px auto; background-color:#8a8a8a; } 
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu:hover { } 
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu:hover::before,
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu:hover::after,
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu.on::before,
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu.on::after { background-color:#1a8cfc; } 
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu:hover .dot,
+.map-list .group-list .list .list-body .list-item .call-menu .btn-call-menu.on .dot { background-color:#1a8cfc; } 
+.map-list .left-area-btns { display:flex; width:100%; } 
+.map-list .left-area-btns .btn { font-size:13px; font-weight:500; display:flex; align-items:center; flex:1; justify-content:center; height:40px; border:none; border-top:1px solid #dcdcdc; border-radius:0; background-color:#ededed; } 
+.map-list .left-area-btns .btn.on,
+.map-list .left-area-btns .btn:hover { color:#ffffff; background-color:#1a8cfc; } 
+.map-list .left-area-btns .btn + .btn { border-left:1px solid #dcdcdc; } 
+.map-list .btn-toggle-left-area { position:absolute; top:60px; left:100%; width:20px; height:58px; border:none; border-radius:0 3px 3px 0; background-color:#1a8cfc; box-shadow:1px 1px 2px 0 rgba(0, 0, 0, 0.2); } 
+.map-list .btn-toggle-left-area::before { display:block; width:0; height:0; content:''; border-top:4px solid transparent; border-bottom:4px solid transparent; border-left:4px solid #ffffff; } 
+.expanded .map-list .btn-toggle-left-area::before { border-right:4px solid #ffffff; border-left:none; } 
+.map-list.detail .detail-hide { display:none !important; } 
+/* 기본 뷰 */
+.map-list.default,
+.map-list.simple { width:400px; margin-left:-400px; } 
+.expanded .map-list.default,
+.expanded .map-list.simple { margin-left:0; } 
+.map-list.default .map-list-top .top-dashboard,
+.map-list.simple .map-list-top .top-dashboard { flex-wrap:wrap; } 
+.map-list.default .map-list-top .top-dashboard .list-tab,
+.map-list.simple .map-list-top .top-dashboard .list-tab { flex:0 0 100%; order:2; padding-right:0; } 
+.map-list.default .map-list-top .top-dashboard .search-form,
+.map-list.simple .map-list-top .top-dashboard .search-form { flex:0 0 100%; order:1; margin-bottom:10px; } 
+.map-list.default .map-list-top .top-dashboard .status,
+.map-list.simple .map-list-top .top-dashboard .status { flex:0 0 100%; order:0; margin-bottom:20px; padding:0 10px; } 
+.map-list.default .group-list,
+.map-list.simple .group-list { height:calc(100vh - 305px); } 
+.map-list.default .group-list .list .list-header,
+.map-list.simple .group-list .list .list-header { display:none; } 
+.map-list.default .group-list .list table,
+.map-list.simple .group-list .list table { display:block; padding-left:36px; } 
+.map-list.default .group-list .list colgroup,
+.map-list.simple .group-list .list colgroup { display:none; } 
+.map-list.default .group-list .list .list-body,
+.map-list.simple .group-list .list .list-body { display:block; } 
+.map-list.default .group-list .list .list-body .list-item,
+.map-list.simple .group-list .list .list-body .list-item { position:relative; display:flex; flex-wrap:wrap; margin-right:-30px; padding-top:13px; padding-bottom:13px; border-top:1px solid #ededed; } 
+.map-list.default .group-list .list .list-body .list-item td { display:block; padding:0; } 
+.map-list.default .group-list .list .list-body .list-item td:not(.car-name):not(.location):not(.date-range):not(.status):not(.time-remaining) { flex:0 0 50%; max-width:135px; margin-top:10px; margin-left:30px; } 
+.map-list.default .group-list .list .list-body .list-item td:not(.car-name):not(.location):not(.date-range):not(.status) span { font-size:12px; display:flex; align-items:center; width:100%; color:#5e5e5e; } 
+.map-list.default .group-list .list .list-body .list-item td:not(.car-name):not(.location):not(.date-range):not(.status) strong { font-size:12px; flex:0 0 60px; text-align:left; color:#2b2b2b; } 
+.map-list.default .group-list .list .list-body .list-item td span:not(.flag) { font-size:14px; } 
+.map-list.default .group-list .list .list-body .list-item td.car-name { flex:0 1 70%; order:0; max-width:70%; text-align:left; } 
+.map-list.default .group-list .list .list-body .list-item td.date-range { font-size:12px; flex:0 1 20%; order:1; max-width:25%; margin-right:30px; color:#8a8a8a; } 
+.map-list.default .group-list .list .list-body .list-item td.location { font-size:13px; flex:0 1 100%; order:2; max-width:100%; margin-top:5px; padding-left:9px; text-align:left; color:#8a8a8a; } 
+.map-list.default .group-list .list .list-body .list-item td.status { font-size:12px; display:inline-flex; flex:0 1 100%; order:3; max-width:100%; margin-top:10px; margin-left:30px; } 
+.map-list.default .group-list .list .list-body .list-item td.status ul { display:flex; width:100%; } 
+.map-list.default .group-list .list .list-body .list-item td.status ul li { display:flex; align-items:center; flex:0 0 50%; width:100%; max-width:135px; color:#5e5e5e; } 
+.map-list.default .group-list .list .list-body .list-item td.status ul li + li { margin-left:30px; } 
+.map-list.default .group-list .list .list-body .list-item td.status ul li strong { flex:0 1 60px; text-align:left; color:#2b2b2b; } 
+.map-list.default .group-list .list .list-body .list-item td.speed { display:flex; align-items:center; order:4; margin-top:10px;; margin-left:auto; } 
+.map-list.default .group-list .list .list-body .list-item td.speed strong { flex:0 1 60px; text-align:left; color:#2b2b2b; } 
+.map-list.default .group-list .list .list-body .list-item td.day-drive-time { order:5; margin-left:36px; } 
+.map-list.default .group-list .list .list-body .list-item td.day-drive-time span { font-size:12px; display:flex; align-items:center; width:100%; color:#5e5e5e; } 
+.map-list.default .group-list .list .list-body .list-item td.day-drive-time span strong { flex:0 0 60px; text-align:left; color:#2b2b2b; } 
+.map-list.default .group-list .list .list-body .list-item td.day-drive-distance { order:6; margin-left:auto; } 
+.map-list.default .group-list .list .list-body .list-item td.day-drive-distance span { font-size:12px; display:flex; align-items:center; text-align:left; color:#5e5e5e; } 
+.map-list.default .group-list .list .list-body .list-item td.day-drive-distance span strong { flex:0 0 60px; color:#2b2b2b; } 
+.map-list.default .group-list .list .list-body .list-item td.total-drive-distance { display:none; order:7; } 
+.map-list.default .group-list .list .list-body .list-item td.total-drive-distance span { display:flex; align-items:center; text-align:left; color:#5e5e5e; } 
+.map-list.default .group-list .list .list-body .list-item td.total-drive-distance span strong { flex:0 0 60px; color:#2b2b2b; } 
+.map-list.default .group-list .list .list-body .list-item td.time-remaining { flex:0 1 100%; order:8; max-width:100%; margin-top:10px; margin-left:30px; } 
+.map-list.default .group-list .list .list-body .list-item td.call-menu { position:absolute; right:8px; bottom:15px; order:8; } 
+.map-list.default .default-hide { display:none !important; } 
+/* 간단 뷰 */
+.map-list.simple .group-list .list .list-body .list-item { margin-right:0; } 
+.map-list.simple .group-list .list .list-body .list-item > td { display:none; } 
+.map-list.simple .group-list .list .list-body .list-item .car-name { font-size:14px; display:flex; flex:0 0 240px; max-width:240px; } 
+.map-list.simple .group-list .list .list-body .list-item .status { display:flex; flex:initial; max-width:30%; margin-top:0; margin-left:0; } 
+.map-list.simple .group-list .list .list-body .list-item .status ul li { font-size:14px; display:none; color:#444444; } 
+.map-list.simple .group-list .list .list-body .list-item .status ul li strong { display:none; } 
+.map-list.simple .group-list .list .list-body .list-item .call-menu { position:absolute; top:50%; right:8px; bottom:auto; display:block; margin-top:-15px; } 
+.map-list.simple .simple-show { display:block !important; } 
+/* 좌측영역 팝업 */
+.left-area .pop-list-item-menu { position:fixed; z-index:-1; left:400px; display:none; width:220px; margin-left:10px; opacity:0; border-radius:3px; background-color:#ffffff; box-shadow:1px 2px 7px 0 rgba(0, 0, 0, 0.3); } 
+.left-area .pop-list-item-menu.show { z-index:5; display:block; opacity:1; } 
+.left-area .map-list.detail .pop-list-item-menu { left:70vw; } 
+.left-area .pop-list-item-menu::before { position:absolute; top:50%; left:0; display:block; width:10px; height:10px; margin-top:-8px; margin-left:-5px; content:''; transform:rotate(45deg); background-color:#ffffff; box-shadow:1px 2px 7px 0 rgba(0, 0, 0, 0.3); } 
+.left-area .pop-list-item-menu::after { position:absolute; top:50%; left:0; display:block; width:10px; height:20px; margin-top:-10px; content:''; background-color:#ffffff; } 
+.left-area .pop-list-item-menu ul { display:flex; align-items:center; height:95px; margin:0 auto; padding:20px 10px; } 
+.left-area .pop-list-item-menu ul li { flex:1; text-align:center; } 
+.left-area .pop-list-item-menu ul li a { } 
+.left-area .pop-list-item-menu ul li a i { display:block; width:36px; height:36px; margin:0 auto; border:1px solid #dcdcdc; border-radius:50%; } 
+.left-area .pop-list-item-menu ul li a:hover i,
+.left-area .pop-list-item-menu ul li a:focus i,
+.left-area .pop-list-item-menu ul li a.on i { border-color:#1a8cfc; background-color:#1a8cfc; } 
+.left-area .pop-list-item-menu ul li a .icon-bookmark { background:url(../images/icon-bookmark.png) no-repeat center; } 
+.left-area .pop-list-item-menu ul li a .icon-remote { background:url(../images/icon-remote.png) no-repeat center; } 
+.left-area .pop-list-item-menu ul li a .icon-route { background:url(../images/icon-route.png) no-repeat center; } 
+.left-area .pop-list-item-menu ul li a:hover .icon-bookmark,
+.left-area .pop-list-item-menu ul li a:focus .icon-bookmark,
+.left-area .pop-list-item-menu ul li a.on .icon-bookmark { background-image:url(../images/icon-bookmark-on.png); } 
+.left-area .pop-list-item-menu ul li a:hover .icon-remote,
+.left-area .pop-list-item-menu ul li a:focus .icon-remote,
+.left-area .pop-list-item-menu ul li a.on .icon-remote { background-image:url(../images/icon-remote-on.png); } 
+.left-area .pop-list-item-menu ul li a:hover .icon-route,
+.left-area .pop-list-item-menu ul li a:focus .icon-route,
+.left-area .pop-list-item-menu ul li a.on .icon-route { background-image:url(../images/icon-route-on.png); } 
+.left-area .pop-list-item-menu ul li a span { font-size:13px; line-height:1; display:block; margin-top:6px; color:#5e5e5e; } 
+/* 리스트 설정 */
+.left-area .pop-list-setting { position:fixed; z-index:5; bottom:4px; left:400px; display:none; width:400px; margin-left:4px; padding:20px; transition:0.2s all; border-radius:4px; background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
+.left-area .pop-list-setting.show { display:block; } 
+.left-area .map-list.detail .pop-list-setting { left:70vw; } 
+.left-area .pop-list-setting .modal-header { display:block; padding:0 0 20px; border-bottom:1px solid #2d2d2d; } 
+.left-area .pop-list-setting .modal-header .close { position:absolute; top:5px; right:0; } 
+.left-area .pop-list-setting h4 { font-size:17px; font-weight:500; margin-top:20px; color:#2b2b2b; } 
+.left-area .pop-list-setting h4 + .radio-group { margin-top:25px; } 
+.left-area .pop-list-setting h4 label span { font-size:17px; } 
+.left-area .pop-list-setting h4 + .note { font-size:13px; margin-top:10px; } 
+.left-area .pop-list-setting h4 + .note.indent { padding-left:25px; } 
+.left-area .pop-list-setting .radio-group { } 
+.left-area .pop-list-setting .radio-group .input-wrap { } 
+.left-area .pop-list-setting .radio-group .input-wrap label { } 
+.left-area .pop-list-setting .radio-group .input-wrap label #selTabMenu1 { } 
+.left-area .pop-list-setting .radio-group .input-wrap label span { } 
+.left-area .pop-list-setting hr { margin-top:20px; } 
+.left-area .pop-list-setting h4 + ul { margin-top:25px; } 
+.left-area .pop-list-setting ul li { display:flex; letter-spacing:-0.05em; } 
+.left-area .pop-list-setting ul li + li { margin-top:40px; } 
+.left-area .pop-list-setting ul li h5 { flex:0 0 105px; } 
+.left-area .pop-list-setting ul li h5 .input-wrap { } 
+.left-area .pop-list-setting ul li h5 .input-wrap label { } 
+.left-area .pop-list-setting ul li h5 .input-wrap label span { font-size:15px; } 
+.left-area .pop-list-setting ul li .setting-detail { } 
+.left-area .pop-list-setting ul li .setting-detail .note { font-size:13px; font-weight:normal; color:#8a8a8a; } 
+.left-area .pop-list-setting ul li .setting-detail .check-group { margin-top:4px; } 
+.left-area .pop-list-setting ul li .setting-detail .check-group .input-wrap.check { flex:0 0 50%; margin:0; padding:6px 0; } 
+.left-area .pop-list-setting ul li .setting-detail .check-group .input-wrap.check label { } 
+.left-area .pop-list-setting ul li .setting-detail .check-group .input-wrap.check label span { font-size:13px; } 
+.left-area .pop-list-setting .note { } 
+/* 미니맵 */
+.pop-minimap { position:fixed; z-index:4; bottom:4px; left:400px; display:none; width:300px; height:200px; margin-left:4px; transition:0.2s all; border:solid 6px rgb(255, 255, 255); border-radius:2px; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
+.left-area .map-list.detail .pop-minimap { left:70vw; } 
+/* 차량 상세 팝업 */
+.pop-car-detail { position:fixed; z-index:5; bottom:4px; left:400px; display:none; width:400px; margin-left:4px; padding:20px; transition:0.2s all; border-radius:4px; background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); height:calc(100% - 8px);max-height:none;} 
+.pop-car-detail.show { display:block; } 
+.left-area .map-list.detail .pop-car-detail { left:70vw; } 
+.pop-car-detail .modal-header { display:block; padding:0 0 20px; border-bottom:1px solid #2d2d2d; } 
+.pop-car-detail .modal-header .modal-title { } 
+.pop-car-detail .modal-header .close { position:absolute; top:5px; right:0; } 
+.pop-car-detail .car-info { display:flex; flex-wrap:wrap; margin-top:20px; } 
+.pop-car-detail .car-info .car-name { font-size:18px; line-height:18px; display:flex; align-items:center; flex:0 0 70%; } 
+.pop-car-detail .car-info .car-name .flag { font-size:11px; display:inline-flex; align-items:center; justify-content:center; width:30px; height:16px; margin-right:6px; vertical-align:middle; color:#ffffff; border-radius:8px; background-color:#dcdcdc; } 
+.pop-car-detail .car-info .car-name .flag.on { background-color:#1a8cfc; } 
+.pop-car-detail .car-info .car-name span { font-size:16px; } 
+.pop-car-detail .car-info .time-remining { font-size:12px; flex:0 0 30%; text-align:right; color:#8a8a8a; } 
+.pop-car-detail .car-info .gps-address { font-size:13px; flex:0 0 100%; margin-top:5px; color:#8a8a8a; } 
+.pop-car-detail .car-info .gps-address .icon-gps { display:inline-flex; align-items:flex-end; justify-content:center; width:30px; height:12px; margin-right:5px; vertical-align:middle; } 
+.pop-car-detail .car-info .gps-address .icon-gps i { width:2.5px; background-color:#dcdcdc; } 
+.pop-car-detail .car-info .gps-address .icon-gps i.on { background-color:#3b95fe; } 
+.pop-car-detail .car-info .gps-address .icon-gps i + i { margin-left:2.5px; } 
+.pop-car-detail .car-info .gps-address .icon-gps i.gps-bar-1 { height:6px; } 
+.pop-car-detail .car-info .gps-address .icon-gps i.gps-bar-2 { height:9px; } 
+.pop-car-detail .car-info .gps-address .icon-gps i.gps-bar-3 { height:12px; } 
+.pop-car-detail .info-tabs { overflow-y:auto; max-height:calc(100vh - 8px); margin-top:10px; } 
+.pop-car-detail .info-tabs > ul { display:flex; border-bottom:1px solid #dcdcdc; } 
+.pop-car-detail .info-tabs > ul li { flex:1; } 
+.pop-car-detail .info-tabs > ul li a { font-size:15px; display:flex; align-items:center; justify-content:center; height:40px; color:#2d2d2d; border-top:3px solid transparent; border-bottom:3px solid transparent; } 
+.pop-car-detail .info-tabs ul li:hover a,
+.pop-car-detail .info-tabs ul li.ui-state-active a { color:#1a8cfc; border-bottom-color:#1a8cfc; } 
+.pop-car-detail .info-tabs .info-tab-content { overflow-y:auto; max-height:calc(100vh - 220px); } 
+.pop-car-detail .car-info-group { } 
+.pop-car-detail .car-info-group + .car-info-group { border-top:1px solid #ededed; } 
+.pop-car-detail .car-info-group:last-child { border-bottom:1px solid #dcdcdc; } 
+.pop-car-detail .car-info-group dl { font-size:14px; display:table-row; align-items:center; } 
+.pop-car-detail .car-info-group dl dt { font-weight:500; display:table-cell; width:135px; padding:7.5px 15px; text-align:center; color:#5e5e5e; background-color:#f6f6f6; } 
+.pop-car-detail .car-info-group dl dd { display:table-cell; padding:7.5px 15px; color:#2b2b2b; } 
+.pop-car-detail .car-info-group dl dd a { text-decoration:underline; color:#1a8cfc; } 
+.pop-car-detail .car-info-group dl:first-child dt,
+.pop-car-detail .car-info-group dl:first-child dd { padding-top:20px; } 
+.pop-car-detail .car-info-group dl:last-child dt,
+.pop-car-detail .car-info-group dl:last-child dd { padding-bottom:20px; } 
+.pop-car-detail .drive-route { } 
+.pop-car-detail .drive-route .calendar { overflow:hidden; height:auto; max-height:0; margin-top:10px; padding:15px 15px 0; padding:0; transition:0.2s all; border:1px solid #dcdcdc; border-bottom:none; } 
+.pop-car-detail .drive-route .calendar.expanded { max-height:400px; padding:15px 15px 0; } 
+.pop-car-detail .drive-route .calendar .sun { color:#f64655; } 
+.pop-car-detail .drive-route .calendar .sat { color:#1a8cfc; } 
+.pop-car-detail .drive-route .calendar .calendar-header { display:flex; align-items:center; width:100%; margin-bottom:20px; } 
+.pop-car-detail .drive-route .calendar .calendar-header button { font-size:14px; font-weight:500; display:flex; align-items:center; color:#8a8a8a; border:none; background:none; } 
+.pop-car-detail .drive-route .calendar .calendar-header > div { display:flex; align-items:center; flex:0 0 25%; max-width:25%; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-left { justify-content:flex-start; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-left .btn-prev { background:none; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-left .btn-prev::before { display:inline-block; width:8px; height:8px; margin-right:3px; content:''; transform:rotate(-45deg); vertical-align:middle; border-top:1px solid #8a8a8a; border-left:1px solid #8a8a8a; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-center { flex:0 0 50%; justify-content:center; max-width:50%; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-center .calendar-title { font-size:22px; position:relative; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-center .calendar-title span { text-decoration:underline; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-center .calendar-title .btn-today { font-size:13px; position:absolute; top:50%; left:100%; width:35px; height:20px; margin-top:-10px; margin-left:5px; padding:0; color:#1a8cfc; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-right { justify-content:flex-end; } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-right .btn-next { } 
+.pop-car-detail .drive-route .calendar .calendar-header .header-right .btn-next::after { display:inline-block; width:8px; height:8px; margin-left:3px; content:''; transform:rotate(45deg); vertical-align:middle; border-top:1px solid #8a8a8a; border-right:1px solid #8a8a8a; } 
+.pop-car-detail .drive-route .calendar .calendar-header .calendar-body { } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-title { display:flex; flex-wrap:wrap; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-title li { font-size:12px; flex:0 0 14.2857%; max-width:14.2857%; padding:3px; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-title li span { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list { display:flex; flex-wrap:wrap; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day { font-size:13px; position:relative; flex:0 0 14.2857%; max-width:14.2857%; height:45px; padding:3px; border-top:1px solid #ededed; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day .date { font-size:13px; line-height:16px; position:static; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day .date.issue { } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day .date.issue::before { position:absolute; top:30px; left:11px; display:block; width:4px; height:4px; content:''; border-radius:50%; background-color:#1a8cfc; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day .date.issue::after { position:absolute; z-index:-1; top:3px; left:14px; display:block; width:calc(100% + 22px); height:22px; margin-left:-11px; content:''; border-radius:11px; background-color:#d1e8fe; /* opacity:0.2; */ } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day .date.issue.start,
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day .date.issue.end { color:#ffffff; background-color:#1a8cfc; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day .date.issue.end::after { display:none; } 
+.pop-car-detail .drive-route .calendar .calendar-body .day-list .day.other-month .date { opacity:0.2; } 
+.pop-car-detail .drive-route .btn-toggle-calendar { font-size:12px; font-weight:500; width:100%; height:32px; color:#5e5e5e; border:solid 1px #e2e2e2; border-top:none; background-color:#f6f6f6; } 
+.pop-car-detail .drive-route .expanded + .btn-toggle-calendar { border-top:1px solid #e2e2e2; } 
+.pop-car-detail .drive-route .btn-toggle-calendar span { } 
+.pop-car-detail .drive-route .btn-toggle-calendar i { width:8px;height:8px;transform:rotate(45deg);border-right:1px solid #5e5e5e;border-bottom:1px solid #5e5e5e;display:inline-block;margin-left:10px;margin-top:-7px;vertical-align:middle;} 
+.pop-car-detail .drive-route .btn-toggle-calendar.on i{border-left:1px solid #5e5e5e;border-top:1px solid #5e5e5e;border-right:none;border-bottom:none;margin-top:2.5px;}
+.pop-car-detail .drive-route .time-table { margin-top:20px; } 
+.pop-car-detail .drive-route .time-table .time-table-header { display:flex; align-items:center; width:100%; margin-bottom:20px; } 
+.pop-car-detail .drive-route .time-table .time-table-header button { font-size:14px; font-weight:500; display:flex; align-items:center; color:#8a8a8a; border:none; background:none; } 
+.pop-car-detail .drive-route .time-table .time-table-header > div { display:flex; align-items:center; flex:0 0 25%; max-width:25%; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-left { justify-content:flex-start; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-left .btn-prev { background:none; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-left .btn-prev::before { display:inline-block; width:8px; height:8px; margin-right:3px; content:''; transform:rotate(-45deg); vertical-align:middle; border-top:1px solid #8a8a8a; border-left:1px solid #8a8a8a; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-center { flex:0 0 50%; justify-content:center; max-width:50%; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-center .time-table-title { font-size:17px; position:relative; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-center .time-table-title span { font-size:17px; font-weight:500; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-right { justify-content:flex-end; } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-right .btn-next { } 
+.pop-car-detail .drive-route .time-table .time-table-header .header-right .btn-next::after { display:inline-block; width:8px; height:8px; margin-left:3px; content:''; transform:rotate(45deg); vertical-align:middle; border-top:1px solid #8a8a8a; border-right:1px solid #8a8a8a; } 
+.pop-car-detail .drive-route .time-table dl { display:flex; } 
+.pop-car-detail .drive-route .time-table dl + dl { margin-top:2px; } 
+.pop-car-detail .drive-route .time-table dl dt { font-size:12px; flex:initial; width:40px; min-width:40px; color:#5e5e5e; } 
+.pop-car-detail .drive-route .time-table dl dd { display:flex; flex:1; } 
+.pop-car-detail .drive-route .time-table dl dd button { font-size:12px; font-weight:normal; flex:1; height:22px; padding:0; color:#8a8a8a; } 
+.pop-car-detail .drive-route .time-table dl dd button.on { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
+.pop-car-detail .drive-route .time-table dl dd button + button { margin-left:2px; } 
+.pop-car-detail .drive-route .show-route-btns { display:flex; justify-content:center; margin:20px auto; } 
+.pop-car-detail .drive-route .show-route-btns button { font-size:13px; width:130px; height:34px; } 
+.pop-car-detail .drive-route .show-route-btns button + button { margin-left:10px; } 
+.pop-car-detail .drive-route hr { } 
+.pop-car-detail .drive-route .route-option { display:flex; align-items:center; } 
+.pop-car-detail .drive-route .route-option .option-left { display:flex; align-items:center; flex:1; justify-content:flex-start; } 
+.pop-car-detail .drive-route .route-option .option-left .input-wrap { } 
+.pop-car-detail .drive-route .route-option .option-left .input-wrap label { } 
+.pop-car-detail .drive-route .route-option .option-left .input-wrap label span { font-size:12px; color:#2b2b2b; } 
+.pop-car-detail .drive-route .route-option .option-right { display:flex; align-items:center; flex:1; justify-content:flex-end; } 
+.pop-car-detail .drive-route .route-option .option-right .input-wrap { } 
+.pop-car-detail .drive-route .route-option .option-right .input-wrap label { font-size:13px; margin-right:10px; } 
+.pop-car-detail .drive-route .route-option .option-right .input-wrap select { font-size:13px; height:28px; } 
+.pop-car-detail .drive-route .drive-timeline { overflow:hidden; height:auto; max-height:0; margin-top:20px; transition:0.2s all; } 
+.pop-car-detail .drive-route .drive-timeline.expanded { max-height:calc(45vh); } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header { display:flex; align-items:center; height:28px; background-color:#ededed; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header li { font-size:11px; text-align:center; color:#5e5e5e; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .time { flex:0 0 19%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .time span { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .location { flex:0 0 38%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .location span { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .event { flex:0 1 13%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .event span { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .speed { flex:0 1 13%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .speed span { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .distance { flex:0 1 22%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-header .distance span { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body { position:relative; overflow-y:auto; max-height:calc(44vh - 79px); padding:15px 0; background-color:#fbfbfb; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body::before { position:absolute; top:15px; bottom:15px; left:19%; display:block; width:6px; margin-left:-3px; content:''; background-color:#ededed; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li { display:flex; align-items:center; padding:5px 0; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li:hover { background-color:#e8f3ff; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li > div { font-size:13px; position:relative; text-align:center; color:#5e5e5e; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .time { flex:0 0 19%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .time span { color:#8a8a8a; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .location { flex:0 0 38%; text-align:left; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .location.painted::before { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .location span { padding:0 15px 0 8px; border-radius:0 10px 10px 0; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .location.painted span { background-color:#ededed; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .event { flex:0 1 13%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .event span { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .speed { flex:0 1 13%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .speed span { } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .distance { flex:0 1 22%; } 
+.pop-car-detail .drive-route .drive-timeline .timeline-body li .distance span { } 
+.pop-car-detail .drive-route .drive-timeline .download-btns { display:flex; width:100%; margin-top:15px; } 
+.pop-car-detail .drive-route .drive-timeline .download-btns .btn { font-size:13px; flex:1; height:36px; border-radius:0; } 
+.pop-car-detail .drive-route .drive-timeline .download-btns .btn + .btn { border-left:none; } 
+.pop-car-detail .data-form-table .data-form-table-body table tr th,
+.pop-car-detail .data-form-table .data-form-table-body table tr td { font-size:14px; letter-spacing:-0.05em; } 
+.pop-car-detail .data-form-table .data-form-table-body table tr td .input-group button { min-width:60px; } 
+.pop-car-detail .search-form { padding:15px 0; } 
+.pop-car-detail .search-form label{font-size:15px;}
+.pop-car-detail .search-form button { font-size:13px; min-width:60px; padding:0; } 
+.pop-car-detail .search-form + .data-list-table { margin-top:0; } 
+/* 그룹원격일괄제어 */
+.pop-group-remote { position:fixed; z-index:5; bottom:4px; left:400px; display:none; width:400px; margin-left:4px; padding:20px; transition:0.2s all; border-radius:4px; background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.3); } 
+.pop-group-remote.show { display:block; } 
+.left-area .map-list.detail .pop-group-remote { left:0; } 
+.left-area.expanded .map-list .pop-group-remote { left:400px; } 
+.left-area.expanded .map-list.detail .pop-group-remote { left:70vw; } 
+.pop-group-remote .modal-header{flex-wrap:wrap;padding:0;}
+.pop-group-remote .modal-header .close{top:0;right:0;}
+.pop-group-remote .modal-header .note{flex:0 0 100%;color:#8a8a8a;font-size:13px;margin-top:10px;}
+.pop-group-remote .search-form{margin-top:20px;}
+.pop-group-remote .search-form label{font-size:15px;}
+.pop-group-remote .search-form + .data-form-table{margin-top:15px;}
+.pop-group-remote .data-form-table .data-form-table-body table tr th,
+.pop-group-remote .data-form-table .data-form-table-body table tr td{font-size:14px;}
+.pop-group-remote .data-form-table .data-form-table-body table tr td button{min-width:60px;}
+.pop-group-remote .page-bottom-btns{margin-top:20px;}
+/* ****** 좌측영역 ****** */
+/* ****** 우측영역 ****** */
+.map-partition-area .right-area { position:relative; z-index:0; flex:1 0 auto; height:100vh; } 
+.map-controls { position:static; } 
+.map-controls > div { z-index:10; } 
+.map-controls .location-control { position:absolute; top:12px; left:40px; display:flex; width:40vw; } 
+.map-controls .location-control .location-group { display:flex; align-items:center; flex:initial; height:38px; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .location-control .location-group .location { position:relative; display:flex; align-items:center; flex:initial; height:38px; } 
+.map-controls .location-control .location-group .location + .location { margin-left:15px; } 
+.map-controls .location-control .location-group .location + .location::before { display:inline-block; flex:initial; width:8px; height:8px; margin-left:-16px; content:''; transform:rotate(45deg); border-top:1px solid #8a8a8a; border-right:1px solid #8a8a8a; } 
+.map-controls .location-control .location .location-name { font-weight:500; margin:0 15px; cursor:pointer; color:#5e5e5e; } 
+.map-controls .location-control .location-group .location + .location .location-name { } 
+.map-controls .location-control .location .location-list { position:absolute; top:100%; left:0; padding-top:10px; } 
+.map-controls .location-control .location:hover .location-list { } 
+.map-controls .location-control .location .location-list ul { overflow:hidden; width:120px; height:auto; max-height:0; padding:0; transition:0.2s all; opacity:0; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .location-control .location:hover .location-list ul { overflow-y:auto; max-height:200px; padding-top:10px; padding-bottom:10px; opacity:1; } 
+.map-controls .location-control .location .location-list ul li { display:flex; align-items:center; height:28px; padding:0 16px; } 
+.map-controls .location-control .location .location-list ul li:hover { background-color:#f6f6f6; } 
+.map-controls .location-control .location .location-list ul li a { font-weight:500; color:#5e5e5e; } 
+.map-controls .location-control .location .location-list ul li a:hover { color:#1a8cfc; } 
+.map-controls .location-control .point { margin-left:10px; } 
+.map-controls .location-control .point .input-wrap { } 
+.map-controls .location-control .point .input-wrap select { font-size:14px; font-weight:normal; width:140px; height:38px; padding-left:12px; color:#5e5e5e; border:none; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings { position:absolute; top:12px; right:12px; display:flex; align-items:flex-start; } 
+#wrapper .map-controls .map-settings{z-index:99;}
+.map-controls .map-settings.pos-2{right:60px;}
+.map-controls .map-settings .map-setting { position:relative; } 
+.map-controls .map-settings .map-setting .btn-map-setting { display:block; width:38px; height:38px; border:1px solid #dcdcdc; border-radius:3px; background:url(../images/icon-setting.png) no-repeat center center; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-setting .btn-map-setting:hover,
+.map-controls .map-settings .map-setting .btn-map-setting.on { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-setting-on.png); } 
+.map-controls .map-settings .map-setting .btn-alerts { display:block; width:38px; height:38px; border:1px solid #dcdcdc; border-radius:3px; background:url(../images/icon-alerts.png) no-repeat center center; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-setting .btn-alerts:hover,
+.map-controls .map-settings .map-setting .btn-alerts.on { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-alerts-on.png); } 
+.map-controls .map-settings .map-setting .setting-layer { position:absolute; top:100%; right:0; left:auto; display:none; width:250px; margin-top:10px; padding:20px; transition:0.2s all; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-setting .setting-layer.wide{width:450px;}
+.map-controls .map-settings.pos-2 .map-setting .setting-layer{margin-right:-50px;}
+.map-controls .map-settings .map-setting .setting-layer .row + .row{margin-top:25px;}
+.map-controls .map-settings .map-setting .setting-layer.show { display:block; } 
+.left-area.expanded + .map-controls .map-settings .map-setting .setting-layer { margin-right:-212px; } 
+.map-controls .map-settings .map-setting .setting-layer .setting-title { font-size:15px; font-weight:500; margin-bottom:15px; color:#2b2b2b; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul { display:flex; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li { flex:0 0 60px; margin:0 auto; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li + li { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:first-child { margin-left:0; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:last-child { margin-right:0; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon { display:block; width:36px; height:36px; margin:0 auto 10px; border:1px solid #dcdcdc; border-radius:50%; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-traffic { background:#ffffff url(../images/icon-traffic-light.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-traffic,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-traffic { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-traffic-light-on.png); } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-cctv { background:#ffffff url(../images/icon-cctv.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-cctv,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-cctv { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-cctv-on.png); } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-trouble { background:#ffffff url(../images/icon-trouble.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-trouble,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-trouble { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-trouble-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-all-select { background:#ffffff url(../images/icon-all-select.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-all-select,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-all-select { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-all-select-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-idling { background:#ffffff url(../images/icon-idling.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-idling,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-idling { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-idling-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-speeding { background:#ffffff url(../images/icon-speeding.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-speeding,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-speeding { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-speeding-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-shock { background:#ffffff url(../images/icon-shock.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-shock,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-shock { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-shock-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-rapid-acc { background:#ffffff url(../images/icon-rapid-acc.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-rapid-acc,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-rapid-acc { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-rapid-acc-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-deceleration { background:#ffffff url(../images/icon-deceleration.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-deceleration,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-deceleration { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-deceleration-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-temperature { background:#ffffff url(../images/icon-temperature.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-temperature,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-temperature { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-temperature-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-start-on { background:#ffffff url(../images/icon-start-on.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-start-on,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-start-on { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-start-on-on.png); } 
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a .icon.icon-start-off { background:#ffffff url(../images/icon-start-off.png) no-repeat center center; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li.on a .icon.icon-start-off,
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li:hover a .icon.icon-start-off { border-color:#1a8cfc; background-color:#1a8cfc; background-image:url(../images/icon-start-off-on.png); } 
+
+
+
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a span { font-size:12px; line-height:1; display:block; text-align:center; color:#8a8a8a; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-btns ul li a span em{color:#222222;margin-left:0.25em;}
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps { margin-top:20px; padding-top:20px; border-top:1px solid #ededed; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group { display:flex; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap { flex:1; } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label #selMapType1 { } 
+.map-controls .map-settings .map-setting .setting-layer .toggle-maps .radio-group .input-wrap label span { } 
+.map-controls .map-settings .partition-setting { position:relative; margin-left:10px; } 
+.map-controls .map-settings .partition-setting .btn-partition-setting { font-size:14px; display:block; width:65px; height:38px; padding:0; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .partition-setting .btn-partition-setting:hover,
+.map-controls .map-settings .partition-setting .btn-partition-setting:focus { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
+.map-controls .map-settings .partition-setting .partition-group { position:absolute; top:100%; left:0; display:none; margin-top:10px; border-radius:3px; background-color:#ffffff; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .partition-setting .partition-group.show { display:block; } 
+.map-controls .map-settings .partition-setting .partition-group { } 
+.map-controls .map-settings .partition-setting .partition-group .btn { display:flex; align-items:center; justify-content:center; width:65px; height:38px; } 
+.map-controls .map-settings .partition-setting .partition-group .btn + .btn { border-top:1px solid #dcdcdc; } 
+.map-controls .map-settings .partition-setting .partition-group .btn i { position:relative; display:block; width:19px; height:16px; border:1px solid #5e5e5e; border-radius:3px; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-2::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-3::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-3::after { position:absolute; top:0; left:50%; display:block; width:1px; height:50%; margin-left:-0.5px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-4::before { position:absolute; top:50%; left:0; display:block; width:100%; height:1px; margin-top:-1px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn .icon-partition-4::after { position:absolute; top:0; left:50%; display:block; width:1px; height:100%; margin-left:-0.5px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .partition-setting .partition-group .btn:hover,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus,
+.map-controls .map-settings .partition-setting .partition-group .btn.on { background-color:#1a8cfc; } 
+.map-controls .map-settings .partition-setting .partition-group .btn:hover i,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus i,
+.map-controls .map-settings .partition-setting .partition-group .btn.on i { border-color:#ffffff; } 
+.map-controls .map-settings .partition-setting .partition-group .btn:hover i::before,
+.map-controls .map-settings .partition-setting .partition-group .btn:hover i::after,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus i::before,
+.map-controls .map-settings .partition-setting .partition-group .btn:focus i::after,
+.map-controls .map-settings .partition-setting .partition-group .btn.on i::before,
+.map-controls .map-settings .partition-setting .partition-group .btn.on i::after { background-color:#ffffff; } 
+.map-controls .map-settings .map-style-setting { font-size:14px; margin-left:70px; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-style-setting .btn-group { font-size:14px; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-style-setting .btn-group .btn { font-size:14px; position:relative; height:38px; } 
+.map-controls .map-settings .map-style-setting .btn-group .btn:not(.on) + .btn::after { position:absolute; top:50%; left:0; display:block; width:1px; height:18px; margin-top:-9px; content:''; background-color:#dcdcdc; } 
+.map-controls .map-settings .map-style-setting .btn-group .btn:hover,
+.map-controls .map-settings .map-style-setting .btn-group .btn:focus,
+.map-controls .map-settings .map-style-setting .btn-group .btn.on { color:#ffffff; border-color:#1a8cfc; background-color:#1a8cfc; } 
+.map-controls .map-settings .map-focus-setting { position:absolute; top:90px; right:0; display:flex; flex-direction:column; } 
+.map-controls .map-settings .map-focus-setting .map-zoom { } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn { width:38px; height:38px; padding:0; border-radius:3px; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn i { position:relative; display:block; width:12px; height:12px; margin:0 auto; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in { position:relative; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in i::before { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-in i::after { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; transform:rotate(90deg); background-color:#5e5e5e; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-out { position:relative; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn-zoom-out i::before { position:absolute; top:50%; left:50%; display:block; width:12px; height:2px; margin-top:-1px; margin-left:-6px; content:''; background-color:#5e5e5e; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn.on { background-color:#1a8cfc; } 
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:before,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:before,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn.on i:before,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:after,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn:hover i:after,
+.map-controls .map-settings .map-focus-setting .map-zoom .btn.on i:after { background-color:#ffffff; } 
+.map-controls .map-settings .map-focus-setting > .btn-focus { width:38px; height:38px; margin-top:10px; border-radius:3px; background:#ffffff url(../images/icon-current-location.png) no-repeat center; box-shadow:0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.21); } 
+.map-controls .map-settings .map-focus-setting > .btn-focus:hover,
+.map-controls .map-settings .map-focus-setting > .btn-focus:focus,
+.map-controls .map-settings .map-focus-setting > .btn-focus.on { background-color:#1a8cfc; background-image:url(../images/icon-current-location.png); } 
+.right-area .map-object-area { position:static; } 
+.right-area .map-object-area .object-item { position:relative; z-index:9; } 
+.car-object { display:inline-block; width:120px; text-align:center; } 
+.car-object > i { display:block; width:42px; height:42px; margin:0 auto; } 
+.car-object > span { font-size:16px; font-weight:500; line-height:24px; display:inline-block; padding:0 5px; color:#ffffff; border-radius:2px; background-color:rgba(0, 0, 0, 0.6); box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.5); } 
+.car-object.on > i { background:url(../images/icon-car-on-default.png) no-repeat center top; } 
+.car-object.on.selected > i { background:url(../images/icon-car-on-selected.png) no-repeat center top; } 
+.car-object.off > i { background:url(../images/icon-car-off-default.png) no-repeat center top; } 
+.car-object.off.selected > i { background:url(../images/icon-car-off-selected.png) no-repeat center top; } 
+/* 경로 오브젝트 */
+.point-object { display:flex; align-items:center; justify-content:center; width:40px; height:40px; border:solid 4px #ffffff; background-color:#1a8cfc; box-shadow:0 1px 10px 0 #00000021;color:#ffffff;z-index:5; font-size:13px;font-weight:500;border-radius:50%;} 
+/* 경로정보 */
+.pop-inner-map { position:relative; z-index:5; width:530px; padding:20px; border-radius:6px; background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.298); } 
+.pop-inner-map::before { position:absolute; bottom:0; left:50%; display:block; width:15px; height:15px; margin-bottom:-7.5px; margin-left:-7.5px; content:''; transform:rotate(45deg); background-color:#ffffff; box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.298); z-index:0;} 
+.pop-inner-map::after { position:absolute; bottom:0; left:50%; display:block; width:30px; height:15px; margin-left:-15px; content:''; background-color:#ffffff; z-index:1;} 
+.pop-inner-map .modal-header { padding:0; font-size:16px;} 
+.pop-inner-map .modal-header .modal-title{font-size:16px;}
+.pop-inner-map .modal-header .close { z-index:5; top:0; right:0; width:16px; height:16px; } 
+.pop-inner-map .car-info { display:flex; flex-wrap:wrap; } 
+.pop-inner-map .car-info .car-name { font-size:18px; line-height:18px; display:flex; align-items:center; flex:0 0 70%; } 
+.pop-inner-map .car-info .car-name .flag { font-size:11px; display:inline-flex; align-items:center; justify-content:center; width:30px; height:16px; margin-right:6px; vertical-align:middle; color:#ffffff; border-radius:8px; background-color:#dcdcdc; } 
+.pop-inner-map .car-info .car-name .flag.on { background-color:#1a8cfc; } 
+.pop-inner-map .car-info .car-name span { font-size:16px; } 
+.pop-inner-map .car-info .time-remining { font-size:12px; flex:0 0 30%; text-align:right; color:#8a8a8a; } 
+.pop-inner-map .car-info .gps-address { font-size:13px; display:flex; align-items:center; flex:0 0 100%; margin-top:5px; color:#8a8a8a; } 
+.pop-inner-map .car-info .gps-address .icon-gps { display:inline-flex; align-items:flex-end; justify-content:center; width:30px; height:12px; margin-right:5px; vertical-align:middle; } 
+.pop-inner-map .car-info .gps-address .icon-gps i { width:2.5px; background-color:#dcdcdc; } 
+.pop-inner-map .car-info .gps-address .icon-gps i.on { background-color:#3b95fe; } 
+.pop-inner-map .car-info .gps-address .icon-gps i + i { margin-left:2.5px; } 
+.pop-inner-map .car-info .gps-address .icon-gps i.gps-bar-1 { height:6px; } 
+.pop-inner-map .car-info .gps-address .icon-gps i.gps-bar-2 { height:9px; } 
+.pop-inner-map .car-info .gps-address .icon-gps i.gps-bar-3 { height:12px; } 
+.pop-inner-map .car-info .gps-address dl { line-height:1; display:flex; flex:initial; margin-left:10px; padding-left:10px; border-left:1px solid #dcdcdc; } 
+.pop-inner-map .car-info .gps-address dl dt { font-size:13px; color:#5e5e5e; } 
+.pop-inner-map .car-info .gps-address dl dd { font-size:13px; margin-left:6px; color:#2b2b2b; } 
+.pop-inner-map .data-form-table{margin-top:10px;}
+.pop-inner-map .data-form-table .data-form-table-body { border-top-color:#dcdcdc; border-bottom-color:#dcdcdc; } 
+.pop-inner-map .data-form-table .data-form-table-body table tr th,
+.pop-inner-map .data-form-table .data-form-table-body table tr td {  height:auto;padding:6px 10px; font-size:12px;border-bottom:none;} 
+.pop-inner-map .data-form-table .data-form-table-body table tr:first-child th,
+.pop-inner-map .data-form-table .data-form-table-body table tr:first-child td{padding-top:12px;}
+.pop-inner-map .data-form-table .data-form-table-body table tr:last-child th,
+.pop-inner-map .data-form-table .data-form-table-body table tr:last-child td{padding-bottom:12px;}
+.pop-inner-map .member-list{display:flex;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;padding:10px 0;margin-top:10px;}
+.pop-inner-map .member-list ul{display:flex;flex-wrap:wrap;max-height:200px;overflow-y:auto;}
+.pop-inner-map .member-list ul li{flex:0 0 50%;padding:5px 0;font-size:13px;}
+.pop-inner-map .member-list ul li:nth-child(odd){margin-left:auto;}
+.pop-inner-map .member-list ul li .flag{font-size:11px;width:30px;height:16px;display:inline-flex;align-items:center;justify-content: center;margin-right:5px;border-radius:8px;background-color:#dcdcdc;color:#ffffff;}
+.pop-inner-map .member-list ul li .flag.on{background-color:#1a8cfc;}
+.right-area .background-map-area { position:absolute; z-index:0; top:0; left:0; width:100%; height:100%; box-shadow:inset 0 1px 4px 0 rgba(0, 0, 0, 0.3); } 
+
+/* 그룹오브젝트 */
+.group-object{display:inline-flex;width:46px;height:46px;align-items:center;justify-content: center;border-radius:50%;background-color:rgb(137, 137, 137);position:relative;}
+.group-object > span{font-size:20px;font-weight:500;color:#ffffff;position:relative;z-index:2;}
+.group-object::before{border-radius:50%;content:'';position:absolute;display:block;width:78px;height:78px;left:50%;top:50%;margin-left:-39px;margin-top:-39px;background-color:rgb(137, 137, 137);opacity:0.4;}
+.group-object::after{border-radius:50%;content:'';position:absolute;display:block;width:124px;height:124px;left:50%;top:50%;margin-left:-62px;margin-top:-62px;background-color:rgb(137, 137, 137);opacity:0.15;}
+.group-object.group-color-1,
+.group-object.group-color-1::before,
+.group-object.group-color-1::after{background-color: #f64655;}
+.group-object.group-color-2,
+.group-object.group-color-2::before,
+.group-object.group-color-2::after{background-color: #1a8cfc;}
+.group-object.group-color-3,
+.group-object.group-color-3::before,
+.group-object.group-color-3::after{background-color: #ffaf0a;}
+
+.pop-in-out{position: absolute;
+  z-index: 10;
+  top:50%;
+  margin-top:-25vh;
+  height:50vh;
+  left:50%;
+  width: 500px;
+  margin-left: -250px;
+  padding: 20px;
+  transition: 0.2s all;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);}
+  .pop-in-out::before,
+  .pop-in-out::after{display:none;}
+  .pop-in-out .modal-header + .top-search{margin-top:15px;}
+  .pop-in-out .pop-top-search{padding:7.5px 15px;}
+  .pop-in-out .data-list-table{margin-top:10px;}
+  .pop-in-out .data-list-table .data-table table thead tr th,
+  .pop-in-out .data-list-table .data-table table tbody tr:not(.jqgfirstrow) td{padding:5px;}
+
+  #wrapper .update-layer{}
+
+/* ****** 우측영역 ****** */
+/* ****** 분할영역 ****** */
+.multi-map-area{overflow:hidden;height:100vh;}
+.multi-map-header{height:55px;display:flex;align-items:center;padding:0 30px;border-bottom:1px solid #dcdcdc;position:relative;z-index:10;flex:0 0 100%;}
+.multi-map-header .header-title{font-size:17px;font-weight:500;color:#000000;margin-right:30px;flex:initial}
+.multi-map-header .header-left{display:flex;align-items:center;flex:1 0 auto;}
+.multi-map-header .header-left button{width:90px;height:26px;font-size:13px;padding:0;}
+.multi-map-header .header-left button+button{margin-left:10px;}
+.multi-map-header .header-right{flex:1 0 auto;display:flex;align-items:center;justify-content: flex-end;}
+.multi-map-header .header-right button{width:100px;height:34px;font-size:13px;padding:0;}
+
+.multi-map-body{display:flex;height:calc(100% - 50px);position:relative;margin-left:-3px;margin-right:-3px;margin-top:-3px;margin-bottom:-3px;z-index:0;background-color:#ffffff;align-items:stretch;flex-wrap:wrap;flex:0 0 100%;}
+.multi-map-body .map-layout{padding:3px;background-color:#ffffff;flex:1 0 50%;position:relative;}
+.multi-map-body .map-layout .map-frame{position:relative;display:flex;padding:3px;width:100%;height:100%;z-indeX:0;}
+.multi-map-body .map-layout .frame-ready{position:absolute;top:3px;right:3px;bottom:3px;left:3px;background-color:#f5f5f5;margin-top:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:10;}
+.multi-map-body .map-layout .frame-ready .btn-add{width:90px;height:90px;border-radius:50%;border:3px solid #b6b6b6;position:relative;display:block;margin:0 auto;background-color:transparent;}
+.multi-map-body .map-layout .frame-ready .btn-add::before,
+.multi-map-body .map-layout .frame-ready .btn-add::after{content:'';display:block;width:36px;height:3px;border-radius:1.5px;background-color:#b6b6b6;position:absolute;left:50%;top:50%;margin-top:-1.5px;margin-left:-18px;}
+.multi-map-body .map-layout .frame-ready .btn-add::after{transform:rotate(90deg);}
+.multi-map-body .map-layout .frame-ready p{font-size:22px;font-weight:500;color:#b6b6b6;margin-top:35px;line-height:32px;text-align:center;}
+.multi-map-body .map-layout .background-map-area{position:absolute;z-index:0;top:0;left:0;right:0;bottom:0;}
+.multi-map-body .map-layout .background-map-area iframe{position:absolute;width:100%;height:100%;top:0;left:0;overflow:hidden;display:block;}
+
+/* ****** 분할영역 ****** */
+/* ************************** 지도영역 END ************************** */

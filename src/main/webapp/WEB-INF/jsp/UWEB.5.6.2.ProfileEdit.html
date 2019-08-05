@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +19,6 @@
   <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
   <!-- //CSS resource load -->
 </head>
-
 <body class="sub">
   <!-- Markup Start -->
   <!-- frame wrapper -->
@@ -39,7 +36,7 @@
     <div class="content-wrap container-box v-top h-center">
       <div class="simplified-form">
         <h3></h3>
-        <p>개인 정보를 수정할 수 있습니다.</p>  
+        <p>개인 정보를 수정할 수 있습니다.</p>
         <div class="form-table wide">
           <table>
             <tr>
@@ -47,7 +44,7 @@
               <td><span class="profile-edit-txt">에스원회사</span></td>
             </tr>
           </table>
-          <hr />
+          <hr>
           <table>
             <tr>
               <th>아이디</th>
@@ -85,5 +82,25 @@
   </div>
   <!-- //wrapper -->
   <!-- //Markup End -->
+  <!-- JS resource load -->
+  <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../resources/js/jquery-ui.min.js "></script>
+  <script src="../../resources/js/bootstrap.min.js "></script>
+  <script src="../../resources/js/popper.min.js "></script>
+  <script src="../../resources/js/bootstrap-datepicker.js"></script>
+  <script src="../../resources/js/jquery.jqGrid.src.js"></script>
+  <script src="../../resources/js/s1-uvis-script.js "></script>
+  <!-- //JS resource load -->
 </body>
 </html>

@@ -126,7 +126,10 @@
       height: 100%;
       overflow: hidden;
     }
-    body{padding:0;margin:0;}
+    body {
+      padding: 0;
+      margin: 0;
+    }
     .marker {
       height: 37px;
       width: 27px;
@@ -137,7 +140,23 @@
       bottom: 5px;
       left: 2px;
       z-index: 16;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      color: #8a8a8a;
+      font-size: 12px;
+      padding: 0 5px 0 0;
+    }
+    .update_layer span {
+      display: inline-flex;
+      align-items: center;
+      flex: initial;
+    }
+    .update_layer img {
+      margin: 0 5px;
+      display: block;
+      flex: initial;
     }
     /* place_control - 지점등록	  */
     #place_control {
@@ -280,6 +299,89 @@
   <div id="wrapper">
     <!-- header_wrap -->
     <div class="header_wrap_forTV">
+      <!-- 지도 컨트롤 영역 -->
+      <!-- 설정 레이어 관련 CSS 호출 -->
+      <link href="../../resources/fonts/NotoSansKR-Regular.woff2" rel="preload" as="font">
+      <link href="../../resources/fonts/NotoSansKR-Medium.woff2" rel="preload" as="font">
+      <link href="../../resources/fonts/NotoSansKR-Bold.woff2" rel="preload" as="font">
+      <link href="../../resources/css/NotoSansKR.css" rel="stylesheet">
+      <link href="../../resources/css/font-awesome-all.css" rel="stylesheet">
+      <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../../resources/css/reset.css" rel="stylesheet">
+      <link href="../../resources/css/s1_uvis_frame.css" rel="stylesheet">
+      <link href="../../resources/css/s1_uvis_style.css" rel="stylesheet">
+      <link href="../../resources/css/s1_uvis_map_style.css" rel="stylesheet">
+      <!-- //설정 레이어 관련 CSS 호출 -->
+      <div class="map-controls">
+        <!-- 교통정보 -->
+        <div class="map-settings">
+          <div class="map-setting">
+            <button class="btn btn-white btn-map-setting" onclick="$(this).next('.setting-layer').toggleClass('show');"></button>
+            <div class="setting-layer">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="setting-title">교통정보</div>
+                  <div class="toggle-btns">
+                    <ul>
+                      <li class="on"><a href="#"><i class="icon icon-traffic"></i><span>전체선택</span></a></li>
+                      <li class="on"><a href="#"><i class="icon icon-cctv"></i><span>CCTV</span></a></li>
+                      <li class="on"><a href="#"><i class="icon icon-trouble"></i><span>사고&middot;공사</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //교통정보 -->
+        <!-- 지도 설정 -->
+        <div class="map-settings pos-2">
+          <div class="map-setting">
+            <button class="btn btn-white btn-alerts" onclick="$(this).next('.setting-layer').toggleClass('show');"></button>
+            <div class="setting-layer wide">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="setting-title">이상정보</div>
+                  <div class="toggle-btns">
+                    <ul>
+                      <li class="on"><a href="#"><i class="icon icon-all-select"></i><span>전체선택<em>90</em></span></a></li>
+                      <li><a href="#"><i class="icon icon-idling"></i><span>공회전<em>90</em></span></a></li>
+                      <li><a href="#"><i class="icon icon-speeding"></i><span>과속<em>90</em></span></a></li>
+                      <li><a href="#"><i class="icon icon-shock"></i><span>충격<em>90</em></span></a></li>
+                      <li><a href="#"><i class="icon icon-rapid-acc"></i><span>급가속<em>90</em></span></a></li>
+                      <li><a href="#"><i class="icon icon-deceleration"></i><span>급감속<em>90</em></span></a></li>
+                      <li><a href="#"><i class="icon icon-temperature"></i><span>온도<em>90</em></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="setting-title">운행상태</div>
+                  <div class="toggle-btns">
+                    <ul>
+                      <li class="on"><a href="#"><i class="icon icon-all-select"></i><span>전체선택</span></a></li>
+                      <li><a href="#"><i class="icon icon-start-on"></i><span>ON</span></a></li>
+                      <li><a href="#"><i class="icon icon-start-off"></i><span>OFF</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="setting-title">지점선택</div>
+                  <div class="input-wrap select">
+                    <select id name>
+                      <option value="">지점</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //지도 설정 -->
+      </div>
+      <script src="../../resources/js/jquery-1.12.4.min.js "></script>
+      <!-- //지도 컨트롤 영역 -->
       <!-- 운행분석 -->
       <!-- 실시간모니터링 -->
       <div id="nav">
@@ -565,9 +667,9 @@
       <!-- //범례 -->
       <!-- 업데이트 시간 정보 -->
       <div class="update_layer">
-        <img src="/uvisc/images/kr/realtime/txt_update_real.gif" alt="업데이트일시">
+        <!-- <img src="../../resources/images/icon-refresh-gray.png" alt="새로고침"> -->
+        <span onclick="getRealDataGRP();" style="cursor:pointer"><img src="../../resources/images/icon-refresh-gray.png" alt="새로고침">업데이트</span>
         <span class="update_time" id="upt_dt">2019-07-29 11:58:12</span>
-        <span><img src="/uvisc/images/realtime/btn_refresh_real.gif" alt="새로고침" onclick="getRealDataGRP();" style="cursor:pointer">&nbsp;</span>
       </div>
     </div>
     <iframe id="IFRMExec" name="IFRMExec" src width="100%" height="0" marginwidth="0" marginheight="0" framespacing="0" frameborder="0"></iframe>
